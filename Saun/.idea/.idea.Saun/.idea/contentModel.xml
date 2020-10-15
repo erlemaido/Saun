@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Erle\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Erle\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Saun.1301973320.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Erle\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Saun.503793012.00" t="ExcludeRecursive" />
     <e p="C:\Users\Erle\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\Erle\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Erle\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\SAUN\SAUN\.gitignore" t="Include" />
-    <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\SAUN\SAUN\SAUN" t="IncludeFlat">
+    <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\Projekt\SAUN\.gitignore" t="Include" />
+    <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\Projekt\SAUN\SAUN" t="IncludeFlat">
       <e p="Aids" t="IncludeRecursive">
         <e p="Aids.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
@@ -21,8 +21,21 @@
         </e>
       </e>
       <e p="Data" t="IncludeRecursive">
+        <e p="Abstractions" t="Include">
+          <e p="DefinedEntityData.cs" t="Include" />
+          <e p="NamedEntityData.cs" t="Include" />
+          <e p="UniqueEntityData.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="CatalogItem" t="Include">
+          <e p="CatalogItem.cs" t="Include" />
+        </e>
+        <e p="CatalogItemBrand" t="Include">
+          <e p="CatalogItemBrand.cs" t="Include" />
+        </e>
+        <e p="CatalogItemType" t="Include">
+          <e p="CatalogItemType.cs" t="Include" />
+        </e>
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -30,6 +43,12 @@
               <e p="Data.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Stock" t="Include">
+          <e p="Stock.cs" t="Include" />
+        </e>
+        <e p="Unit" t="Include">
+          <e p="Unit.cs" t="Include" />
         </e>
       </e>
       <e p="Directory.Build.props" t="Include" />
