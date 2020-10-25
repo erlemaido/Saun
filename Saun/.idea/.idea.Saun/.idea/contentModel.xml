@@ -11,7 +11,14 @@
       <e p="Aids" t="IncludeRecursive">
         <e p="Aids.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="Logging" t="Include">
+          <e p="ILogBook.cs" t="Include" />
+          <e p="Log.cs" t="Include" />
+        </e>
+        <e p="Methods" t="Include">
+          <e p="Copy.cs" t="Include" />
+          <e p="Safe.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -53,8 +60,23 @@
       </e>
       <e p="Directory.Build.props" t="Include" />
       <e p="Domain" t="IncludeRecursive">
+        <e p="Abstractions" t="Include">
+          <e p="DefinedEntity.cs" t="Include" />
+          <e p="ICrudMethods.cs" t="Include" />
+          <e p="IDefinedEntity.cs" t="Include" />
+          <e p="IFiltering.cs" t="Include" />
+          <e p="INamedEntity.cs" t="Include" />
+          <e p="IPaging.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="ISorting.cs" t="Include" />
+          <e p="IUniqueEntity.cs" t="Include" />
+          <e p="NamedEntity.cs" t="Include" />
+          <e p="UniqueEntity.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="CatalogItem" t="Include" />
+        <e p="CatalogItemBrand" t="Include" />
+        <e p="CatalogItemType" t="Include" />
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -63,6 +85,8 @@
             </e>
           </e>
         </e>
+        <e p="Stock" t="Include" />
+        <e p="Unit" t="Include" />
       </e>
       <e p="Facade" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
