@@ -2,6 +2,6 @@ namespace Data.Abstractions
 {
     public class NamedEntityData : UniqueEntityData
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
     }
 }

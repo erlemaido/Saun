@@ -24,24 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Stock/Stock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Unit/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Facade.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Facade.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Infra.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Pages.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Pages.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Stock/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stock/Stock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +37,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -72,12 +65,13 @@
         <option value="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" />
         <option value="$PROJECT_DIR$/WebApp/WebApp.csproj" />
         <option value="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemType.cs" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" />
         <option value="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrand.cs" />
-        <option value="$PROJECT_DIR$/Data/Stock/Stock.cs" />
         <option value="$PROJECT_DIR$/Data/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" />
+        <option value="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" />
         <option value="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" />
+        <option value="$PROJECT_DIR$/Data/Stock/Stock.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" />
       </list>
     </option>
   </component>
@@ -159,7 +153,9 @@
       <workItem from="1602748953453" duration="789000" />
       <workItem from="1602750036809" duration="77000" />
       <workItem from="1602750237489" duration="2584000" />
-      <workItem from="1602765799534" duration="3234000" />
+      <workItem from="1602765799534" duration="4135000" />
+      <workItem from="1603380257763" duration="84000" />
+      <workItem from="1603639845004" duration="1738000" />
     </task>
     <servers />
   </component>
