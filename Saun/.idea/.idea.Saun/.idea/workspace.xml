@@ -23,13 +23,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="">
+    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Fixed Data nullable reference types">
+      <change afterPath="$PROJECT_DIR$/Aids/Logging/ILogBook.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aids/Logging/Log.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aids/Methods/Copy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aids/Methods/Safe.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/ICrudMethods.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/IDefinedEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/IFiltering.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/INamedEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/IPaging.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/ISorting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/IUniqueEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Stock/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stock/Stock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aids/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +61,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Facade/Class1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infra/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Domain/Class1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Aids/Class1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,7 +74,6 @@
         <option value="$PROJECT_DIR$/Pages/Class1.cs" />
         <option value="$PROJECT_DIR$/Tests/Program.cs" />
         <option value="$PROJECT_DIR$/Directory.Build.props" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" />
         <option value="$PROJECT_DIR$/WebApp/WebApp.csproj" />
         <option value="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemType.cs" />
         <option value="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrand.cs" />
@@ -72,6 +83,24 @@
         <option value="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" />
         <option value="$PROJECT_DIR$/Data/Stock/Stock.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/ICrudMethods.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/IFiltering.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/IPaging.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/ISorting.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/IRepository.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/INamedEntity.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/IUniqueEntity.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/IDefinedEntity.cs" />
+        <option value="$PROJECT_DIR$/Aids/Methods/Copy.cs" />
+        <option value="$PROJECT_DIR$/Aids/Logging/ILogBook.cs" />
+        <option value="$PROJECT_DIR$/Aids/Logging/Log.cs" />
+        <option value="$PROJECT_DIR$/Aids/Methods/Safe.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/VakueObject.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/ValueObject.cs" />
+        <option value="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" />
+        <option value="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" />
       </list>
     </option>
   </component>
@@ -155,8 +184,16 @@
       <workItem from="1602750237489" duration="2584000" />
       <workItem from="1602765799534" duration="4135000" />
       <workItem from="1603380257763" duration="84000" />
-      <workItem from="1603639845004" duration="1738000" />
+      <workItem from="1603639845004" duration="7681000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed Data nullable reference types">
+      <created>1603645584854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603645584854</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,11 +215,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Fixed Data nullable reference types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Data nullable reference types" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1602749283623">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602749283623" />
+    <state x="4208" y="613" key="RiderGenerateDialog" timestamp="1603651391335">
+      <screen x="3840" y="0" width="1080" height="1880" />
+    </state>
+    <state x="4208" y="613" key="RiderGenerateDialog/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@3840.0.1080.1880" timestamp="1603651391335" />
+    <state x="3972" y="660" key="Vcs.Push.Dialog.v2" timestamp="1603645591317">
+      <screen x="3840" y="0" width="1080" height="1880" />
+    </state>
+    <state x="3972" y="660" key="Vcs.Push.Dialog.v2/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@3840.0.1080.1880" timestamp="1603645591317" />
   </component>
 </project>
