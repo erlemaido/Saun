@@ -7,7 +7,7 @@ namespace Data.CatalogItem
         public int CatalogItemBrandId { get; set; }
         public int CatalogItemTypeId { get; set; }
         public int UnitId { get; set; }
-        public string PictureUrl { get; set; }
+        public string PictureUrl { get; set; } = null!;
         public double Price { get; set; }
     }
 }
