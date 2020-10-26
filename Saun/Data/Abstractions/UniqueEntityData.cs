@@ -1,7 +1,9 @@
+using System;
+
 namespace Data.Abstractions
 {
     public class UniqueEntityData
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

@@ -1,12 +1,16 @@
+using System;
+using Aids.Methods;
 using Data.Abstractions;
 
 namespace Domain.Abstractions
 {
-    public abstract class UniqueEntity<T> : IUniqueEntity<T> where T : UniqueEntityData, new()
+    public abstract class UniqueEntity<TData> : IUniqueEntity<TData> where TData : UniqueEntityData, new()
     {
         // Piho on muutnud struktuuri. Tal on loodud ValueObject klass, millega see seotud
-        public virtual int Id { get; }
+        public Guid Id => Data.Id;
 
-        public T Data { get; internal set; } = null!;
+        public TData Data { get; }
+
+        protected internal UniqueEntity(TData d = null!) => Data = d;
     }
 }

@@ -35,13 +35,13 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="CatalogItem" t="Include">
-          <e p="CatalogItem.cs" t="Include" />
+          <e p="CatalogItemData.cs" t="Include" />
         </e>
         <e p="CatalogItemBrand" t="Include">
-          <e p="CatalogItemBrand.cs" t="Include" />
+          <e p="CatalogItemBrandData.cs" t="Include" />
         </e>
         <e p="CatalogItemType" t="Include">
-          <e p="CatalogItemType.cs" t="Include" />
+          <e p="CatalogItemTypeData.cs" t="Include" />
         </e>
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -52,10 +52,10 @@
           </e>
         </e>
         <e p="Stock" t="Include">
-          <e p="Stock.cs" t="Include" />
+          <e p="StockData.cs" t="Include" />
         </e>
         <e p="Unit" t="Include">
-          <e p="Unit.cs" t="Include" />
+          <e p="UnitData.cs" t="Include" />
         </e>
       </e>
       <e p="Directory.Build.props" t="Include" />
@@ -74,9 +74,18 @@
           <e p="UniqueEntity.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItem" t="Include" />
-        <e p="CatalogItemBrand" t="Include" />
-        <e p="CatalogItemType" t="Include" />
+        <e p="CatalogItem" t="Include">
+          <e p="CatalogItem.cs" t="Include" />
+          <e p="ICatalogItemsRepository.cs" t="Include" />
+        </e>
+        <e p="CatalogItemBrand" t="Include">
+          <e p="CatalogItemBrand.cs" t="Include" />
+          <e p="ICatalogItemBrandsRepository.cs" t="Include" />
+        </e>
+        <e p="CatalogItemType" t="Include">
+          <e p="CatalogItemType.cs" t="Include" />
+          <e p="ICatalogItemTypesRepository.cs" t="Include" />
+        </e>
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -85,8 +94,14 @@
             </e>
           </e>
         </e>
-        <e p="Stock" t="Include" />
-        <e p="Unit" t="Include" />
+        <e p="Stock" t="Include">
+          <e p="IStocksRepository.cs" t="Include" />
+          <e p="Stock.cs" t="Include" />
+        </e>
+        <e p="Unit" t="Include">
+          <e p="IUnitsRepository.cs" t="Include" />
+          <e p="Unit.cs" t="Include" />
+        </e>
       </e>
       <e p="Facade" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

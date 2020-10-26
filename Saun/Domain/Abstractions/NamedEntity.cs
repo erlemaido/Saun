@@ -2,8 +2,14 @@ using Data.Abstractions;
 
 namespace Domain.Abstractions
 {
-    public abstract class NamedEntity<T> : IUniqueEntity<T> where T : NamedEntityData, new()
+    public abstract class NamedEntity<TData> : UniqueEntity<TData> where TData : NamedEntityData, new()
     {
-        public virtual string Name { get; } = null!;
+        // ei saa sellest aru
+        protected internal NamedEntity(TData d = null!) : base(d)
+        {
+            
+        }
+
+        public virtual string Name => Data.Name;
     }
 }
