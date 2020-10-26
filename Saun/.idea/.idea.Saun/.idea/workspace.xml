@@ -26,18 +26,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Added domain abstract classes. Classes are broken and not finished.">
+    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes">
+      <change afterPath="$PROJECT_DIR$/Data/Unit/UnitData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItem/CatalogItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItem/ICatalogItemsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItemBrand/CatalogItemBrand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItemBrand/ICatalogItemBrandsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItemType/CatalogItemType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/CatalogItemType/ICatalogItemTypesRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Stock/IStocksRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Stock/Stock.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Unit/IUnitsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Unit/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Stock/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stock/Stock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/ICrudMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/ICrudMethods.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/IDefinedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/IDefinedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/IUniqueEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/IUniqueEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/CatalogItem/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItem/CatalogItemData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrandData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemTypeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Stock/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stock/StockData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Unit/Unit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +103,22 @@
         <option value="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItemBrand/CatalogItemBrans.cs" />
+        <option value="$PROJECT_DIR$/Data/CatalogItem/CatalogItemData.cs" />
+        <option value="$PROJECT_DIR$/Data/CatalogItemBrand/CatalogItemBrandData.cs" />
+        <option value="$PROJECT_DIR$/Data/CatalogItemType/CatalogItemTypeData.cs" />
+        <option value="$PROJECT_DIR$/Data/Stock/StockData.cs" />
+        <option value="$PROJECT_DIR$/Data/Unit/UnitData.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItem/ICatalogItemsRepository.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItem/CatalogItem.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItemBrand/CatalogItemBrand.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItemBrand/ICatalogItemBrandsRepository.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItemType/CatalogItemType.cs" />
+        <option value="$PROJECT_DIR$/Domain/CatalogItemType/ICatalogItemTypesRepository.cs" />
+        <option value="$PROJECT_DIR$/Domain/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Domain/Stock/Stock.cs" />
+        <option value="$PROJECT_DIR$/Domain/Unit/IUnitsRepository.cs" />
+        <option value="$PROJECT_DIR$/Domain/Stock/IStocksRepository.cs" />
       </list>
     </option>
   </component>
@@ -179,7 +203,7 @@
       <workItem from="1602765799534" duration="4135000" />
       <workItem from="1603380257763" duration="84000" />
       <workItem from="1603639845004" duration="7681000" />
-      <workItem from="1603710341791" duration="3370000" />
+      <workItem from="1603710341791" duration="6381000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Data nullable reference types">
       <created>1603645584854</created>
@@ -188,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603645584854</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes">
+      <created>1603716833664</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603716833664</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +242,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Fixed Data nullable reference types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Data nullable reference types" />
+    <MESSAGE value="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1602749283623">

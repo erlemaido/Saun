@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Stock
 {
-    public class Stock : UniqueEntityData
+    public class StockData : UniqueEntityData
     {
         public Guid CatalogItemId { get; set; }
         public int InStock { get; set; }

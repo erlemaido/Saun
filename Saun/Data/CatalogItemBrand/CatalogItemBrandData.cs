@@ -2,7 +2,7 @@ using Data.Abstractions;
 
 namespace Data.CatalogItemBrand
 {
-    public class CatalogItemBrand : DefinedEntityData
+    public class CatalogItemBrandData : DefinedEntityData
     {
         
     }

@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.CatalogItem
 {
-    public class CatalogItem : DefinedEntityData
+    public class CatalogItemData : DefinedEntityData
     {
         public Guid CatalogItemBrandId { get; set; }
         public Guid CatalogItemTypeId { get; set; }

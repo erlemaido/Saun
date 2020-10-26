@@ -9,12 +9,4 @@
       <ProjectReference Include="..\Data\Data.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="CatalogItem" />
-      <Folder Include="CatalogItemBrand" />
-      <Folder Include="CatalogItemType" />
-      <Folder Include="Stock" />
-      <Folder Include="Unit" />
-    </ItemGroup>
-
 </Project>
