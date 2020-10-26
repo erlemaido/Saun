@@ -1,3 +1,5 @@
+using System;
+
 namespace Domain.Abstractions
 {
     public interface IRepository<T> : ICrudMethods<T>, IPaging, IFiltering, ISorting, IRepository 
@@ -7,6 +9,6 @@ namespace Domain.Abstractions
 
     public interface IRepository
     {
-        object GetById(int id);
+        object GetById(Guid id);
     }
 }

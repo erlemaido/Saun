@@ -5,7 +5,7 @@ namespace Data.Stock
 {
     public class Stock : UniqueEntityData
     {
-        public int CatalogItemId { get; set; }
+        public Guid CatalogItemId { get; set; }
         public int InStock { get; set; }
         public DateTime LastUpdateTime { get; set; }
         public string? Comment { get; set; }
