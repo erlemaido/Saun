@@ -1,6 +1,6 @@
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Domain.Abstractions
+namespace Saun.Domain.Abstractions
 {
     public abstract class NamedEntity<TData> : UniqueEntity<TData> where TData : NamedEntityData, new()
     {

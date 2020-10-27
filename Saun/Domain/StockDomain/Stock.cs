@@ -1,7 +1,7 @@
-using Data.Stock;
-using Domain.Abstractions;
+using Saun.Data.Stock;
+using Saun.Domain.Abstractions;
 
-namespace Domain.Stock
+namespace Saun.Domain.StockDomain
 {
     public sealed class Stock : UniqueEntity<StockData>
     {

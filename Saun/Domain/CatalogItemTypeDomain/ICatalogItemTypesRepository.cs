@@ -1,6 +1,6 @@
-using Domain.Abstractions;
+using Saun.Domain.Abstractions;
 
-namespace Domain.CatalogItemType
+namespace Saun.Domain.CatalogItemTypeDomain
 {
     public interface ICatalogItemTypesRepository : IRepository<CatalogItemType>
     {

@@ -1,6 +1,6 @@
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Data.Unit
+namespace Saun.Data.Unit
 {
     public class UnitData : NamedEntityData
     {

@@ -1,8 +1,7 @@
 using System;
-using Aids.Methods;
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Domain.Abstractions
+namespace Saun.Domain.Abstractions
 {
     public abstract class UniqueEntity<TData> : IUniqueEntity<TData> where TData : UniqueEntityData, new()
     {

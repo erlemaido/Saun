@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domain.Abstractions
+namespace Saun.Domain.Abstractions
 {
     public interface ICrudMethods<T>
     {

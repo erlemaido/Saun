@@ -1,6 +1,6 @@
 using System;
 
-namespace Data.Abstractions
+namespace Saun.Data.Abstractions
 {
     public class UniqueEntityData
     {

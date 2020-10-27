@@ -1,6 +1,6 @@
-using Domain.Abstractions;
+using Saun.Domain.Abstractions;
 
-namespace Domain.Stock
+namespace Saun.Domain.StockDomain
 {
     public interface IStocksRepository : IRepository<Stock>
     {

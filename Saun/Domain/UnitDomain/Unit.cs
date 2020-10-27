@@ -1,7 +1,7 @@
-using Data.Unit;
-using Domain.Abstractions;
+using Saun.Data.Unit;
+using Saun.Domain.Abstractions;
 
-namespace Domain.Unit
+namespace Saun.Domain.UnitDomain
 {
     public sealed class Unit : NamedEntity<UnitData>
     {

@@ -1,6 +1,6 @@
-using Domain.Abstractions;
+using Saun.Domain.Abstractions;
 
-namespace Domain.CatalogItemBrand
+namespace Saun.Domain.CatalogItemBrandDomain
 {
     public interface ICatalogItemBrandsRepository : IRepository<CatalogItemBrand>
     {

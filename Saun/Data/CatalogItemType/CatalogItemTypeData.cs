@@ -1,6 +1,6 @@
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Data.CatalogItemType
+namespace Saun.Data.CatalogItemType
 {
     public class CatalogItemTypeData : NamedEntityData
     {

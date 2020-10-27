@@ -1,6 +1,6 @@
-using Domain.Abstractions;
+using Saun.Domain.Abstractions;
 
-namespace Domain.Unit
+namespace Saun.Domain.UnitDomain
 {
     public interface IUnitsRepository : IRepository<Unit>
     {
