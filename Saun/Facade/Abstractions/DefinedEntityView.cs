@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Saun.Facade.Abstractions
+namespace Facade.Abstractions
 {
     public class DefinedEntityView : NamedEntityView
     {

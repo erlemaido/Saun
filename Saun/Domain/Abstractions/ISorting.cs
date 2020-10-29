@@ -1,4 +1,4 @@
-namespace Saun.Domain.Abstractions
+namespace Domain.Abstractions
 {
     public interface ISorting
     {

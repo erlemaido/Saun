@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <AssemblyName>Saun.Facade</AssemblyName>
-        <RootNamespace>Saun.Facade</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="CataLogItemFacade\" />
+      <Folder Include="CatalogItems\" />
     </ItemGroup>
 
 </Project>
