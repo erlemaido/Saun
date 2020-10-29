@@ -1,4 +1,4 @@
-namespace Saun.Data.Abstractions
+namespace Data.Abstractions
 {
     public class NamedEntityData : UniqueEntityData
     {
