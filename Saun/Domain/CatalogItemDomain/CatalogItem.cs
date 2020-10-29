@@ -1,7 +1,7 @@
-using Domain.Abstractions;
-using Data.CatalogItem;
+using Saun.Data.CatalogItem;
+using Saun.Domain.Abstractions;
 
-namespace Domain.CatalogItem
+namespace Saun.Domain.CatalogItemDomain
 {
     public sealed class CatalogItem : UniqueEntity<CatalogItemData>
     {

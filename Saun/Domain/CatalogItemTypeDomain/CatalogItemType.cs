@@ -1,7 +1,7 @@
-using Data.CatalogItemType;
-using Domain.Abstractions;
+using Saun.Data.CatalogItemType;
+using Saun.Domain.Abstractions;
 
-namespace Domain.CatalogItemType
+namespace Saun.Domain.CatalogItemTypeDomain
 {
     public sealed class CatalogItemType : NamedEntity<CatalogItemTypeData>
     {

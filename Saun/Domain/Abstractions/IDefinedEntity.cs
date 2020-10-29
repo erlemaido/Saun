@@ -1,4 +1,4 @@
-namespace Domain.Abstractions
+namespace Saun.Domain.Abstractions
 {
     public interface IDefinedEntity : INamedEntity
     {

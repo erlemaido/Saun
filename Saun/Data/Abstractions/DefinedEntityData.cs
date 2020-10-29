@@ -1,4 +1,4 @@
-namespace Data.Abstractions
+namespace Saun.Data.Abstractions
 {
     public class DefinedEntityData : NamedEntityData
     {

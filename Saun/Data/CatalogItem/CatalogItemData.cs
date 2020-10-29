@@ -1,7 +1,7 @@
 using System;
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Data.CatalogItem
+namespace Saun.Data.CatalogItem
 {
     public class CatalogItemData : DefinedEntityData
     {

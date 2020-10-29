@@ -1,7 +1,7 @@
-using Data.CatalogItemBrand;
-using Domain.Abstractions;
+using Saun.Data.CatalogItemBrand;
+using Saun.Domain.Abstractions;
 
-namespace Domain.CatalogItemBrand
+namespace Saun.Domain.CatalogItemBrandDomain
 {
     public sealed class CatalogItemBrand : DefinedEntity<CatalogItemBrandData>
     {

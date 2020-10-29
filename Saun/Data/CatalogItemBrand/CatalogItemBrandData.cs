@@ -1,6 +1,6 @@
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Data.CatalogItemBrand
+namespace Saun.Data.CatalogItemBrand
 {
     public class CatalogItemBrandData : DefinedEntityData
     {

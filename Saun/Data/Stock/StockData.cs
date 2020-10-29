@@ -1,7 +1,7 @@
 using System;
-using Data.Abstractions;
+using Saun.Data.Abstractions;
 
-namespace Data.Stock
+namespace Saun.Data.Stock
 {
     public class StockData : UniqueEntityData
     {

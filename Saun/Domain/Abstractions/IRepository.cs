@@ -1,6 +1,6 @@
 using System;
 
-namespace Domain.Abstractions
+namespace Saun.Domain.Abstractions
 {
     public interface IRepository<T> : ICrudMethods<T>, IPaging, IFiltering, ISorting, IRepository 
     {
