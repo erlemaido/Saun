@@ -6,21 +6,20 @@ namespace Facade.CatalogItemTypes
 {
     public class CatalogItemTypeViewFactory
     {
-        public static CatalogItemType Create(CatalogItemTypeView v)
+        public static CatalogItemType Create(CatalogItemTypeView view)
         {
-            var d = new CatalogItemTypeData();
-            Copy.Members(v, d);
-            return new CatalogItemType(d);
-
+            var catalogItemTypeData = new CatalogItemTypeData();
+            Copy.Members(view, catalogItemTypeData);
+            
+            return new CatalogItemType(catalogItemTypeData);
         }
 
-        public static CatalogItemTypeView Create(CatalogItemType o)
+        public static CatalogItemTypeView Create(CatalogItemType catalogItemType)
         {
-            var v = new CatalogItemTypeView();
-            if (!(o?.Data is null))
-                Copy.Members(o.Data, v);
+            var view = new CatalogItemTypeView();
+            Copy.Members(catalogItemType.Data, view);
 
-            return v;
+            return view;
         }
     }
 }

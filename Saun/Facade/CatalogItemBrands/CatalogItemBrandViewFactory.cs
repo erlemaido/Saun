@@ -6,20 +6,20 @@ namespace Facade.CatalogItemBrands
 {
     public class CatalogItemBrandViewFactory 
     {
-        public static CatalogItemBrand Create(CatalogItemBrandView v)
+        public static CatalogItemBrand Create(CatalogItemBrandView view)
         {
-            var d = new CatalogItemBrandData();
-            Copy.Members(v, d);
-            return new CatalogItemBrand(d);
-
+            var catalogItemBrandData = new CatalogItemBrandData();
+            Copy.Members(view, catalogItemBrandData);
+            
+            return new CatalogItemBrand(catalogItemBrandData);
         }
 
-        public static CatalogItemBrandView Create(CatalogItemBrand o)
+        public static CatalogItemBrandView Create(CatalogItemBrand catalogItemBrand)
         {
-            var v = new CatalogItemBrandView();
-            if (!(o?.Data is null))
-                Copy.Members(o.Data, v);
-            return v;
+            var view = new CatalogItemBrandView();
+            Copy.Members(catalogItemBrand.Data, view);
+            
+            return view;
         }
     }
 }

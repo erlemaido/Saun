@@ -7,5 +7,7 @@ namespace Facade.Abstractions
     {
         [Required]
         public Guid Id { get; set; }
+
+        public Guid GetId() => Id;
     }
 }
