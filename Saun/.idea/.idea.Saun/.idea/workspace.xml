@@ -27,23 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItems/CatalogItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/CatalogItems/CatalogItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Stocks/StockData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stocks/StockData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Abstractions/DefinedEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Abstractions/DefinedEntityView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Abstractions/UniqueEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Abstractions/UniqueEntityView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandViewFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeViewFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemViewFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Stocks/StockView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Stocks/StockView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Stocks/StockViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Stocks/StockViewFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Units/UnitView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Units/UnitView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Units/UnitViewFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Units/UnitViewFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Infra.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,23 +51,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="fixedNamespacesAndFoldersNames" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Infra/Class1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Class1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Domain/CatalogItem/CatalogItem.cs" />
-        <option value="$PROJECT_DIR$/Domain/CatalogItemBrand/CatalogItemBrand.cs" />
-        <option value="$PROJECT_DIR$/Domain/CatalogItemBrand/ICatalogItemBrandsRepository.cs" />
-        <option value="$PROJECT_DIR$/Domain/CatalogItemType/CatalogItemType.cs" />
-        <option value="$PROJECT_DIR$/Domain/CatalogItemType/ICatalogItemTypesRepository.cs" />
         <option value="$PROJECT_DIR$/Domain/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Domain/Stock/Stock.cs" />
         <option value="$PROJECT_DIR$/Domain/Unit/IUnitsRepository.cs" />
@@ -119,6 +108,11 @@
         <option value="$PROJECT_DIR$/Data/Stocks/StockData.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" />
+        <option value="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" />
       </list>
     </option>
   </component>
@@ -136,6 +130,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebApp">
@@ -262,9 +257,14 @@
       <screen x="3840" y="0" width="1080" height="1880" />
     </state>
     <state x="4208" y="613" key="RiderGenerateDialog/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@3840.0.1080.1880" timestamp="1603651391335" />
-    <state x="3972" y="660" key="Vcs.Push.Dialog.v2" timestamp="1603645591317">
-      <screen x="3840" y="0" width="1080" height="1880" />
+    <state x="-1459" y="165" key="SettingsEditor" timestamp="1603968663157">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1459" y="165" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603968663157" />
+    <state x="-1685" y="365" key="Vcs.Push.Dialog.v2" timestamp="1603968154308">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1685" y="365" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603968154308" />
     <state x="3972" y="660" key="Vcs.Push.Dialog.v2/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@3840.0.1080.1880" timestamp="1603645591317" />
     <state x="-1143" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603961385375">
       <screen x="-1920" y="0" width="1920" height="1040" />

@@ -140,8 +140,17 @@
         </e>
       </e>
       <e p="Infra" t="IncludeRecursive">
+        <e p="Abstractions" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="CatalogItemBrands" t="Include">
+          <e p="CatalogItemBrandsRepository.cs" t="Include" />
+        </e>
+        <e p="CatalogItems" t="Include">
+          <e p="CatalogItemsRepository.cs" t="Include" />
+        </e>
+        <e p="CatalogItemTypes" t="Include">
+          <e p="CatalogItemTypesRepository.cs" t="Include" />
+        </e>
         <e p="Infra.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -149,6 +158,12 @@
               <e p="Infra.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Stocks" t="Include">
+          <e p="StocksRepository.cs" t="Include" />
+        </e>
+        <e p="Units" t="Include">
+          <e p="UnitsRepository.cs" t="Include" />
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
