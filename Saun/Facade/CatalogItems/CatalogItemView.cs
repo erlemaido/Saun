@@ -10,27 +10,20 @@ namespace Facade.CatalogItems
         [Required]
         [DisplayName("Bränd")]
         public Guid CatalogItemBrandId { get; set; }
+        
         [Required]
-        [DisplayName("Toote tüüp")]
+        [DisplayName("Tüüp")]
         public Guid CatalogItemTypeId { get; set; }
+        
         [Required]
+        [DisplayName("Ühik")]
         public Guid UnitId { get; set; }
+        
+        [Required]
         public string PictureUrl { get; set; } = null!;
+        
         [Required]
         [DisplayName("Hind")]
         public double Price { get; set; }
-        //public string GetId()
-        //{
-        //    return $"{CatalogItemBrandId}.{CatalogItemTypeId}.{UnitId}";
-        //}
-        //ei tea kumba tarvis on
-        public Guid GetId()
-        {
-            return Id;
-        }
-
-
-
-
     }
 }

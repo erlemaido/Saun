@@ -7,21 +7,20 @@ namespace Facade.CatalogItems
 {
     public class CatalogItemViewFactory
     {
-        public static CatalogItem Create(CatalogItemView v)
+        public static CatalogItem Create(CatalogItemView view)
         {
-            var d = new CatalogItemData();
-            Copy.Members(v, d);
-            return new CatalogItem(d);
-
+            var catalogItemData = new CatalogItemData();
+            Copy.Members(view, catalogItemData);
+            
+            return new CatalogItem(catalogItemData);
         }
 
-        public static CatalogItemView Create(CatalogItem o)
+        public static CatalogItemView Create(CatalogItem catalogItem)
         {
-            var v = new CatalogItemView();
-            if (!(o?.Data is null))
-                Copy.Members(o.Data, v);
+            var view = new CatalogItemView();
+            Copy.Members(catalogItem.Data, view);
 
-            return v;
+            return view;
         }
     }
 }

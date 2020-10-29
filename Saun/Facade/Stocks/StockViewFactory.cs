@@ -6,21 +6,20 @@ namespace Facade.Stocks
 {
     public static class StockViewFactory
     {
-        public static Stock Create(StockView v)
+        public static Stock Create(StockView view)
         {
-            var d = new StockData();
-            Copy.Members(v, d);
-            return new Stock(d);
-
+            var stockData = new StockData();
+            Copy.Members(view, stockData);
+            
+            return new Stock(stockData);
         }
 
-        public static StockView Create(Stock o)
+        public static StockView Create(Stock stock)
         {
-            var v = new StockView();
-            if (!(o?.Data is null))
-                Copy.Members(o.Data, v);
+            var view = new StockView();
+            Copy.Members(stock.Data, view);
 
-            return v;
+            return view;
         }
     }
 }

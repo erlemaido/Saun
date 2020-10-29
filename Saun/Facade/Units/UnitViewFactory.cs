@@ -6,20 +6,19 @@ namespace Facade.Units
 {
     public static class UnitViewFactory
     {
-        public static Unit Create(UnitView v)
+        public static Unit Create(UnitView view)
         {
-            var d = new UnitData();
-            Copy.Members(v, d);
-            return new Unit(d);
-
+            var unitData = new UnitData();
+            Copy.Members(view, unitData);
+            
+            return new Unit(unitData);
         }
-        public static UnitView Create(Unit o)
+        public static UnitView Create(Unit unit)
         {
-            var v = new UnitView();
-            if (!(o?.Data is null))
-                Copy.Members(o.Data, v);
+            var view = new UnitView();
+            Copy.Members(unit.Data, view);
 
-            return v;
+            return view;
         }
     }
 }
