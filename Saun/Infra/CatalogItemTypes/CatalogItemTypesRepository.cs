@@ -1,6 +1,10 @@
+using Data.CatalogItemTypes;
+using Domain.CatalogItemTypes;
+using Infra.Abstractions;
+
 namespace Infra.CatalogItemTypes
 {
-    public class CatalogItemTypesRepository
+    public sealed class CatalogItemTypesRepository : UniqueEntityRepository<CatalogItemType, CatalogItemTypeData>, ICatalogItemTypesRepository
     {
         
     }

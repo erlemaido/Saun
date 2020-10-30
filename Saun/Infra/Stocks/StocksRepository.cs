@@ -1,6 +1,10 @@
+using Data.Stocks;
+using Domain.Stocks;
+using Infra.Abstractions;
+
 namespace Infra.Stocks
 {
-    public class StocksRepository
+    public sealed class StocksRepository : UniqueEntityRepository<Stock, StockData>, IStocksRepository
     {
         
     }

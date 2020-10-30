@@ -1,6 +1,10 @@
+using Data.Units;
+using Domain.Units;
+using Infra.Abstractions;
+
 namespace Infra.Units
 {
-    public class UnitsRepository
+    public sealed class UnitsRepository : UniqueEntityRepository<Unit, UnitData>, IUnitsRepository
     {
         
     }

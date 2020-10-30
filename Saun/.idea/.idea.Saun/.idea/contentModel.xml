@@ -44,6 +44,9 @@
           <e p="CatalogItemTypeData.cs" t="Include" />
         </e>
         <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="Docs" t="Include">
+          <e p="DataDiagram.cd" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -140,7 +143,13 @@
         </e>
       </e>
       <e p="Infra" t="IncludeRecursive">
-        <e p="Abstractions" t="Include" />
+        <e p="Abstractions" t="Include">
+          <e p="BaseRepository.cs" t="Include" />
+          <e p="FilteredRepository.cs" t="Include" />
+          <e p="PaginatedRepository.cs" t="Include" />
+          <e p="SortedRepository.cs" t="Include" />
+          <e p="UniqueEntityRepository.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="CatalogItemBrands" t="Include">
           <e p="CatalogItemBrandsRepository.cs" t="Include" />
@@ -159,6 +168,8 @@
             </e>
           </e>
         </e>
+        <e p="SaunDbContext.cs" t="Include" />
+        <e p="SaunDbInitializer.cs" t="Include" />
         <e p="Stocks" t="Include">
           <e p="StocksRepository.cs" t="Include" />
         </e>
@@ -169,7 +180,6 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Pages" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -181,41 +191,40 @@
       </e>
       <e p="Saun.sln" t="IncludeFlat" />
       <e p="Solution items" t="Include" />
-      <e p="Tests" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Data" t="Include" />
-        <e p="Domain" t="Include" />
-        <e p="Facade" t="Include" />
-        <e p="Infra" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.1" t="Include">
-              <e p="Tests.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Pages" t="Include" />
-        <e p="Program.cs" t="Include" />
-        <e p="Tests.csproj" t="IncludeRecursive" />
-      </e>
       <e p="WebApp" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Areas" t="Include">
-          <e p="Identity" t="Include">
+          <e p="CatalogItemBrands" t="Include">
             <e p="Pages" t="Include">
-              <e p="_ViewStart.cshtml" t="Include" />
+              <e p="Index.cshtml" t="Include" />
+              <e p="Index.cshtml.cs" t="Include" />
             </e>
+          </e>
+          <e p="CatalogItems" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="CatalogItemTypes" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Identity" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Stocks" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Units" t="Include">
+            <e p="Pages" t="Include" />
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
-          <e p="Migrations" t="Include">
-            <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
-            <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
-            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
-          </e>
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20201030130341_initial.cs" t="Include" />
+          <e p="20201030130341_initial.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
