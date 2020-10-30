@@ -216,6 +216,18 @@
           <e p="Units" t="Include">
             <e p="Pages" t="Include" />
           </e>
+          <e p="CatalogItems" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="CatalogItemTypes" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Stocks" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Units" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
