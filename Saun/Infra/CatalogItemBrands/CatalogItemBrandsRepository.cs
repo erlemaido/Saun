@@ -1,6 +1,10 @@
+using Data.CatalogItemBrands;
+using Domain.CatalogItemBrands;
+using Infra.Abstractions;
+
 namespace Infra.CatalogItemBrands
 {
-    public class CatalogItemBrandsRepository
+    public sealed class CatalogItemBrandsRepository : UniqueEntityRepository<CatalogItemBrand, CatalogItemBrandData>, ICatalogItemBrandsRepository
     {
         
     }

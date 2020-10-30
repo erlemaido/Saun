@@ -29,6 +29,7 @@
   <ItemGroup>
     <Folder Include="Areas\CatalogItems\Pages\" />
     <Folder Include="Areas\CatalogItemTypes\Pages\" />
+    <Folder Include="Areas\Identity\Pages" />
     <Folder Include="Areas\Stocks\Pages\" />
     <Folder Include="Areas\Units\Pages\" />
   </ItemGroup>

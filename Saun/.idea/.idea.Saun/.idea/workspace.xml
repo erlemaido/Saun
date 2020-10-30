@@ -27,8 +27,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Testing commit username">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Abstractions/BaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Abstractions/FilteredRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/Abstractions/UniqueEntityRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/SaunDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infra/SaunDbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/IFiltering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/IFiltering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/ISorting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/ISorting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,22 +62,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Pages/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Domain/Unit/Unit.cs" />
-        <option value="$PROJECT_DIR$/Domain/Stock/Stock.cs" />
-        <option value="$PROJECT_DIR$/Domain/Unit/IUnitsRepository.cs" />
-        <option value="$PROJECT_DIR$/Domain/Stock/IStocksRepository.cs" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/DefinedEntityData.cs" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/NamedEntityData.cs" />
-        <option value="$PROJECT_DIR$/Data/Abstractions/UniqueEntityData.cs" />
-        <option value="$PROJECT_DIR$/Data/CatalogItemBrands/CatalogItemBrandData.cs" />
-        <option value="$PROJECT_DIR$/Data/CatalogItemTypes/CatalogItemTypeData.cs" />
-        <option value="$PROJECT_DIR$/Data/Units/UnitData.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/ICrudMethods.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/IDefinedEntity.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/INamedEntity.cs" />
@@ -98,11 +101,21 @@
         <option value="$PROJECT_DIR$/Data/Stocks/StockData.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" />
         <option value="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Areas/Identity.cs" />
+        <option value="$PROJECT_DIR$/WebApp/ScaffoldingReadMe.txt" />
+        <option value="$PROJECT_DIR$/Infra/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Abstractions/UniqueEntityRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Abstractions/BaseRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Abstractions/FilteredRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" />
+        <option value="$PROJECT_DIR$/Infra/SaunDbContext.cs" />
+        <option value="$PROJECT_DIR$/Infra/SaunDbInitializer.cs" />
       </list>
     </option>
   </component>
@@ -190,6 +203,7 @@
       <workItem from="1603639845004" duration="7681000" />
       <workItem from="1603710341791" duration="6381000" />
       <workItem from="1604052986806" duration="1225000" />
+      <workItem from="1604072666259" duration="2847000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Data nullable reference types">
       <created>1603645584854</created>
@@ -252,9 +266,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602749283623" />
-    <state x="4208" y="613" key="RiderGenerateDialog" timestamp="1603651391335">
-      <screen x="3840" y="0" width="1080" height="1880" />
+    <state x="2574" y="339" key="RiderGenerateDialog" timestamp="1604074803128">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2574" y="339" key="RiderGenerateDialog/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604074803128" />
     <state x="4208" y="613" key="RiderGenerateDialog/0.0.1536.824/3840.0.1080.1880/1920.0.1920.1040@3840.0.1080.1880" timestamp="1603651391335" />
     <state x="-1459" y="165" key="SettingsEditor" timestamp="1603968663157">
       <screen x="-1920" y="0" width="1920" height="1040" />
