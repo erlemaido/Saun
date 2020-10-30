@@ -26,19 +26,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03_[Default_Changelist]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Testing commit username">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2020_16_03__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Infra.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +189,7 @@
       <workItem from="1603380257763" duration="84000" />
       <workItem from="1603639845004" duration="7681000" />
       <workItem from="1603710341791" duration="6381000" />
+      <workItem from="1604052986806" duration="1225000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Data nullable reference types">
       <created>1603645584854</created>
@@ -221,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603962529061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Testing commit username">
+      <created>1603969129533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603969129533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +244,8 @@
     <MESSAGE value="Fixed Data nullable reference types" />
     <MESSAGE value="Changed primary keys for Guid type instead of int and finished (hopefully) Domain abstract classes" />
     <MESSAGE value="changed folders' names to plurals and fixed namespaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed folders' names to plurals and fixed namespaces" />
+    <MESSAGE value="Testing commit username" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing commit username" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1602749283623">

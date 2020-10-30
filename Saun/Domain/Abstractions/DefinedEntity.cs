@@ -10,6 +10,6 @@ namespace Domain.Abstractions
             
         }
 
-        public virtual string Description => Data.Description;
+        public virtual string? Description => Data.Description;
     }
 }

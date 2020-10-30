@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApp.Data.Migrations
+namespace WebApp.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +47,48 @@ namespace WebApp.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CatalogItemBrands",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CatalogItemBrands", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CatalogItemTypes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CatalogItemTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Units",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Units", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +109,7 @@ namespace WebApp.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -153,6 +189,67 @@ namespace WebApp.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CatalogItems",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    CatalogItemBrandId = table.Column<Guid>(nullable: false),
+                    CatalogItemBrandDataId = table.Column<Guid>(nullable: false),
+                    CatalogItemTypeId = table.Column<Guid>(nullable: false),
+                    CatalogItemTypeDataId = table.Column<Guid>(nullable: false),
+                    UnitId = table.Column<Guid>(nullable: false),
+                    UnitDataId = table.Column<Guid>(nullable: false),
+                    PictureUrl = table.Column<string>(nullable: false),
+                    Price = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CatalogItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CatalogItems_CatalogItemBrands_CatalogItemBrandDataId",
+                        column: x => x.CatalogItemBrandDataId,
+                        principalTable: "CatalogItemBrands",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CatalogItems_CatalogItemTypes_CatalogItemTypeDataId",
+                        column: x => x.CatalogItemTypeDataId,
+                        principalTable: "CatalogItemTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CatalogItems_Units_UnitDataId",
+                        column: x => x.UnitDataId,
+                        principalTable: "Units",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Stocks",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    CatalogItemId = table.Column<Guid>(nullable: false),
+                    CatalogItemDataId = table.Column<Guid>(nullable: false),
+                    InStock = table.Column<int>(nullable: false),
+                    LastUpdateTime = table.Column<DateTime>(nullable: false),
+                    Comment = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Stocks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Stocks_CatalogItems_CatalogItemDataId",
+                        column: x => x.CatalogItemDataId,
+                        principalTable: "CatalogItems",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -191,6 +288,26 @@ namespace WebApp.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CatalogItems_CatalogItemBrandDataId",
+                table: "CatalogItems",
+                column: "CatalogItemBrandDataId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CatalogItems_CatalogItemTypeDataId",
+                table: "CatalogItems",
+                column: "CatalogItemTypeDataId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CatalogItems_UnitDataId",
+                table: "CatalogItems",
+                column: "UnitDataId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stocks_CatalogItemDataId",
+                table: "Stocks",
+                column: "CatalogItemDataId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -211,10 +328,25 @@ namespace WebApp.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Stocks");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "CatalogItems");
+
+            migrationBuilder.DropTable(
+                name: "CatalogItemBrands");
+
+            migrationBuilder.DropTable(
+                name: "CatalogItemTypes");
+
+            migrationBuilder.DropTable(
+                name: "Units");
         }
     }
 }
