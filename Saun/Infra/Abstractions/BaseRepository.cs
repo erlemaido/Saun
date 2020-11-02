@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Data.Abstractions;
 using Domain.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Abstractions
 {
@@ -10,34 +12,66 @@ namespace Infra.Abstractions
     where TDomain : IUniqueEntity<TData>
     where TData : UniqueEntityData, new()
     {
-        public Task<List<TDomain>> Get()
+        protected internal DbContext db;
+        protected internal DbSet<TData> dbSet;
+
+        protected BaseRepository(DbContext c, DbSet<TData> s)
         {
-            throw new NotImplementedException();
+            db = c;
+            dbSet = s;
+        }
+        protected abstract Task<TData> GetData(Guid id);
+        protected abstract Task<TData> GetStringData(string id);
+        protected abstract string GetId(TDomain entity);
+        internal List<TDomain> ToDomainObjectsList(List<TData> set) => set.Select(ToDomainObject).ToList();
+
+        protected internal abstract TDomain ToDomainObject(TData periodData);
+
+        internal async Task<List<TData>> RunSqlQueryAsync(IQueryable<TData> query) => await query.AsNoTracking().ToListAsync();
+
+        protected internal virtual IQueryable<TData> CreateSqlQuery()
+        {
+            var query = from s in dbSet select s;
+
+            return query;
         }
 
-        public Task<TDomain> Get(Guid id)
+        public async Task<List<TDomain>> Get()
         {
-            throw new NotImplementedException();
+            var query = CreateSqlQuery();
+            var set = await RunSqlQueryAsync(query);
+
+            return ToDomainObjectsList(set);
         }
 
-        public Task Delete(Guid id)
+        public async Task<TDomain> Get(Guid id)
         {
-            throw new NotImplementedException();
+            var d = await GetData(id);
+            var obj = ToDomainObject(d);
+            return obj;
         }
 
-        public Task Add(TDomain obj)
+        public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var d = await GetData(id);
+
+            dbSet.Remove(d);
+            await db.SaveChangesAsync();
         }
 
-        public Task Update(TDomain obj)
+        public async Task Add(TDomain obj)
         {
-            throw new NotImplementedException();
+            if (obj?.Data is null) return;
+            dbSet.Add(obj.Data);
+            await db.SaveChangesAsync();
         }
 
-        public object GetById(Guid id)
+        public async Task Update(TDomain obj)
         {
-            throw new NotImplementedException();
+            var v = await GetStringData(GetId(obj));
+            dbSet.Remove(v);
+            dbSet.Add(obj.Data);
+            await db.SaveChangesAsync();
         }
     }
 }
