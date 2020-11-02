@@ -73,5 +73,10 @@ namespace Infra.Abstractions
             dbSet.Add(obj.Data);
             await db.SaveChangesAsync();
         }
+
+        public object GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

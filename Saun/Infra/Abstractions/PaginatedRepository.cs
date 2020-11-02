@@ -1,5 +1,6 @@
 using Data.Abstractions;
 using Domain.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Abstractions
 {
@@ -12,5 +13,9 @@ namespace Infra.Abstractions
         public int TotalPages { get; }
         public bool HasNextPage { get; }
         public bool HasPreviousPage { get; }
+
+        protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s)
+        {
+        }
     }
 }

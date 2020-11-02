@@ -1,5 +1,6 @@
 using Data.Abstractions;
 using Domain.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Abstractions
 {
@@ -8,5 +9,9 @@ namespace Infra.Abstractions
     where TData : UniqueEntityData, new()
     {
         public string? SortOrder { get; set; }
+
+        protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s)
+        {
+        }
     }
 }
