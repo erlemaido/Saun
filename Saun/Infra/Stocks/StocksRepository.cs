@@ -14,12 +14,7 @@ namespace Infra.Stocks
             throw new NotImplementedException();
         }
 
-        protected override Task<StockData> GetStringData(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override string GetId(Stock entity)
+        protected override Guid GetId(Stock entity)
         {
             throw new NotImplementedException();
         }

@@ -34,4 +34,8 @@
     <Folder Include="Areas\Units\Pages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
 </Project>

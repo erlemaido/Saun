@@ -14,12 +14,7 @@ namespace Infra.CatalogItems
             throw new NotImplementedException();
         }
 
-        protected override Task<CatalogItemData> GetStringData(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override string GetId(CatalogItem entity)
+        protected override Guid GetId(CatalogItem entity)
         {
             throw new NotImplementedException();
         }

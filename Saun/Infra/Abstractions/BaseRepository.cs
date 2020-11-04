@@ -21,8 +21,7 @@ namespace Infra.Abstractions
             dbSet = s;
         }
         protected abstract Task<TData> GetData(Guid id);
-        protected abstract Task<TData> GetStringData(string id);
-        protected abstract string GetId(TDomain entity);
+        protected abstract Guid GetId(TDomain entity);
         internal List<TDomain> ToDomainObjectsList(List<TData> set) => set.Select(ToDomainObject).ToList();
 
         protected internal abstract TDomain ToDomainObject(TData periodData);
@@ -68,7 +67,7 @@ namespace Infra.Abstractions
 
         public async Task Update(TDomain obj)
         {
-            var v = await GetStringData(GetId(obj));
+            var v = await GetData(GetId(obj));
             dbSet.Remove(v);
             dbSet.Add(obj.Data);
             await db.SaveChangesAsync();

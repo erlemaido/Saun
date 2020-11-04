@@ -14,12 +14,7 @@ namespace Infra.Units
             throw new NotImplementedException();
         }
 
-        protected override Task<UnitData> GetStringData(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override string GetId(Unit entity)
+        protected override Guid GetId(Unit entity)
         {
             throw new NotImplementedException();
         }
