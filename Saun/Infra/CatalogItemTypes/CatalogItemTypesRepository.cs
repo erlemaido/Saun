@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Data.CatalogItemTypes;
 using Domain.CatalogItemTypes;
 using Infra.Abstractions;
@@ -9,20 +7,7 @@ namespace Infra.CatalogItemTypes
 {
     public sealed class CatalogItemTypesRepository : UniqueEntityRepository<CatalogItemType, CatalogItemTypeData>, ICatalogItemTypesRepository
     {
-        protected override Task<CatalogItemTypeData> GetData(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override Guid GetId(CatalogItemType entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected internal override CatalogItemType ToDomainObject(CatalogItemTypeData periodData)
-        {
-            throw new NotImplementedException();
-        }
+        protected internal override CatalogItemType ToDomainObject(CatalogItemTypeData periodData) => new CatalogItemType(periodData);
 
         public CatalogItemTypesRepository(DbContext c, DbSet<CatalogItemTypeData> s) : base(c, s)
         {

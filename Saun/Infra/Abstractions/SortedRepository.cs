@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Data.Abstractions;
 using Domain.Abstractions;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Abstractions

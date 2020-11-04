@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Data.Stocks;
 using Domain.Stocks;
 using Infra.Abstractions;
@@ -9,20 +7,7 @@ namespace Infra.Stocks
 {
     public sealed class StocksRepository : UniqueEntityRepository<Stock, StockData>, IStocksRepository
     {
-        protected override Task<StockData> GetData(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override Guid GetId(Stock entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected internal override Stock ToDomainObject(StockData periodData)
-        {
-            throw new NotImplementedException();
-        }
+        protected internal override Stock ToDomainObject(StockData periodData) => new Stock(periodData);
 
         public StocksRepository(DbContext c, DbSet<StockData> s) : base(c, s)
         {
