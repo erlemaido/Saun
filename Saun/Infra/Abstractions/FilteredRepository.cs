@@ -11,10 +11,10 @@ namespace Infra.Abstractions
     where TDomain : IUniqueEntity<TData>
     where TData : UniqueEntityData, new()
     {
-        public string? SearchString { get; set; }
-        public string? CurrentFilter { get; set; }
-        public string? FixedFilter { get; set; }
-        public string? FixedValue { get; set; }
+        public string SearchString { get; set; }
+        public string CurrentFilter { get; set; }
+        public string FixedFilter { get; set; }
+        public string FixedValue { get; set; }
 
         protected FilteredRepository(DbContext c, DbSet<TData> s) : base(c, s)
         {

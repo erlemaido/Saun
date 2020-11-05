@@ -20,7 +20,7 @@ namespace Facade.CatalogItems
         public Guid UnitId { get; set; }
         
         [Required]
-        public string PictureUrl { get; set; } = null!;
+        public string PictureUrl { get; set; }
         
         [Required]
         [DisplayName("Hind")]

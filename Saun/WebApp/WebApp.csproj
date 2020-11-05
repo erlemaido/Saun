@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-WebApp-22CA8519-103D-4965-9500-02EC58465D00</UserSecretsId>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

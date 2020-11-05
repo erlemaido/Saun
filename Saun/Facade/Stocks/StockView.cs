@@ -21,6 +21,6 @@ namespace Facade.Stocks
         public DateTime LastUpdateTime { get; set; }
         
         [DisplayName("Kommentaar")]
-        public string? Comment { get; set; }
+        public string Comment { get; set; }
     }
 }

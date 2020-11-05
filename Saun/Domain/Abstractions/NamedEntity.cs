@@ -5,7 +5,7 @@ namespace Domain.Abstractions
     public abstract class NamedEntity<TData> : UniqueEntity<TData> where TData : NamedEntityData, new()
     {
         // ei saa sellest aru
-        protected internal NamedEntity(TData d = null!) : base(d)
+        protected internal NamedEntity(TData d) : base(d)
         {
             
         }

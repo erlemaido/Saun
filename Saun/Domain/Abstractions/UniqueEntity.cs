@@ -10,6 +10,6 @@ namespace Domain.Abstractions
 
         public TData Data { get; }
 
-        protected internal UniqueEntity(TData d = null!) => Data = d;
+        protected internal UniqueEntity(TData d) => Data = d;
     }
 }
