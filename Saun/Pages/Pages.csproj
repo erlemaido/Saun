@@ -16,4 +16,11 @@
       <ProjectReference Include="..\Infra\Infra.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="CatalogItems\" />
+      <Folder Include="CatalogItemBrands\" />
+      <Folder Include="Units\" />
+      <Folder Include="Stocks\" />
+    </ItemGroup>
+
 </Project>

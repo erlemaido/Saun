@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Aids.Methods;
 using Domain.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using TrainingApp.Aids;
 
 namespace Pages {
 

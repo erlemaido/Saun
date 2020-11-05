@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
 
-namespace TrainingApp.Aids 
+namespace Aids.Methods 
 {
     public class GetMember
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Data.Abstractions;
 using Domain.Abstractions;
@@ -14,7 +15,7 @@ namespace Pages
 
         protected internal CommonPage(TRepository r) : base(r) { }
 
-        public abstract string ItemId { get; }
+        public abstract Guid ItemId { get; }
 
         public string PageTitle { get; set; } = null!;
 
