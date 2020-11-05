@@ -5,7 +5,7 @@ namespace Domain.CatalogItems
 {
     public sealed class CatalogItem : UniqueEntity<CatalogItemData>
     {
-        public CatalogItem() : this(null!)
+        public CatalogItem() : this(null)
         {
             
         }

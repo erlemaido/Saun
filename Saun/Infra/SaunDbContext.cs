@@ -11,11 +11,11 @@ namespace Infra
     {
         public SaunDbContext(DbContextOptions<SaunDbContext> options) : base(options) { }
 
-        public DbSet<CatalogItemBrandData> CatalogItemBrands { get; set; } = null!;
-        public DbSet<CatalogItemData> CatalogItems { get; set; } = null!;
-        public DbSet<CatalogItemTypeData> CatalogItemTypes { get; set; } = null!;
-        public DbSet<StockData> Stocks { get; set; } = null!;
-        public DbSet<UnitData> Units { get; set; } = null!;
+        public DbSet<CatalogItemBrandData> CatalogItemBrands { get; set; }
+        public DbSet<CatalogItemData> CatalogItems { get; set; }
+        public DbSet<CatalogItemTypeData> CatalogItemTypes { get; set; }
+        public DbSet<StockData> Stocks { get; set; }
+        public DbSet<UnitData> Units { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

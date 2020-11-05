@@ -5,7 +5,7 @@ namespace Domain.Units
 {
     public sealed class Unit : NamedEntity<UnitData>
     {
-        public Unit() : this(null!)
+        public Unit() : this(null)
         {
             
         }

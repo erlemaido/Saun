@@ -8,6 +8,7 @@
     <e p="C:\Users\Erle\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
     <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\Projekt\SAUN\.gitignore" t="Include" />
     <e p="C:\Users\Erle\Dropbox (Personal)\Kool\IT\Infosüsteemide arendamine III\Projekt\SAUN\SAUN" t="IncludeFlat">
+      <e p=".editorconfig" t="Include" />
       <e p="Aids" t="IncludeRecursive">
         <e p="Aids.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
@@ -61,7 +62,6 @@
           <e p="UnitData.cs" t="Include" />
         </e>
       </e>
-      <e p="Directory.Build.props" t="Include" />
       <e p="Domain" t="IncludeRecursive">
         <e p="Abstractions" t="Include">
           <e p="DefinedEntity.cs" t="Include" />
@@ -216,27 +216,10 @@
           <e p="Units" t="Include">
             <e p="Pages" t="Include" />
           </e>
-          <e p="CatalogItems" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
-          <e p="CatalogItemTypes" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
-          <e p="Stocks" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
-          <e p="Units" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
-        </e>
-        <e p="Migrations" t="Include">
-          <e p="20201030130341_initial.cs" t="Include" />
-          <e p="20201030130341_initial.Designer.cs" t="Include" />
-          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

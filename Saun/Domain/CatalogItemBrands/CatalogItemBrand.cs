@@ -5,7 +5,7 @@ namespace Domain.CatalogItemBrands
 {
     public sealed class CatalogItemBrand : DefinedEntity<CatalogItemBrandData>
     {
-        public CatalogItemBrand() : this(null!)
+        public CatalogItemBrand() : this(null)
         {
             
         }

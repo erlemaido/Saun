@@ -13,7 +13,7 @@ namespace Infra.Abstractions
     where TData : UniqueEntityData, new()
     {
         public string DescendingString => "_desc";
-        public string? SortOrder { get; set; }
+        public string SortOrder { get; set; }
         internal bool IsDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
 
         protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s)

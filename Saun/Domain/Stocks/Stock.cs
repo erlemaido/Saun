@@ -5,7 +5,7 @@ namespace Domain.Stocks
 {
     public sealed class Stock : UniqueEntity<StockData>
     {
-        public Stock() : this(null!)
+        public Stock() : this(null)
         {
             
         }

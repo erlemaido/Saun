@@ -7,7 +7,6 @@ namespace Facade.Abstractions
     {
         [Required]
         [DisplayName("Nimi")]
-        public string Name { get; set; } = null!;
-
+        public string Name { get; set; }
     }
 }
