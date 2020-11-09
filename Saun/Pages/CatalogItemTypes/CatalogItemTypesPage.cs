@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.CatalogItemTypes;
 using Domain.CatalogItemTypes;
 using Facade.CatalogItemTypes;
