@@ -1,16 +1,14 @@
-using System.Threading.Tasks;
 using Data.Brands;
 using Domain.Brands;
 using Infra.Abstractions;
-using Microsoft.EntityFrameworkCore;
 
-namespace Infra.CatalogItemBrands
+namespace Infra.Brands
 {
     public sealed class BrandsRepository : UniqueEntityRepository<Brand, BrandData>, IBrandsRepository
     {
-        protected internal override Brand ToDomainObject(BrandData uniqueEntityData) => new Brand(uniqueEntityData);
+        protected internal override Brand ToDomainObject(BrandData data) => new Brand(data);
 
-        public BrandsRepository(SaunDbContext c) : base(c, c.CatalogItemBrands)
+        public BrandsRepository(SaunaDbContext context) : base(context, context.Brands)
         {
         }
     }

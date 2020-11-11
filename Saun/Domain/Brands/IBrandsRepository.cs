@@ -1,9 +1,8 @@
 using Domain.Abstractions;
-using Domain.Brands;
 
-namespace Domain.CatalogItemBrands
+namespace Domain.Brands
 {
-    public interface ICatalogItemBrandsRepository : IRepository<Brand>
+    public interface IBrandsRepository : IRepository<Brand>
     {
         
     }

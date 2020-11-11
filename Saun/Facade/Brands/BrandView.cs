@@ -1,8 +1,8 @@
 ﻿using Facade.Abstractions;
 
-namespace Facade.CatalogItemBrands
+namespace Facade.Brands
 {
-    public class CatalogItemBrandView : DefinedEntityView
+    public class BrandView : DefinedEntityView
     {
 
     }

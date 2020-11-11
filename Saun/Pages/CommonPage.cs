@@ -13,11 +13,11 @@ namespace Pages
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
     {
 
-        protected internal CommonPage(TRepository r) : base(r) { }
+        protected internal CommonPage(TRepository repository) : base(repository) { }
 
         public abstract Guid ItemId { get; }
 
-        public string PageTitle { get; set; } = null!;
+        public string PageTitle { get; set; }
 
         public string PageSubTitle => GetPageSubTitle();
 
@@ -31,13 +31,13 @@ namespace Pages
 
         protected internal string GetIndexUrl() => $"{PageUrl}/Index?fixedFilter={FixedFilter}&fixedValue={FixedValue}";
 
-        protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
-            where TTDomain : Entity<TTData>
-            where TTData : NamedEntityData, new()
-        {
-            var items = r.Get().GetAwaiter().GetResult();
-
-            return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
-        }
+        //protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
+        //    where TTDomain : Entity<TTData>
+        //    where TTData : NamedEntityData, new()
+        //{
+        //var items = r.Get().GetAwaiter().GetResult();
+        //
+        //           return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
+        // }
     }
 }

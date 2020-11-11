@@ -1,16 +1,16 @@
 using Data.Brands;
 using Domain.Abstractions;
 
-namespace Domain.CatalogItemBrands
+namespace Domain.Brands
 {
-    public sealed class CatalogItemBrand : DefinedEntity<BrandData>
+    public sealed class Brand : DefinedEntity<BrandData>
     {
-        public CatalogItemBrand() : this(null)
+        public Brand() : this(null)
         {
             
         }
 
-        public CatalogItemBrand(BrandData data) : base(data)
+        public Brand(BrandData data) : base(data)
         {
             
         }

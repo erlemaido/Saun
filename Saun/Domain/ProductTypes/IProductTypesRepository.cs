@@ -1,9 +1,8 @@
 using Domain.Abstractions;
-using Domain.ProductTypes;
 
-namespace Domain.CatalogItemTypes
+namespace Domain.ProductTypes
 {
-    public interface ICatalogItemTypesRepository : IRepository<ProductType>
+    public interface IProductTypesRepository : IRepository<ProductType>
     {
         
     }

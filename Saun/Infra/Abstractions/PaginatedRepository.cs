@@ -11,12 +11,12 @@ namespace Infra.Abstractions
     where TData : UniqueEntityData, new()
     {
         public int PageIndex { get; set; }
-        public int PageSize { get; set; }
-        public int TotalPages { get; }
-        public bool HasNextPage { get; }
-        public bool HasPreviousPage { get; }
+        public int PageSize { get; set; } = 5;
+        public int TotalPages => GetTotalPages(PageSize);
+        public bool HasNextPage  => PageIndex < TotalPages;
+        public bool HasPreviousPage => PageIndex > 1;
 
-        protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s)
+        protected PaginatedRepository(DbContext context, DbSet<TData> dbSet) : base(context, dbSet)
         {
         }
 

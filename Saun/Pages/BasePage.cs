@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Aids.Methods;
+using Aids.Reflection;
 using Domain.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,28 +8,37 @@ namespace Pages {
 
     public abstract class BasePage<TRepository, TDomain, TView, TData> :
         PageModel
-        where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging {
+        where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
+    {
 
-        protected TRepository db;
+        protected TRepository Repository;
 
-        protected internal BasePage(TRepository r) => db = r;
+        protected internal BasePage(TRepository repository) => Repository = repository;
 
         public string SortOrder {
-            get => db.SortOrder;
-            set => db.SortOrder = value;
+            get => Repository.SortOrder;
+            set => Repository.SortOrder = value;
         }
         public string SearchString {
-            get => db.SearchString;
-            set => db.SearchString = value;
+            get => Repository.SearchString;
+            set => Repository.SearchString = value;
         }
+        
+        public string CurrentFilter {
+            get => Repository.CurrentFilter;
+            set => Repository.CurrentFilter = value;
+        }
+        
         public string FixedValue {
-            get => db.FixedValue;
-            set => db.FixedValue = value;
+            get => Repository.FixedValue;
+            set => Repository.FixedValue = value;
         }
         public string FixedFilter {
-            get => db.FixedFilter;
-            set => db.FixedFilter = value;
+            get => Repository.FixedFilter;
+            set => Repository.FixedFilter = value;
         }
+        
+        public bool HasFixedFilter => !string.IsNullOrWhiteSpace(FixedFilter);
 
         protected internal void SetFixedFilter(string fixedFilter, string fixedValue) {
             FixedFilter = fixedFilter;
@@ -38,13 +47,13 @@ namespace Pages {
 
         protected internal abstract void SetPageValues(string sortOrder, string searchString, in int pageIndex);
 
-        public string GetSortString(Expression<Func<TData, object>> e, string page) {
+        public Uri GetSortString(Expression<Func<TData, object>> e, Uri page) {
             var name = GetMember.Name(e);
             var sortOrder = GetSortOrder(name);
 
-            return $"{page}?sortOrder={sortOrder}&currentFilter={SearchString}"
-                   + $"&fixedFilter={FixedFilter}&fixedValue={FixedValue}";
-        }
+            return new Uri(
+                $"{page}?handler=Index&sortOrder={sortOrder}&currentFilter={CurrentFilter}&searchString={SearchString}"
+                + $"&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);        }
 
         internal string GetSortOrder(string name) {
             if (string.IsNullOrEmpty(SortOrder)) return name;
@@ -59,9 +68,12 @@ namespace Pages {
             else { searchString = currentFilter; }
 
             return searchString;
-
         }
+        
+        internal static string GetCurrentFilter(string currentFilter, string searchString, ref int? pageIndex) {
+            if (searchString != currentFilter) { pageIndex = 1; }
 
+            return searchString;
+        }
     }
-
 }

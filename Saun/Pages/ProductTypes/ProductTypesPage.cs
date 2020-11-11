@@ -3,19 +3,19 @@ using Data.ProductTypes;
 using Domain.ProductTypes;
 using Facade.ProductTypes;
 
-namespace Pages.CatalogItemTypes
+namespace Pages.ProductTypes
 {
-    public abstract class CatalogItemTypesPage : CommonPage<IProductTypesRepository, ProductType, ProductTypeView, ProductTypeData>
+    public abstract class ProductTypesPage : CommonPage<IProductTypesRepository, ProductType, ProductTypeView, ProductTypeData>
     {
-        protected internal CatalogItemTypesPage(IProductTypesRepository productTypesRepository) : base(
+        protected internal ProductTypesPage(IProductTypesRepository productTypesRepository) : base(
             productTypesRepository)
         {
-            PageTitle = "Toote Tüübid";
+            PageTitle = "Toote tüübid";
 
         }
         public override Guid ItemId => Item.Id;
 
-        protected internal override string GetPageUrl() => "/Saun/CatalogItemTypes";
+        protected internal override string GetPageUrl() => "/Saun/ProductTypes";
         //No idea, mis meil siin olema peaks
         protected internal override ProductType ToObject(ProductTypeView view)
         {

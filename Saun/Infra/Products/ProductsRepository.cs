@@ -1,15 +1,14 @@
 using Data.Products;
 using Domain.Products;
 using Infra.Abstractions;
-using Microsoft.EntityFrameworkCore;
 
-namespace Infra.CatalogItems
+namespace Infra.Products
 {
     public sealed class ProductsRepository : UniqueEntityRepository<Product, ProductData>, IProductsRepository
     {
-        protected internal override Product ToDomainObject(ProductData uniqueEntityData) => new Product(uniqueEntityData);
+        protected internal override Product ToDomainObject(ProductData data) => new Product(data);
 
-        public ProductsRepository(SaunDbContext c) : base(c, c.CatalogItems)
+        public ProductsRepository(SaunaDbContext context) : base(context, context.Products)
         {
         }
     }

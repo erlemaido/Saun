@@ -2,9 +2,9 @@
 using Data.Brands;
 using Domain.Brands;
 
-namespace Facade.CatalogItemBrands
+namespace Facade.Brands
 {
-    public class CatalogItemBrandViewFactory 
+    public class BrandViewFactory 
     {
         public static Brand Create(BrandView view)
         {

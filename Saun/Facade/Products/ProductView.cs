@@ -3,17 +3,17 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Facade.Abstractions;
 
-namespace Facade.CatalogItems
+namespace Facade.Products
 {
-    public class CatalogItemView : DefinedEntityView
+    public class ProductView : DefinedEntityView
     {
         [Required]
         [DisplayName("Bränd")]
-        public Guid CatalogItemBrandId { get; set; }
+        public Guid BrandId { get; set; }
         
         [Required]
         [DisplayName("Tüüp")]
-        public Guid CatalogItemTypeId { get; set; }
+        public Guid ProductTypeId { get; set; }
         
         [Required]
         [DisplayName("Ühik")]

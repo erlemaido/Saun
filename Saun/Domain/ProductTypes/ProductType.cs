@@ -1,16 +1,16 @@
 using Data.ProductTypes;
 using Domain.Abstractions;
 
-namespace Domain.CatalogItemTypes
+namespace Domain.ProductTypes
 {
-    public sealed class CatalogItemType : NamedEntity<ProductTypeData>
+    public sealed class ProductType : NamedEntity<ProductTypeData>
     {
-        public CatalogItemType() : this(null)
+        public ProductType() : this(null)
         {
             
         }
 
-        public CatalogItemType(ProductTypeData data) : base(data)
+        public ProductType(ProductTypeData data) : base(data)
         {
             
         }

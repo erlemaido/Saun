@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infra
 {
-    public class SaunDbContext : DbContext
+    public class SaunaDbContext : DbContext
     {
-        public SaunDbContext(DbContextOptions<SaunDbContext> options) : base(options) { }
+        public SaunaDbContext(DbContextOptions<SaunaDbContext> options) : base(options) { }
 
-        public DbSet<BrandData> CatalogItemBrands { get; set; }
-        public DbSet<ProductData> CatalogItems { get; set; }
-        public DbSet<ProductTypeData> CatalogItemTypes { get; set; }
+        public DbSet<BrandData> Brands { get; set; }
+        public DbSet<ProductData> Products { get; set; }
+        public DbSet<ProductTypeData> ProductTypes { get; set; }
         public DbSet<StockData> Stocks { get; set; }
         public DbSet<UnitData> Units { get; set; }
 
@@ -25,10 +25,10 @@ namespace Infra
 
         public static void InitializeTables(ModelBuilder builder)
         {
-            builder.Entity<BrandData>().ToTable(nameof(CatalogItemBrands));
-            builder.Entity<ProductTypeData>().ToTable(nameof(CatalogItemTypes));
+            builder.Entity<BrandData>().ToTable(nameof(Brands));
+            builder.Entity<ProductTypeData>().ToTable(nameof(ProductTypes));
             builder.Entity<UnitData>().ToTable(nameof(Units));
-            builder.Entity<ProductData>().ToTable(nameof(CatalogItems));
+            builder.Entity<ProductData>().ToTable(nameof(Products));
             builder.Entity<StockData>().ToTable(nameof(Stocks));
         }
     }

@@ -1,19 +1,18 @@
 ﻿using Aids.Methods;
 using Data.Products;
 using Domain.Products;
-using Facade.Products;
 
-namespace Facade.CatalogItems
+namespace Facade.Products
 
 {
-    public class CatalogItemViewFactory
+    public class ProductViewFactory
     {
         public static Product Create(ProductView view)
         {
-            var catalogItemData = new ProductData();
-            Copy.Members(view, catalogItemData);
+            var productData = new ProductData();
+            Copy.Members(view, productData);
             
-            return new Product(catalogItemData);
+            return new Product(productData);
         }
 
         public static ProductView Create(Product product)

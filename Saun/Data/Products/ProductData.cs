@@ -1,18 +1,18 @@
 using System;
 using Data.Abstractions;
-using Data.CatalogItemBrands;
-using Data.CatalogItemTypes;
+using Data.Brands;
+using Data.ProductTypes;
 using Data.Units;
 
-namespace Data.CatalogItems
+namespace Data.Products
 {
-    public class CatalogItemData : DefinedEntityData
+    public class ProductData : DefinedEntityData
     {
-        public Guid CatalogItemBrandId { get; set; }
+        public Guid BrandId { get; set; }
         public BrandData BrandData { get; set; }
 
-        public Guid CatalogItemTypeId { get; set; }
-        public CatalogItemTypeData CatalogItemTypeData { get; set; }
+        public Guid ProductTypeId { get; set; }
+        public ProductTypeData ProductTypeData { get; set; }
 
         public Guid UnitId { get; set; }
         public UnitData UnitData { get; set; }

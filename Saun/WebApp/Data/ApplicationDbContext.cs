@@ -1,6 +1,6 @@
-﻿using Data.CatalogItemBrands;
-using Data.CatalogItems;
-using Data.CatalogItemTypes;
+﻿using Data.Brands;
+using Data.Products;
+using Data.ProductTypes;
 using Data.Stocks;
 using Data.Units;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -15,10 +15,10 @@ namespace WebApp.Data
         {
         }
 
-        public DbSet<CatalogItemBrandData> CatalogItemBrands { get; set; } = null!;
-        public DbSet<CatalogItemData> CatalogItems { get; set; } = null!;
-        public DbSet<CatalogItemTypeData> CatalogItemTypes { get; set; } = null!;
-        public DbSet<StockData> Stocks { get; set; } = null!;
-        public DbSet<UnitData> Units { get; set; } = null!;
+        public DbSet<BrandData> Brands { get; set; }
+        public DbSet<ProductData> Products { get; set; }
+        public DbSet<ProductTypeData> ProductTypes { get; set; }
+        public DbSet<StockData> Stocks { get; set; }
+        public DbSet<UnitData> Units { get; set; }
     }
 }

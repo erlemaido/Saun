@@ -1,8 +1,8 @@
 ﻿using Facade.Abstractions;
 
-namespace Facade.CatalogItemTypes
+namespace Facade.ProductTypes
 {
-    public class CatalogItemTypeView : NamedEntityView
+    public class ProductTypeView : NamedEntityView
     {
 
     }

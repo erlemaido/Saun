@@ -1,8 +1,8 @@
 using Data.Abstractions;
 
-namespace Data.CatalogItemBrands
+namespace Data.Brands
 {
-    public class CatalogItemBrandData : DefinedEntityData
+    public class BrandData : DefinedEntityData
     {
         
     }

@@ -1,18 +1,17 @@
 ﻿using Aids.Methods;
 using Data.ProductTypes;
 using Domain.ProductTypes;
-using Facade.ProductTypes;
 
-namespace Facade.CatalogItemTypes
+namespace Facade.ProductTypes
 {
-    public class CatalogItemTypeViewFactory
+    public class ProductTypeViewFactory
     {
         public static ProductType Create(ProductTypeView view)
         {
-            var catalogItemTypeData = new ProductTypeData();
-            Copy.Members(view, catalogItemTypeData);
+            var productTypeData = new ProductTypeData();
+            Copy.Members(view, productTypeData);
             
-            return new ProductType(catalogItemTypeData);
+            return new ProductType(productTypeData);
         }
 
         public static ProductTypeView Create(ProductType productType)

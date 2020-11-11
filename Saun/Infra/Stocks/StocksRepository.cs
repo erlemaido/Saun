@@ -7,9 +7,9 @@ namespace Infra.Stocks
 {
     public sealed class StocksRepository : UniqueEntityRepository<Stock, StockData>, IStocksRepository
     {
-        protected internal override Stock ToDomainObject(StockData periodData) => new Stock(periodData);
+        protected internal override Stock ToDomainObject(StockData data) => new Stock(data);
 
-        public StocksRepository(DbContext c, DbSet<StockData> s) : base(c, s)
+        public StocksRepository(SaunaDbContext context) : base(context, context.Stocks)
         {
         }
     }

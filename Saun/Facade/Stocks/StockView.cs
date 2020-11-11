@@ -9,7 +9,7 @@ namespace Facade.Stocks
     {
         [Required]
         [DisplayName("Toode")]
-        public Guid CatalogItemId { get; set; }
+        public Guid ProductId { get; set; }
         
         [Required]
         [DisplayName("Kogus")]
@@ -21,6 +21,7 @@ namespace Facade.Stocks
         public DateTime LastUpdateTime { get; set; }
         
         [DisplayName("Kommentaar")]
+        [MaxLength(512)]
         public string Comment { get; set; }
     }
 }

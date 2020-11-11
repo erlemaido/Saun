@@ -7,9 +7,9 @@ namespace Infra.Units
 {
     public sealed class UnitsRepository : UniqueEntityRepository<Unit, UnitData>, IUnitsRepository
     {
-        protected internal override Unit ToDomainObject(UnitData periodData) => new Unit(periodData);
+        protected internal override Unit ToDomainObject(UnitData data) => new Unit(data);
 
-        public UnitsRepository(DbContext c, DbSet<UnitData> s) : base(c, s)
+        public UnitsRepository(SaunaDbContext context) : base(context, context.Units)
         {
         }
     }

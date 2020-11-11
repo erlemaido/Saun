@@ -1,16 +1,16 @@
 using Data.Products;
 using Domain.Abstractions;
 
-namespace Domain.CatalogItems
+namespace Domain.Products
 {
-    public sealed class CatalogItem : UniqueEntity<ProductData>
+    public sealed class Product : UniqueEntity<ProductData>
     {
-        public CatalogItem() : this(null)
+        public Product() : this(null)
         {
             
         }
 
-        public CatalogItem(ProductData data) : base(data)
+        public Product(ProductData data) : base(data)
         {
             
         }

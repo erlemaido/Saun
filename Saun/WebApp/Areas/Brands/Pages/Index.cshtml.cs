@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebApp.Areas.CatalogItemBrands.Pages
+namespace WebApp.Areas.Brands.Pages
 {
     public class IndexModel : PageModel
     {

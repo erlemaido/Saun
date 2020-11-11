@@ -14,9 +14,8 @@ namespace Infra.Abstractions
     {
         public string DescendingString => "_desc";
         public string SortOrder { get; set; }
-        internal bool IsDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
 
-        protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s)
+        protected SortedRepository(DbContext context, DbSet<TData> dbSet) : base(context, dbSet)
         {
         }
 
@@ -38,9 +37,7 @@ namespace Infra.Abstractions
         internal Expression<Func<TData, object>> CreateExpression()
         {
             var property = FindProperty();
-#pragma warning disable CS8603 // Possible null reference return.
             return property is null ? null : LambdaExpression(property);
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         internal Expression<Func<TData, object>> LambdaExpression(PropertyInfo p)
@@ -66,9 +63,7 @@ namespace Infra.Abstractions
 
         internal IQueryable<TData> AddOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e)
         {
-#pragma warning disable CS8603 // Possible null reference return.
             if (query is null) return null;
-#pragma warning restore CS8603 // Possible null reference return.
             if (e is null) return query;
             try
             {
@@ -79,5 +74,8 @@ namespace Infra.Abstractions
                 return query;
             }
         }
+        
+        internal bool IsDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
+
     }
 }
