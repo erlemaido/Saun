@@ -10,15 +10,17 @@ namespace Infra.Abstractions
     where TDomain : IUniqueEntity<TData>
     where TData : UniqueEntityData, new()
     {
-        protected UniqueEntityRepository(DbContext c, DbSet<TData> s) : base(c, s)
+        protected UniqueEntityRepository(DbContext context, DbSet<TData> dbSet) : base(context, dbSet)
         {
         }
 
         protected override async Task<TData> GetData(Guid id)
         {
-            return await dbSet.FirstOrDefaultAsync(m => m.Id == id);
+            return await DbSet.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        protected override Guid GetId(TDomain entity) => (Guid)(entity?.Data?.Id);
+        protected override Guid GetId(TDomain entity) => entity.Data.Id;
+        
+        protected override TData GetDataById(TData data) => DbSet.Find(data.Id);
     }
 }

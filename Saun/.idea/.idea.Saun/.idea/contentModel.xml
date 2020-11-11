@@ -27,6 +27,9 @@
             </e>
           </e>
         </e>
+        <e p="Reflection" t="Include">
+          <e p="GetMember.cs" t="Include" />
+        </e>
       </e>
       <e p="Data" t="IncludeRecursive">
         <e p="Abstractions" t="Include">
@@ -35,25 +38,22 @@
           <e p="UniqueEntityData.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItemBrands" t="Include">
-          <e p="CatalogItemBrandData.cs" t="Include" />
-        </e>
-        <e p="CatalogItems" t="Include">
-          <e p="CatalogItemData.cs" t="Include" />
-        </e>
-        <e p="CatalogItemTypes" t="Include">
-          <e p="CatalogItemTypeData.cs" t="Include" />
+        <e p="Brands" t="Include">
+          <e p="BrandData.cs" t="Include" />
         </e>
         <e p="Data.csproj" t="IncludeRecursive" />
-        <e p="Docs" t="Include">
-          <e p="DataDiagram.cd" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
               <e p="Data.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Products" t="Include">
+          <e p="ProductData.cs" t="Include" />
+        </e>
+        <e p="ProductTypes" t="Include">
+          <e p="ProductTypeData.cs" t="Include" />
         </e>
         <e p="Stocks" t="Include">
           <e p="StockData.cs" t="Include" />
@@ -77,17 +77,9 @@
           <e p="UniqueEntity.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItemBrands" t="Include">
-          <e p="CatalogItemBrand.cs" t="Include" />
-          <e p="ICatalogItemBrandsRepository.cs" t="Include" />
-        </e>
-        <e p="CatalogItems" t="Include">
-          <e p="CatalogItem.cs" t="Include" />
-          <e p="ICatalogItemsRepository.cs" t="Include" />
-        </e>
-        <e p="CatalogItemTypes" t="Include">
-          <e p="CatalogItemType.cs" t="Include" />
-          <e p="ICatalogItemTypesRepository.cs" t="Include" />
+        <e p="Brands" t="Include">
+          <e p="Brand.cs" t="Include" />
+          <e p="IBrandsRepository.cs" t="Include" />
         </e>
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -96,6 +88,14 @@
               <e p="Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Products" t="Include">
+          <e p="IProductsRepository.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
+        </e>
+        <e p="ProductTypes" t="Include">
+          <e p="IProductTypesRepository.cs" t="Include" />
+          <e p="ProductType.cs" t="Include" />
         </e>
         <e p="Stocks" t="Include">
           <e p="IStocksRepository.cs" t="Include" />
@@ -113,17 +113,9 @@
           <e p="UniqueEntityView.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItemBrands" t="Include">
-          <e p="CatalogItemBrandView.cs" t="Include" />
-          <e p="CatalogItemBrandViewFactory.cs" t="Include" />
-        </e>
-        <e p="CatalogItems" t="Include">
-          <e p="CatalogItemView.cs" t="Include" />
-          <e p="CatalogItemViewFactory.cs" t="Include" />
-        </e>
-        <e p="CatalogItemTypes" t="Include">
-          <e p="CatalogItemTypeView.cs" t="Include" />
-          <e p="CatalogItemTypeViewFactory.cs" t="Include" />
+        <e p="Brands" t="Include">
+          <e p="BrandView.cs" t="Include" />
+          <e p="BrandViewFactory.cs" t="Include" />
         </e>
         <e p="Facade.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -132,6 +124,14 @@
               <e p="Facade.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Products" t="Include">
+          <e p="ProductView.cs" t="Include" />
+          <e p="ProductViewFactory.cs" t="Include" />
+        </e>
+        <e p="ProductTypes" t="Include">
+          <e p="ProductTypeView.cs" t="Include" />
+          <e p="ProductTypeViewFactory.cs" t="Include" />
         </e>
         <e p="Stocks" t="Include">
           <e p="StockView.cs" t="Include" />
@@ -151,14 +151,8 @@
           <e p="UniqueEntityRepository.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItemBrands" t="Include">
-          <e p="CatalogItemBrandsRepository.cs" t="Include" />
-        </e>
-        <e p="CatalogItems" t="Include">
-          <e p="CatalogItemsRepository.cs" t="Include" />
-        </e>
-        <e p="CatalogItemTypes" t="Include">
-          <e p="CatalogItemTypesRepository.cs" t="Include" />
+        <e p="Brands" t="Include">
+          <e p="BrandsRepository.cs" t="Include" />
         </e>
         <e p="Infra.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -168,8 +162,14 @@
             </e>
           </e>
         </e>
-        <e p="SaunDbContext.cs" t="Include" />
-        <e p="SaunDbInitializer.cs" t="Include" />
+        <e p="Products" t="Include">
+          <e p="ProductsRepository.cs" t="Include" />
+        </e>
+        <e p="ProductTypes" t="Include">
+          <e p="ProductTypesRepository.cs" t="Include" />
+        </e>
+        <e p="SaunaDbContext.cs" t="Include" />
+        <e p="SaunaDbInitializer.cs" t="Include" />
         <e p="Stocks" t="Include">
           <e p="StocksRepository.cs" t="Include" />
         </e>
@@ -179,7 +179,12 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Pages" t="IncludeRecursive">
+        <e p="BasePage.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CatalogItemBrands" t="Include" />
+        <e p="CatalogItems" t="Include" />
+        <e p="CommonPage.cs" t="Include" />
+        <e p="CrudPage.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -188,6 +193,12 @@
           </e>
         </e>
         <e p="Pages.csproj" t="IncludeRecursive" />
+        <e p="PaginatedPage.cs" t="Include" />
+        <e p="ProductTypes" t="Include">
+          <e p="ProductTypesPage.cs" t="Include" />
+        </e>
+        <e p="Stocks" t="Include" />
+        <e p="Units" t="Include" />
       </e>
       <e p="Saun.sln" t="IncludeFlat" />
       <e p="Solution items" t="Include" />
@@ -195,19 +206,19 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Areas" t="Include">
-          <e p="CatalogItemBrands" t="Include">
+          <e p="Brands" t="Include">
             <e p="Pages" t="Include">
               <e p="Index.cshtml" t="Include" />
               <e p="Index.cshtml.cs" t="Include" />
             </e>
           </e>
-          <e p="CatalogItems" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
-          <e p="CatalogItemTypes" t="Include">
-            <e p="Pages" t="Include" />
-          </e>
           <e p="Identity" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="Products" t="Include">
+            <e p="Pages" t="Include" />
+          </e>
+          <e p="ProductTypes" t="Include">
             <e p="Pages" t="Include" />
           </e>
           <e p="Stocks" t="Include">

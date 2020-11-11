@@ -9,7 +9,7 @@ namespace Pages {
         CrudPage<TRepository, TDomain, TView, TData>
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging {
 
-        protected PaginatedPage(TRepository r) : base(r) { }
+        protected PaginatedPage(TRepository repository) : base(repository) { }
 
         public IList<TView> Items { get; private set; } = null!;
 
@@ -18,13 +18,13 @@ namespace Pages {
             protected set;
         } = null!;
         public int PageIndex {
-            get => db.PageIndex;
-            set => db.PageIndex = value;
+            get => Repository.PageIndex;
+            set => Repository.PageIndex = value;
         }
-        public bool HasPreviousPage => db.HasPreviousPage;
-        public bool HasNextPage => db.HasNextPage;
+        public bool HasPreviousPage => Repository.HasPreviousPage;
+        public bool HasNextPage => Repository.HasNextPage;
 
-        public int TotalPages => db.TotalPages;
+        public int TotalPages => Repository.TotalPages;
 
         protected internal override void SetPageValues(string sortOrder, string searchString, in int pageIndex) {
             SortOrder = sortOrder;
@@ -44,7 +44,7 @@ namespace Pages {
         }
 
         internal async Task<List<TView>> GetList() {
-            var l = await db.Get();
+            var l = await Repository.Get();
 
             return l.Select(ToView).ToList();
         }

@@ -8,7 +8,7 @@ namespace Pages {
         BasePage<TRepository, TDomain, TView, TData>
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging {
 
-        protected CrudPage(TRepository r) : base(r) { }
+        protected CrudPage(TRepository repository) : base(repository) { }
 
         [BindProperty]
         public TView Item { get; set; }
@@ -18,7 +18,7 @@ namespace Pages {
 
             try {
                 if (!ModelState.IsValid) return false;
-                await db.Add(ToObject(Item));
+                await Repository.Add(ToObject(Item));
             }
             catch { return false; }
 
@@ -30,7 +30,7 @@ namespace Pages {
 
             try {
                 if (!ModelState.IsValid) return false;
-                await db.Update(ToObject(Item));
+                await Repository.Update(ToObject(Item));
             }
             catch { return false; }
 
@@ -44,8 +44,8 @@ namespace Pages {
             try
             {
                 if (!ModelState.IsValid) return false;
-                await db.Delete(id);
-                await db.Add(ToObject(Item));
+                //               await Repository.Delete(id);
+                await Repository.Add(ToObject(Item));
             }
             catch { return false; }
 
@@ -54,20 +54,20 @@ namespace Pages {
 
         protected internal async Task GetObject(string id, string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            var o = await db.Get(id);
-            Item = ToView(o);
+            //           var o = await Repository.Get(id);
+            //           Item = ToView(o);
         }
 
         protected internal async Task GetObject(string id, string sortOrder, string searchString, int pageIndex, string fixedFilter, string fixedValue) {
             SetPageValues(sortOrder, searchString, pageIndex);
             SetFixedFilter(fixedFilter, fixedValue);
-            var o = await db.Get(id);
-            Item = ToView(o);
+            //            var o = await Repository.Get(id);
+            //            Item = ToView(o);
         }
 
         protected internal async Task DeleteObject(string id, string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            await db.Delete(id);
+            //            await Repository.Delete(id);
         }
 
         protected internal abstract TDomain ToObject(TView view);
