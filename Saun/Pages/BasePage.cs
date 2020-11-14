@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using Aids.Reflection;
 using Domain.Abstractions;
+using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Pages {
@@ -45,7 +47,7 @@ namespace Pages {
             FixedValue = fixedValue;
         }
 
-        protected internal abstract void SetPageValues(string sortOrder, string searchString, in int pageIndex);
+        protected internal abstract void SetPageValues(string sortOrder, string searchString, in int? pageIndex);
 
         public Uri GetSortString(Expression<Func<TData, object>> e, Uri page) {
             var name = GetMember.Name(e);
@@ -55,7 +57,7 @@ namespace Pages {
                 $"{page}?handler=Index&sortOrder={sortOrder}&currentFilter={CurrentFilter}&searchString={SearchString}"
                 + $"&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);        }
 
-        internal string GetSortOrder(string name) {
+        protected internal virtual string GetSortOrder(string name) {
             if (string.IsNullOrEmpty(SortOrder)) return name;
             if (!SortOrder.StartsWith(name)) return name;
             if (SortOrder.EndsWith("_desc")) return name;
@@ -74,6 +76,28 @@ namespace Pages {
             if (searchString != currentFilter) { pageIndex = 1; }
 
             return searchString;
+        }
+        internal static void LoadDetails<TDetailObj, TDetailView, TMasterView>(IList<TDetailView> list,
+            IRepository<TDetailObj> data, TMasterView item,
+            string filter, Func<TDetailObj, TDetailView> create)
+            where TMasterView : UniqueEntityView
+        {
+
+            LoadDetails(list, data,item?.GetId().ToString(), filter, create);
+        }
+
+        internal static void LoadDetails<TDetailObj, TDetailView>(IList<TDetailView> list,
+            IRepository<TDetailObj> data, string value,
+            string filter, Func<TDetailObj, TDetailView> create)
+        {
+            list.Clear();
+            if (value is null) return;
+
+            data.FixedFilter = filter;
+            data.FixedValue = value;
+            var l = data.Get().GetAwaiter().GetResult();
+
+            foreach (var e in l) { list.Add(create(e)); }
         }
     }
 }

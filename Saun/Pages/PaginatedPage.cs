@@ -2,21 +2,24 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Abstractions;
+using Facade.Abstractions;
 
 namespace Pages {
 
     public abstract class PaginatedPage<TRepository, TDomain, TView, TData> :
         CrudPage<TRepository, TDomain, TView, TData>
-        where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging {
-
+        where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
+        where TView : UniqueEntityView
+    {
+        
         protected PaginatedPage(TRepository repository) : base(repository) { }
 
-        public IList<TView> Items { get; private set; } = null!;
+        public IList<TView> Items { get; private set; }
 
         public string SelectedId {
             get;
             protected set;
-        } = null!;
+        }
         public int PageIndex {
             get => Repository.PageIndex;
             set => Repository.PageIndex = value;
@@ -26,10 +29,10 @@ namespace Pages {
 
         public int TotalPages => Repository.TotalPages;
 
-        protected internal override void SetPageValues(string sortOrder, string searchString, in int pageIndex) {
+        protected internal override void SetPageValues(string sortOrder, string searchString, in int? pageIndex) {
             SortOrder = sortOrder;
             SearchString = searchString;
-            PageIndex = pageIndex;
+            PageIndex = pageIndex ?? 0;
         }
 
         protected internal async Task GetList(string sortOrder, string currentFilter, string searchString,
@@ -39,6 +42,7 @@ namespace Pages {
             FixedValue = fixedValue;
             SortOrder = sortOrder;
             SearchString = GetSearchString(currentFilter, searchString, ref pageIndex);
+            CurrentFilter = GetCurrentFilter(currentFilter, searchString, ref pageIndex);
             PageIndex = pageIndex ?? 1;
             Items = await GetList();
         }

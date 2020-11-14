@@ -9,5 +9,6 @@ namespace Facade.Abstractions
         public Guid Id { get; set; }
 
         public Guid GetId() => Id;
+        
     }
 }
