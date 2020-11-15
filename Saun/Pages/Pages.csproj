@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <Folder Include="CatalogItems\" />
-      <Folder Include="CatalogItemBrands\" />
       <Folder Include="Units\" />
       <Folder Include="Stocks\" />
     </ItemGroup>
