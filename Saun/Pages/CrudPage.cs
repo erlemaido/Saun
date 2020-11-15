@@ -17,7 +17,6 @@ namespace Pages {
         [BindProperty]
         public TView Item { get; set; }
 
-        public Guid ItemId => Item?.GetId() ?? Guid.Empty;
         protected internal async Task<bool> AddObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
 

@@ -4,18 +4,19 @@ using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Pages
 {
     public abstract class CommonPage<TRepository, TDomain, TView, TData> :
-        BasePage<TRepository, TDomain, TView, TData>
+        PaginatedPage<TRepository, TDomain, TView, TData>
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
         where TView : UniqueEntityView
     {
 
         protected internal CommonPage(TRepository r) : base(r) { }
 
-        public abstract string ItemId { get; }
+        public abstract Guid ItemId { get; }
 
         public string PageTitle { get; set; }
 

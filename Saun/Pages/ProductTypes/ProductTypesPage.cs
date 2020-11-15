@@ -13,6 +13,7 @@ namespace Pages.ProductTypes
             PageTitle = "Toote tüübid";
 
         }
+
         public override Guid ItemId => Item.Id;
 
         protected internal override string GetPageUrl() => "/Saun/ProductTypes";
