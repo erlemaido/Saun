@@ -7,7 +7,7 @@ using Facade.Units;
 
 namespace Pages.Units
 {
-    class UnitsPage : CommonPage<IUnitsRepository, Unit, UnitView, UnitData>
+    public class UnitsPage : CommonPage<IUnitsRepository, Unit, UnitView, UnitData>
     {
         protected internal UnitsPage(IUnitsRepository UnitsRepository) : base(
             UnitsRepository)

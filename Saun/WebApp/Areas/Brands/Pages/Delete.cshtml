@@ -1,0 +1,15 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Pages.Extensions
+@model WebApp.Areas.Brands.Pages.DeleteModel
+
+@{
+    Layout = "_Delete";
+}
+
+<body>
+<dl class="row">
+    @Html.DisplayControlsFor(model => model.Item.Name)
+    @Html.DisplayControlsFor(model => model.Item.Description)
+</dl>
+</body>

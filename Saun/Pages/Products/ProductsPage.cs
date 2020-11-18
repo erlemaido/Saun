@@ -7,7 +7,7 @@ using Domain.Products;
 
 namespace Pages.Products
 {
-    class ProductsPage : CommonPage<IProductsRepository, Product, ProductView, ProductData>
+    public class ProductsPage : CommonPage<IProductsRepository, Product, ProductView, ProductData>
     {
         protected internal ProductsPage(IProductsRepository ProductsRepository) : base(
             ProductsRepository)

@@ -7,7 +7,7 @@ using Facade.Brands;
 
 namespace Pages.Brands
 {
-    class BrandsPage : CommonPage<IBrandsRepository, Brand, BrandView, BrandData>
+    public class BrandsPage : CommonPage<IBrandsRepository, Brand, BrandView, BrandData>
     {
         protected internal BrandsPage(IBrandsRepository BrandsRepository) : base(
             BrandsRepository)
@@ -17,7 +17,7 @@ namespace Pages.Brands
 
         public override Guid ItemId => Item.Id;
 
-        protected internal override string GetPageUrl() => "/Saun/Brands";
+        protected internal override string GetPageUrl() => "/Brands";
        
         protected internal override Brand ToObject(BrandView view)
         {

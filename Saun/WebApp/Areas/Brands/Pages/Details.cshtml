@@ -1,0 +1,16 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.Brands.Pages.DetailsModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Details";
+}
+
+<body>
+@Html.DisplayControlsFor(model => model.Item.Name);
+@Html.DisplayControlsFor(model => model.Item.Description);
+</body>
+
+@section Details {
+}

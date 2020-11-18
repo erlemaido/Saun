@@ -48,7 +48,14 @@ namespace Pages {
         }
 
         protected internal abstract void SetPageValues(string sortOrder, string searchString, in int? pageIndex);
+        public string GetSortString(Expression<Func<TData, object>> e, string page)
+        {
+            var name = GetMember.Name(e);
+            var sortOrder = GetSortOrder(name);
 
+            return $"{page}?sortOrder={sortOrder}&currentFilter={SearchString}"
+                   + $"&fixedFilter={FixedFilter}&fixedValue={FixedValue}";
+        }
         public Uri GetSortString(Expression<Func<TData, object>> e, Uri page) {
             var name = GetMember.Name(e);
             var sortOrder = GetSortOrder(name);
