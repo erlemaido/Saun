@@ -7,7 +7,7 @@ using Facade.Stocks;
 
 namespace Pages.Stocks
 {
-    class StocksPage : CommonPage<IStocksRepository, Stock, StockView, StockData>
+    public class StocksPage : CommonPage<IStocksRepository, Stock, StockView, StockData>
     {
         protected internal StocksPage(IStocksRepository StocksRepository) : base(
             StocksRepository)

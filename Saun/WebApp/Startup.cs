@@ -1,4 +1,6 @@
+using Domain.Brands;
 using Infra;
+using Infra.Brands;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +30,7 @@ namespace WebApp
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<SaunaDbContext>();
             services.AddRazorPages();
+            services.AddScoped<IBrandsRepository, BrandsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

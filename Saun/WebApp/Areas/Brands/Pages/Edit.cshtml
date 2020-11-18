@@ -1,0 +1,15 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.Brands.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+    @Html.HiddenEditControlsFor(model => model.Item.Id)
+    @Html.EditControlsFor(model => model.Item.Name)
+    @Html.EditControlsFor(model => model.Item.Description)
+
+</body>
