@@ -14,13 +14,13 @@ namespace Pages
         where TData : UniqueEntityData, new()
         where TView : UniqueEntityView
     {
-        protected ViewsPage(TRepository r, string title) : base(r, title)
+        protected ViewsPage(TRepository repository, string title) : base(repository, title)
         {
         }
 
-        protected internal Uri createUri(int i)
+        protected internal Uri CreateUri(int i)
         {
-            var uri = CreateUrl.ToString();
+            var uri = CreationUrl.ToString();
             uri += $"&switchOfCreate={i}";
 
             return new Uri(uri, UriKind.Relative);
