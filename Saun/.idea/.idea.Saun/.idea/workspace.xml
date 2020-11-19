@@ -27,71 +27,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cfa781-26a9-49df-b59b-55b4a2b7ef07" name="Default Changelist" comment="Testing commit username">
-      <change afterPath="$PROJECT_DIR$/Aids/Reflection/GetMember.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ProductTypes/IProductTypesRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Products/IProductsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Facade/Brands/BrandViewFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Facade/ProductTypes/ProductTypeViewFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Facade/Products/ProductViewFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Brands/BrandsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/ProductTypes/ProductTypesRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Products/ProductsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/ProductTypes/ProductTypesPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_10_2020_18_38_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_10_2020_18_38__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_10_2020_18_40_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_10_2020_18_40__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Saun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aids/Methods/GetMember.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItemBrands/CatalogItemBrandData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Brands/BrandData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItemTypes/CatalogItemTypeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ProductTypes/ProductTypeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/CatalogItems/CatalogItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Products/ProductData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Docs/DataDiagram.cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Products/ProductData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Products/ProductData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Stocks/StockData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Stocks/StockData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/DefinedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/NamedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Abstractions/UniqueEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItemBrands/CatalogItemBrand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Brands/Brand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItemBrands/ICatalogItemBrandsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Brands/IBrandsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItemTypes/CatalogItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ProductTypes/ProductType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItemTypes/ICatalogItemTypesRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItems/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Products/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/CatalogItems/ICatalogItemsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Abstractions/DefinedEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Abstractions/DefinedEntityView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Abstractions/NamedEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Abstractions/NamedEntityView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Brands/BrandView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemBrands/CatalogItemBrandViewFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/ProductTypes/ProductTypeView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItemTypes/CatalogItemTypeViewFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Products/ProductView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemViewFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Facade/Facade.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Facade.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facade/Stocks/StockView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Facade/Stocks/StockView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Abstractions/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Abstractions/BaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Abstractions/FilteredRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Abstractions/FilteredRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Abstractions/UniqueEntityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Abstractions/UniqueEntityRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/CatalogItemTypes/CatalogItemTypesRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/CatalogItems/CatalogItemsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/SaunDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/SaunaDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/SaunDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/SaunaDbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Stocks/StocksRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Units/UnitsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/BasePage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/BasePage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CatalogItemTypes/CatalogItemTypesPage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CommonPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CommonPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CrudPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CrudPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/PaginatedPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/PaginatedPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Areas/CatalogItemBrands/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Areas/Brands/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Areas/CatalogItemBrands/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Areas/Brands/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20201105120724_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20201105120724_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Migrations/20201111175311_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Migrations/20201111175311_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Migrations/SaunaDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Migrations/SaunaDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,12 +61,12 @@
     <setting file="file://$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infra/SaunaDbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Infosüsteemide arendamine II/itb1702/ContosoUniversity/Models/Enrollment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Infosüsteemide arendamine II/itb1702/RazorPagesMovie/Models/Movie.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Facade/CatalogItems/CatalogItemView.cs" />
-        <option value="$PROJECT_DIR$/Infra/Abstractions/FilteredRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/Abstractions/PaginatedRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/Abstractions/SortedRepository.cs" />
         <option value="$PROJECT_DIR$/Infra/CatalogItemBrands/CatalogItemBrandsRepository.cs" />
@@ -132,7 +78,6 @@
         <option value="$PROJECT_DIR$/Data/CatalogItemTypes/ProductTypeData.cs" />
         <option value="$PROJECT_DIR$/Data/Stocks/StockData.cs" />
         <option value="$PROJECT_DIR$/Data/Brands/BrandData.cs" />
-        <option value="$PROJECT_DIR$/Data/Products/ProductData.cs" />
         <option value="$PROJECT_DIR$/Data/ProductTypes/ProductTypeData.cs" />
         <option value="$PROJECT_DIR$/Domain/Brands/Brand.cs" />
         <option value="$PROJECT_DIR$/Domain/Brands/IBrandsRepository.cs" />
@@ -144,7 +89,6 @@
         <option value="$PROJECT_DIR$/Facade/CatalogItemBrands/BrandViewFactory.cs" />
         <option value="$PROJECT_DIR$/Facade/Brands/BrandView.cs" />
         <option value="$PROJECT_DIR$/Facade/Brands/BrandViewFactory.cs" />
-        <option value="$PROJECT_DIR$/Facade/Products/ProductView.cs" />
         <option value="$PROJECT_DIR$/Facade/Products/ProductViewFactory.cs" />
         <option value="$PROJECT_DIR$/Facade/ProductTypes/ProductTypeView.cs" />
         <option value="$PROJECT_DIR$/Facade/ProductTypes/ProductTypeViewFactory.cs" />
@@ -170,6 +114,10 @@
         <option value="$PROJECT_DIR$/WebApp/Areas/Brands/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Areas/Brands/Pages/Index.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Data/ApplicationDbContext.cs" />
+        <option value="$PROJECT_DIR$/Data/Products/ProductData.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/Facade/Facade.csproj" />
+        <option value="$PROJECT_DIR$/Facade/Products/ProductView.cs" />
       </list>
     </option>
   </component>
@@ -263,6 +211,8 @@
       <workItem from="1604577092593" duration="185000" />
       <workItem from="1604577421706" duration="501000" />
       <workItem from="1605108657200" duration="7534000" />
+      <workItem from="1605693185924" duration="3834000" />
+      <workItem from="1605796038256" duration="1065000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Data nullable reference types">
       <created>1603645584854</created>

@@ -115,7 +115,7 @@ namespace Infra.Migrations
                     b.Property<Guid?>("ProductDataId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("ProductIdData")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");

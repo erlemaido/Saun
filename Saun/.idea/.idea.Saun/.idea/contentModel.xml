@@ -12,6 +12,9 @@
       <e p="Aids" t="IncludeRecursive">
         <e p="Aids.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Constants" t="Include">
+          <e p="Word.cs" t="Include" />
+        </e>
         <e p="Logging" t="Include">
           <e p="ILogBook.cs" t="Include" />
           <e p="Log.cs" t="Include" />
@@ -42,6 +45,9 @@
           <e p="BrandData.cs" t="Include" />
         </e>
         <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="Docs" t="Include">
+          <e p="ClassDiagram.cd" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -155,6 +161,11 @@
           <e p="BrandsRepository.cs" t="Include" />
         </e>
         <e p="Infra.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20201118115350_Initial.cs" t="Include" />
+          <e p="20201118115350_Initial.Designer.cs" t="Include" />
+          <e p="SaunaDbContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -181,10 +192,22 @@
       <e p="Pages" t="IncludeRecursive">
         <e p="BasePage.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="CatalogItemBrands" t="Include" />
-        <e p="CatalogItems" t="Include" />
+        <e p="Brands" t="Include">
+          <e p="BrandsPage.cs" t="Include" />
+        </e>
         <e p="CommonPage.cs" t="Include" />
         <e p="CrudPage.cs" t="Include" />
+        <e p="extensions" t="Include">
+          <e p="Constants.cs" t="Include" />
+          <e p="DisplayControlsForHtmlExtension.cs" t="Include" />
+          <e p="DropDownNavigationMenuForHtmlExtension.cs" t="Include" />
+          <e p="EditControlsForDropDownHtmlExtension.cs" t="Include" />
+          <e p="EditControlsForHtmlExtension.cs" t="Include" />
+          <e p="HypertextLinkForHtmlExtension.cs" t="Include" />
+          <e p="Link.cs" t="Include" />
+          <e p="TableHeaderForHtmlExtension.cs" t="Include" />
+          <e p="TableRowForHtmlExtension.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -194,11 +217,21 @@
         </e>
         <e p="Pages.csproj" t="IncludeRecursive" />
         <e p="PaginatedPage.cs" t="Include" />
+        <e p="Products" t="Include">
+          <e p="ProductsPage.cs" t="Include" />
+        </e>
         <e p="ProductTypes" t="Include">
           <e p="ProductTypesPage.cs" t="Include" />
         </e>
-        <e p="Stocks" t="Include" />
-        <e p="Units" t="Include" />
+        <e p="Stocks" t="Include">
+          <e p="StocksPage.cs" t="Include" />
+        </e>
+        <e p="TitledPage.cs" t="Include" />
+        <e p="Units" t="Include">
+          <e p="UnitsPage.cs" t="Include" />
+        </e>
+        <e p="ViewPage.cs" t="Include" />
+        <e p="ViewsPage.cs" t="Include" />
       </e>
       <e p="Saun.sln" t="IncludeFlat" />
       <e p="Solution items" t="Include" />
@@ -208,6 +241,14 @@
         <e p="Areas" t="Include">
           <e p="Brands" t="Include">
             <e p="Pages" t="Include">
+              <e p="Create.cshtml" t="Include" />
+              <e p="Create.cshtml.cs" t="Include" />
+              <e p="Delete.cshtml" t="Include" />
+              <e p="Delete.cshtml.cs" t="Include" />
+              <e p="Details.cshtml" t="Include" />
+              <e p="Details.cshtml.cs" t="Include" />
+              <e p="Edit.cshtml" t="Include" />
+              <e p="Edit.cshtml.cs" t="Include" />
               <e p="Index.cshtml" t="Include" />
               <e p="Index.cshtml.cs" t="Include" />
             </e>
@@ -250,6 +291,11 @@
           <e p="Privacy.cshtml" t="Include" />
           <e p="Privacy.cshtml.cs" t="Include" />
           <e p="Shared" t="Include">
+            <e p="_Create.cshtml" t="Include" />
+            <e p="_Delete.cshtml" t="Include" />
+            <e p="_Details.cshtml" t="Include" />
+            <e p="_Edit.cshtml" t="Include" />
+            <e p="_Index.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
