@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using Data.Abstractions;
 using Data.Brands;
 using Data.ProductTypes;
