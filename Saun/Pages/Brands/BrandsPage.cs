@@ -7,26 +7,16 @@ using Facade.Brands;
 
 namespace Pages.Brands
 {
-    public class BrandsPage : CommonPage<IBrandsRepository, Brand, BrandView, BrandData>
+    public class BrandsPage : ViewPage<IBrandsRepository, Brand, BrandView, BrandData>
     {
-        protected internal BrandsPage(IBrandsRepository BrandsRepository) : base(
-            BrandsRepository)
+        public BrandsPage(IBrandsRepository repository) : base(repository, "Brändid")
         {
-            PageTitle = "Toodete brändid";
         }
 
-        public override Guid ItemId => Item.Id;
+        protected internal override Brand ToObject(BrandView view) => BrandViewFactory.Create(view);
+        
+        protected internal override BrandView ToView(Brand obj) => BrandViewFactory.Create(obj);
 
-        protected internal override string GetPageUrl() => "/Brands";
-       
-        protected internal override Brand ToObject(BrandView view)
-        {
-            return BrandViewFactory.Create(view);
-        }
-
-        protected internal override BrandView ToView(Brand obj)
-        {
-            return BrandViewFactory.Create(obj);
-        }
+        protected internal override Uri CreatePageUrl() => new Uri("/Brands", UriKind.Relative);
     }
 }

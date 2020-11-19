@@ -1,7 +1,6 @@
 ﻿@page
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using Pages.Extensions
-@model WebApp.Areas.Brands.Pages.DeleteModel
+@model Pages.Brands.BrandsPage
 
 @{
     Layout = "_Delete";
@@ -9,7 +8,7 @@
 
 <body>
 <dl class="row">
-    @Html.DisplayControlsFor(model => model.Item.Name)
-    @Html.DisplayControlsFor(model => model.Item.Description)
+    @Html.Show(model => model.Item.Name)
+    @Html.Show(model => model.Item.Description)
 </dl>
 </body>

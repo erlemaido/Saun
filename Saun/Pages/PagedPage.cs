@@ -12,12 +12,16 @@ namespace Pages {
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
         where TView : UniqueEntityView
     {
-        
-        protected PagedPage(TRepository repository) : base(repository) { }
+
+        protected PagedPage(TRepository repository) : base(repository)
+        {
+            Items = new List<TView>();
+        }
 
         public IList<TView> Items { get; private set; }
 
-        public Guid SelectedId {
+        public Guid SelectedId 
+        {
             get;
             set;
         }

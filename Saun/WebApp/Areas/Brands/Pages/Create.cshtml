@@ -1,15 +1,14 @@
 ﻿@page
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using Pages.Extensions
-@model WebApp.Areas.Brands.Pages.CreateModel
+@model Pages.Brands.BrandsPage
 
 @{
     Layout = "_Create";
 }
 
 <body>
-    @Html.EditControlsFor(model => model.Item.Id);
-    @Html.EditControlsFor(model => model.Item.Name);
-    @Html.EditControlsFor(model => model.Item.Description);
+    @Html.Editor(model => model.Item.Id);
+    @Html.Editor(model => model.Item.Name);
+    @Html.Editor(model => model.Item.Description);
 
 </body>

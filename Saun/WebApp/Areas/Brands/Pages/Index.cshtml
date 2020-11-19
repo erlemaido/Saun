@@ -1,21 +1,22 @@
 ﻿@page
-@using Pages.Extensions
-@model WebApp.Areas.Brands.Pages.IndexModel
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Pages.Common.Aids
+@using Pages.Common.Constants
+@using Pages.Common.Extensions
+@model Pages.Brands.BrandsPage
 
 @{
     Layout = "_Index";
     var page = Model.PageUrl;
 }
 @section Create {
-    @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewLinkTitle, $"{page}/Create"))
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
 }
 
 
 <body>
 <table class="table">
     <thead>
-    @Html.TableHeaderFor(
+    @Html.Header(
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
         new Link(Html.DisplayNameFor(m => m.Item.Description), Model.GetSortString(m=> m.Description, page))
         )
@@ -25,9 +26,13 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            @Html.TableRowFor(
+            @Html.Row(
+                false,
                 page,
-                item.Id,
+                item.GetId(),
+                Model.SortOrder,
+                Model.SearchString,
+                Model.PageIndex,
                 Model.FixedFilter,
                 Model.FixedValue,
                 Html.DisplayFor(modelItem => item.Name),

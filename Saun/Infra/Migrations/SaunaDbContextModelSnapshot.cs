@@ -15,7 +15,7 @@ namespace Infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -115,7 +115,7 @@ namespace Infra.Migrations
                     b.Property<Guid?>("ProductDataId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProductIdData")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -142,11 +142,11 @@ namespace Infra.Migrations
             modelBuilder.Entity("Data.Products.ProductData", b =>
                 {
                     b.HasOne("Data.Brands.BrandData", "BrandData")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("BrandDataId");
 
                     b.HasOne("Data.ProductTypes.ProductTypeData", "ProductTypeData")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("ProductTypeDataId");
 
                     b.HasOne("Data.Units.UnitData", "UnitData")
