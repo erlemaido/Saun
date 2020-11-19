@@ -16,73 +16,58 @@ namespace Pages {
 
         [BindProperty]
         public TView Item { get; set; }
+        
+        public Guid ItemId => Item.GetId();
 
         protected internal async Task<bool> AddObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-
-            try {
-                if (!ModelState.IsValid) return false;
-                await Repository.Add(ToObject(Item));
-            }
-            catch { return false; }
-
+            
+            if (!ModelState.IsValid) return false;
+            await Repository.Add(ToObject(Item)).ConfigureAwait(true);
+            
             return true;
         }
-        protected internal async Task<bool> AddObject(string sortOrder, string searchString, int? pageIndex, string fixedFilter, string fixedValue)
+        protected internal async Task<bool> AddObject(string sortOrder, string searchString,
+            int? pageIndex, string fixedFilter, string fixedValue)
         {
             SetPageValues(sortOrder, searchString, pageIndex);
             return await AddObject(fixedFilter, fixedValue).ConfigureAwait(true);
         }
         protected internal async Task<bool> UpdateObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-
-            try {
-                if (!ModelState.IsValid) return false;
-                await Repository.Update(ToObject(Item));
-            }
-            catch { return false; }
+            
+            if (!ModelState.IsValid) return false;
+            await Repository.Update(ToObject(Item));
 
             return true;
         }
-
-        protected internal async Task<bool> UpdateObject(Guid id, string fixedFilter, string fixedValue)
-        {
-            SetFixedFilter(fixedFilter, fixedValue);
-
-            try
-            {
-                if (!ModelState.IsValid) return false;
-                await Repository.Delete(id);
-                await Repository.Add(ToObject(Item));
-            }
-            catch { return false; }
-
-            return true;
-        }
-        protected internal async Task<bool> UpdateObject(string sortOrder, string searchString, int? pageIndex, string fixedFilter, string fixedValue)
+        
+        protected internal async Task<bool> UpdateObject(string sortOrder, 
+            string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
             SetPageValues(sortOrder, searchString, pageIndex);
             return await UpdateObject(fixedFilter, fixedValue).ConfigureAwait(true);
         }
-        protected internal async Task GetObject(Guid id, string fixedFilter, string fixedValue) {
+        protected internal async Task GetObject(Guid id, string fixedFilter, 
+            string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            var o = await Repository.Get(id);
-            Item = ToView(o);
+            var obj = await Repository.Get(id);
+            Item = ToView(obj);
         }
 
-        protected internal async Task GetObject(Guid id, string sortOrder, string searchString, int? pageIndex, string fixedFilter, string fixedValue) {
+        protected internal async Task GetObject(Guid id, string sortOrder, 
+            string searchString, int? pageIndex, string fixedFilter, string fixedValue) {
             SetPageValues(sortOrder, searchString, pageIndex);
-            SetFixedFilter(fixedFilter, fixedValue);
-            var o = await Repository.Get(id);
-            Item = ToView(o);
+            await GetObject(id, fixedFilter, fixedValue).ConfigureAwait(true);
         }
 
-        protected internal async Task DeleteObject(Guid id, string fixedFilter, string fixedValue) {
+        protected internal async Task DeleteObject(Guid id, string fixedFilter, 
+            string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            await Repository.Delete(id);
+            await Repository.Delete(id).ConfigureAwait(true);
         }
-        protected internal async Task DeleteObject(Guid id, string sortOrder, string searchString, int? pageIndex,
-            string fixedFilter, string fixedValue)
+        protected internal async Task DeleteObject(Guid id, string sortOrder, 
+            string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
             SetPageValues(sortOrder, searchString, pageIndex);
             await DeleteObject(id, fixedFilter, fixedValue).ConfigureAwait(true);

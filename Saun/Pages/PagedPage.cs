@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Abstractions;
@@ -6,19 +7,19 @@ using Facade.Abstractions;
 
 namespace Pages {
 
-    public abstract class PaginatedPage<TRepository, TDomain, TView, TData> :
+    public abstract class PagedPage<TRepository, TDomain, TView, TData> :
         CrudPage<TRepository, TDomain, TView, TData>
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
         where TView : UniqueEntityView
     {
         
-        protected PaginatedPage(TRepository repository) : base(repository) { }
+        protected PagedPage(TRepository repository) : base(repository) { }
 
         public IList<TView> Items { get; private set; }
 
-        public string SelectedId {
+        public Guid SelectedId {
             get;
-            protected set;
+            set;
         }
         public int PageIndex {
             get => Repository.PageIndex;
@@ -26,16 +27,17 @@ namespace Pages {
         }
         public bool HasPreviousPage => Repository.HasPreviousPage;
         public bool HasNextPage => Repository.HasNextPage;
-
         public int TotalPages => Repository.TotalPages;
 
-        protected internal override void SetPageValues(string sortOrder, string searchString, in int? pageIndex) {
+        protected internal override void SetPageValues(string sortOrder, 
+            string searchString, in int? pageIndex) {
             SortOrder = sortOrder;
             SearchString = searchString;
             PageIndex = pageIndex ?? 0;
         }
 
-        protected internal async Task GetList(string sortOrder, string currentFilter, string searchString,
+        protected internal async Task GetList(string sortOrder, 
+            string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue) {
 
             FixedFilter = fixedFilter;
@@ -44,13 +46,13 @@ namespace Pages {
             SearchString = GetSearchString(currentFilter, searchString, ref pageIndex);
             CurrentFilter = GetCurrentFilter(currentFilter, searchString, ref pageIndex);
             PageIndex = pageIndex ?? 1;
-            Items = await GetList();
+            Items = await GetList().ConfigureAwait(true);
         }
 
         internal async Task<List<TView>> GetList() {
-            var l = await Repository.Get();
+            var list = await Repository.Get().ConfigureAwait(true);
 
-            return l.Select(ToView).ToList();
+            return list.Select(ToView).ToList();
         }
 
     }

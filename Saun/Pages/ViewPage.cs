@@ -17,12 +17,12 @@ namespace Pages
         where TView : UniqueEntityView
     {
 
-        protected ViewPage(TRepository r, string title) : base(r, title)
+        protected ViewPage(TRepository repository, string title) : base(repository, title)
         {
         }
 
         public async Task OnGetIndexAsync(string sortOrder,
-            string id, string currentFilter, string searchString, int? pageIndex,
+            Guid id, string currentFilter, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue)
         {
             SelectedId = id;
@@ -81,8 +81,7 @@ namespace Pages
         }
 
         public virtual async Task<IActionResult> OnGetDetailsAsync(Guid id, string sortOrder, string searchString,
-            int pageIndex,
-            string fixedFilter, string fixedValue)
+            int pageIndex, string fixedFilter, string fixedValue)
         {
             await GetObject(id, sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);
 

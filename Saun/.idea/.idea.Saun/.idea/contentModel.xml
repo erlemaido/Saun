@@ -215,8 +215,8 @@
             </e>
           </e>
         </e>
+        <e p="PagedPage.cs" t="Include" />
         <e p="Pages.csproj" t="IncludeRecursive" />
-        <e p="PaginatedPage.cs" t="Include" />
         <e p="Products" t="Include">
           <e p="ProductsPage.cs" t="Include" />
         </e>
