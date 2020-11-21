@@ -1,0 +1,14 @@
+﻿@page
+@using Pages.Common.Extensions
+@model Pages.ProductTypes.ProductTypesPage
+
+@{
+    Layout = "_Details";
+}
+
+<body>
+    @Html.Show(model => model.Item.Name);
+</body>
+
+@section Details {
+}

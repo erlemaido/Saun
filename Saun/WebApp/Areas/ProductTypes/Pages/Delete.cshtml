@@ -1,0 +1,13 @@
+﻿@page
+@using Pages.Common.Extensions
+@model Pages.ProductTypes.ProductTypesPage
+
+@{
+    Layout = "_Delete";
+}
+
+<body>
+    <dl class="row">
+        @Html.Show(model => model.Item.Name)
+    </dl>
+</body>

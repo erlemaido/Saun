@@ -1,6 +1,6 @@
 ﻿@page
 @using Pages.Common.Extensions
-@model Pages.Brands.BrandsPage
+@model Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Edit";
@@ -9,5 +9,4 @@
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.Editor(model => model.Item.Name)
-    @Html.Editor(model => model.Item.Description)
 </body>
