@@ -1,6 +1,6 @@
 ﻿@page
 @using Pages.Common.Extensions
-@model Pages.Brands.BrandsPage
+@model Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Create";
@@ -9,6 +9,4 @@
 <body>
     @Html.Editor(model => model.Item.Id);
     @Html.Editor(model => model.Item.Name);
-    @Html.Editor(model => model.Item.Description);
-
 </body>

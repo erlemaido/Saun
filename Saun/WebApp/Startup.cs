@@ -1,6 +1,8 @@
 using Domain.Brands;
+using Domain.ProductTypes;
 using Infra;
 using Infra.Brands;
+using Infra.ProductTypes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +33,8 @@ namespace WebApp
                 .AddEntityFrameworkStores<SaunaDbContext>();
             services.AddRazorPages();
             services.AddScoped<IBrandsRepository, BrandsRepository>();
+            services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
