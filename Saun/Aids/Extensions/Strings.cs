@@ -6,6 +6,11 @@ namespace Aids.Extensions
 {
     public static class Strings
     {
+        public static string Format(this string s, params object[] args)
+            => Safe.Run(
+                () => string.Format(CultureInfo.InvariantCulture, s, args),
+                s ?? string.Empty);
+        
         public static string ToLowerCase(this string s)
         {
             return Safe.Run(

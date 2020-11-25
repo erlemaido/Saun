@@ -15,7 +15,7 @@ namespace Pages.Abstractions.Aids
         public string Title { get; internal set; }
         public string Action { get; internal set; }
         public string Disabled { get; internal set; }
-        public Guid ControlId { get; internal set; }
+        public string ControlId { get; internal set; }
         public string CurrentFilter { get; internal set; }
 
         public Args(
