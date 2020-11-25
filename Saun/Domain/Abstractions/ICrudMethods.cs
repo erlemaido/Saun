@@ -7,8 +7,8 @@ namespace Domain.Abstractions
     public interface ICrudMethods<T>
     {
         Task<List<T>> Get();
-        Task<T> Get(Guid id);
-        Task Delete(Guid id);
+        Task<T> Get(String id);
+        Task Delete(String id);
         Task Add(T obj);
         Task Update(T obj);
     }

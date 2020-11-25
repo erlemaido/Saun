@@ -9,15 +9,15 @@ namespace Facade.Products
     {
         [Required]
         [DisplayName("Bränd")]
-        public Guid BrandId { get; set; }
+        public String BrandId { get; set; }
         
         [Required]
         [DisplayName("Tüüp")]
-        public Guid ProductTypeId { get; set; }
+        public String ProductTypeId { get; set; }
         
         [Required]
         [DisplayName("Ühik")]
-        public Guid UnitId { get; set; }
+        public String UnitId { get; set; }
         
         [Required]
         public string PictureUrl { get; set; }

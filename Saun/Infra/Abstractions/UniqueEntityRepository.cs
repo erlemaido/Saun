@@ -14,12 +14,12 @@ namespace Infra.Abstractions
         {
         }
 
-        protected override async Task<TData> GetData(Guid id)
+        protected override async Task<TData> GetData(String id)
         {
             return await DbSet.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        protected override Guid GetId(TDomain entity) => entity.Data.Id;
+        protected override String GetId(TDomain entity) => entity.Data.Id;
         
         protected override TData GetDataById(TData data) => DbSet.Find(data.Id);
     }

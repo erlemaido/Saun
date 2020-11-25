@@ -17,7 +17,7 @@ namespace Pages {
         [BindProperty]
         public TView Item { get; set; }
         
-        public Guid ItemId => Item?.GetId() ?? Guid.Empty;
+        public String ItemId => Item?.GetId() ?? String.Empty;
 
         protected internal async Task<bool> AddObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
@@ -48,25 +48,25 @@ namespace Pages {
             SetPageValues(sortOrder, searchString, pageIndex);
             return await UpdateObject(fixedFilter, fixedValue).ConfigureAwait(true);
         }
-        protected internal async Task GetObject(Guid id, string fixedFilter, 
+        protected internal async Task GetObject(String id, string fixedFilter, 
             string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
             var obj = await Repository.Get(id);
             Item = ToView(obj);
         }
 
-        protected internal async Task GetObject(Guid id, string sortOrder, 
+        protected internal async Task GetObject(String id, string sortOrder, 
             string searchString, int? pageIndex, string fixedFilter, string fixedValue) {
             SetPageValues(sortOrder, searchString, pageIndex);
             await GetObject(id, fixedFilter, fixedValue).ConfigureAwait(true);
         }
 
-        protected internal async Task DeleteObject(Guid id, string fixedFilter, 
+        protected internal async Task DeleteObject(String id, string fixedFilter, 
             string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
             await Repository.Delete(id).ConfigureAwait(true);
         }
-        protected internal async Task DeleteObject(Guid id, string sortOrder, 
+        protected internal async Task DeleteObject(String id, string sortOrder, 
             string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
             SetPageValues(sortOrder, searchString, pageIndex);

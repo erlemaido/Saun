@@ -6,7 +6,7 @@ namespace Data.Stocks
 {
     public class StockData : UniqueEntityData
     {
-        public Guid ProductId { get; set; }
+        public String ProductId { get; set; }
         public ProductData ProductData { get; set; }
 
         public int InStock { get; set; }
