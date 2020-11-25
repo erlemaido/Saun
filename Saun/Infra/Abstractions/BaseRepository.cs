@@ -68,13 +68,23 @@ namespace Infra.Abstractions
             await DbContext.SaveChangesAsync();
         }
 
+        //public async Task Update(TDomain obj)
+        //{
+        //    var data = GetData(obj);
+        //    data = CopyData(data);
+        //    DbContext.Attach(data).State = EntityState.Modified;
+        //    await DbContext.SaveChangesAsync();
+        //}
         public async Task Update(TDomain obj)
         {
-            var data = GetData(obj);
-            data = CopyData(data);
-            DbContext.Attach(data).State = EntityState.Modified;
+            if (obj is null) return;
+            var v = await GetData(GetId(obj));
+            if (v is null) return;
+            DbSet.Remove(v);
+            await DbSet.AddAsync(obj.Data);
             await DbContext.SaveChangesAsync();
         }
+        //selle koodiga ei tule concurrency exceptionit.
 
         public object GetById(string id)
         {

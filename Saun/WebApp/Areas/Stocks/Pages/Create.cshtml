@@ -1,0 +1,16 @@
+﻿@page
+@using Pages.Abstractions.Extensions
+@model Pages.Stocks.StocksPage
+
+@{
+    Layout = "_Create";
+}
+
+<body>
+    <input type="hidden" asp-for="Model.Item.Id" />
+    @Html.Editor(model => model.Item.ProductId)
+    @Html.Editor(model => model.Item.InStock)
+    @Html.Editor(model => model.Item.LastUpdateTime)
+    @Html.Editor(model => model.Item.Comment)
+
+</body>

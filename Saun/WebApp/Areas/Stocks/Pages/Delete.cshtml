@@ -1,0 +1,18 @@
+﻿@page
+@using Pages.Abstractions.Extensions
+@model Pages.Stocks.StocksPage
+
+@{
+    Layout = "_Delete";
+}
+
+<body>
+<dl class="row">
+    @Html.Show(model => model.Item.ProductId)
+    @Html.Show(model => model.Item.InStock)
+    @Html.Show(model => model.Item.LastUpdateTime)
+    @Html.Show(model => model.Item.Comment)
+
+
+</dl>
+</body>

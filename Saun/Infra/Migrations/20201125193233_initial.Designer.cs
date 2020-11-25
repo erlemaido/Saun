@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(SaunaDbContext))]
-    [Migration("20201125164951_InitialDbCreation")]
-    partial class InitialDbCreation
+    [Migration("20201125193233_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -103,6 +103,9 @@ namespace Infra.Migrations
 
                     b.Property<string>("ProductDataId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -31,7 +31,6 @@
   <ItemGroup>
     <Folder Include="Areas\Products\Pages\" />
     <Folder Include="Areas\Identity\Pages" />
-    <Folder Include="Areas\Stocks\Pages\" />
     <Folder Include="Areas\Units\Pages\" />
   </ItemGroup>
 

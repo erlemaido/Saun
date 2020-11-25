@@ -7,7 +7,7 @@ namespace Pages.Units
 {
     public class UnitsPage : ViewPage<IUnitsRepository, Unit, UnitView, UnitData>
     {
-        public UnitsPage(IUnitsRepository repository) : base(repository, "Ühikud?")
+        public UnitsPage(IUnitsRepository repository) : base(repository, "Ühikud")
         {
         }
 

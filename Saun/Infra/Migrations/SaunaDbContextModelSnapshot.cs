@@ -102,6 +102,9 @@ namespace Infra.Migrations
                     b.Property<string>("ProductDataId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductDataId");

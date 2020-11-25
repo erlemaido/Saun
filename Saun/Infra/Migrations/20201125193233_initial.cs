@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class InitialDbCreation : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -85,6 +85,7 @@ namespace Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ProductId = table.Column<string>(nullable: true),
                     ProductDataId = table.Column<string>(nullable: true),
                     InStock = table.Column<int>(nullable: false),
                     LastUpdateTime = table.Column<DateTime>(nullable: false),
