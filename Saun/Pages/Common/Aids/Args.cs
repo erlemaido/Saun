@@ -5,7 +5,7 @@ namespace Pages.Common.Aids
     public sealed class Args {
 
         public Uri PageUrl { get; internal set; }
-        public Guid ItemId { get; internal set; }
+        public String ItemId { get; internal set; }
         public string SortOrder { get; internal set; }
         public string SearchString { get; internal set; }
         public int? PageIndex { get; internal set; }
@@ -19,7 +19,7 @@ namespace Pages.Common.Aids
         public string CurrentFilter { get; internal set; }
 
         public Args(
-            Uri pageUrl = null, Guid itemId = default,
+            Uri pageUrl = null, String itemId = default,
             string fixedFilter = null, string fixedValue = null,
             string sortOrder = null, string searchString = null,
             int? pageIndex = null, string currentFilter = null) 

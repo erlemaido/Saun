@@ -59,7 +59,7 @@ namespace Pages
 
 
         public async Task<IActionResult> OnGetDeleteAsync(
-            Guid id,
+            String id,
             string sortOrder,
             string searchString,
             int? pageIndex,
@@ -71,7 +71,7 @@ namespace Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostDeleteAsync(Guid id, string sortOrder, string searchString,
+        public async Task<IActionResult> OnPostDeleteAsync(String id, string sortOrder, string searchString,
             int pageIndex,
             string fixedFilter, string fixedValue)
         {
@@ -80,7 +80,7 @@ namespace Pages
             return Redirect(IndexUrl.ToString());
         }
 
-        public virtual async Task<IActionResult> OnGetDetailsAsync(Guid id, string sortOrder, string searchString,
+        public virtual async Task<IActionResult> OnGetDetailsAsync(String id, string sortOrder, string searchString,
             int pageIndex, string fixedFilter, string fixedValue)
         {
             await GetObject(id, sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);
@@ -89,7 +89,7 @@ namespace Pages
         }
 
         public async Task<IActionResult> OnGetEditAsync(
-            Guid id,
+            String id,
             string sortOrder,
             string searchString,
             int pageIndex,

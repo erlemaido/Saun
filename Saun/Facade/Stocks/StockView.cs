@@ -9,7 +9,7 @@ namespace Facade.Stocks
     {
         [Required]
         [DisplayName("Toode")]
-        public Guid ProductId { get; set; }
+        public String ProductId { get; set; }
         
         [Required]
         [DisplayName("Kogus")]

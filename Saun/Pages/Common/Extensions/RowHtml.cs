@@ -13,7 +13,7 @@ namespace Pages.Common.Extensions
             this IHtmlHelper h,
             bool hasSelect,
             Uri pageUrl, 
-            Guid itemId,
+            string itemId,
             params IHtmlContent[] values) 
         {
             if (h == null) throw new ArgumentNullException(nameof(h));
@@ -27,7 +27,7 @@ namespace Pages.Common.Extensions
             this IHtmlHelper h,
             bool hasSelect,
             Uri pageUrl, 
-            Guid itemId,
+            string itemId,
             string fixedFilter, 
             string fixedValue,
             params IHtmlContent[] values) 
@@ -45,7 +45,7 @@ namespace Pages.Common.Extensions
             this IHtmlHelper h,
             bool hasSelect,
             Uri pageUrl, 
-            Guid itemId,
+            string itemId,
             string sortOrder, 
             string searchString, 
             int pageIndex,
@@ -68,7 +68,7 @@ namespace Pages.Common.Extensions
             bool hasDetails,
             bool hasDelete,
             Uri pageUrl,
-            Guid itemId,
+            string itemId,
             string sortOrder,
             string searchString,
             int pageIndex,
