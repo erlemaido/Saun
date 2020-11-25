@@ -51,11 +51,8 @@ namespace Infra.Migrations
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    BrandId = table.Column<string>(nullable: true),
                     BrandDataId = table.Column<string>(nullable: true),
-                    ProductTypeId = table.Column<string>(nullable: true),
                     ProductTypeDataId = table.Column<string>(nullable: true),
-                    UnitId = table.Column<string>(nullable: true),
                     UnitDataId = table.Column<string>(nullable: true),
                     PictureUrl = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false)
@@ -88,7 +85,6 @@ namespace Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    ProductId = table.Column<string>(nullable: true),
                     ProductDataId = table.Column<string>(nullable: true),
                     InStock = table.Column<int>(nullable: false),
                     LastUpdateTime = table.Column<DateTime>(nullable: false),

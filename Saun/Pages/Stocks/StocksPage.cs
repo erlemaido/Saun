@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.Stocks;
 using Domain.Stocks;
 using Facade.Stocks;

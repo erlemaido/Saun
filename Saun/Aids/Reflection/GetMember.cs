@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Linq.Expressions;
 using Aids.Methods;
 
@@ -18,9 +17,7 @@ namespace Aids.Reflection
 
             if (!(member is null)) return Name(member);
             if (!(method is null)) return Name(method);
-            if (!(operand is null)) return Name(operand);
-
-            return string.Empty;
+            return !(operand is null) ? Name(operand) : string.Empty;
         }
 
         private static string Name(MemberExpression ex) {
@@ -36,9 +33,7 @@ namespace Aids.Reflection
             var method = ex?.Operand as MethodCallExpression;
 
             if (!(member is null)) return Name(member);
-            if (!(method is null)) return Name(method);
-
-            return string.Empty;
+            return !(method is null) ? Name(method) : string.Empty;
         }
     }
 }

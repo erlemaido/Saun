@@ -2,7 +2,7 @@
 using Data.ProductTypes;
 using Domain.ProductTypes;
 using Facade.ProductTypes;
-using Pages.Common.Constants;
+using Pages.Abstractions.Constants;
 
 namespace Pages.ProductTypes
 {

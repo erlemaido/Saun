@@ -1,5 +1,5 @@
 ﻿@page
-@using Pages.Common.Extensions
+@using Pages.Abstractions.Extensions
 @model Pages.Brands.BrandsPage
 
 @{
@@ -7,8 +7,8 @@
 }
 
 <body>
-    @Html.Editor(model => model.Item.Id)
-    @Html.Editor(model => model.Item.Name)
-    @Html.Editor(model => model.Item.Description)
+            <input type="hidden" asp-for="Model.Item.Id"/>
+@Html.Editor(model => model.Item.Name)
+@Html.Editor(model => model.Item.Description)
 
 </body>

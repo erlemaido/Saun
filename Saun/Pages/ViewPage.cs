@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Data.Abstractions;
 using Domain.Abstractions;
 using Facade.Abstractions;
@@ -22,13 +19,12 @@ namespace Pages
         }
 
         public async Task OnGetIndexAsync(string sortOrder,
-            Guid id, string currentFilter, string searchString, int? pageIndex,
+            string id, string currentFilter, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue)
         {
             SelectedId = id;
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue).ConfigureAwait(true);
-
         }
 
         public virtual IActionResult OnGetCreate(
@@ -59,7 +55,7 @@ namespace Pages
 
 
         public async Task<IActionResult> OnGetDeleteAsync(
-            String id,
+            string id,
             string sortOrder,
             string searchString,
             int? pageIndex,
@@ -71,7 +67,7 @@ namespace Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostDeleteAsync(String id, string sortOrder, string searchString,
+        public async Task<IActionResult> OnPostDeleteAsync(string id, string sortOrder, string searchString,
             int pageIndex,
             string fixedFilter, string fixedValue)
         {
@@ -80,7 +76,7 @@ namespace Pages
             return Redirect(IndexUrl.ToString());
         }
 
-        public virtual async Task<IActionResult> OnGetDetailsAsync(String id, string sortOrder, string searchString,
+        public virtual async Task<IActionResult> OnGetDetailsAsync(string id, string sortOrder, string searchString,
             int pageIndex, string fixedFilter, string fixedValue)
         {
             await GetObject(id, sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);
@@ -89,7 +85,7 @@ namespace Pages
         }
 
         public async Task<IActionResult> OnGetEditAsync(
-            String id,
+            string id,
             string sortOrder,
             string searchString,
             int pageIndex,

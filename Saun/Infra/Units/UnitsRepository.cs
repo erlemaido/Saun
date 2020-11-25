@@ -1,7 +1,6 @@
 using Data.Units;
 using Domain.Units;
 using Infra.Abstractions;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Units
 {

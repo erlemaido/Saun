@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Abstractions;
@@ -20,7 +19,7 @@ namespace Pages {
 
         public IList<TView> Items { get; private set; }
 
-        public Guid SelectedId 
+        public string SelectedId 
         {
             get;
             set;
@@ -58,7 +57,5 @@ namespace Pages {
 
             return list.Select(ToView).ToList();
         }
-
     }
-
 }

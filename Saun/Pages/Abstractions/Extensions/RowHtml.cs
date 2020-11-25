@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Pages.Common.Aids;
-using Pages.Common.Constants;
+using Pages.Abstractions.Aids;
+using Pages.Abstractions.Constants;
 
-namespace Pages.Common.Extensions
+namespace Pages.Abstractions.Extensions
 {
     public static class RowHtml {
 

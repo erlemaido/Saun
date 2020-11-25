@@ -1,6 +1,8 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Domain.Brands;
+using Domain.ProductTypes;
+using Domain.Units;
 using Facade.Abstractions;
 
 namespace Facade.Products
@@ -9,15 +11,18 @@ namespace Facade.Products
     {
         [Required]
         [DisplayName("Bränd")]
-        public String BrandId { get; set; }
+        public string BrandId { get; set; }
+        public Brand Brand { get; set; }
         
         [Required]
         [DisplayName("Tüüp")]
-        public String ProductTypeId { get; set; }
+        public string ProductTypeId { get; set; }
+        public ProductType ProductType { get; set; }
         
         [Required]
         [DisplayName("Ühik")]
-        public String UnitId { get; set; }
+        public string UnitId { get; set; }
+        public Unit Unit { get; set; }
         
         [Required]
         public string PictureUrl { get; set; }

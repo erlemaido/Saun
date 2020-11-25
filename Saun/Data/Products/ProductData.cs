@@ -1,5 +1,3 @@
-using System;
-using System.ComponentModel.DataAnnotations;
 using Data.Abstractions;
 using Data.Brands;
 using Data.ProductTypes;
@@ -9,13 +7,13 @@ namespace Data.Products
 {
     public class ProductData : DefinedEntityData
     {
-        public String BrandId { get; set; }
+        public string BrandDataId { get; set; }
         public BrandData BrandData { get; set; }
 
-        public String ProductTypeId { get; set; }
+        public string ProductTypeDataId { get; set; }
         public ProductTypeData ProductTypeData { get; set; }
 
-        public String UnitId { get; set; }
+        public string UnitDataId { get; set; }
         public UnitData UnitData { get; set; }
 
         public string PictureUrl { get; set; }

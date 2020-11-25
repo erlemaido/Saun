@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Domain.Products;
 using Facade.Abstractions;
 
 namespace Facade.Stocks
@@ -9,7 +10,8 @@ namespace Facade.Stocks
     {
         [Required]
         [DisplayName("Toode")]
-        public String ProductId { get; set; }
+        public string ProductId { get; set; }
+        public Product Product { get; set; }
         
         [Required]
         [DisplayName("Kogus")]

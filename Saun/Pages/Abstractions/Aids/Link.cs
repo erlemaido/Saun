@@ -1,6 +1,6 @@
 using System;
 
-namespace Pages.Common.Aids
+namespace Pages.Abstractions.Aids
 {
     public class Link 
     {
@@ -20,6 +20,5 @@ namespace Pages.Common.Aids
         public string DisplayName { get; }
         public Uri Url { get; }
         public string PropertyName { get; }
-
     }
 }
