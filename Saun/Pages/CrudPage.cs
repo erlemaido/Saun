@@ -26,17 +26,19 @@ namespace Pages {
             
             return true;
         }
+        
         protected internal async Task<bool> AddObject(string sortOrder, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)
         {
             SetPageValues(sortOrder, searchString, pageIndex);
             return await AddObject(fixedFilter, fixedValue).ConfigureAwait(true);
         }
+        
         protected internal async Task<bool> UpdateObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
             
             if (!ModelState.IsValid) return false;
-            await Repository.Update(ToObject(Item));
+            await Repository.Update(ToObject(Item)).ConfigureAwait(true);
 
             return true;
         }
@@ -47,6 +49,7 @@ namespace Pages {
             SetPageValues(sortOrder, searchString, pageIndex);
             return await UpdateObject(fixedFilter, fixedValue).ConfigureAwait(true);
         }
+        
         protected internal async Task GetObject(string id, string fixedFilter, 
             string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
@@ -65,6 +68,7 @@ namespace Pages {
             SetFixedFilter(fixedFilter, fixedValue);
             await Repository.Delete(id).ConfigureAwait(true);
         }
+        
         protected internal async Task DeleteObject(string id, string sortOrder, 
             string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {

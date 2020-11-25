@@ -17,10 +17,10 @@ namespace Pages.Abstractions.Aids
 
         public static string Compose(Args args) 
         {
-            var s = AddPage(args?.PageUrl, args?.ControlId.ToString()) 
+            var s = AddPage(args?.PageUrl, args?.ControlId) 
                 + AddAction(args?.Action) 
                 + AddHandler(args?.Handler) 
-                + AddItemId(args?.ItemId.ToString()) 
+                + AddItemId(args?.ItemId) 
                 + AddFixedFilter(args?.FixedFilter) 
                 + AddFixedValue(args?.FixedValue) 
                 + AddSearchString(args?.SearchString) 
