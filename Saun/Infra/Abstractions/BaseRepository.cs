@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,8 +20,8 @@ namespace Infra.Abstractions
             DbContext = context;
             DbSet = dbSet;
         }
-        protected abstract Task<TData> GetData(String id);
-        protected abstract String GetId(TDomain entity);
+        protected abstract Task<TData> GetData(string id);
+        protected abstract string GetId(TDomain entity);
         internal List<TDomain> ToDomainObjectsList(List<TData> set) => set.Select(ToDomainObject).ToList();
 
         protected internal abstract TDomain ToDomainObject(TData uniqueEntityData);
@@ -44,14 +43,14 @@ namespace Infra.Abstractions
             return ToDomainObjectsList(set);
         }
 
-        public async Task<TDomain> Get(String id)
+        public async Task<TDomain> Get(string id)
         {
             var data = await GetData(id);
             var obj = ToDomainObject(data);
             return obj;
         }
 
-        public async Task Delete(String id)
+        public async Task Delete(string id)
         {
             var data = await GetData(id);
 
@@ -77,7 +76,7 @@ namespace Infra.Abstractions
             await DbContext.SaveChangesAsync();
         }
 
-        public object GetById(String id)
+        public object GetById(string id)
         {
             return Get(id).GetAwaiter().GetResult();
         }

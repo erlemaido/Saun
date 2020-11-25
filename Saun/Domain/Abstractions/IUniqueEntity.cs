@@ -1,10 +1,9 @@
-using System;
 
 namespace Domain.Abstractions
 {
     public interface IUniqueEntity
     {
-        String Id { get; }
+        string Id { get; }
     }
 
     public interface IUniqueEntity<out TData> : IUniqueEntity

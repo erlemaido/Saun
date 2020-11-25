@@ -9,6 +9,6 @@ namespace Domain.Abstractions
 
     public interface IRepository
     {
-        object GetById(String id);
+        object GetById(string id);
     }
 }

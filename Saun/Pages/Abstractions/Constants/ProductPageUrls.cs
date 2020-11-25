@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Pages.Common.Constants
+﻿namespace Pages.Abstractions.Constants
 {
     public static class ProductPagesUrls
     {

@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Data.Abstractions;
 using Domain.Abstractions;
@@ -14,12 +13,12 @@ namespace Infra.Abstractions
         {
         }
 
-        protected override async Task<TData> GetData(String id)
+        protected override async Task<TData> GetData(string id)
         {
             return await DbSet.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        protected override String GetId(TDomain entity) => entity.Data.Id;
+        protected override string GetId(TDomain entity) => entity.Data.Id;
         
         protected override TData GetDataById(TData data) => DbSet.Find(data.Id);
     }

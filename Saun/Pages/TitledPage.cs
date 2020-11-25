@@ -67,7 +67,5 @@ namespace Pages
         }
 
         public virtual bool IsMasterDetail() => PageSubTitle != string.Empty;
-
     }
-    
 }

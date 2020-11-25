@@ -5,54 +5,54 @@ namespace Aids.Methods
 {
     public static class Safe {
 
-        private static readonly object key = new object();
+        private static readonly object Key = new object();
 
-        public static T Run<T>(Func<T> function, T valueOnExeption,
+        public static T Run<T>(Func<T> function, T valueOnException,
             bool useLock = false) => useLock
-            ? lockedRun(function, valueOnExeption)
-            : run(function, valueOnExeption);
+            ? LockedRun(function, valueOnException)
+            : Run(function, valueOnException);
         
-        public static T Run<T>(Func<T> function, Func<string, T> valueOnExeption,
-            bool useLock = false) => useLock
-            ? lockedRun(function, valueOnExeption)
-            : run(function, valueOnExeption);
+        // public static T Run<T>(Func<T> function, Func<string, T> valueOnException,
+        //     bool useLock = false) => useLock
+        //     ? LockedRun(function, valueOnException)
+        //     : Run(function, valueOnException);
         
         public static void Run(Action action, bool useLock = false) {
-            if (useLock) lockedRun(action);
-            else run(action);
+            if (useLock) LockedRun(action);
+            else Run(action);
         }
 
-        private static T lockedRun<T>(Func<T> function, T valueOnExeption) {
-            lock (key) { return run(function, valueOnExeption); }
+        private static T LockedRun<T>(Func<T> function, T valueOnException) {
+            lock (Key) { return Run(function, valueOnException); }
         }
 
-        private static T lockedRun<T>(Func<T> function, Func<string, T> valueOnExeption) {
-            lock (key) { return run(function, valueOnExeption); }
+        // private static T LockedRun<T>(Func<T> function, Func<string, T> valueOnException) {
+        //     lock (Key) { return Run(function, valueOnException); }
+        // }
+
+        private static void LockedRun(Action action) {
+            lock (Key) { Run(action); }
         }
 
-        private static void lockedRun(Action action) {
-            lock (key) { run(action); }
-        }
-
-        private static T run<T>(Func<T> function, T valueOnExeption) {
+        private static T Run<T>(Func<T> function, T valueOnException) {
             try { return function(); }
             catch (Exception e) {
                 Log.Exception(e);
 
-                return valueOnExeption;
+                return valueOnException;
             }
         }
 
-        private static T run<T>(Func<T> function, Func<string, T> valueOnExeption) {
-            try { return function(); }
-            catch (Exception e) {
-                Log.Exception(e);
+        // private static T Run<T>(Func<T> function, Func<string, T> valueOnException) {
+        //     try { return function(); }
+        //     catch (Exception e) {
+        //         Log.Exception(e);
+        //
+        //         return (valueOnException is null? default: valueOnException(e.Message))!;
+        //     }
+        // }
 
-                return (valueOnExeption is null? default: valueOnExeption(e.Message))!;
-            }
-        }
-
-        private static void run(Action action) {
+        private static void Run(Action action) {
             try { action(); }
             catch (Exception e) { Log.Exception(e); }
         }

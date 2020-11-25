@@ -1,4 +1,4 @@
-namespace Pages.Common.Constants
+namespace Pages.Abstractions.Constants
 {
     public static class Captions {
 

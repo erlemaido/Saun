@@ -1,7 +1,6 @@
 using Data.Stocks;
 using Domain.Stocks;
 using Infra.Abstractions;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Stocks
 {

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Pages.Common.Extensions
+namespace Pages.Abstractions.Extensions
 {
     public static class ShowHtml
     {

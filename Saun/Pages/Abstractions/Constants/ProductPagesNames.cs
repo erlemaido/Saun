@@ -1,5 +1,5 @@
 ﻿
-namespace Pages.Common.Constants {
+namespace Pages.Abstractions.Constants {
     public static class ProductPagesNames {
 
         public static string Catalogs => "Catalogs";

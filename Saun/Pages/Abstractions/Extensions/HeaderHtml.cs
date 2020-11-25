@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Aids.Extensions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Pages.Common.Aids;
+using Pages.Abstractions.Aids;
 
-namespace Pages.Common.Extensions
+namespace Pages.Abstractions.Extensions
 {
    public static class HeaderHtml {
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Pages.Common.Aids
+namespace Pages.Abstractions.Aids
 {
     public static class Href 
     {
