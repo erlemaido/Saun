@@ -1,4 +1,5 @@
 ﻿@page
+@using Newtonsoft.Json.Linq
 @using Pages.Abstractions.Extensions
 @model Pages.Brands.BrandsPage
 
@@ -7,7 +8,7 @@
 }
 
 <body>
-    <input type="hidden" asp-for="Item.Id" />
+    @Html.HiddenEditor(model => model.Item.Id)
     @Html.Editor(model => model.Item.Name)
     @Html.Editor(model => model.Item.Description)
 </body>

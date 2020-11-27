@@ -7,7 +7,7 @@
 }
 
 <body>
-<input type="hidden" asp-for="Model.Item.Id" />
+    @Html.HiddenEditor(model => model.Item.Id)
 @Html.Editor(model => model.Item.ProductId)
 @Html.Editor(model => model.Item.InStock)
 @Html.Editor(model => model.Item.LastUpdateTime)

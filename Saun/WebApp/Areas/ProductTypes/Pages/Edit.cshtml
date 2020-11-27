@@ -7,6 +7,6 @@
 }
 
 <body>
-    <input type="hidden" asp-for="Item.Id" />
+    @Html.HiddenEditor(model => model.Item.Id)
     @Html.Editor(model => model.Item.Name)
 </body>
