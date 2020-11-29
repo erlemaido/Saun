@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Domain.Products;
 using Facade.Abstractions;
+using Facade.Products;
 
 namespace Facade.Stocks
 {

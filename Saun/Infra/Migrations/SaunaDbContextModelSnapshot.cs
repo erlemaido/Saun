@@ -99,15 +99,12 @@ namespace Infra.Migrations
                     b.Property<DateTime>("LastUpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ProductDataId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductDataId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Stocks");
                 });
@@ -142,9 +139,9 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Data.Stocks.StockData", b =>
                 {
-                    b.HasOne("Data.Products.ProductData", "ProductData")
+                    b.HasOne("Data.Products.ProductData", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductDataId");
+                        .HasForeignKey("ProductId");
                 });
 #pragma warning restore 612, 618
         }

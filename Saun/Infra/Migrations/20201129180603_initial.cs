@@ -86,7 +86,6 @@ namespace Infra.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     ProductId = table.Column<string>(nullable: true),
-                    ProductDataId = table.Column<string>(nullable: true),
                     InStock = table.Column<int>(nullable: false),
                     LastUpdateTime = table.Column<DateTime>(nullable: false),
                     Comment = table.Column<string>(nullable: true)
@@ -95,8 +94,8 @@ namespace Infra.Migrations
                 {
                     table.PrimaryKey("PK_Stocks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Stocks_Products_ProductDataId",
-                        column: x => x.ProductDataId,
+                        name: "FK_Stocks_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -118,9 +117,9 @@ namespace Infra.Migrations
                 column: "UnitDataId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Stocks_ProductDataId",
+                name: "IX_Stocks_ProductId",
                 table: "Stocks",
-                column: "ProductDataId");
+                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
