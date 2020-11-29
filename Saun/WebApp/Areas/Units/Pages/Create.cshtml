@@ -1,0 +1,12 @@
+﻿@page
+@using Pages.Abstractions.Extensions
+@model Pages.Products.ProductsPage
+
+@{
+    Layout = "_Create";
+}
+
+<body>
+    @Html.Editor(model => model.Item.Id)
+    @Html.Editor(model => model.Item.Name)
+</body>

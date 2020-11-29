@@ -7,7 +7,7 @@ namespace Pages.Products
 {
     public class ProductsPage : ViewPage<IProductsRepository, Product, ProductView, ProductData>
     {
-        public ProductsPage(IProductsRepository repository) : base(repository, "Brändid")
+        public ProductsPage(IProductsRepository repository) : base(repository, "Tooted")
         {
         }
 

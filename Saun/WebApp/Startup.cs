@@ -1,10 +1,14 @@
 using Domain.Brands;
 using Domain.ProductTypes;
 using Domain.Stocks;
+using Domain.Products;
+using Domain.Units;
 using Infra;
 using Infra.Brands;
 using Infra.ProductTypes;
 using Infra.Stocks;
+using Infra.Products;
+using Infra.Units;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -40,6 +44,8 @@ namespace WebApp
             services.AddScoped<IBrandsRepository, BrandsRepository>();
             services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
             services.AddScoped<IStocksRepository, StocksRepository>();
+            services.AddScoped<IProductsRepository, ProductsRepository>();
+            services.AddScoped<IUnitsRepository, UnitsRepository>();
 
 
         }

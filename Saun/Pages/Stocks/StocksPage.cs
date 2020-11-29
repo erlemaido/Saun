@@ -7,7 +7,7 @@ namespace Pages.Stocks
 {
     public class StocksPage : ViewPage<IStocksRepository, Stock, StockView, StockData>
     {
-        public StocksPage(IStocksRepository repository) : base(repository, "ladu")
+        public StocksPage(IStocksRepository repository) : base(repository, "Ladu")
         {
         }
 
