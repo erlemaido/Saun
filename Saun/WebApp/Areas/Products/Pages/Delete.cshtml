@@ -9,5 +9,10 @@
 <body>
     <dl class="row">
         @Html.Show(model => model.Item.Name)
+        @Html.Show(model => model.Item.Brand)
+        @Html.Show(model => model.Item.ProductType)
+        @Html.Show(model => model.Item.Unit)
+        @Html.Show(model => model.Item.PictureUrl)
+        @Html.Show(model => model.Item.Price)
     </dl>
 </body>
