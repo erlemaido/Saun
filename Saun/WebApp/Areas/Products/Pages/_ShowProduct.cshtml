@@ -1,0 +1,12 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Products.ProductsPage
+
+<body>
+    @Html.Show(m => m.Item.Name)
+    @Html.Show(m => m.Item.BrandId)
+    @Html.Show(m => m.Item.ProductTypeId)
+    @Html.Show(m => m.Item.UnitId)
+    @Html.Show(m => m.Item.Description)
+    @Html.Show(model => model.Item.PictureUrl)
+    @Html.Show(model => model.Item.Price)
+</body>

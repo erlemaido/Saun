@@ -5,8 +5,7 @@ namespace Facade.Abstractions
 {
     public abstract class UniqueEntityView
     {
-        [Required]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
 
         public string GetId() => Id;
     }

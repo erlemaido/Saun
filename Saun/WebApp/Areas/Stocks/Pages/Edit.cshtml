@@ -1,15 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Stocks.StocksPage
+@model Sauna.Pages.Stocks.StocksPage
 
 @{
     Layout = "_Edit";
 }
 
-<body>
-    @Html.HiddenEditor(model => model.Item.Id)
-    @Html.Editor(model => model.Item.ProductId)
-    @Html.Editor(model => model.Item.InStock)
-    @Html.Editor(model => model.Item.LastUpdateTime)
-    @Html.Editor(model => model.Item.Comment)
-</body>
+<partial name ="_EditStock"/>

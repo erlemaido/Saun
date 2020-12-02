@@ -1,14 +1,7 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Brands.BrandsPage
+@model Sauna.Pages.Brands.BrandsPage
 
 @{
     Layout = "_Create";
 }
-
-<body>
-<input type="hidden" asp-for="Model.Item.Id"/>
-@Html.Editor(model => model.Item.Name)
-@Html.Editor(model => model.Item.Description)
-
-</body>
+<partial name ="_EditBrand"/>

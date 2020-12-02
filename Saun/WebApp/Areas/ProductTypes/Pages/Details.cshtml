@@ -1,14 +1,10 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.ProductTypes.ProductTypesPage
+@model Sauna.Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Details";
 }
 
-<body>
-    @Html.Show(model => model.Item.Name)
-</body>
+<partial name="_ShowProductType" />
 
-@section Details {
-}
+@section Details {}

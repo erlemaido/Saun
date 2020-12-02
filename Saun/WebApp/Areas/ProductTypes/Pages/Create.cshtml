@@ -1,12 +1,7 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.ProductTypes.ProductTypesPage
+@model Sauna.Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Create";
 }
-
-<body>
-    <input type="hidden" asp-for="Model.Item.Id" />
-    @Html.Editor(model => model.Item.Name)
-</body>
+<partial name ="_EditProductType"/>

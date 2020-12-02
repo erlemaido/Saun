@@ -1,8 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Aids
-@using Pages.Abstractions.Constants
-@using Pages.Abstractions.Extensions
-@model Pages.ProductTypes.ProductTypesPage
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Index";
@@ -36,7 +36,6 @@
                         Model.FixedValue,
                         Html.DisplayFor(modelItem => item.Name)
                         )
-
                 </tr>
             }
         </tbody>

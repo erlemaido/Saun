@@ -3,6 +3,7 @@ using Data.Products;
 using Data.ProductTypes;
 using Data.Stocks;
 using Data.Units;
+using Infra;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +16,15 @@ namespace WebApp.Data
         {
         }
 
-        public DbSet<BrandData> Brands { get; set; }
-        public DbSet<ProductData> Products { get; set; }
-        public DbSet<ProductTypeData> ProductTypes { get; set; }
-        public DbSet<StockData> Stocks { get; set; }
-        public DbSet<UnitData> Units { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            InitializeTables(builder);
+        }
+
+        internal void InitializeTables(ModelBuilder builder)
+        {
+            SaunaDbContext.InitializeTables(builder);
+        }
     }
 }

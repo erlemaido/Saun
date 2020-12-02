@@ -1,4 +1,4 @@
-namespace Pages.Abstractions.Constants
+namespace Sauna.Pages.Abstractions.Constants
 {
     public static class Captions {
 

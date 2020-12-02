@@ -1,6 +1,6 @@
 using System;
 
-namespace Pages.Abstractions.Aids
+namespace Sauna.Pages.Abstractions.Aids
 {
     public sealed class Args {
 

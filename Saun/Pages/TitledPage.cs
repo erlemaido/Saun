@@ -6,7 +6,7 @@ using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Pages
+namespace Sauna.Pages
 {
     public abstract class TitledPage<TRepository, TDomain, TView, TData> :
         PagedPage<TRepository, TDomain, TView, TData>
@@ -18,9 +18,9 @@ namespace Pages
 
         public string PageTitle { get; }
 
-        public string PageSubTitle => FixedValue is null ? string.Empty : $"{PageSubtitle()}";
+        public string PageSubtitle => FixedValue is null ? string.Empty : $"{GetPageSubtitle()}";
 
-        protected internal virtual string PageSubtitle() => string.Empty;
+        protected internal virtual string GetPageSubtitle() => string.Empty;
 
         public Uri PageUrl => CreatePageUrl();
         public Uri CreationUrl => CreateCreationUrl();
@@ -51,21 +51,21 @@ namespace Pages
                 ? new List<SelectListItem>()
                 : condition is null ?
                     items
-                    .Select(m => new SelectListItem(m.Data.Name, m.Data.Id.ToString()))
+                    .Select(m => new SelectListItem(m.Data.Name, m.Data.Id))
                     .ToList() :
                     items
                     .Where(condition)
-                    .Select(m => new SelectListItem(m.Data.Name, m.Data.Id.ToString()))
+                    .Select(m => new SelectListItem(m.Data.Name, m.Data.Id))
                     .ToList();
 
             return list;
         }
 
-        protected internal static string ItemName(IEnumerable<SelectListItem> list, Guid id)
+        protected internal static string ItemName(IEnumerable<SelectListItem> list, string id)
         {
-            return (from selectListItem in list where selectListItem.Value == id.ToString() select selectListItem.Text).FirstOrDefault();
+            return (from selectListItem in list where selectListItem.Value == id select selectListItem.Text).FirstOrDefault();
         }
 
-        public virtual bool IsMasterDetail() => PageSubTitle != string.Empty;
+        public virtual bool IsMasterDetail() => PageSubtitle != string.Empty;
     }
 }

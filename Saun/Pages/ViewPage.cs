@@ -4,7 +4,7 @@ using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Pages
+namespace Sauna.Pages
 {
     public abstract class ViewPage<TRepository, TDomain, TView, TData> :
         TitledPage<TRepository, TDomain, TView, TData>

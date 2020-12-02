@@ -6,7 +6,7 @@ using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Pages {
+namespace Sauna.Pages {
 
     public abstract class BasePage<TRepository, TDomain, TView, TData> :
         PageModel
@@ -90,7 +90,7 @@ namespace Pages {
             where TMasterView : UniqueEntityView
         {
 
-            LoadDetails(list, data,item?.GetId().ToString(), filter, create);
+            LoadDetails(list, data,item?.GetId(), filter, create);
         }
 
         internal static void LoadDetails<TDetailObj, TDetailView>(IList<TDetailView> list,
