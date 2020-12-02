@@ -3,7 +3,7 @@ using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Pages {
+namespace Sauna.Pages {
 
     public abstract class CrudPage<TRepository, TDomain, TView, TData> :
         BasePage<TRepository, TDomain, TView, TData>
@@ -16,7 +16,7 @@ namespace Pages {
         [BindProperty]
         public TView Item { get; set; }
         
-        public string ItemId => Item?.GetId() ?? string.Empty;
+        public string ItemId => Item.GetId() ?? string.Empty;
 
         protected internal async Task<bool> AddObject(string fixedFilter, string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);

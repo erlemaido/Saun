@@ -1,12 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.ProductTypes.ProductTypesPage
+@model Sauna.Pages.ProductTypes.ProductTypesPage
 
 @{
     Layout = "_Edit";
 }
 
-<body>
-    @Html.HiddenEditor(model => model.Item.Id)
-    @Html.Editor(model => model.Item.Name)
-</body>
+<partial name ="_EditProductType"/>

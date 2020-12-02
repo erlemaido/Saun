@@ -3,7 +3,7 @@ using Data.Abstractions;
 using Domain.Abstractions;
 using Facade.Abstractions;
 
-namespace Pages
+namespace Sauna.Pages
 {
     public abstract class ViewsPage<TRepository, TDomain, TView, TData> :
         ViewPage<TRepository, TDomain, TView, TData>

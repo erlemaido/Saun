@@ -1,4 +1,5 @@
-﻿using Aids.Methods;
+﻿using System;
+using Aids.Methods;
 using Data.Brands;
 using Domain.Brands;
 
@@ -9,7 +10,14 @@ namespace Facade.Brands
         public static Brand Create(BrandView view)
         {
             var catalogItemBrandData = new BrandData();
+            // {
+            //     Id = view.Id ?? Guid.NewGuid().ToString(),
+            //     Description = view.Description,
+            //     Name = view.Name
+            // };
             Copy.Members(view, catalogItemBrandData);
+            
+            
             
             return new Brand(catalogItemBrandData);
         }

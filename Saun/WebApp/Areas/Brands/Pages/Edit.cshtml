@@ -1,14 +1,8 @@
 ﻿@page
-@using Newtonsoft.Json.Linq
-@using Pages.Abstractions.Extensions
-@model Pages.Brands.BrandsPage
+@model Sauna.Pages.Brands.BrandsPage
 
 @{
     Layout = "_Edit";
 }
 
-<body>
-    @Html.HiddenEditor(model => model.Item.Id)
-    @Html.Editor(model => model.Item.Name)
-    @Html.Editor(model => model.Item.Description)
-</body>
+    <partial name ="_EditBrand"/>

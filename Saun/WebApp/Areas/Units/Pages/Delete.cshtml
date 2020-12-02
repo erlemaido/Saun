@@ -1,13 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Units.UnitsPage
+@model Sauna.Pages.Units.UnitsPage
 
 @{
     Layout = "_Delete";
 }
 
-<body>
-    <dl class="row">
-        @Html.Show(model => model.Item.Name)
-    </dl>
-</body>
+<partial name="_ShowUnit"/>

@@ -1,0 +1,8 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Brands.BrandsPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+    @Html.Editor(m => m.Item.Name)
+    @Html.Editor(m => m.Item.Description)
+</body>

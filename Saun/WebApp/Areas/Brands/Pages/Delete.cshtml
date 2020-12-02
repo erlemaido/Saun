@@ -1,14 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Brands.BrandsPage
+@model Sauna.Pages.Brands.BrandsPage
 
 @{
     Layout = "_Delete";
 }
 
-<body>
-<dl class="row">
-    @Html.Show(model => model.Item.Name)
-    @Html.Show(model => model.Item.Description)
-</dl>
-</body>
+<partial name="_ShowBrand"/>

@@ -1,19 +1,10 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Stocks.StocksPage
+@model Sauna.Pages.Stocks.StocksPage
 
 @{
     Layout = "_Details";
 }
 
-<body>
-    <dl class="row">
-        @Html.Show(model => model.Item.ProductId)
-        @Html.Show(model => model.Item.InStock)
-        @Html.Show(model => model.Item.LastUpdateTime)
-        @Html.Show(model => model.Item.Comment)
+<partial name="_ShowStock" />
 
-    </dl>
-</body>
-@section Details {
-}
+@section Details {}

@@ -102,9 +102,6 @@ namespace WebApp.Migrations
                     b.Property<string>("ProductDataId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductDataId");
@@ -116,6 +113,9 @@ namespace WebApp.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -328,11 +328,11 @@ namespace WebApp.Migrations
             modelBuilder.Entity("Data.Products.ProductData", b =>
                 {
                     b.HasOne("Data.Brands.BrandData", "BrandData")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("BrandDataId");
 
                     b.HasOne("Data.ProductTypes.ProductTypeData", "ProductTypeData")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("ProductTypeDataId");
 
                     b.HasOne("Data.Units.UnitData", "UnitData")

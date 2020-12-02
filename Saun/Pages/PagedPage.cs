@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Domain.Abstractions;
 using Facade.Abstractions;
 
-namespace Pages {
+namespace Sauna.Pages {
 
     public abstract class PagedPage<TRepository, TDomain, TView, TData> :
         CrudPage<TRepository, TDomain, TView, TData>

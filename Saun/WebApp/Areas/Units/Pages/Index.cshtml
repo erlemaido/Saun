@@ -1,8 +1,8 @@
 ﻿@page
-@using Pages.Abstractions.Aids
-@using Pages.Abstractions.Constants
-@using Pages.Abstractions.Extensions
-@model Pages.Units.UnitsPage
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Units.UnitsPage
 
 @{
     Layout = "_Index";
@@ -17,7 +17,8 @@
     <table class="table">
         <thead>
             @Html.Header(
-                new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page))
+                new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Code), Model.GetSortString(m => m.Code, page))
                 )
         </thead>
 
@@ -34,9 +35,9 @@
                         Model.PageIndex,
                         Model.FixedFilter,
                         Model.FixedValue,
-                        Html.DisplayFor(modelItem => item.Name)
+                        Html.DisplayFor(modelItem => item.Name),
+                        Html.DisplayFor(modelItem => item.Code)
                         )
-
                 </tr>
             }
         </tbody>

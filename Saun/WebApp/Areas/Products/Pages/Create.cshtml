@@ -1,17 +1,7 @@
 ﻿@page
-@using Pages.Abstractions.Extensions
-@model Pages.Products.ProductsPage
+@model Sauna.Pages.Products.ProductsPage
 
 @{
     Layout = "_Create";
 }
-
-<body>
-    <input type="hidden" asp-for="Model.Item.Id" />
-    @Html.Editor(model => model.Item.Name)
-    @Html.EditControlsForDropDown(model => Model.Item.BrandId, Model.Brands)
-    @Html.EditControlsForDropDown(model => Model.Item.ProductTypeId, Model.ProductTypes)
-    @Html.EditControlsForDropDown(model => Model.Item.UnitId, Model.Units)
-    @Html.Editor(model => model.Item.PictureUrl)
-    @Html.Editor(model => model.Item.Price)
-</body>
+<partial name ="_EditProduct"/>

@@ -2,12 +2,14 @@
 using Data.Brands;
 using Domain.Brands;
 using Facade.Brands;
+using Microsoft.AspNetCore.Mvc;
+using Sauna.Pages.Abstractions.Constants;
 
-namespace Pages.Brands
+namespace Sauna.Pages.Brands
 {
     public class BrandsPage : ViewPage<IBrandsRepository, Brand, BrandView, BrandData>
     {
-        public BrandsPage(IBrandsRepository repository) : base(repository, "Brändid")
+        public BrandsPage(IBrandsRepository repository) : base(repository, PagesNames.Brands)
         {
         }
 
@@ -15,6 +17,16 @@ namespace Pages.Brands
         
         protected internal override BrandView ToView(Brand obj) => BrandViewFactory.Create(obj);
 
-        protected internal override Uri CreatePageUrl() => new Uri("/Brands", UriKind.Relative);
+        protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Brands, UriKind.Relative);
+        
+        public override IActionResult OnGetCreate(
+            string sortOrder, string searchString, int? pageIndex,
+            string fixedFilter, string fixedValue, int? switchOfCreate)
+        {
+            Item = new BrandView() {Id = Guid.NewGuid().ToString()};
+
+            return base.OnGetCreate(sortOrder, searchString, pageIndex,
+                fixedFilter, fixedValue, switchOfCreate);
+        }
     }
 }
