@@ -18,9 +18,9 @@
         <thead>
             @Html.Header(
                 new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.BrandId), Model.GetSortString(m => m.BrandDataId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeDataId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitDataId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.BrandId), Model.GetSortString(m => m.BrandId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.Description), Model.GetSortString(m => m.Description, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PictureUrl), Model.GetSortString(m => m.PictureUrl, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.Price), Model.GetSortString(m => m.Price, page))
@@ -41,9 +41,9 @@
                     Model.FixedFilter,
                     Model.FixedValue,
                     Html.DisplayFor(modelItem => item.Name),
-                    Html.DisplayFor(modelItem => item.Brand.Name),
-                    Html.DisplayFor(modelItem => item.ProductTypeId),
-                    Html.DisplayFor(modelItem => item.UnitId),
+                    Html.Raw(Model.GetBrandName(item.BrandId)),
+                    Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
+                    Html.Raw(Model.GetUnitName(item.UnitId)),
                     Html.DisplayFor(modelItem => item.Description),
                     Html.DisplayFor(modelItem => item.PictureUrl),
                     Html.DisplayFor(modelItem => item.Price))

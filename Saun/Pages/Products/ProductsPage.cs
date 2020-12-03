@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aids.Reflection;
 using Data.Brands;
 using Data.Products;
 using Data.ProductTypes;
@@ -8,6 +9,7 @@ using Domain.Brands;
 using Domain.Products;
 using Domain.ProductTypes;
 using Domain.Units;
+using Facade.Brands;
 using Facade.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -29,70 +31,41 @@ namespace Sauna.Pages.Products
         {
             Brands = NewItemsList<Brand, BrandData>(brandsRepository);
             ProductTypes = NewItemsList<ProductType, ProductTypeData>(productTypesRepository);
-            Units = NewItemsList<Unit, UnitData>(unitsRepository);
+            Units = NewUnitsList<Unit, UnitData>(unitsRepository);
         }
 
-        public string BrandName(string id) => ItemName(Brands, id);
+        public string GetBrandName(string id) => GetItemName(Brands, id);
 
-        public string ProductTypeName(string id) => ItemName(ProductTypes, id);
-
-        public string UnitName(string id) => ItemName(Units, id);
+        public string GetProductTypeName(string id) => GetItemName(ProductTypes, id);
+        
+        public string GetUnitName(string id) => GetItemName(Units, id);
+        
 
         protected internal override Product ToObject(ProductView view) => ProductViewFactory.Create(view);
 
         protected internal override ProductView ToView(Product obj) => ProductViewFactory.Create(obj);
 
         protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Products, UriKind.Relative);
-        
-        public string GetBrandName(string brandId)
-        {
-            foreach (var m in Brands)
-            {
-                if (m.Value == brandId)
-                    return m.Text;
-            }
 
-            return "Määramata";
-        }
-        
-        public string GetProductTypeName(string productTypeId)
-        {
-            foreach (var m in ProductTypes)
-            {
-                if (m.Value == productTypeId)
-                    return m.Text;
-            }
 
-            return "Määramata";
-        }
+        private bool IsBrand() => FixedFilter == GetMember.Name<ProductView>(x => x.BrandId);
         
-        public string GetUnitName(string unitId)
-        {
-            foreach (var m in Units)
-            {
-                if (m.Value == unitId)
-                    return m.Text;
-            }
+        private bool IsProductType() => FixedFilter == GetMember.Name<ProductView>(x => x.ProductTypeId);
 
-            return "Määramata";
-        }
-        
         protected internal override string GetPageSubtitle()
         {
-            if (!GetBrandName(FixedValue).Equals("Määramata"))
+            if (IsBrand())
             {
-                return FixedValue is null ? base.GetPageSubtitle() : $"{GetBrandName(FixedValue)}";
-            } 
-            if (!GetProductTypeName(FixedValue).Equals("Määramata"))
-            {
-                return FixedValue is null ? base.GetPageSubtitle() : $"{GetProductTypeName(FixedValue)}";
+                return $"{GetBrandName(FixedValue)}";
             }
-            if (!GetUnitName(FixedValue).Equals("Määramata"))
+            else if (IsProductType())
             {
-                return FixedValue is null ? base.GetPageSubtitle() : $"{GetUnitName(FixedValue)}";
+                return $"{GetProductTypeName(FixedValue)}";
             }
-
-            return base.GetPageSubtitle();
+            else
+            {
+                return "Määramata alalehe pealkiri";
+            }
         }
         
         public override IActionResult OnGetCreate(

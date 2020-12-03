@@ -43,11 +43,10 @@ namespace WebApp
             services.AddRazorPages();
             services.AddScoped<IBrandsRepository, BrandsRepository>();
             services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
-            services.AddScoped<IStocksRepository, StocksRepository>();
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IUnitsRepository, UnitsRepository>();
-
-
+            services.AddScoped<IStocksRepository, StocksRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
