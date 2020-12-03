@@ -17,7 +17,7 @@
 <table class="table">
     <thead>
     @Html.Header(
-        new Link(Html.DisplayNameFor(m => m.Item.ProductId), Model.GetSortString(m => m.ProductDataId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.ProductId), Model.GetSortString(m => m.ProductId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.InStock), Model.GetSortString(m=> m.InStock, page)),
         new Link(Html.DisplayNameFor(m => m.Item.LastUpdateTime), Model.GetSortString(m=> m.LastUpdateTime, page)),
         new Link(Html.DisplayNameFor(m => m.Item.Comment), Model.GetSortString(m => m.Comment, page))
@@ -37,11 +37,10 @@
                 Model.PageIndex,
                 Model.FixedFilter,
                 Model.FixedValue,
-                Html.DisplayFor(modelItem => item.ProductId),
+                Html.Raw(Model.GetProductName(item.ProductId)),
                 Html.DisplayFor(modelItem => item.InStock),
                 Html.DisplayFor(modelItem => item.LastUpdateTime),
                 Html.DisplayFor(modelItem => item.Comment))
-                )
         </tr>
     }
     </tbody>

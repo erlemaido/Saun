@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aids.Reflection;
 using Data.Products;
 using Data.Stocks;
 using Domain.Products;
@@ -20,15 +21,15 @@ namespace Sauna.Pages.Stocks
         {
             Products = NewItemsList<Product, ProductData>(productsRepository);
         }
-        public string ProductName(string id) => ItemName(Products, id);
-
+        public string GetProductName(string id) => GetItemName(Products, id);
+        
         protected internal override Stock ToObject(StockView view) => StockViewFactory.Create(view);
 
         protected internal override StockView ToView(Stock obj) => StockViewFactory.Create(obj);
 
         protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Stock, UriKind.Relative);
         
-        protected internal override string GetPageSubtitle() => $"{ProductName(FixedValue)}";
+        protected internal override string GetPageSubtitle() => $"{GetProductName(FixedValue)}";
         
         public override IActionResult OnGetCreate(
             string sortOrder, string searchString, int? pageIndex,

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data.Abstractions;
+using Data.Units;
 using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -60,8 +61,28 @@ namespace Sauna.Pages
 
             return list;
         }
+        
+        protected internal static IEnumerable<SelectListItem> NewUnitsList<TTDomain, TTData>(IRepository<TTDomain> repository,
+            Func<TTDomain, bool> condition = null)
+            where TTDomain : IUniqueEntity<TTData>
+            where TTData : UnitData, new()
+        {
+            var items = repository?.Get().GetAwaiter().GetResult();
+            var list = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                        .Select(m => new SelectListItem(m.Data.Code, m.Data.Id))
+                        .ToList() :
+                    items
+                        .Where(condition)
+                        .Select(m => new SelectListItem(m.Data.Code, m.Data.Id))
+                        .ToList();
 
-        protected internal static string ItemName(IEnumerable<SelectListItem> list, string id)
+            return list;
+        }
+
+        protected internal static string GetItemName(IEnumerable<SelectListItem> list, string id)
         {
             return (from selectListItem in list where selectListItem.Value == id select selectListItem.Text).FirstOrDefault();
         }
