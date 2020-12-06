@@ -31,21 +31,21 @@
   <Class Name="Data.Units.UnitData" Collapsed="true">
     <Position X="10.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\UnitData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Data.Stocks.StockData" Collapsed="true">
     <Position X="12.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAEAAAAAAAAAAAAAAAAAAAAAAACAABAAAAQAAA=</HashCode>
+      <HashCode>EAACAAAEAAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAA=</HashCode>
       <FileName>Stocks\StockData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Data.Products.ProductData" Collapsed="true">
     <Position X="3.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAQACAAAAQAAAAAAAAAAgAAAAAEAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAQAQAQAAAAIAAAAAAAAAAAAAAAAAAEAAARAAA=</HashCode>
       <FileName>Products\ProductData.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -54,6 +54,34 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Brands\BrandData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DeliveryType.DeliveryTypeData" Collapsed="true">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeliveryType\DeliveryTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DeliveryStatus.DeliveryStatusData" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeliveryStatus\DeliveryStatusData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DeliveryCountry.DeliveryCountryData" Collapsed="true">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeliveryCountry\DeliveryCountryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DeliveryCity.DeliveryCityData" Collapsed="true">
+    <Position X="3.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>DeliveryCity\DeliveryCityData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
