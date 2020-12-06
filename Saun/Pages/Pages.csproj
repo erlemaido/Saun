@@ -19,4 +19,11 @@
       <ProjectReference Include="..\Infra\Infra.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Reviews\" />
+      <Folder Include="Roles\" />
+      <Folder Include="UserRoles\" />
+      <Folder Include="Users\" />
+    </ItemGroup>
+
 </Project>

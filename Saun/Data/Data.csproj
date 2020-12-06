@@ -13,4 +13,11 @@
       <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="UserRoles\" />
+      <Folder Include="Roles\" />
+      <Folder Include="Reviews\" />
+      <Folder Include="Users\" />
+    </ItemGroup>
+
 </Project>
