@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Facade.Abstractions
+﻿namespace Facade.Abstractions
 {
     public abstract class UniqueEntityView
     {

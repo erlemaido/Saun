@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.DeliveryCountry;
+﻿using Data.DeliveryCountry;
 using Domain.Abstractions;
 
 namespace Domain.DeliveryCountries

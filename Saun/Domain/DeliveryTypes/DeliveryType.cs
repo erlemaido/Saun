@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.DeliveryType;
+﻿using Data.DeliveryType;
 using Domain.Abstractions;
 
 namespace Domain.DeliveryTypes

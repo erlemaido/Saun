@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Aids.Reflection;
 using Data.Products;
 using Data.Stocks;
 using Domain.Products;
 using Domain.Stocks;
-using Facade.Brands;
 using Facade.Stocks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
