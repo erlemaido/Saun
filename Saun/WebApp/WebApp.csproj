@@ -39,11 +39,4 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Reviews\" />
-    <Folder Include="Areas\Roles\" />
-    <Folder Include="Areas\UserRoles\" />
-    <Folder Include="Areas\Users\" />
-  </ItemGroup>
-
 </Project>

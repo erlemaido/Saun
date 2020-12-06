@@ -17,10 +17,6 @@
 
     <ItemGroup>
       <Folder Include="Products\" />
-      <Folder Include="Reviews\" />
-      <Folder Include="Roles\" />
-      <Folder Include="UserRoles\" />
-      <Folder Include="Users\" />
     </ItemGroup>
 
 </Project>

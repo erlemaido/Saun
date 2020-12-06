@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Data.Brands;
 using Data.Products;
 using Data.ProductTypes;
+using Data.Brands;
 using Data.Stocks;
 using Data.Units;
 

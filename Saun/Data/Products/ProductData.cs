@@ -1,6 +1,6 @@
 using Data.Abstractions;
-using Data.Brands;
 using Data.ProductTypes;
+using Data.Reviews;
 using Data.Units;
 
 namespace Data.Products
@@ -8,7 +8,7 @@ namespace Data.Products
     public class ProductData : DefinedEntityData
     {
         public string BrandId { get; set; }
-        public BrandData Brand { get; set; }
+        public ReviewData Brand { get; set; }
 
         public string ProductTypeId { get; set; }
         public ProductTypeData ProductType { get; set; }

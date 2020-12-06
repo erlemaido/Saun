@@ -16,11 +16,4 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Reviews\" />
-      <Folder Include="Roles\" />
-      <Folder Include="UserRoles\" />
-      <Folder Include="Users\" />
-    </ItemGroup>
-
 </Project>
