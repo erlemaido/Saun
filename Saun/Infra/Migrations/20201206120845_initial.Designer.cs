@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(SaunaDbContext))]
-    [Migration("20201203150105_InitialDbCreation")]
-    partial class InitialDbCreation
+    [Migration("20201206120845_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
