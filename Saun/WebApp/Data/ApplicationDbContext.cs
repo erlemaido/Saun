@@ -1,9 +1,4 @@
-﻿using Data.Brands;
-using Data.Products;
-using Data.ProductTypes;
-using Data.Stocks;
-using Data.Units;
-using Infra;
+﻿using Infra;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

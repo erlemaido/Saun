@@ -1,7 +1,6 @@
 ﻿using System;
 using Data.ProductTypes;
 using Domain.ProductTypes;
-using Facade.Brands;
 using Facade.ProductTypes;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;

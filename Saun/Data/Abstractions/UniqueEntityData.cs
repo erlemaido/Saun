@@ -1,6 +1,4 @@
 
-using System;
-
 namespace Data.Abstractions
 {
     public class UniqueEntityData

@@ -8,6 +8,8 @@
         public static string Products => "/Products";
         public static string Units => "/Units";
         public static string Stock => "/Stocks";
+        public static string DeliveryCountries => "/DeliveryCountries";
+
 
     }
 }

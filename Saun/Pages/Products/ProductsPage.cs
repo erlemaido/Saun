@@ -9,7 +9,6 @@ using Domain.Brands;
 using Domain.Products;
 using Domain.ProductTypes;
 using Domain.Units;
-using Facade.Brands;
 using Facade.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
