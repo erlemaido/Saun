@@ -2,7 +2,7 @@
 
 namespace Domain.DeliveryCountries
 {
-    public interface IDeliveryCountries : IRepository<DeliveryCountry>
+    public interface IDeliveryCountriesRepository : IRepository<DeliveryCountry>
     {
     }
 }

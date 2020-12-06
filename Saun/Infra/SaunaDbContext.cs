@@ -1,4 +1,8 @@
 using Data.Brands;
+using Data.DeliveryCity;
+using Data.DeliveryCountry;
+using Data.DeliveryStatus;
+using Data.DeliveryType;
 using Data.Products;
 using Data.ProductTypes;
 using Data.Stocks;
@@ -16,7 +20,10 @@ namespace Infra
         public DbSet<ProductTypeData> ProductTypes { get; set; }
         public DbSet<StockData> Stocks { get; set; }
         public DbSet<UnitData> Units { get; set; }
-
+        public DbSet<DeliveryCountryData> Countries { get; set; }
+        public DbSet<DeliveryTypeData> DeliveryTypes { get; set; }
+        public DbSet<DeliveryCityData> Cities { get; set; }
+        public DbSet<DeliveryStatusData> Statuses { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -30,6 +37,11 @@ namespace Infra
             builder.Entity<UnitData>().ToTable(nameof(Units));
             builder.Entity<ProductData>().ToTable(nameof(Products));
             builder.Entity<StockData>().ToTable(nameof(Stocks));
+            builder.Entity<DeliveryTypeData>().ToTable(nameof(DeliveryTypes));
+            builder.Entity<DeliveryCountryData>().ToTable(nameof(Countries));
+            builder.Entity<DeliveryCityData>().ToTable(nameof(Cities));
+            builder.Entity<DeliveryStatusData>().ToTable(nameof(Statuses));
+
         }
     }
 }
