@@ -1,10 +1,12 @@
 using Domain.Brands;
+using Domain.DeliveryCountries;
 using Domain.ProductTypes;
 using Domain.Stocks;
 using Domain.Products;
 using Domain.Units;
 using Infra;
 using Infra.Brands;
+using Infra.DeliveryCountries;
 using Infra.ProductTypes;
 using Infra.Stocks;
 using Infra.Products;
@@ -46,7 +48,8 @@ namespace WebApp
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IUnitsRepository, UnitsRepository>();
             services.AddScoped<IStocksRepository, StocksRepository>();
-            
+            services.AddScoped<IDeliveryCountriesRepository, DeliveryCountriesRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

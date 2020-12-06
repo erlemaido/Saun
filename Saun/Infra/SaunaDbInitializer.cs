@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data.Brands;
+using Data.DeliveryCountry;
 using Data.Products;
 using Data.ProductTypes;
 using Data.Stocks;
@@ -224,7 +225,37 @@ namespace Infra
             Comment = "Tuleb juurde tellida",
             LastUpdateTime = System.DateTime.Now
         };
-        
+
+        internal static DeliveryCountryData estonia = new DeliveryCountryData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Estonia"
+
+        };
+        internal static DeliveryCountryData russia = new DeliveryCountryData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Russia"
+
+        };
+        internal static DeliveryCountryData USA = new DeliveryCountryData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "USA"
+
+        };
+        internal static DeliveryCountryData latvia = new DeliveryCountryData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Latvia"
+
+        };
+        internal static DeliveryCountryData china = new DeliveryCountryData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "China"
+
+        };
         internal static List<BrandData> Brands => new List<BrandData>
         {
             adidas, nike, gucci, balenciaga, evian, lenovo, samsung
@@ -234,7 +265,10 @@ namespace Infra
         {
             mug, coat, laptop, sneakers, sweatshirt, water
         };
-        
+        internal static List<DeliveryCountryData> Countries => new List<DeliveryCountryData>
+        {
+            estonia,USA,latvia,russia,china
+        };
         internal static List<UnitData> Units => new List<UnitData>
         {
             kilogram, gram, liter, piece, meter
@@ -256,7 +290,12 @@ namespace Infra
             db.Brands.AddRange(Brands);
             db.SaveChanges();
         }
-        
+        private static void InitializeDeliveryCountries(SaunaDbContext db)
+        {
+            if (db.Countries.Count() != 0) return;
+            db.Countries.AddRange(Countries);
+            db.SaveChanges();
+        }
         private static void InitializeProductTypes(SaunaDbContext db)
         {
             if (db.ProductTypes.Count() != 0) return;
@@ -292,6 +331,7 @@ namespace Infra
             InitializeUnits(db);
             InitializeProducts(db);
             InitializeStocks(db);
+            InitializeDeliveryCountries(db);
         }
         
     }

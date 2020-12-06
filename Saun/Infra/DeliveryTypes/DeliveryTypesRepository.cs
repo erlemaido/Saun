@@ -15,6 +15,5 @@ namespace Infra.DeliveryTypes
        {
        }
    }
-    {
-    }
+    
 }
