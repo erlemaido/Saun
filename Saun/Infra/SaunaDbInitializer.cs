@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Data.Brands;
 using Data.DeliveryCountry;
+using Data.DeliveryType;
 using Data.Products;
 using Data.ProductTypes;
 using Data.Stocks;
@@ -121,7 +122,26 @@ namespace Infra
             Id = Guid.NewGuid().ToString(),
             Name = "Mantel"
         };
-        
+        internal static DeliveryTypeData UPS = new DeliveryTypeData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "UPS"
+        };
+        internal static DeliveryTypeData smartpost = new DeliveryTypeData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "SmartPost"
+        };
+        internal static DeliveryTypeData standard = new DeliveryTypeData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Tulen ise järele"
+        };
+        internal static DeliveryTypeData parcelMachine = new DeliveryTypeData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Postiautomaat"
+        };
         internal static UnitData kilogram = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -283,7 +303,16 @@ namespace Infra
         {
             adidasOriginalsSneakersStock, evian500mlWaterStock, thinkpadP51Stock
         };
-
+        internal static List<DeliveryTypeData> DeliveryTypes = new List<DeliveryTypeData>
+        {
+            UPS,standard,parcelMachine,smartpost
+        };
+        private static void InitializeDeliveryTypes(SaunaDbContext db)
+        {
+            if (db.DeliveryTypes.Count() != 0) return;
+            db.DeliveryTypes.AddRange(DeliveryTypes);
+            db.SaveChanges();
+        }
         private static void InitializeBrands(SaunaDbContext db)
         {
             if (db.Brands.Count() != 0) return;
@@ -332,6 +361,7 @@ namespace Infra
             InitializeProducts(db);
             InitializeStocks(db);
             InitializeDeliveryCountries(db);
+            InitializeDeliveryTypes(db);
         }
         
     }
