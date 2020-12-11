@@ -10,6 +10,8 @@
         public static string Stock => "/Stocks";
         public static string DeliveryCountries => "/DeliveryCountries";
         public static string DeliveryTypes => "/DeliveryTypes";
+        public static string DeliveryStatus => "/DeliveryStatus";
+
 
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Data.Brands;
 using Data.DeliveryCountry;
+using Data.DeliveryStatus;
 using Data.DeliveryType;
 using Data.Products;
 using Data.ProductTypes;
@@ -245,7 +246,36 @@ namespace Infra
             Comment = "Tuleb juurde tellida",
             LastUpdateTime = System.DateTime.Now
         };
+        internal static DeliveryStatusData infoReceived = new DeliveryStatusData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Info Received"
 
+        };
+        internal static DeliveryStatusData inTransit = new DeliveryStatusData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "In Transit"
+
+        };
+        internal static DeliveryStatusData outForDelivery = new DeliveryStatusData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Out for Delivery"
+
+        };
+        internal static DeliveryStatusData pickUp = new DeliveryStatusData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Available for Pickup"
+
+        };
+        internal static DeliveryStatusData delivered = new DeliveryStatusData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Delivered"
+
+        };
         internal static DeliveryCountryData estonia = new DeliveryCountryData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -289,6 +319,10 @@ namespace Infra
         {
             estonia,USA,latvia,russia,china
         };
+        internal static List<DeliveryStatusData> Statuses => new List<DeliveryStatusData>
+        {
+            infoReceived,inTransit,outForDelivery,pickUp,delivered
+        };
         internal static List<UnitData> Units => new List<UnitData>
         {
             kilogram, gram, liter, piece, meter
@@ -311,6 +345,12 @@ namespace Infra
         {
             if (db.DeliveryTypes.Count() != 0) return;
             db.DeliveryTypes.AddRange(DeliveryTypes);
+            db.SaveChanges();
+        }
+        private static void InitializeDeliveryStatus(SaunaDbContext db)
+        {
+            if (db.Statuses.Count() != 0) return;
+            db.Statuses.AddRange(Statuses);
             db.SaveChanges();
         }
         private static void InitializeBrands(SaunaDbContext db)
@@ -362,6 +402,7 @@ namespace Infra
             InitializeStocks(db);
             InitializeDeliveryCountries(db);
             InitializeDeliveryTypes(db);
+            InitializeDeliveryStatus(db);
         }
         
     }
