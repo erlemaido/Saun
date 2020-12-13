@@ -9,6 +9,7 @@ namespace Sauna.Pages.Abstractions.Constants {
         public static string Stock => "Laoseis";
         public static string DeliveryCountries => "Riigid";
         public static string DeliveryTypes => "Tarne tüüp";
+        public static string DeliveryStatus => "Saadetise olek";
 
 
     }
