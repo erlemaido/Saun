@@ -1,0 +1,45 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.DeliveryCities.DeliveryCitiesPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.Header(
+                new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.DeliveryCountryId), Model.GetSortString(m => m.DeliveryCountryId, page))
+                )
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    @Html.Row(
+                        false,
+                        page,
+                        item.GetId(),
+                        Model.SortOrder,
+                        Model.SearchString,
+                        Model.PageIndex,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.DisplayFor(modelItem => item.Name),
+                        Html.Raw(Model.GetDeliveryCountryName(item.DeliveryCountryId))
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

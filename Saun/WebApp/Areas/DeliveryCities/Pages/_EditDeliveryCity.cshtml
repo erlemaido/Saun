@@ -1,0 +1,8 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.DeliveryCities.DeliveryCitiesPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+    @Html.Editor(m => m.Item.Name)
+    @Html.DropDown(m => m.Item.DeliveryCountryId, Model.DeliveryCountries)
+</body>

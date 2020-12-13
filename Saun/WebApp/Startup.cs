@@ -1,4 +1,5 @@
 using Domain.Brands;
+using Domain.DeliveryCities;
 using Domain.DeliveryCountries;
 using Domain.DeliveryStatuses;
 using Domain.DeliveryTypes;
@@ -8,6 +9,7 @@ using Domain.Products;
 using Domain.Units;
 using Infra;
 using Infra.Brands;
+using Infra.DeliveryCities;
 using Infra.DeliveryCountries;
 using Infra.DeliveryStatuses;
 using Infra.DeliveryTypes;
@@ -55,6 +57,8 @@ namespace WebApp
             services.AddScoped<IDeliveryCountriesRepository, DeliveryCountriesRepository>();
             services.AddScoped<IDeliveryTypesRepository, DeliveryTypesRepository>();
             services.AddScoped<IDeliveryStatusesRepository, DeliveryStatusesRepository>();
+            services.AddScoped<IDeliveryCitiesRepository, DeliveryCitiesRepository>();
+
 
 
 
