@@ -3,6 +3,8 @@ using Data.DeliveryCity;
 using Data.DeliveryCountry;
 using Data.DeliveryStatus;
 using Data.DeliveryType;
+using Data.OrderItems;
+using Data.Orders;
 using Data.Products;
 using Data.ProductTypes;
 using Data.Stocks;
@@ -24,6 +26,10 @@ namespace Infra
         public DbSet<DeliveryTypeData> DeliveryTypes { get; set; }
         public DbSet<DeliveryCityData> Cities { get; set; }
         public DbSet<DeliveryStatusData> Statuses { get; set; }
+        public DbSet<OrderData> Orders { get; set; }
+        public DbSet<OrderItemData> OrderItems { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -41,6 +47,10 @@ namespace Infra
             builder.Entity<DeliveryCountryData>().ToTable(nameof(Countries));
             builder.Entity<DeliveryCityData>().ToTable(nameof(Cities));
             builder.Entity<DeliveryStatusData>().ToTable(nameof(Statuses));
+            builder.Entity<OrderData>().ToTable(nameof(Orders));
+            builder.Entity<OrderItemData>().ToTable(nameof(OrderItems));
+
+
 
         }
     }
