@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Data.Brands;
-using Data.DeliveryCountry;
-using Data.DeliveryStatus;
-using Data.DeliveryType;
 using Data.Products;
 using Data.ProductTypes;
+using Data.Brands;
 using Data.Stocks;
 using Data.Units;
 
@@ -123,26 +120,7 @@ namespace Infra
             Id = Guid.NewGuid().ToString(),
             Name = "Mantel"
         };
-        internal static DeliveryTypeData UPS = new DeliveryTypeData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "UPS"
-        };
-        internal static DeliveryTypeData smartpost = new DeliveryTypeData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "SmartPost"
-        };
-        internal static DeliveryTypeData standard = new DeliveryTypeData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Tulen ise järele"
-        };
-        internal static DeliveryTypeData parcelMachine = new DeliveryTypeData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Postiautomaat"
-        };
+        
         internal static UnitData kilogram = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -246,66 +224,7 @@ namespace Infra
             Comment = "Tuleb juurde tellida",
             LastUpdateTime = System.DateTime.Now
         };
-        internal static DeliveryStatusData infoReceived = new DeliveryStatusData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Info Received"
-
-        };
-        internal static DeliveryStatusData inTransit = new DeliveryStatusData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "In Transit"
-
-        };
-        internal static DeliveryStatusData outForDelivery = new DeliveryStatusData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Out for Delivery"
-
-        };
-        internal static DeliveryStatusData pickUp = new DeliveryStatusData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Available for Pickup"
-
-        };
-        internal static DeliveryStatusData delivered = new DeliveryStatusData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Delivered"
-
-        };
-        internal static DeliveryCountryData estonia = new DeliveryCountryData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Estonia"
-
-        };
-        internal static DeliveryCountryData russia = new DeliveryCountryData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Russia"
-
-        };
-        internal static DeliveryCountryData USA = new DeliveryCountryData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "USA"
-
-        };
-        internal static DeliveryCountryData latvia = new DeliveryCountryData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "Latvia"
-
-        };
-        internal static DeliveryCountryData china = new DeliveryCountryData()
-        {
-            Id = Guid.NewGuid().ToString(),
-            Name = "China"
-
-        };
+        
         internal static List<BrandData> Brands => new List<BrandData>
         {
             adidas, nike, gucci, balenciaga, evian, lenovo, samsung
@@ -315,14 +234,7 @@ namespace Infra
         {
             mug, coat, laptop, sneakers, sweatshirt, water
         };
-        internal static List<DeliveryCountryData> Countries => new List<DeliveryCountryData>
-        {
-            estonia,USA,latvia,russia,china
-        };
-        internal static List<DeliveryStatusData> Statuses => new List<DeliveryStatusData>
-        {
-            infoReceived,inTransit,outForDelivery,pickUp,delivered
-        };
+        
         internal static List<UnitData> Units => new List<UnitData>
         {
             kilogram, gram, liter, piece, meter
@@ -337,34 +249,14 @@ namespace Infra
         {
             adidasOriginalsSneakersStock, evian500mlWaterStock, thinkpadP51Stock
         };
-        internal static List<DeliveryTypeData> DeliveryTypes = new List<DeliveryTypeData>
-        {
-            UPS,standard,parcelMachine,smartpost
-        };
-        private static void InitializeDeliveryTypes(SaunaDbContext db)
-        {
-            if (db.DeliveryTypes.Count() != 0) return;
-            db.DeliveryTypes.AddRange(DeliveryTypes);
-            db.SaveChanges();
-        }
-        private static void InitializeDeliveryStatus(SaunaDbContext db)
-        {
-            if (db.Statuses.Count() != 0) return;
-            db.Statuses.AddRange(Statuses);
-            db.SaveChanges();
-        }
+
         private static void InitializeBrands(SaunaDbContext db)
         {
             if (db.Brands.Count() != 0) return;
             db.Brands.AddRange(Brands);
             db.SaveChanges();
         }
-        private static void InitializeDeliveryCountries(SaunaDbContext db)
-        {
-            if (db.Countries.Count() != 0) return;
-            db.Countries.AddRange(Countries);
-            db.SaveChanges();
-        }
+        
         private static void InitializeProductTypes(SaunaDbContext db)
         {
             if (db.ProductTypes.Count() != 0) return;
@@ -400,9 +292,6 @@ namespace Infra
             InitializeUnits(db);
             InitializeProducts(db);
             InitializeStocks(db);
-            InitializeDeliveryCountries(db);
-            InitializeDeliveryTypes(db);
-            InitializeDeliveryStatus(db);
         }
         
     }

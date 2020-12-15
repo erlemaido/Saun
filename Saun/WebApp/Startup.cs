@@ -1,16 +1,10 @@
 using Domain.Brands;
-using Domain.DeliveryCountries;
-using Domain.DeliveryStatuses;
-using Domain.DeliveryTypes;
 using Domain.ProductTypes;
 using Domain.Stocks;
 using Domain.Products;
 using Domain.Units;
 using Infra;
 using Infra.Brands;
-using Infra.DeliveryCountries;
-using Infra.DeliveryStatuses;
-using Infra.DeliveryTypes;
 using Infra.ProductTypes;
 using Infra.Stocks;
 using Infra.Products;
@@ -23,6 +17,14 @@ using WebApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Domain.Reviews;
+using Domain.Roles;
+using Domain.UserRoles;
+using Infra.UserRoles;
+using Infra.Roles;
+using Infra.Reviews;
+using Domain.Users;
+using Infra.Users;
 
 namespace WebApp
 {
@@ -52,11 +54,10 @@ namespace WebApp
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IUnitsRepository, UnitsRepository>();
             services.AddScoped<IStocksRepository, StocksRepository>();
-            services.AddScoped<IDeliveryCountriesRepository, DeliveryCountriesRepository>();
-            services.AddScoped<IDeliveryTypesRepository, DeliveryTypesRepository>();
-            services.AddScoped<IDeliveryStatusesRepository, DeliveryStatusesRepository>();
-
-
+            services.AddScoped<IReviewsRepository, ReviewsRepository>();
+            services.AddScoped<IRolesRepository, RolesRepository>();
+            services.AddScoped<IUserRolesRepository, UserRolesRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
 
         }
 
