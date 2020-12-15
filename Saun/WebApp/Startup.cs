@@ -25,6 +25,12 @@ using Infra.Roles;
 using Infra.Reviews;
 using Domain.Users;
 using Infra.Users;
+using Domain.DeliveryCountries;
+using Infra.DeliveryTypes;
+using Domain.DeliveryTypes;
+using Infra.DeliveryCountries;
+using Infra.DeliveryStatuses;
+using Domain.DeliveryStatuses;
 
 namespace WebApp
 {
@@ -54,6 +60,9 @@ namespace WebApp
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IUnitsRepository, UnitsRepository>();
             services.AddScoped<IStocksRepository, StocksRepository>();
+            services.AddScoped<IDeliveryCountriesRepository, DeliveryCountriesRepository>();
+            services.AddScoped<IDeliveryTypesRepository, DeliveryTypesRepository>();
+            services.AddScoped<IDeliveryStatusesRepository, DeliveryStatusesRepository>();
             services.AddScoped<IReviewsRepository, ReviewsRepository>();
             services.AddScoped<IRolesRepository, RolesRepository>();
             services.AddScoped<IUserRolesRepository, UserRolesRepository>();
