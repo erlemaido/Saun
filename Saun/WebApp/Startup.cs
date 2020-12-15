@@ -1,10 +1,18 @@
 using Domain.Brands;
+using Domain.DeliveryCities;
+using Domain.DeliveryCountries;
+using Domain.DeliveryStatuses;
+using Domain.DeliveryTypes;
 using Domain.ProductTypes;
 using Domain.Stocks;
 using Domain.Products;
 using Domain.Units;
 using Infra;
 using Infra.Brands;
+using Infra.DeliveryCities;
+using Infra.DeliveryCountries;
+using Infra.DeliveryStatuses;
+using Infra.DeliveryTypes;
 using Infra.ProductTypes;
 using Infra.Stocks;
 using Infra.Products;
@@ -63,11 +71,11 @@ namespace WebApp
             services.AddScoped<IDeliveryCountriesRepository, DeliveryCountriesRepository>();
             services.AddScoped<IDeliveryTypesRepository, DeliveryTypesRepository>();
             services.AddScoped<IDeliveryStatusesRepository, DeliveryStatusesRepository>();
+            services.AddScoped<IDeliveryCitiesRepository, DeliveryCitiesRepository>();
             services.AddScoped<IReviewsRepository, ReviewsRepository>();
             services.AddScoped<IRolesRepository, RolesRepository>();
             services.AddScoped<IUserRolesRepository, UserRolesRepository>();
             services.AddScoped<IUsersRepository, UsersRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

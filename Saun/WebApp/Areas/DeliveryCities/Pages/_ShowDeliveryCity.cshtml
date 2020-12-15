@@ -1,0 +1,7 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.DeliveryCities.DeliveryCitiesPage
+
+<body>
+    @Html.Show(m => m.Item.Name)
+    @Html.Show(m => m.Item.DeliveryCountryId, Model.GetDeliveryCountryName(Model.Item.DeliveryCountryId))
+</body>

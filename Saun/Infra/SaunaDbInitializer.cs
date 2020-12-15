@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data.Brands;
+using Data.DeliveryCity;
 using Data.DeliveryCountry;
 using Data.DeliveryStatus;
 using Data.DeliveryType;
@@ -303,7 +304,44 @@ namespace Infra
         internal static DeliveryCountryData china = new DeliveryCountryData()
         {
             Id = Guid.NewGuid().ToString(),
-            Name = "China"
+            Name = "China",
+
+        };
+        internal static DeliveryCityData tallinn = new DeliveryCityData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Tallinn",
+            DeliveryCountryId = estonia.Id
+
+        };
+        internal static DeliveryCityData moscow = new DeliveryCityData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Moscow",
+            DeliveryCountryId = russia.Id
+
+        };
+        internal static DeliveryCityData tokyo = new DeliveryCityData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Tokyo",
+            DeliveryCountryId = china.Id
+
+        };
+        internal static DeliveryCityData newyork = new DeliveryCityData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "New York",
+            DeliveryCountryId = USA.Id
+
+
+        };
+        internal static DeliveryCityData riga = new DeliveryCityData()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = "Riga",
+            DeliveryCountryId = latvia.Id
+
 
         };
         internal static List<BrandData> Brands => new List<BrandData>
@@ -318,6 +356,11 @@ namespace Infra
         internal static List<DeliveryCountryData> Countries => new List<DeliveryCountryData>
         {
             estonia,USA,latvia,russia,china
+        };
+
+        internal static List<DeliveryCityData> Cities => new List<DeliveryCityData>
+        {
+            tallinn, moscow, tokyo, newyork, riga
         };
         internal static List<DeliveryStatusData> Statuses => new List<DeliveryStatusData>
         {
@@ -365,6 +408,12 @@ namespace Infra
             db.Countries.AddRange(Countries);
             db.SaveChanges();
         }
+        private static void InitializeDeliveryCities(SaunaDbContext db)
+        {
+            if (db.Cities.Count() != 0) return;
+            db.Cities.AddRange(Cities);
+            db.SaveChanges();
+        }
         private static void InitializeProductTypes(SaunaDbContext db)
         {
             if (db.ProductTypes.Count() != 0) return;
@@ -403,6 +452,7 @@ namespace Infra
             InitializeDeliveryCountries(db);
             InitializeDeliveryTypes(db);
             InitializeDeliveryStatus(db);
+            InitializeDeliveryCities(db);
         }
 
     }
