@@ -10,6 +10,10 @@ using Data.ProductTypes;
 using Data.Stocks;
 using Data.Units;
 using Microsoft.EntityFrameworkCore;
+using Data.Users;
+using Data.UserRoles;
+using Data.Roles;
+using Data.Reviews;
 
 namespace Infra
 {
@@ -28,6 +32,10 @@ namespace Infra
         public DbSet<DeliveryStatusData> Statuses { get; set; }
         public DbSet<OrderData> Orders { get; set; }
         public DbSet<OrderItemData> OrderItems { get; set; }
+        public DbSet<ReviewData> Reviews { get; set; }
+        public DbSet<RoleData> Roles { get; set; }
+        public DbSet<UserRoleData> UserRoles { get; set; }
+        public DbSet<UserData> Users { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -49,8 +57,10 @@ namespace Infra
             builder.Entity<DeliveryStatusData>().ToTable(nameof(Statuses));
             builder.Entity<OrderData>().ToTable(nameof(Orders));
             builder.Entity<OrderItemData>().ToTable(nameof(OrderItems));
-
-
+            builder.Entity<ReviewData>().ToTable(nameof(Reviews));
+            builder.Entity<RoleData>().ToTable(nameof(Roles));
+            builder.Entity<UserRoleData>().ToTable(nameof(UserRoles));
+            builder.Entity<UserData>().ToTable(nameof(Users));
 
         }
     }

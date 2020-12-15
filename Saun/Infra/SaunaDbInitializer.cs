@@ -30,7 +30,7 @@ namespace Infra
                           "Aastal 2001. alustas ka Nike Skateboarding, mida iseloomustab mitmekülgne " +
                           "rulatajatest tiim ning innovaatilisus."
         };
-        
+
         internal static BrandData adidas = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -39,7 +39,7 @@ namespace Infra
                           "kuuluvad spordijalatsite, -rõivaste ja -aksessuaaride disain ja tootmine. " +
                           "Korporatsiooni peakontor asub Baieris Herzogenaurachis."
         };
-        
+
         internal static BrandData gucci = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -48,7 +48,7 @@ namespace Infra
                           "Sellele pani aluse Guccio Gucci Firenzes 1921. aastal. Guccit peetakse üheks maailma " +
                           "kuulsamaks, prestiižsemaks ja tuntumaks moebrändiks maailmas."
         };
-        
+
         internal static BrandData balenciaga = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -58,7 +58,7 @@ namespace Infra
                           "kompromissitute standardite couturieri maine ja Christian Dior nimetas teda meie " +
                           "kõigi peremeheks."
         };
-        
+
         internal static BrandData samsung = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -68,7 +68,7 @@ namespace Infra
                           "Korporatsiooni peakorter asub Soulis Samsung Townis. Samsungi asutas 1938. aastal " +
                           "Lee Byung-chul kaubandusettevõttena."
         };
-        
+
         internal static BrandData evian = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -78,7 +78,7 @@ namespace Infra
                           "Danone. Lisaks mineraalveele kasutab Danone Group Éviani nime nii orgaaniliste " +
                           "nahahooldustoodete sarja kui ka luksuskuurordi jaoks Prantsusmaal. "
         };
-        
+
         internal static BrandData lenovo = new BrandData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -88,37 +88,37 @@ namespace Infra
                           "servereid, kõvakettaid, IT haldustarkvara ning muid selliseid tooteid ja teenuseid. " +
                           "Lenovo hakkas tegutsema praegusel kujul aastal 1988 Hongkongis nime Legend all. "
         };
-        
+
         internal static ProductTypeData mug = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Kruus"
         };
-        
+
         internal static ProductTypeData water = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Vesi"
         };
-        
+
         internal static ProductTypeData sweatshirt = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Pusa"
         };
-        
+
         internal static ProductTypeData sneakers = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Vabaajajalanõud"
         };
-        
+
         internal static ProductTypeData laptop = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Sülearvuti"
         };
-        
+
         internal static ProductTypeData coat = new ProductTypeData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -150,35 +150,35 @@ namespace Infra
             Code = "kg",
             Name = "Kilogramm"
         };
-        
+
         internal static UnitData liter = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
             Code = "l",
             Name = "Liiter"
         };
-        
+
         internal static UnitData gram = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
             Code = "g",
             Name = "Gramm"
         };
-        
+
         internal static UnitData meter = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
             Code = "m",
             Name = "Meeter"
         };
-        
+
         internal static UnitData piece = new UnitData()
         {
             Id = Guid.NewGuid().ToString(),
             Code = "tk",
             Name = "Tükk"
         };
-        
+
         internal static ProductData adidasOriginalsSneakers = new ProductData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -190,7 +190,7 @@ namespace Infra
             UnitId = piece.Id,
             ProductTypeId = sneakers.Id
         };
-        
+
         internal static ProductData thinkpadP51 = new ProductData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -208,7 +208,7 @@ namespace Infra
             UnitId = piece.Id,
             ProductTypeId = laptop.Id
         };
-        
+
         internal static ProductData evian500mlWater = new ProductData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -220,7 +220,7 @@ namespace Infra
             UnitId = piece.Id,
             ProductTypeId = water.Id
         };
-        
+
         internal static StockData adidasOriginalsSneakersStock = new StockData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -229,7 +229,7 @@ namespace Infra
             Comment = "",
             LastUpdateTime = System.DateTime.Now
         };
-        
+
         internal static StockData evian500mlWaterStock = new StockData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -238,7 +238,7 @@ namespace Infra
             Comment = "",
             LastUpdateTime = System.DateTime.Now
         };
-        
+
         internal static StockData thinkpadP51Stock = new StockData()
         {
             Id = Guid.NewGuid().ToString(),
@@ -348,7 +348,7 @@ namespace Infra
         {
             adidas, nike, gucci, balenciaga, evian, lenovo, samsung
         };
-        
+
         internal static List<ProductTypeData> ProductTypes => new List<ProductTypeData>
         {
             mug, coat, laptop, sneakers, sweatshirt, water
@@ -370,12 +370,12 @@ namespace Infra
         {
             kilogram, gram, liter, piece, meter
         };
-        
+
         internal static List<ProductData> Products => new List<ProductData>
         {
             adidasOriginalsSneakers, thinkpadP51, evian500mlWater
         };
-        
+
         internal static List<StockData> Stocks => new List<StockData>
         {
             adidasOriginalsSneakersStock, evian500mlWaterStock, thinkpadP51Stock
@@ -420,21 +420,21 @@ namespace Infra
             db.ProductTypes.AddRange(ProductTypes);
             db.SaveChanges();
         }
-        
+
         private static void InitializeUnits(SaunaDbContext db)
         {
             if (db.Units.Count() != 0) return;
             db.Units.AddRange(Units);
             db.SaveChanges();
         }
-        
+
         private static void InitializeProducts(SaunaDbContext db)
         {
             if (db.Products.Count() != 0) return;
             db.Products.AddRange(Products);
             db.SaveChanges();
         }
-        
+
         private static void InitializeStocks(SaunaDbContext db)
         {
             if (db.Stocks.Count() != 0) return;
@@ -454,6 +454,6 @@ namespace Infra
             InitializeDeliveryStatus(db);
             InitializeDeliveryCities(db);
         }
-        
+
     }
 }

@@ -25,6 +25,20 @@ using WebApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Domain.Reviews;
+using Domain.Roles;
+using Domain.UserRoles;
+using Infra.UserRoles;
+using Infra.Roles;
+using Infra.Reviews;
+using Domain.Users;
+using Infra.Users;
+using Domain.DeliveryCountries;
+using Infra.DeliveryTypes;
+using Domain.DeliveryTypes;
+using Infra.DeliveryCountries;
+using Infra.DeliveryStatuses;
+using Domain.DeliveryStatuses;
 
 namespace WebApp
 {
@@ -58,10 +72,10 @@ namespace WebApp
             services.AddScoped<IDeliveryTypesRepository, DeliveryTypesRepository>();
             services.AddScoped<IDeliveryStatusesRepository, DeliveryStatusesRepository>();
             services.AddScoped<IDeliveryCitiesRepository, DeliveryCitiesRepository>();
-
-
-
-
+            services.AddScoped<IReviewsRepository, ReviewsRepository>();
+            services.AddScoped<IRolesRepository, RolesRepository>();
+            services.AddScoped<IUserRolesRepository, UserRolesRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
