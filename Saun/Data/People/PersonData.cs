@@ -1,6 +1,8 @@
+using Data.Abstractions;
+
 namespace Data.People
 {
-    public class PersonData
+    public class PersonData : UniqueEntityData
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

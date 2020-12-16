@@ -5,13 +5,13 @@ using Data.OrderItems;
 using Data.Orders;
 using Data.Products;
 using Data.ProductTypes;
-using Data.Stocks;
 using Data.Units;
 using Microsoft.EntityFrameworkCore;
 using Data.Users;
 using Data.UserRoles;
 using Data.Roles;
 using Data.Reviews;
+using Data.Stock;
 
 namespace Infra
 {

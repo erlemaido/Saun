@@ -6,7 +6,7 @@ using Data.Cities;
 using Data.DeliveryTypes;
 using Data.Products;
 using Data.ProductTypes;
-using Data.Stocks;
+using Data.Stock;
 using Data.Units;
 
 namespace Infra

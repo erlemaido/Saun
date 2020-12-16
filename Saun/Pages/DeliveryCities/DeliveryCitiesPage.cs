@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using Aids.Reflection;
 using Data.Cities;
-using Domain.DeliveryCities;
-using Domain.DeliveryCountries;
+using Domain.Cities;
 using Facade.DeliveryCities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

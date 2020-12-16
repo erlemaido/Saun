@@ -1,8 +1,7 @@
 using System;
 using Data.Abstractions;
-using Data.Products;
 
-namespace Data.Stocks
+namespace Data.Stock
 {
     public class StockData : UniqueEntityData
     {

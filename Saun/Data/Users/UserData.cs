@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Users
 {
-    public class UserData : DefinedEntityData
+    public class UserData : UniqueEntityData
     {
         public string PersonId { get; set; }
         public bool EmailConfirmed { get; set; }

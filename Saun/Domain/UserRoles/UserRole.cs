@@ -3,7 +3,7 @@ using Domain.Abstractions;
 
 namespace Domain.UserRoles
 {
-    public sealed class UserRole : DefinedEntity<UserRoleData>
+    public sealed class UserRole : UniqueEntity<UserRoleData>
     {
         public UserRole() : this(null)
         {

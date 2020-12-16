@@ -3,7 +3,7 @@ using Domain.Abstractions;
 
 namespace Domain.Reviews
 {
-    public sealed class Review : DefinedEntity<ReviewData>
+    public sealed class Review : UniqueEntity<ReviewData>
     {
         public Review() : this(null)
         {

@@ -14,5 +14,6 @@ namespace Data.Orders
         public string Street { get; set; }
         public string ZipCode { get; set; }
         public double DeliveryCost { get; set; }
+        public string Comment { get; set; }
     }
 }
