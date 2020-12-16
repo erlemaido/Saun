@@ -1,0 +1,8 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.OrderItems.OrderItemsPage
+
+<body>
+    @Html.Show(m => m.Item.OrderId, Model.GetOrderName(Model.Item.OrderId))
+    @Html.Show(m => m.Item.ProductId, Model.GetProductName(Model.Item.ProductId))
+    @Html.Show(m => m.Item.Quantity)
+</body>

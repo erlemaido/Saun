@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Data.Shop.UserRoles;
 using Domain.Shop.UserRoles;
 using Facade.Shop.UserRoles;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
 
@@ -13,6 +15,9 @@ namespace Sauna.Pages.Shop.UserRoles
         public UserRolesPage(IUserRolesRepository repository) : base(repository, PagesNames.UserRoles)
         {
         }
+
+        public IEnumerable<SelectListItem> Users { get; set; }
+        public IEnumerable<SelectListItem> Roles { get; set; }
 
         protected internal override UserRole ToObject(UserRoleView view) => UserRoleViewFactory.Create(view);
 
@@ -28,6 +33,16 @@ namespace Sauna.Pages.Shop.UserRoles
 
             return base.OnGetCreate(sortOrder, searchString, pageIndex,
                 fixedFilter, fixedValue, switchOfCreate);
+        }
+
+        public string GetUserName(string itemUserId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetRoleName(string itemRoleId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

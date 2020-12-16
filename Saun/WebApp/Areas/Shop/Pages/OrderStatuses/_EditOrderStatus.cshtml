@@ -1,0 +1,10 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.OrderStatuses.OrderStatusesPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DropDown(m => m.Item.OrderId, Model.Orders)
+@Html.DropDown(m => m.Item.StatusId, Model.Statuses)
+    @Html.Editor(m => m.Item.Time)
+    @Html.Editor(m => m.Item.Comment)
+</body>

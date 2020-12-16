@@ -1,0 +1,49 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Payments.PaymentsPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+<table class="table">
+    <thead>
+    @Html.Header(
+        new Link(Html.DisplayNameFor(m => m.Item.OrderId), Model.GetSortString(m => m.OrderId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m=> m.PersonId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.PaymentTypeId), Model.GetSortString(m => m.PaymentTypeId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Time), Model.GetSortString(m=> m.Time, page))
+        )
+    </thead>
+   
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.Row(
+                false,
+                page,
+                item.GetId(),
+                Model.SortOrder,
+                Model.SearchString,
+                Model.PageIndex,
+                Model.FixedFilter,
+                Model.FixedValue,
+                Html.Raw(Model.GetOrderName(item.OrderId)),
+                Html.Raw(Model.GetPersonName(item.PersonId)),
+                Html.Raw(Model.GetPaymentTypeName(item.PaymentTypeId)),
+                Html.DisplayFor(modelItem => item.Time)
+                )
+        </tr>
+    }
+    </tbody>
+</table>
+</body>

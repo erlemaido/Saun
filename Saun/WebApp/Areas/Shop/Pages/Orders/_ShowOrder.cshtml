@@ -1,0 +1,17 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Orders.OrdersPage
+
+<body>
+    @Html.Show(m => m.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
+    @Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
+    @Html.Show(m => m.Item.DeliveryTypeId, Model.GetDeliveryTypeName(Model.Item.DeliveryTypeId))
+    @Html.Show(m => m.Item.CountryId, Model.GetCountryName(Model.Item.CountryId))
+    @Html.Show(m => m.Item.CityId, Model.GetCityName(Model.Item.CityId))
+@Html.Show(m => m.Item.Street)
+@Html.Show(m => m.Item.ZipCode)
+@Html.Show(m => m.Item.TotalPrice)
+@Html.Show(m => m.Item.Date)
+@Html.Show(m => m.Item.DeliveryCost)
+@Html.Show(m => m.Item.Comment)
+
+</body>

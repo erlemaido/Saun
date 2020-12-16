@@ -1,0 +1,9 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.OrderStatuses.OrderStatusesPage
+
+<body>
+    @Html.Show(m => m.Item.OrderId, Model.GetOrderName(Model.Item.OrderId))
+    @Html.Show(m => m.Item.StatusId, Model.GetStatusName(Model.Item.StatusId))
+@Html.Show(m => m.Item.Time)
+@Html.Show(m => m.Item.Comment)
+</body>

@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Data.Shop.OrderStatuses;
 using Domain.Shop.OrderStatuses;
 using Facade.Shop.OrderStatuses;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
 
@@ -13,6 +15,9 @@ namespace Sauna.Pages.Shop.OrderStatuses
         public OrderStatusesPage(IOrderStatusesRepository repository) : base(repository, PagesNames.OrderStatuses)
         {
         }
+
+        public IEnumerable<SelectListItem> Orders { get; set; }
+        public IEnumerable<SelectListItem> Statuses { get; set; }
 
         protected internal override OrderStatus ToObject(OrderStatusView view) => OrderStatusViewFactory.Create(view);
         
@@ -28,6 +33,16 @@ namespace Sauna.Pages.Shop.OrderStatuses
 
             return base.OnGetCreate(sortOrder, searchString, pageIndex,
                 fixedFilter, fixedValue, switchOfCreate);
+        }
+
+        public string GetOrderName(string itemOrderId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetStatusName(string itemStatusId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,0 +1,11 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Reviews.ReviewsPage
+
+<body>
+    <input type="hidden" asp-for="Item.Id" />
+@Html.DropDown(m => m.Item.ProductId, Model.Products)
+@Html.DropDown(m => m.Item.UserId, Model.Users)
+    @Html.Editor(m => m.Item.Rating)
+    @Html.Editor(m => m.Item.Comment)
+    @Html.Editor(m => m.Item.Time)
+</body>

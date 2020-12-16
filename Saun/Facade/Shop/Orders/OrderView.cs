@@ -36,7 +36,7 @@ namespace Facade.Shop.Orders
         
         [Required]
         [DisplayName("Tellimuse kuupäev")]
-        public DateTime OrderDate { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         [DisplayName("Saate kulu")]

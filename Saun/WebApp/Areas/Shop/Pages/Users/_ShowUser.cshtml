@@ -1,0 +1,11 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Users.UsersPage
+
+<body>
+    @Html.Show(m => m.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
+@Html.Show(m => m.Item.EmailConfirmed)
+@Html.Show(m => m.Item.PasswordHash)
+@Html.Show(m => m.Item.ValidFrom)
+@Html.Show(m => m.Item.ValidTo)
+@Html.Show(m => m.Item.Comment)
+</body>

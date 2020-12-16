@@ -1,0 +1,10 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Reviews.ReviewsPage
+
+<body>
+    @Html.Show(m => m.Item.ProductId, Model.GetProductName(Model.Item.ProductId))
+    @Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
+@Html.Show(m => m.Item.Rating)
+@Html.Show(m => m.Item.Comment)
+@Html.Show(m => m.Item.Time)
+</body>

@@ -17,7 +17,7 @@ namespace Facade.Shop.OrderStatuses
         
         [Required]
         [DisplayName("Aeg")]
-        public DateTime StatusTime { get; set; }
+        public DateTime Time { get; set; }
 
         [DisplayName("Kommentaar")] 
         public string Comment { get; set; }

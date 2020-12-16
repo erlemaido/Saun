@@ -1,0 +1,7 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Cities.CitiesPage
+
+<body>
+    @Html.Show(m => m.Item.Name)
+    @Html.Show(m => m.Item.CountryId, Model.GetCountryName(Model.Item.CountryId))
+</body>

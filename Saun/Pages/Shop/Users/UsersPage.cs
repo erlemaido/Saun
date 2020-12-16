@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Data.Shop.Users;
 using Domain.Shop.Users;
 using Facade.Shop.Users;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
 
@@ -13,6 +15,8 @@ namespace Sauna.Pages.Shop.Users
         public UsersPage(IUsersRepository repository) : base(repository, PagesNames.Users)
         {
         }
+
+        public IEnumerable<SelectListItem> People { get; set; }
 
         protected internal override User ToObject(UserView view) => UserViewFactory.Create(view);
 
@@ -28,6 +32,11 @@ namespace Sauna.Pages.Shop.Users
 
             return base.OnGetCreate(sortOrder, searchString, pageIndex,
                 fixedFilter, fixedValue, switchOfCreate);
+        }
+
+        public string GetPersonName(string itemPersonId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

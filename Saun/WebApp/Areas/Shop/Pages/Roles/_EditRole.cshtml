@@ -1,0 +1,9 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Roles.RolesPage
+
+<body>
+    <input type="hidden" asp-for="Item.Id" />
+    @Html.Editor(m => m.Item.Name)
+    @Html.Editor(m => m.Item.ValidFrom)
+    @Html.Editor(m => m.Item.ValidTo)
+</body>

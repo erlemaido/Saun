@@ -1,0 +1,11 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.UserRoles.UserRolesPage
+
+<body>
+    <input type="hidden" asp-for="Item.Id" />
+@Html.DropDown(m => m.Item.UserId, Model.Users)
+@Html.DropDown(m => m.Item.RoleId, Model.Roles)
+    @Html.Editor(m => m.Item.ValidFrom)
+    @Html.Editor(m => m.Item.ValidTo)
+    @Html.Editor(m => m.Item.Comment)
+</body>

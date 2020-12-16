@@ -1,0 +1,48 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.People.PeoplePage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+<table class="table">
+    <thead>
+    @Html.Header(
+        new Link(Html.DisplayNameFor(m => m.Item.FirstName), Model.GetSortString(m => m.FirstName, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.LastName), Model.GetSortString(m=> m.LastName, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Email), Model.GetSortString(m => m.Email, page))
+        )
+    </thead>
+   
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.Row(
+                false,
+                page,
+                item.GetId(),
+                Model.SortOrder,
+                Model.SearchString,
+                Model.PageIndex,
+                Model.FixedFilter,
+                Model.FixedValue,
+                Html.DisplayFor(modelItem => item.FirstName),
+                Html.DisplayFor(modelItem => item.LastName),
+                Html.DisplayFor(modelItem => item.Email)
+                )
+
+        </tr>
+    }
+    </tbody>
+</table>
+</body>

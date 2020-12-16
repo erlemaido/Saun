@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Data.Shop.Reviews;
 using Domain.Shop.Reviews;
 using Facade.Shop.Reviews;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
 
@@ -13,6 +15,9 @@ namespace Sauna.Pages.Shop.Reviews
         public ReviewsPage(IReviewsRepository repository) : base(repository, PagesNames.Reviews)
         {
         }
+
+        public IEnumerable<SelectListItem> Products { get; set; }
+        public IEnumerable<SelectListItem> Users { get; set; }
 
         protected internal override Review ToObject(ReviewView view) => ReviewViewFactory.Create(view);
 
@@ -28,6 +33,16 @@ namespace Sauna.Pages.Shop.Reviews
 
             return base.OnGetCreate(sortOrder, searchString, pageIndex,
                 fixedFilter, fixedValue, switchOfCreate);
+        }
+
+        public string GetProductName(string itemProductId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetUserName(string itemUserId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

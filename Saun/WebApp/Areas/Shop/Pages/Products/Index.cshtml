@@ -1,0 +1,54 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Products.ProductsPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.Header(
+                new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.BrandId), Model.GetSortString(m => m.BrandId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Description), Model.GetSortString(m => m.Description, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PictureUrl), Model.GetSortString(m => m.PictureUrl, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Price), Model.GetSortString(m => m.Price, page))
+                )
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+            <tr>
+                @Html.Row(
+                    false,
+                    page,
+                    item.GetId(),
+                    Model.SortOrder,
+                    Model.SearchString,
+                    Model.PageIndex,
+                    Model.FixedFilter,
+                    Model.FixedValue,
+                    Html.DisplayFor(modelItem => item.Name),
+                    Html.Raw(Model.GetBrandName(item.BrandId)),
+                    Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
+                    Html.Raw(Model.GetUnitName(item.UnitId)),
+                    Html.DisplayFor(modelItem => item.Description),
+                    Html.DisplayFor(modelItem => item.PictureUrl),
+                    Html.DisplayFor(modelItem => item.Price))
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
