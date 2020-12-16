@@ -1,0 +1,17 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Orders.OrdersPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DropDown(m => m.Item.PersonId, Model.People)
+@Html.DropDown(m => m.Item.UserId, Model.Users)
+@Html.DropDown(m => m.Item.DeliveryTypeId, Model.DeliveryTypes)
+@Html.DropDown(m => m.Item.CountryId, Model.Countries)
+@Html.DropDown(m => m.Item.CityId, Model.Cities)
+@Html.Editor(m => m.Item.Street)
+@Html.Editor(m => m.Item.ZipCode)
+@Html.Editor(m => m.Item.TotalPrice)
+@Html.Editor(m => m.Item.Date)
+@Html.Editor(m => m.Item.DeliveryCost)
+@Html.Editor(m => m.Item.Comment)
+</body>

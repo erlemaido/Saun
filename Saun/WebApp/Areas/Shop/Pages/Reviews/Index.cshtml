@@ -1,0 +1,51 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Reviews.ReviewsPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.Header(
+                new Link(Html.DisplayNameFor(m => m.Item.ProductId), Model.GetSortString(m => m.ProductId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.UserId), Model.GetSortString(m => m.UserId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Rating), Model.GetSortString(m => m.Rating, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Comment), Model.GetSortString(m => m.Comment, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Time), Model.GetSortString(m => m.Time, page))
+                )
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    @Html.Row(
+                        false,
+                        page,
+                        item.GetId(),
+                        Model.SortOrder,
+                        Model.SearchString,
+                        Model.PageIndex,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.Raw(Model.GetProductName(item.ProductId)),
+                        Html.Raw(Model.GetUserName(item.UserId)),
+                        Html.DisplayFor(modelItem => item.Rating),
+                        Html.DisplayFor(modelItem => item.Comment),
+                        Html.DisplayFor(modelItem => item.Time)
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -1,0 +1,53 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Users.UsersPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.Header(
+                new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m => m.PersonId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.EmailConfirmed), Model.GetSortString(m => m.EmailConfirmed, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PasswordHash), Model.GetSortString(m => m.PasswordHash, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ValidFrom), Model.GetSortString(m => m.ValidFrom, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ValidTo), Model.GetSortString(m => m.ValidTo, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Comment), Model.GetSortString(m => m.Comment, page))
+                )
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    @Html.Row(
+                        false,
+                        page,
+                        item.GetId(),
+                        Model.SortOrder,
+                        Model.SearchString,
+                        Model.PageIndex,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.Raw(Model.GetPersonName(item.PersonId)),
+                        Html.DisplayFor(modelItem => item.EmailConfirmed),
+                        Html.DisplayFor(modelItem => item.PasswordHash),
+                        Html.DisplayFor(modelItem => item.ValidFrom),
+                        Html.DisplayFor(modelItem => item.ValidTo),
+                        Html.DisplayFor(modelItem => item.Comment)
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

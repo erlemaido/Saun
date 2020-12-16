@@ -1,0 +1,10 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Payments.PaymentsPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DropDown(m => m.Item.OrderId, Model.Orders)
+@Html.DropDown(m => m.Item.PersonId, Model.People)
+@Html.DropDown(m => m.Item.PaymentTypeId, Model.PaymentTypes)
+    @Html.Editor(m => m.Item.Time)
+</body>

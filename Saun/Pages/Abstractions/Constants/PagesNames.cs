@@ -14,7 +14,7 @@ namespace Sauna.Pages.Abstractions.Constants {
         public static string People => "Isikud";
         public static string Products => "Tooted";
         public static string ProductTypes => "Toote tüübid";
-        public static string Reviews => "Hinnangud";
+        public static string Reviews => "Arvustused";
         public static string Roles => "Rollid";
         public static string Statuses => "Tellimuse staatused";
         public static string Stock => "Laoseis";

@@ -1,0 +1,62 @@
+﻿@page
+@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Constants
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Orders.OrdersPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+@section Create {
+    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
+}
+
+<body>
+<table class="table">
+    <thead>
+    @Html.Header(
+        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m => m.PersonId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.UserId), Model.GetSortString(m=> m.UserId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.DeliveryTypeId), Model.GetSortString(m => m.DeliveryTypeId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.CountryId), Model.GetSortString(m=> m.CountryId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.CityId), Model.GetSortString(m => m.CityId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Street), Model.GetSortString(m=> m.Street, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.ZipCode), Model.GetSortString(m => m.ZipCode, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.TotalPrice), Model.GetSortString(m=> m.TotalPrice, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Date), Model.GetSortString(m=> m.Date, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.DeliveryCost), Model.GetSortString(m => m.DeliveryCost, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.Comment), Model.GetSortString(m=> m.Comment, page))
+        )
+    </thead>
+   
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.Row(
+                false,
+                page,
+                item.GetId(),
+                Model.SortOrder,
+                Model.SearchString,
+                Model.PageIndex,
+                Model.FixedFilter,
+                Model.FixedValue,
+                Html.Raw(Model.GetPersonName(item.PersonId)),
+                Html.Raw(Model.GetUserName(item.UserId)),
+                Html.Raw(Model.GetDeliveryTypeName(item.DeliveryTypeId)),
+                Html.Raw(Model.GetCountryName(item.CountryId)),
+                Html.Raw(Model.GetCityName(item.CityId)),
+                Html.DisplayFor(modelItem => item.Street),
+                Html.DisplayFor(modelItem => item.ZipCode),
+                Html.DisplayFor(modelItem => item.TotalPrice),
+                Html.DisplayFor(modelItem => item.Date),
+                Html.DisplayFor(modelItem => item.DeliveryCost),
+                Html.DisplayFor(modelItem => item.Comment)
+                )
+        </tr>
+    }
+    </tbody>
+</table>
+</body>

@@ -1,0 +1,8 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.People.PeoplePage
+
+<body>
+    @Html.Show(m => m.Item.FirstName)
+    @Html.Show(m => m.Item.LastName)
+    @Html.Show(m => m.Item.Email)
+</body>

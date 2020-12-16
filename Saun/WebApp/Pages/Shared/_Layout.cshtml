@@ -1,90 +1,75 @@
-﻿<!DOCTYPE html>
+﻿@using Sauna.Pages.Abstractions.Aids
+@using Sauna.Pages.Abstractions.Extensions
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - WebApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">WebApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index" asp-page-handler="index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" asp-page-handler="index">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Brands" asp-page="/Index" asp-page-handler="index">Brands</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Products" asp-page="/Index" asp-page-handler="index">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="ProductTypes" asp-page="/Index" asp-page-handler="index">Product Types</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Stocks" asp-page="/Index" asp-page-handler="index">Stock</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Units" asp-page="/Index" asp-page-handler="index">Units</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="DeliveryCountries" asp-page="/Index" asp-page-handler="index">Countries</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="DeliveryCities" asp-page="/Index" asp-page-handler="index">Cities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="DeliveryTypes" asp-page="/Index" asp-page-handler="index">Delivery Types</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="DeliveryStatuses" asp-page="/Index" asp-page-handler="index">Delivery Status</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Reviews" asp-page="/Index" asp-page-handler="index">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Roles" asp-page="/Index" asp-page-handler="index">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="UserRoles" asp-page="/Index" asp-page-handler="index">UserRoles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Users" asp-page="/Index" asp-page-handler="index">Users</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
-            &copy; 2020 - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <a class="navbar-brand" asp-area="" asp-page="/Index">WebApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <partial name="_LoginPartial"/>
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Index" asp-page-handler="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" asp-page-handler="index">Privacy</a>
+                    </li>
+
+                    @Html.DropMenu("Poodi",
+                        new Link("Brändid", new Uri("/Shop/Brands/Index?handler=index", UriKind.Relative)),
+                        new Link("Linnad", new Uri("/Shop/Cities/Index?handler=index", UriKind.Relative)),
+                        new Link("Riigid", new Uri("/Shop/Countries/Index?handler=index", UriKind.Relative)),
+                        new Link("Tarne tüübid", new Uri("/Shop/DeliveryTypes/Index?handler=index", UriKind.Relative)),
+                        new Link("Tellimuse read", new Uri("/Shop/OrderItems/Index?handler=index", UriKind.Relative)),
+                        new Link("Tellimused", new Uri("/Shop/Orders/Index?handler=index", UriKind.Relative)),
+                        new Link("Tellimuse staatused", new Uri("/Shop/OrderStatuses/Index?handler=index", UriKind.Relative)),
+                        new Link("Maksed", new Uri("/Shop/Payments/Index?handler=index", UriKind.Relative)),
+                        new Link("Maksevahendid", new Uri("/Shop/PaymentTypes/Index?handler=index", UriKind.Relative)),
+                        new Link("Isikud", new Uri("/Shop/People/Index?handler=index", UriKind.Relative)),
+                        new Link("Tooted", new Uri("/Shop/Products/Index?handler=index", UriKind.Relative)),
+                        new Link("Toote tüübid", new Uri("/Shop/ProductTypes/Index?handler=index", UriKind.Relative)),
+                        new Link("Arvustused", new Uri("/Shop/Reviews/Index?handler=index", UriKind.Relative)),
+                        new Link("Rollid", new Uri("/Shop/Roles/Index?handler=index", UriKind.Relative)),
+                        new Link("Staatused", new Uri("/Shop/Statuses/Index?handler=index", UriKind.Relative)),
+                        new Link("Laoseis", new Uri("/Shop/Stock/Index?handler=index", UriKind.Relative)),
+                        new Link("Ühikud", new Uri("/Shop/Units/Index?handler=index", UriKind.Relative)),
+                        new Link("Kasutaja rollid", new Uri("/Shop/UserRoles/Index?handler=index", UriKind.Relative)),
+                        new Link("Kasutajad", new Uri("/Shop/Users/Index?handler=index", UriKind.Relative))
+                        )
+                </ul>
+            </div>
         </div>
-    </footer>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2020 - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
 
-    @RenderSection("Scripts", required: false)
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@RenderSection("Scripts", required: false)
 </body>
 </html>

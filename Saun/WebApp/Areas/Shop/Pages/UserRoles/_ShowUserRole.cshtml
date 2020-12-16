@@ -1,0 +1,10 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.UserRoles.UserRolesPage
+
+<body>
+    @Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
+    @Html.Show(m => m.Item.RoleId, Model.GetRoleName(Model.Item.RoleId))
+@Html.Show(m => m.Item.ValidFrom)
+@Html.Show(m => m.Item.ValidTo)
+@Html.Show(m => m.Item.Comment)
+</body>

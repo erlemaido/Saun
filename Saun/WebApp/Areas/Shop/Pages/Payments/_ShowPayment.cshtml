@@ -1,0 +1,9 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Payments.PaymentsPage
+
+<body>
+    @Html.Show(m => m.Item.OrderId, Model.GetOrderName(Model.Item.OrderId))
+    @Html.Show(m => m.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
+    @Html.Show(m => m.Item.PaymentTypeId, Model.GetPaymentTypeName(Model.Item.PaymentTypeId))
+@Html.Show(m => m.Item.Time)
+</body>
