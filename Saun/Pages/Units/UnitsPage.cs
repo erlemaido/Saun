@@ -1,7 +1,7 @@
 ﻿using System;
-using Data.Units;
-using Domain.Units;
-using Facade.Units;
+using Data.Shop.Units;
+using Domain.Shop.Units;
+using Facade.Shop.Units;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 

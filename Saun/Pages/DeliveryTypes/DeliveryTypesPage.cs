@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.DeliveryTypes;
-using Domain.DeliveryTypes;
-using Facade.DeliveryCountries;
-using Facade.DeliveryTypes;
+using Data.Shop.DeliveryTypes;
+using Domain.Shop.DeliveryTypes;
+using Facade.Shop.DeliveryTypes;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 

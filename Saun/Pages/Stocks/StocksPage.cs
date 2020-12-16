@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Data.Products;
-using Data.Stock;
-using Domain.Products;
-using Domain.Stock;
-using Facade.Stocks;
+using Data.Shop.Products;
+using Data.Shop.Stock;
+using Domain.Shop.Products;
+using Domain.Shop.Stock;
+using Facade.Shop.Stock;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions.Constants;

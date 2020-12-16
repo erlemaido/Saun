@@ -1,7 +1,7 @@
 ﻿using System;
-using Data.Brands;
-using Domain.Brands;
-using Facade.Brands;
+using Data.Shop.Brands;
+using Domain.Shop.Brands;
+using Facade.Shop.Brands;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 
