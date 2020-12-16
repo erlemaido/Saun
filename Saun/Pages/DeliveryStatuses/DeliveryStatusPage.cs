@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.DeliveryStatus;
-using Domain.DeliveryCountries;
-using Domain.DeliveryStatuses;
 using Facade.DeliveryCountries;
 using Facade.DeliveryStatuses;
 using Microsoft.AspNetCore.Mvc;

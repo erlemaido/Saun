@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.DeliveryType;
-using Domain.DeliveryCountries;
+using Data.DeliveryTypes;
 using Domain.DeliveryTypes;
 using Facade.DeliveryCountries;
 using Facade.DeliveryTypes;

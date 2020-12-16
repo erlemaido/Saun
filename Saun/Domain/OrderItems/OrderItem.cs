@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.OrderItems;
+﻿using Data.OrderItems;
 using Domain.Abstractions;
 
 namespace Domain.OrderItems

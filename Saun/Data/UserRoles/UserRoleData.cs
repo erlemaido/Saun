@@ -1,10 +1,14 @@
-using System.Collections.Generic;
+using System;
 using Data.Abstractions;
-using Data.Products;
 
 namespace Data.UserRoles
 {
-    public class UserRoleData : DefinedEntityData
+    public class UserRoleData : UniqueEntityData
     {
+        public string UserId { get; set; }
+        public string RoleId { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime ValidTo { get; set; }
+        public string Comment { get; set; }
     }
 }

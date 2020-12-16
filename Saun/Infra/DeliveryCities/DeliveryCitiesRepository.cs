@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.DeliveryCity;
-using Domain.DeliveryCities;
+using Data.Cities;
+using Domain.Cities;
 using Infra.Abstractions;
 
 namespace Infra.DeliveryCities

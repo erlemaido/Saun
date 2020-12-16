@@ -1,6 +1,6 @@
 ﻿using Aids.Methods;
-using Data.Stocks;
-using Domain.Stocks;
+using Data.Stock;
+using Domain.Stock;
 
 namespace Facade.Stocks
 {

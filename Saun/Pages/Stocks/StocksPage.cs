@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data.Products;
-using Data.Stocks;
+using Data.Stock;
 using Domain.Products;
-using Domain.Stocks;
+using Domain.Stock;
 using Facade.Stocks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,11 +11,11 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Stocks
 {
-    public class StocksPage : ViewPage<IStocksRepository, Stock, StockView, StockData>
+    public class StocksPage : ViewPage<IStockRepository, Stock, StockView, StockData>
     {
         public IEnumerable<SelectListItem> Products { get; }
 
-        public StocksPage(IStocksRepository repository, IProductsRepository productsRepository) : base(repository, PagesNames.Stock)
+        public StocksPage(IStockRepository repository, IProductsRepository productsRepository) : base(repository, PagesNames.Stock)
         {
             Products = NewItemsList<Product, ProductData>(productsRepository);
         }

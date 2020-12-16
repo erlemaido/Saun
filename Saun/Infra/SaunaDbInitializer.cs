@@ -2,13 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data.Brands;
-using Data.DeliveryCity;
-using Data.DeliveryCountry;
-using Data.DeliveryStatus;
-using Data.DeliveryType;
+using Data.Cities;
+using Data.DeliveryTypes;
 using Data.Products;
 using Data.ProductTypes;
-using Data.Stocks;
+using Data.Stock;
 using Data.Units;
 
 namespace Infra

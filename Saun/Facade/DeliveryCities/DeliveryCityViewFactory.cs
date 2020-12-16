@@ -1,6 +1,6 @@
 ﻿using Aids.Methods;
-using Data.DeliveryCity;
-using Domain.DeliveryCities;
+using Data.Cities;
+using Domain.Cities;
 
 namespace Facade.DeliveryCities
 {

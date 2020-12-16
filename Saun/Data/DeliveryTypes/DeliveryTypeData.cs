@@ -1,6 +1,6 @@
 ﻿using Data.Abstractions;
 
-namespace Data.DeliveryType
+namespace Data.DeliveryTypes
 {
     public class DeliveryTypeData : NamedEntityData
     {

@@ -1,5 +1,5 @@
 ﻿using Aids.Methods;
-using Data.DeliveryType;
+using Data.DeliveryTypes;
 using Domain.DeliveryTypes;
 
 namespace Facade.DeliveryTypes

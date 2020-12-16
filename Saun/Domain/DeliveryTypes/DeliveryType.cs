@@ -1,4 +1,4 @@
-﻿using Data.DeliveryType;
+﻿using Data.DeliveryTypes;
 using Domain.Abstractions;
 
 namespace Domain.DeliveryTypes

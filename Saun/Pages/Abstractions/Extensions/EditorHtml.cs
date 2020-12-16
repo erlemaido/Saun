@@ -14,30 +14,11 @@ namespace Sauna.Pages.Abstractions.Extensions
 
             return new HtmlContentBuilder(s);
         }
-        
-        public static IHtmlContent HiddenEditor<TModel, TResult>(this IHtmlHelper<TModel> h, Expression<Func<TModel, TResult>> e) 
-        {
-            var s = HiddenHtmlStrings(h, e);
 
-            return new HtmlContentBuilder(s);
-        }
-        
         internal static List<object> HtmlStrings<TModel, TResult>(IHtmlHelper<TModel> h, Expression<Func<TModel, TResult>> e) 
         {
             return new List<object> {
                 new HtmlString("<div class=\"form-group\">"),
-                h.LabelFor(e, new {@class = "text-dark"}),
-                h.EditorFor(e,
-                    new {htmlAttributes = new {@class = "form-control"}}),
-                h.ValidationMessageFor(e, "", new {@class = "text-danger"}),
-                new HtmlString("</div>")
-            };
-        }
-        
-        internal static List<object> HiddenHtmlStrings<TModel, TResult>(IHtmlHelper<TModel> h, Expression<Func<TModel, TResult>> e) 
-        {
-            return new List<object> {
-                new HtmlString("<div class=\"form-group\" style=\"display: none;\">"),
                 h.LabelFor(e, new {@class = "text-dark"}),
                 h.EditorFor(e,
                     new {htmlAttributes = new {@class = "form-control"}}),
