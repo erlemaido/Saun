@@ -1,5 +1,4 @@
-﻿using Data.DeliveryStatus;
-using Domain.Abstractions;
+﻿using Domain.Abstractions;
 
 namespace Domain.DeliveryStatuses
 {

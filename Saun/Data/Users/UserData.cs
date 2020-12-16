@@ -1,10 +1,15 @@
-using System.Collections.Generic;
+using System;
 using Data.Abstractions;
-using Data.Products;
 
 namespace Data.Users
 {
     public class UserData : DefinedEntityData
     {
+        public string PersonId { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public string PasswordHash { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime ValidTo { get; set; }
+        public string Comment { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Aids.Methods;
-using Data.DeliveryCity;
+using Data.Cities;
 using Domain.DeliveryCities;
 
 namespace Facade.DeliveryCities

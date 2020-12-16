@@ -1,4 +1,4 @@
-﻿using Data.DeliveryCity;
+﻿using Data.Cities;
 using Domain.Abstractions;
 
 namespace Domain.DeliveryCities

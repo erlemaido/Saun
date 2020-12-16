@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.DeliveryStatus;
 using Domain.DeliveryStatuses;
 using Infra.Abstractions;
 

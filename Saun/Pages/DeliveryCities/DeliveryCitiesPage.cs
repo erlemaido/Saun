@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Aids.Reflection;
-using Data.DeliveryCity;
-using Data.DeliveryCountry;
+using Data.Cities;
 using Domain.DeliveryCities;
 using Domain.DeliveryCountries;
 using Facade.DeliveryCities;

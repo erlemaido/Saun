@@ -33,12 +33,7 @@ using Infra.Roles;
 using Infra.Reviews;
 using Domain.Users;
 using Infra.Users;
-using Domain.DeliveryCountries;
-using Infra.DeliveryTypes;
-using Domain.DeliveryTypes;
-using Infra.DeliveryCountries;
-using Infra.DeliveryStatuses;
-using Domain.DeliveryStatuses;
+
 
 namespace WebApp
 {

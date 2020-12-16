@@ -1,5 +1,4 @@
-﻿using Data.DeliveryCountry;
-using Domain.Abstractions;
+﻿using Domain.Abstractions;
 
 namespace Domain.DeliveryCountries
 {

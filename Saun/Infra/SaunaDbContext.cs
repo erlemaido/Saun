@@ -1,8 +1,6 @@
 using Data.Brands;
-using Data.DeliveryCity;
-using Data.DeliveryCountry;
-using Data.DeliveryStatus;
-using Data.DeliveryType;
+using Data.Cities;
+using Data.DeliveryTypes;
 using Data.OrderItems;
 using Data.Orders;
 using Data.Products;

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.Abstractions;
+﻿using Data.Abstractions;
 
 namespace Data.OrderItems
 {
@@ -10,6 +7,5 @@ namespace Data.OrderItems
         public string OrderId { get; set; }
         public string ProductId { get; set; }
         public int Quantity { get; set; }
-
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Aids.Methods;
-using Data.DeliveryStatus;
 using Domain.DeliveryCities;
 using Domain.DeliveryStatuses;
 using Facade.DeliveryCities;

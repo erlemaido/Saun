@@ -1,10 +1,14 @@
-using System.Collections.Generic;
+using System;
 using Data.Abstractions;
-using Data.Products;
 
 namespace Data.Reviews
 {
-    public class ReviewData : DefinedEntityData
+    public class ReviewData : UniqueEntityData
     {
+        public string ProductId { get; set; }
+        public string UserId { get; set; }
+        public int Rating { get; set; }
+        public string Comment { get; set; }
+        public DateTime Time { get; set; }
     }
 }
