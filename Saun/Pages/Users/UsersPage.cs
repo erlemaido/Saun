@@ -1,7 +1,7 @@
 ﻿using System;
-using Data.Users;
-using Domain.Users;
-using Facade.Users;
+using Data.Shop.Users;
+using Domain.Shop.Users;
+using Facade.Shop.Users;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 

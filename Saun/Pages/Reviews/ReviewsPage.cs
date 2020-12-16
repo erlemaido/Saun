@@ -1,7 +1,7 @@
 ﻿using System;
-using Data.Reviews;
-using Domain.Reviews;
-using Facade.Reviews;
+using Data.Shop.Reviews;
+using Domain.Shop.Reviews;
+using Facade.Shop.Reviews;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 

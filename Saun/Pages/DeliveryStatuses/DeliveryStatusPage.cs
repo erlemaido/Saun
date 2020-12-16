@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Facade.DeliveryCountries;
-using Facade.DeliveryStatuses;
 using Microsoft.AspNetCore.Mvc;
 using Sauna.Pages.Abstractions.Constants;
 

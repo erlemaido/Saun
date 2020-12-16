@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data.Abstractions;
-using Data.Units;
+using Data.Shop.Units;
 using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.Rendering;

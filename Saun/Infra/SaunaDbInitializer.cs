@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Data.Brands;
-using Data.Cities;
-using Data.DeliveryTypes;
-using Data.Products;
-using Data.ProductTypes;
-using Data.Stock;
-using Data.Units;
+using Data.Shop.Brands;
+using Data.Shop.Cities;
+using Data.Shop.Countries;
+using Data.Shop.DeliveryTypes;
+using Data.Shop.Products;
+using Data.Shop.ProductTypes;
+using Data.Shop.Statuses;
+using Data.Shop.Stock;
+using Data.Shop.Units;
 
 namespace Infra
 {
@@ -245,102 +247,100 @@ namespace Infra
             Comment = "Tuleb juurde tellida",
             LastUpdateTime = System.DateTime.Now
         };
-        internal static DeliveryStatusData infoReceived = new DeliveryStatusData()
+        internal static StatusData infoReceived = new StatusData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Info Received"
 
         };
-        internal static DeliveryStatusData inTransit = new DeliveryStatusData()
+        internal static StatusData inTransit = new StatusData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "In Transit"
 
         };
-        internal static DeliveryStatusData outForDelivery = new DeliveryStatusData()
+        internal static StatusData outForDelivery = new StatusData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Out for Delivery"
 
         };
-        internal static DeliveryStatusData pickUp = new DeliveryStatusData()
+        internal static StatusData pickUp = new StatusData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Available for Pickup"
 
         };
-        internal static DeliveryStatusData delivered = new DeliveryStatusData()
+        internal static StatusData delivered = new StatusData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Delivered"
 
         };
-        internal static DeliveryCountryData estonia = new DeliveryCountryData()
+        internal static CountryData estonia = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Estonia"
 
         };
-        internal static DeliveryCountryData russia = new DeliveryCountryData()
+        internal static CountryData russia = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Russia"
 
         };
-        internal static DeliveryCountryData USA = new DeliveryCountryData()
+        internal static CountryData USA = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "USA"
 
         };
-        internal static DeliveryCountryData latvia = new DeliveryCountryData()
+        internal static CountryData latvia = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Latvia"
 
         };
-        internal static DeliveryCountryData china = new DeliveryCountryData()
+        internal static CountryData china = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "China",
 
         };
-        internal static DeliveryCityData tallinn = new DeliveryCityData()
+        internal static CityData tallinn = new CityData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Tallinn",
-            DeliveryCountryId = estonia.Id
+            CountryId = estonia.Id
 
         };
-        internal static DeliveryCityData moscow = new DeliveryCityData()
+        internal static CityData moscow = new CityData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Moscow",
-            DeliveryCountryId = russia.Id
+            CountryId = russia.Id
 
         };
-        internal static DeliveryCityData tokyo = new DeliveryCityData()
+        internal static CityData tokyo = new CityData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Tokyo",
-            DeliveryCountryId = china.Id
+            CountryId = china.Id
 
         };
-        internal static DeliveryCityData newyork = new DeliveryCityData()
+        internal static CityData newyork = new CityData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "New York",
-            DeliveryCountryId = USA.Id
+            CountryId = USA.Id
 
 
         };
-        internal static DeliveryCityData riga = new DeliveryCityData()
+        internal static CityData riga = new CityData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "Riga",
-            DeliveryCountryId = latvia.Id
-
-
+            CountryId = latvia.Id
         };
         internal static List<BrandData> Brands => new List<BrandData>
         {
@@ -351,16 +351,16 @@ namespace Infra
         {
             mug, coat, laptop, sneakers, sweatshirt, water
         };
-        internal static List<DeliveryCountryData> Countries => new List<DeliveryCountryData>
+        internal static List<CountryData> Countries => new List<CountryData>
         {
             estonia,USA,latvia,russia,china
         };
 
-        internal static List<DeliveryCityData> Cities => new List<DeliveryCityData>
+        internal static List<CityData> Cities => new List<CityData>
         {
             tallinn, moscow, tokyo, newyork, riga
         };
-        internal static List<DeliveryStatusData> Statuses => new List<DeliveryStatusData>
+        internal static List<StatusData> Statuses => new List<StatusData>
         {
             infoReceived,inTransit,outForDelivery,pickUp,delivered
         };
@@ -400,13 +400,13 @@ namespace Infra
             db.Brands.AddRange(Brands);
             db.SaveChanges();
         }
-        private static void InitializeDeliveryCountries(SaunaDbContext db)
+        private static void InitializeCountries(SaunaDbContext db)
         {
             if (db.Countries.Count() != 0) return;
             db.Countries.AddRange(Countries);
             db.SaveChanges();
         }
-        private static void InitializeDeliveryCities(SaunaDbContext db)
+        private static void InitializeCities(SaunaDbContext db)
         {
             if (db.Cities.Count() != 0) return;
             db.Cities.AddRange(Cities);
@@ -433,10 +433,10 @@ namespace Infra
             db.SaveChanges();
         }
 
-        private static void InitializeStocks(SaunaDbContext db)
+        private static void InitializeStock(SaunaDbContext db)
         {
-            if (db.Stocks.Count() != 0) return;
-            db.Stocks.AddRange(Stocks);
+            if (db.Stock.Count() != 0) return;
+            db.Stock.AddRange(Stocks);
             db.SaveChanges();
         }
 
@@ -446,11 +446,11 @@ namespace Infra
             InitializeProductTypes(db);
             InitializeUnits(db);
             InitializeProducts(db);
-            InitializeStocks(db);
-            InitializeDeliveryCountries(db);
+            InitializeStock(db);
+            InitializeCountries(db);
             InitializeDeliveryTypes(db);
             InitializeDeliveryStatus(db);
-            InitializeDeliveryCities(db);
+            InitializeCities(db);
         }
 
     }
