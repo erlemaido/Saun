@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aids.Reflection;
+using Data.Shop.People;
 using Data.Shop.Users;
+using Domain.Shop.People;
 using Domain.Shop.Users;
 using Facade.Shop.Users;
 using Microsoft.AspNetCore.Mvc;
@@ -12,8 +15,11 @@ namespace Sauna.Pages.Shop.Users
 {
     public class UsersPage : ViewPage<IUsersRepository, User, UserView, UserData>
     {
-        public UsersPage(IUsersRepository repository) : base(repository, PagesNames.Users)
+        public UsersPage(
+            IUsersRepository repository,
+            IPeopleRepository peopleRepository) : base(repository, PagesNames.Users)
         {
+            People = NewPeopleList<Person, PersonData>(peopleRepository);
         }
 
         public IEnumerable<SelectListItem> People { get; set; }
@@ -34,9 +40,13 @@ namespace Sauna.Pages.Shop.Users
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
-        public string GetPersonName(string itemPersonId)
+        public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
+        
+        private bool IsPerson() => FixedFilter == GetMember.Name<UserView>(x => x.PersonId);
+        
+        protected internal override string GetPageSubtitle()
         {
-            throw new NotImplementedException();
+            return IsPerson() ? $"{GetPersonName(FixedValue)}" : "Määramata alalehe pealkiri";
         }
     }
 }
