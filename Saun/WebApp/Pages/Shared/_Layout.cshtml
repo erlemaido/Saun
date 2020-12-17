@@ -28,7 +28,7 @@
                         <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" asp-page-handler="index">Privacy</a>
                     </li>
 
-                    @Html.DropMenu("Poodi",
+                    @Html.DropMenu("Admin",
                         new Link("Brändid", new Uri("/Shop/Brands/Index?handler=index", UriKind.Relative)),
                         new Link("Linnad", new Uri("/Shop/Cities/Index?handler=index", UriKind.Relative)),
                         new Link("Riigid", new Uri("/Shop/Countries/Index?handler=index", UriKind.Relative)),
@@ -49,6 +49,18 @@
                         new Link("Kasutaja rollid", new Uri("/Shop/UserRoles/Index?handler=index", UriKind.Relative)),
                         new Link("Kasutajad", new Uri("/Shop/Users/Index?handler=index", UriKind.Relative))
                         )
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Products/Index" asp-page-handler="index">Tooted</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Brands/Index" asp-page-handler="index">Brändid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Orders/Index" asp-page-handler="index">Minu tellimused</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Users/Index" asp-page-handler="index">Minu andmed</a>
+                    </li>
                 </ul>
             </div>
         </div>
