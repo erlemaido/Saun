@@ -1,7 +1,12 @@
 using System;
 using System.Collections.Generic;
+using Aids.Reflection;
+using Data.Shop.Orders;
 using Data.Shop.OrderStatuses;
+using Data.Shop.Statuses;
+using Domain.Shop.Orders;
 using Domain.Shop.OrderStatuses;
+using Domain.Shop.Statuses;
 using Facade.Shop.OrderStatuses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,8 +17,13 @@ namespace Sauna.Pages.Shop.OrderStatuses
 {
     public class OrderStatusesPage : ViewPage<IOrderStatusesRepository, OrderStatus, OrderStatusView, OrderStatusData>
     {
-        public OrderStatusesPage(IOrderStatusesRepository repository) : base(repository, PagesNames.OrderStatuses)
+        public OrderStatusesPage(
+            IOrderStatusesRepository repository,
+            IOrdersRepository ordersRepository,
+            IStatusesRepository statusesRepository) : base(repository, PagesNames.OrderStatuses)
         {
+            Orders = NewItemsList<Order, OrderData>(ordersRepository);
+            Statuses = NewItemsList<Status, StatusData>(statusesRepository);
         }
 
         public IEnumerable<SelectListItem> Orders { get; set; }
@@ -35,14 +45,28 @@ namespace Sauna.Pages.Shop.OrderStatuses
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
-        public string GetOrderName(string itemOrderId)
-        {
-            throw new NotImplementedException();
-        }
+        public string GetOrderName(string itemOrderId) => GetItemName(Orders, itemOrderId);
 
-        public string GetStatusName(string itemStatusId)
+        public string GetStatusName(string itemStatusId) => GetItemName(Statuses, itemStatusId);
+        
+        private bool IsOrder() => FixedFilter == GetMember.Name<OrderStatusView>(x => x.OrderId);
+        
+        private bool IsStatus() => FixedFilter == GetMember.Name<OrderStatusView>(x => x.StatusId);
+
+        protected internal override string GetPageSubtitle()
         {
-            throw new NotImplementedException();
+            if (IsOrder())
+            {
+                return $"{GetOrderName(FixedValue)}";
+            }
+            else if (IsStatus())
+            {
+                return $"{GetStatusName(FixedValue)}";
+            }
+            else
+            {
+                return "Määramata alalehe pealkiri";
+            }
         }
     }
 }
