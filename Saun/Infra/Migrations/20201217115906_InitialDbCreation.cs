@@ -76,6 +76,7 @@ namespace Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     PersonId = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true),
                     DeliveryTypeId = table.Column<string>(nullable: true),

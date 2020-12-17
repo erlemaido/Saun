@@ -3,6 +3,7 @@
 
 <body>
 <input type="hidden" asp-for="Item.Id" />
+@Html.Editor(m => m.Item.Name)
 @Html.DropDown(m => m.Item.PersonId, Model.People)
 @Html.DropDown(m => m.Item.UserId, Model.Users)
 @Html.DropDown(m => m.Item.DeliveryTypeId, Model.DeliveryTypes)

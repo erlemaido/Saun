@@ -8,6 +8,10 @@ namespace Facade.Shop.Orders
     public class OrderView : UniqueEntityView
     {
         [Required]
+        [DisplayName("Nimi")]
+        public string Name { get; set; }
+        
+        [Required]
         [DisplayName("Klient")]
         public string PersonId { get; set; }
         

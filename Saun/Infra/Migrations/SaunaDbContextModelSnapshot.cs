@@ -141,6 +141,9 @@ namespace Infra.Migrations
                     b.Property<string>("DeliveryTypeId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PersonId")
                         .HasColumnType("nvarchar(max)");
 
