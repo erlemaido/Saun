@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aids.Reflection;
+using Data.Shop.Products;
 using Data.Shop.Reviews;
+using Data.Shop.Users;
+using Domain.Shop.Products;
 using Domain.Shop.Reviews;
+using Domain.Shop.Users;
 using Facade.Shop.Reviews;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,8 +17,13 @@ namespace Sauna.Pages.Shop.Reviews
 {
     public class ReviewsPage : ViewPage<IReviewsRepository, Review, ReviewView, ReviewData>
     {
-        public ReviewsPage(IReviewsRepository repository) : base(repository, PagesNames.Reviews)
+        public ReviewsPage(
+            IReviewsRepository repository,
+            IProductsRepository productsRepository,
+            IUsersRepository usersRepository) : base(repository, PagesNames.Reviews)
         {
+            Products = NewItemsList<Product, ProductData>(productsRepository);
+            Users = NewUsersList<User, UserData>(usersRepository);
         }
 
         public IEnumerable<SelectListItem> Products { get; set; }
@@ -35,14 +45,28 @@ namespace Sauna.Pages.Shop.Reviews
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
-        public string GetProductName(string itemProductId)
-        {
-            throw new NotImplementedException();
-        }
+        public string GetProductName(string itemProductId) => GetItemName(Products, itemProductId);
 
-        public string GetUserName(string itemUserId)
+        public string GetUserName(string itemUserId) => GetItemName(Users, itemUserId);
+        
+        private bool IsProduct() => FixedFilter == GetMember.Name<ReviewView>(x => x.ProductId);
+        
+        private bool IsUser() => FixedFilter == GetMember.Name<ReviewView>(x => x.UserId);
+
+        protected internal override string GetPageSubtitle()
         {
-            throw new NotImplementedException();
+            if (IsProduct())
+            {
+                return $"{GetProductName(FixedValue)}";
+            }
+            else if (IsUser())
+            {
+                return $"{GetUserName(FixedValue)}";
+            }
+            else
+            {
+                return "Määramata alalehe pealkiri";
+            }
         }
     }
 }
