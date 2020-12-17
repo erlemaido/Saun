@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using Aids.Reflection;
 using Data.Shop.Baskets;
+using Data.Shop.People;
 using Data.Shop.Users;
 using Domain.Shop.Baskets;
+using Domain.Shop.People;
 using Domain.Shop.Users;
 using Facade.Shop.Baskets;
 using Microsoft.AspNetCore.Mvc;
@@ -17,11 +19,11 @@ namespace Sauna.Pages.Shop.Baskets
     {
         public BasketsPage(
             IBasketsRepository repository,
-            IUsersRepository usersRepository) : base(repository, PagesNames.Baskets)
+            IPeopleRepository peopleRepository) : base(repository, PagesNames.Baskets)
         {
-            Users = NewUsersList<User, UserData>(usersRepository);
+            People = NewPeopleList<Person, PersonData>(peopleRepository);
         }
-        public IEnumerable<SelectListItem> Users { get; set; }
+        public IEnumerable<SelectListItem> People { get; set; }
 
         protected internal override Basket ToObject(BasketView view) => BasketViewFactory.Create(view);
         
@@ -39,14 +41,14 @@ namespace Sauna.Pages.Shop.Baskets
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
-        public string GetUserName(string itemUserId) => GetItemName(Users, itemUserId);
-        private bool IsUser() => FixedFilter == GetMember.Name<BasketView>(x => x.UserId);
+        public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
+        private bool IsPerson() => FixedFilter == GetMember.Name<BasketView>(x => x.PersonId);
 
         protected internal override string GetPageSubtitle()
         {
-            if (IsUser())
+            if (IsPerson())
             {
-                return $"{GetUserName(FixedValue)}";
+                return $"{GetPersonName(FixedValue)}";
             }
             else
             {

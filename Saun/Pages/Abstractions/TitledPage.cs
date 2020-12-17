@@ -114,11 +114,11 @@ namespace Sauna.Pages.Abstractions
                 ? new List<SelectListItem>()
                 : condition is null ?
                     items
-                        .Select(m => new SelectListItem(m.Data.Email, m.Data.Id))
+                        .Select(m => new SelectListItem(m.Data.PersonId, m.Data.Id))
                         .ToList() :
                     items
                         .Where(condition)
-                        .Select(m => new SelectListItem(m.Data.Email, m.Data.Id))
+                        .Select(m => new SelectListItem(m.Data.PersonId, m.Data.Id))
                         .ToList();
 
             return list;

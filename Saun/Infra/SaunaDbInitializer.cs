@@ -1022,7 +1022,6 @@ namespace Infra
         internal static UserData adminUser = new UserData()
         {
             Id = Guid.NewGuid().ToString(),
-            Email = "admin@saun.ee",
             EmailConfirmed = true,
             PasswordHash = "njndrfkflcwmapodlmka843eu892ujr",
             PersonId = adminPerson.Id,

@@ -27,7 +27,7 @@ namespace Infra.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: true),
+                    PersonId = table.Column<string>(nullable: true),
                     TotalPrice = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
@@ -301,7 +301,6 @@ namespace Infra.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     PersonId = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
                     ValidFrom = table.Column<DateTime>(nullable: false),
