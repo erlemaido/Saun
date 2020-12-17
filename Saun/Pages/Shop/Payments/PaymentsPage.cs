@@ -1,7 +1,14 @@
 using System;
 using System.Collections.Generic;
+using Aids.Reflection;
+using Data.Shop.Orders;
 using Data.Shop.Payments;
+using Data.Shop.PaymentTypes;
+using Data.Shop.People;
+using Domain.Shop.Orders;
 using Domain.Shop.Payments;
+using Domain.Shop.PaymentTypes;
+using Domain.Shop.People;
 using Facade.Shop.Payments;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,8 +19,15 @@ namespace Sauna.Pages.Shop.Payments
 {
     public class PaymentsPage : ViewPage<IPaymentsRepository, Payment, PaymentView, PaymentData>
     {
-        public PaymentsPage(IPaymentsRepository repository) : base(repository, PagesNames.Payments)
+        public PaymentsPage(
+            IPaymentsRepository repository,
+            IOrdersRepository ordersRepository,
+            IPaymentTypesRepository paymentTypesRepository,
+            IPeopleRepository peopleRepository) : base(repository, PagesNames.Payments)
         {
+            Orders = NewItemsList<Order, OrderData>(ordersRepository);
+            People = NewPeopleList<Person, PersonData>(peopleRepository);
+            PaymentTypes = NewItemsList<PaymentType, PaymentTypeData>(paymentTypesRepository);
         }
 
         public IEnumerable<SelectListItem> Orders { get; set; }
@@ -36,19 +50,34 @@ namespace Sauna.Pages.Shop.Payments
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
-        public string GetOrderName(string itemOrderId)
-        {
-            throw new NotImplementedException();
-        }
+        public string GetOrderName(string itemOrderId) => GetItemName(Orders, itemOrderId);
 
-        public string GetPersonName(string itemPersonId)
-        {
-            throw new NotImplementedException();
-        }
+        public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
 
-        public string GetPaymentTypeName(string itemPaymentTypeId)
+        public string GetPaymentTypeName(string itemPaymentTypeId) => GetItemName(PaymentTypes, itemPaymentTypeId);
+        private bool IsOrder() => FixedFilter == GetMember.Name<PaymentView>(x => x.OrderId);
+        
+        private bool IsPerson() => FixedFilter == GetMember.Name<PaymentView>(x => x.PersonId);
+        private bool IsPaymentType() => FixedFilter == GetMember.Name<PaymentView>(x => x.PaymentTypeId);
+
+        protected internal override string GetPageSubtitle()
         {
-            throw new NotImplementedException();
+            if (IsOrder())
+            {
+                return $"{GetOrderName(FixedValue)}";
+            }
+            else if (IsPerson())
+            {
+                return $"{GetPersonName(FixedValue)}";
+            }
+            else if (IsPaymentType())
+            {
+                return $"{GetPaymentTypeName(FixedValue)}";
+            }
+            else
+            {
+                return "Määramata alalehe pealkiri";
+            }
         }
     }
 }
