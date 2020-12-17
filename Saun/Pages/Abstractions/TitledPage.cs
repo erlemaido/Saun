@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data.Abstractions;
+using Data.Shop.People;
 using Data.Shop.Units;
+using Data.Shop.Users;
 using Domain.Abstractions;
 using Facade.Abstractions;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -77,6 +79,46 @@ namespace Sauna.Pages.Abstractions
                     items
                         .Where(condition)
                         .Select(m => new SelectListItem(m.Data.Code, m.Data.Id))
+                        .ToList();
+
+            return list;
+        }
+        
+        protected internal static IEnumerable<SelectListItem> NewPeopleList<TtDomain, TtData>(IRepository<TtDomain> repository,
+            Func<TtDomain, bool> condition = null)
+            where TtDomain : IUniqueEntity<TtData>
+            where TtData : PersonData, new()
+        {
+            var items = repository?.Get().GetAwaiter().GetResult();
+            var list = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                        .Select(m => new SelectListItem(m.Data.FirstName + " " + m.Data.LastName, m.Data.Id))
+                        .ToList() :
+                    items
+                        .Where(condition)
+                        .Select(m => new SelectListItem(m.Data.FirstName + " " + m.Data.LastName, m.Data.Id))
+                        .ToList();
+
+            return list;
+        }
+        
+        protected internal static IEnumerable<SelectListItem> NewUsersList<TtDomain, TtData>(IRepository<TtDomain> repository,
+            Func<TtDomain, bool> condition = null)
+            where TtDomain : IUniqueEntity<TtData>
+            where TtData : UserData, new()
+        {
+            var items = repository?.Get().GetAwaiter().GetResult();
+            var list = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                        .Select(m => new SelectListItem(m.Data.Email, m.Data.Id))
+                        .ToList() :
+                    items
+                        .Where(condition)
+                        .Select(m => new SelectListItem(m.Data.Email, m.Data.Id))
                         .ToList();
 
             return list;

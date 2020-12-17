@@ -393,6 +393,9 @@ namespace Infra.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 

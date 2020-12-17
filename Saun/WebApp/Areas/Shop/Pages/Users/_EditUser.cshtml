@@ -4,6 +4,7 @@
 <body>
     <input type="hidden" asp-for="Item.Id" />
 @Html.DropDown(m => m.Item.PersonId, Model.People)
+    @Html.Editor(m => m.Item.Email)
     @Html.Editor(m => m.Item.EmailConfirmed)
     @Html.Editor(m => m.Item.PasswordHash)
     @Html.Editor(m => m.Item.ValidFrom)
