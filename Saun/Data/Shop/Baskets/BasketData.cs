@@ -4,7 +4,7 @@ namespace Data.Shop.Baskets
 {
     public class BasketData : NamedEntityData
     {
-        public string UserId { get; set; }
+        public string PersonId { get; set; }
         public double TotalPrice { get; set; }
     }
 }

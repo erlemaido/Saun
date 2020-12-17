@@ -6,7 +6,6 @@ namespace Data.Shop.Users
     public class UserData : UniqueEntityData
     {
         public string PersonId { get; set; }
-        public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
         public string PasswordHash { get; set; }
         public DateTime ValidFrom { get; set; }

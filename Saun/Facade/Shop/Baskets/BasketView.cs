@@ -10,8 +10,8 @@ namespace Facade.Shop.Baskets
         [DisplayName("Nimi")]
         public string Name { get; set; }
 
-        [DisplayName("Kasutaja")]
-        public string UserId { get; set; }
+        [DisplayName("Klient")]
+        public string PersonId { get; set; }
 
         [Required]
         [DisplayName("Hind")]

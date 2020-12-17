@@ -17,7 +17,7 @@
     <thead>
     @Html.Header(
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.UserId), Model.GetSortString(m=> m.UserId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m=> m.PersonId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.TotalPrice), Model.GetSortString(m=> m.TotalPrice, page))
         )
     </thead>
@@ -36,7 +36,7 @@
                 Model.FixedFilter,
                 Model.FixedValue,
                 Html.DisplayFor(modelItem => item.Name),
-                Html.Raw(Model.GetUserName(item.UserId)),
+                Html.Raw(Model.GetPersonName(item.PersonId)),
                 Html.DisplayFor(modelItem => item.TotalPrice)
                 )
         </tr>
