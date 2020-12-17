@@ -21,14 +21,9 @@
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                 <partial name="_LoginPartial"/>
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Index" asp-page-handler="index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" asp-page-handler="index">Privacy</a>
-                    </li>
-
                     @Html.DropMenu("Admin",
+                        new Link("Ostukorvi read", new Uri("/Shop/BasketItems/Index?handler=index", UriKind.Relative)),
+                        new Link("Ostukorvid", new Uri("/Shop/Baskets/Index?handler=index", UriKind.Relative)),
                         new Link("Brändid", new Uri("/Shop/Brands/Index?handler=index", UriKind.Relative)),
                         new Link("Linnad", new Uri("/Shop/Cities/Index?handler=index", UriKind.Relative)),
                         new Link("Riigid", new Uri("/Shop/Countries/Index?handler=index", UriKind.Relative)),
@@ -50,16 +45,25 @@
                         new Link("Kasutajad", new Uri("/Shop/Users/Index?handler=index", UriKind.Relative))
                         )
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Products/Index" asp-page-handler="index">Tooted</a>
+                        <a class="nav-link text-dark" asp-area="Shop" asp-page="/Products/Index" asp-page-handler="index">Tooted</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Brands/Index" asp-page-handler="index">Brändid</a>
+                        <a class="nav-link text-dark" asp-area="Shop" asp-page="/Brands/Index" asp-page-handler="index">Brändid</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Orders/Index" asp-page-handler="index">Minu tellimused</a>
+                        <a class="nav-link text-dark" asp-area="Shop" asp-page="/Baskets/Index" asp-page-handler="index">Ostukorv</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Shop/Users/Index" asp-page-handler="index">Minu andmed</a>
+                        <a class="nav-link text-dark" asp-area="Shop" asp-page="/Orders/Index" asp-page-handler="index">Minu tellimused</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Shop" asp-page="/Users/Index" asp-page-handler="index">Minu andmed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Index" asp-page-handler="index">Meist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" asp-page-handler="index">Kontakt</a>
                     </li>
                 </ul>
             </div>

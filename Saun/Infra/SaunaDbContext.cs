@@ -1,3 +1,5 @@
+using Data.Shop.BasketItems;
+using Data.Shop.Baskets;
 using Data.Shop.Brands;
 using Data.Shop.Cities;
 using Data.Shop.Countries;
@@ -25,6 +27,8 @@ namespace Infra
     {
         public SaunaDbContext(DbContextOptions<SaunaDbContext> options) : base(options) { }
 
+        public DbSet<BasketItemData> BasketItems { get; set; }
+        public DbSet<BasketData> Baskets { get; set; }
         public DbSet<BrandData> Brands { get; set; }
         public DbSet<CityData> Cities { get; set; }
         public DbSet<CountryData> Countries { get; set; }
@@ -54,6 +58,8 @@ namespace Infra
 
         public static void InitializeTables(ModelBuilder builder)
         {
+            builder.Entity<BasketItemData>().ToTable(nameof(BasketItems));
+            builder.Entity<BasketData>().ToTable(nameof(Baskets));
             builder.Entity<BrandData>().ToTable(nameof(Brands));
             
             builder.Entity<CityData>().ToTable(nameof(Cities));

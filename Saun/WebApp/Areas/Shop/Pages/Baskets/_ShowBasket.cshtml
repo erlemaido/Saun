@@ -1,0 +1,9 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Baskets.BasketsPage
+
+<body>
+@Html.Show(m => m.Item.Name)
+@Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
+@Html.Show(m => m.Item.TotalPrice)
+
+</body>

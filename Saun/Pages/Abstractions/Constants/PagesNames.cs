@@ -2,6 +2,8 @@
 namespace Sauna.Pages.Abstractions.Constants {
     public static class PagesNames {
         
+        public static string BasketItems => "Ostukorvi read";
+        public static string Baskets => "Ostukorvid";
         public static string Brands => "Brändid";
         public static string Cities => "Linnad";
         public static string Countries => "Riigid";
