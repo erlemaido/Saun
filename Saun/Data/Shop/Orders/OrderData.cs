@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.Orders
 {
-    public class OrderData : UniqueEntityData
+    public class OrderData : NamedEntityData
     {
         public string PersonId { get; set; }
         public string UserId { get; set; }

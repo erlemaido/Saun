@@ -1,87 +1,157 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Data.Abstractions.DefinedEntityData" Collapsed="true">
-    <Position X="5" Y="3.5" Width="1.5" />
+  <Class Name="Data.Abstractions.DefinedEntityData">
+    <Position X="0.5" Y="7" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abstractions\DefinedEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Abstractions.NamedEntityData" Collapsed="true">
-    <Position X="7.25" Y="2" Width="1.5" />
+  <Class Name="Data.Abstractions.NamedEntityData">
+    <Position X="0.5" Y="3" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abstractions\NamedEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Abstractions.UniqueEntityData" Collapsed="true">
-    <Position X="8.25" Y="0.75" Width="1.5" />
+  <Class Name="Data.Abstractions.UniqueEntityData">
+    <Position X="0.5" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abstractions\UniqueEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.ProductTypes.ProductTypeData" Collapsed="true">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+  <Class Name="Data.Shop.Brands.BrandData">
+    <Position X="4.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductTypes\ProductTypeData.cs</FileName>
+      <FileName>Shop\Brands\BrandData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Units.UnitData" Collapsed="true">
-    <Position X="10.5" Y="3.5" Width="1.5" />
+  <Class Name="Data.Shop.Products.ProductData">
+    <Position X="0.5" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAA=</HashCode>
+      <FileName>Shop\Products\ProductData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Roles.RoleData">
+    <Position X="2.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAAAAA=</HashCode>
+      <FileName>Shop\Roles\RoleData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Cities.CityData">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Cities\CityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Countries.CountryData">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Countries\CountryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.DeliveryTypes.DeliveryTypeData">
+    <Position X="6" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\DeliveryTypes\DeliveryTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.PaymentTypes.PaymentTypeData">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\PaymentTypes\PaymentTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.ProductTypes.ProductTypeData">
+    <Position X="9.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\ProductTypes\ProductTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Statuses.StatusData">
+    <Position X="11.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Statuses\StatusData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Units.UnitData">
+    <Position X="13" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Units\UnitData.cs</FileName>
+      <FileName>Shop\Units\UnitData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Stocks.StockData" Collapsed="true">
-    <Position X="12.75" Y="2" Width="1.5" />
+  <Class Name="Data.Shop.OrderItems.OrderItemData">
+    <Position X="4.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAACAAAEAAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAA=</HashCode>
-      <FileName>Stocks\StockData.cs</FileName>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Shop\OrderItems\OrderItemData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Products.ProductData" Collapsed="true">
-    <Position X="3.75" Y="5" Width="1.5" />
+  <Class Name="Data.Shop.Orders.OrderData">
+    <Position X="2.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAQAQAAAAIAAAAAAAAAAAAAAAAAAEAAARAAA=</HashCode>
-      <FileName>Products\ProductData.cs</FileName>
+      <HashCode>AAAAAAAFAIAAAAAEAAACAAgAAAAQQAABAAIAAAAAAAA=</HashCode>
+      <FileName>Shop\Orders\OrderData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.Brands.BrandData" Collapsed="true">
-    <Position X="6" Y="5" Width="1.5" />
+  <Class Name="Data.Shop.OrderStatuses.OrderStatusData">
+    <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Brands\BrandData.cs</FileName>
+      <HashCode>EAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Shop\OrderStatuses\OrderStatusData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.DeliveryType.DeliveryTypeData" Collapsed="true">
-    <Position X="11" Y="4.75" Width="1.5" />
+  <Class Name="Data.Shop.Payments.PaymentData">
+    <Position X="7.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DeliveryType\DeliveryTypeData.cs</FileName>
+      <HashCode>EAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAQA=</HashCode>
+      <FileName>Shop\Payments\PaymentData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.DeliveryStatus.DeliveryStatusData" Collapsed="true">
-    <Position X="9.75" Y="6.25" Width="1.5" />
+  <Class Name="Data.Shop.People.PersonData">
+    <Position X="9.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DeliveryStatus\DeliveryStatusData.cs</FileName>
+      <HashCode>AAAAAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Shop\People\PersonData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.DeliveryCountry.DeliveryCountryData" Collapsed="true">
-    <Position X="6.5" Y="7" Width="1.5" />
+  <Class Name="Data.Shop.Reviews.ReviewData">
+    <Position X="11.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DeliveryCountry\DeliveryCountryData.cs</FileName>
+      <HashCode>EAAAAAAEAAAAAAAAAAAAAAgAAAAAAAEAAAAAAAAAAQA=</HashCode>
+      <FileName>Shop\Reviews\ReviewData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Data.DeliveryCity.DeliveryCityData" Collapsed="true">
-    <Position X="3.75" Y="7" Width="1.5" />
+  <Class Name="Data.Shop.Stock.StockData">
+    <Position X="14.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>DeliveryCity\DeliveryCityData.cs</FileName>
+      <HashCode>EAAAAAAEAAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAA=</HashCode>
+      <FileName>Shop\Stock\StockData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.UserRoles.UserRoleData">
+    <Position X="13" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIEAAAAAAAAAAAAAAgAAAAAACAAACAAAAAAAAA=</HashCode>
+      <FileName>Shop\UserRoles\UserRoleData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Shop.Users.UserData">
+    <Position X="16.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAEAAAAAAAEAAAAAAAAAAAAACAAACQAAAAAAAA=</HashCode>
+      <FileName>Shop\Users\UserData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
