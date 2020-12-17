@@ -1,0 +1,9 @@
+@using Sauna.Pages.Abstractions.Extensions
+@model Sauna.Pages.Shop.Baskets.BasketsPage
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.Editor(m => m.Item.Name)
+@Html.DropDown(m => m.Item.UserId, Model.Users)
+@Html.Editor(m => m.Item.TotalPrice)
+</body>

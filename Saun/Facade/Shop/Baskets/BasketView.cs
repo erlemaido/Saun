@@ -1,0 +1,20 @@
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Facade.Abstractions;
+
+namespace Facade.Shop.Baskets
+{
+    public class BasketView : UniqueEntityView
+    {
+        [Required]
+        [DisplayName("Nimi")]
+        public string Name { get; set; }
+
+        [DisplayName("Kasutaja")]
+        public string UserId { get; set; }
+
+        [Required]
+        [DisplayName("Hind")]
+        public double TotalPrice { get; set; }
+    }
+}

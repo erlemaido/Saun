@@ -1,3 +1,5 @@
+using Domain.Shop.BasketItems;
+using Domain.Shop.Baskets;
 using Domain.Shop.Brands;
 using Domain.Shop.Cities;
 using Domain.Shop.Countries;
@@ -18,6 +20,8 @@ using Domain.Shop.Units;
 using Domain.Shop.UserRoles;
 using Domain.Shop.Users;
 using Infra;
+using Infra.Shop.BasketItems;
+using Infra.Shop.Baskets;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -71,6 +75,8 @@ namespace WebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
             
+            services.AddScoped<IBasketItemsRepository, BasketItemsRepository>();
+            services.AddScoped<IBasketsRepository, BasketsRepository>();
             services.AddScoped<IBrandsRepository, BrandsRepository>();
             services.AddScoped<ICitiesRepository, CitiesRepository>();
             services.AddScoped<ICountriesRepository, CountriesRepository>();
