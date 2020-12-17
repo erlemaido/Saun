@@ -273,6 +273,7 @@ namespace Infra.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     PersonId = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
                     ValidFrom = table.Column<DateTime>(nullable: false),

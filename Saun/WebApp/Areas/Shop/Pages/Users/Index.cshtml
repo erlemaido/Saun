@@ -18,6 +18,7 @@
         <thead>
             @Html.Header(
                 new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m => m.PersonId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Email), Model.GetSortString(m => m.Email, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.EmailConfirmed), Model.GetSortString(m => m.EmailConfirmed, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PasswordHash), Model.GetSortString(m => m.PasswordHash, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.ValidFrom), Model.GetSortString(m => m.ValidFrom, page)),
@@ -40,6 +41,7 @@
                         Model.FixedFilter,
                         Model.FixedValue,
                         Html.Raw(Model.GetPersonName(item.PersonId)),
+                        Html.DisplayFor(modelItem => item.Email),
                         Html.DisplayFor(modelItem => item.EmailConfirmed),
                         Html.DisplayFor(modelItem => item.PasswordHash),
                         Html.DisplayFor(modelItem => item.ValidFrom),

@@ -12,6 +12,10 @@ namespace Facade.Shop.Users
         public string PersonId { get; set; }
         
         [Required]
+        [DisplayName("E-mail")]
+        public string Email { get; set; }
+        
+        [Required]
         [DisplayName("Kas Email on kinnitatud")]
         public bool EmailConfirmed { get; set; }
         
