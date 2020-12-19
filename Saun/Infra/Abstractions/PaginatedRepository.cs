@@ -22,7 +22,11 @@ namespace Infra.Abstractions
 
         internal int GetTotalPages(int pageSize)
         {
-            var count = GetItemsCount();
+            var count = 1;
+            if (GetItemsCount() > 1)
+            {
+                count = GetItemsCount();
+            }
             var pages = CountTotalPages(count, pageSize);
 
             return pages;
