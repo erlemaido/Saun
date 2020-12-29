@@ -66,11 +66,9 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
             services.AddDbContext<SaunaDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
@@ -96,6 +94,9 @@ namespace WebApp
             services.AddScoped<IUnitsRepository, UnitsRepository>();
             services.AddScoped<IUserRolesRepository, UserRolesRepository>();
             services.AddScoped<IUsersRepository, UsersRepository>();
+            
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
