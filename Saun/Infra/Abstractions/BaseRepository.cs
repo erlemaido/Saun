@@ -12,13 +12,13 @@ namespace Infra.Abstractions
     where TDomain : IUniqueEntity<TData>
     where TData : UniqueEntityData, new()
     {
-        protected internal DbContext DbContext;
-        protected internal DbSet<TData> DbSet;
+        protected internal DbContext dbContext;
+        protected internal DbSet<TData> dbSet;
 
         protected BaseRepository(DbContext context, DbSet<TData> dbSet)
         {
-            DbContext = context;
-            DbSet = dbSet;
+            dbContext = context;
+            this.dbSet = dbSet;
         }
         protected abstract Task<TData> GetData(string id);
         protected abstract string GetId(TDomain entity);
@@ -30,7 +30,7 @@ namespace Infra.Abstractions
 
         protected internal virtual IQueryable<TData> CreateSqlQuery()
         {
-            var query = from s in DbSet select s;
+            var query = from s in dbSet select s;
 
             return query;
         }
@@ -54,8 +54,8 @@ namespace Infra.Abstractions
         {
             var data = await GetData(id);
 
-            DbSet.Remove(data);
-            await DbContext.SaveChangesAsync();
+            dbSet.Remove(data);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task Add(TDomain obj)
@@ -63,16 +63,16 @@ namespace Infra.Abstractions
             var data = GetData(obj);
             if (data is null) return;
             if (IsInDatabase(data)) await Update(obj);
-            else await DbSet.AddAsync(data);
+            else await dbSet.AddAsync(data);
 
-            await DbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task Update(TDomain obj)
         {
             var data = GetData(obj);
-            DbContext.Attach(data).State = EntityState.Modified;
-            await DbContext.SaveChangesAsync();
+            dbContext.Attach(data).State = EntityState.Modified;
+            await dbContext.SaveChangesAsync();
         }
 
 

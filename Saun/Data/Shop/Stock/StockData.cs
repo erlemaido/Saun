@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.Stock
 {
-    public class StockData : UniqueEntityData
+    public sealed class StockData : UniqueEntityData
     {
         public string ProductId { get; set; }
         public int InStock { get; set; }

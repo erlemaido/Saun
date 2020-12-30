@@ -25,12 +25,12 @@ namespace Sauna.Pages.Abstractions {
             set;
         }
         public int PageIndex {
-            get => Repository.PageIndex;
-            set => Repository.PageIndex = value;
+            get => repository.PageIndex;
+            set => repository.PageIndex = value;
         }
-        public bool HasPreviousPage => Repository.HasPreviousPage;
-        public bool HasNextPage => Repository.HasNextPage;
-        public int TotalPages => Repository.TotalPages;
+        public bool HasPreviousPage => repository.HasPreviousPage;
+        public bool HasNextPage => repository.HasNextPage;
+        public int TotalPages => repository.TotalPages;
 
         protected internal override void SetPageValues(string sortOrder, 
             string searchString, in int? pageIndex) {
@@ -53,7 +53,7 @@ namespace Sauna.Pages.Abstractions {
         }
 
         internal async Task<List<TView>> GetList() {
-            var list = await Repository.Get().ConfigureAwait(true);
+            var list = await repository.Get().ConfigureAwait(true);
 
             return list.Select(ToView).ToList();
         }

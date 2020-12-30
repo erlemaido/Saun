@@ -2,7 +2,7 @@
 
 namespace Data.Shop.OrderItems
 {
-    public class OrderItemData : UniqueEntityData
+    public sealed class OrderItemData : UniqueEntityData
     {
         public string OrderId { get; set; }
         public string ProductId { get; set; }

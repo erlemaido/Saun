@@ -2,7 +2,7 @@
 
 namespace Data.Shop.Statuses
 {
-    public class StatusData : NamedEntityData
+    public sealed class StatusData : NamedEntityData
     {
     }
 }

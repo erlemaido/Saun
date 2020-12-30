@@ -2,7 +2,7 @@
 
 namespace Data.Shop.Cities
 {
-    public class CityData : NamedEntityData
+    public sealed class CityData : NamedEntityData
     {
         public string CountryId { get; set; }
 

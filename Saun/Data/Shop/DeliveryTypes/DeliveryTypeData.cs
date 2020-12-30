@@ -2,7 +2,7 @@
 
 namespace Data.Shop.DeliveryTypes
 {
-    public class DeliveryTypeData : NamedEntityData
+    public sealed class DeliveryTypeData : NamedEntityData
     {
     }
 }

@@ -1,0 +1,134 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+    <PackageReference Include="coverlet.collector" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Aids\" />
+    <Folder Include="Data\Shop\Baskets\" />
+    <Folder Include="Data\Shop\Brands\" />
+    <Folder Include="Data\Shop\Cities\" />
+    <Folder Include="Data\Shop\Countries\" />
+    <Folder Include="Data\Shop\DeliveryTypes\" />
+    <Folder Include="Data\Shop\OrderItems\" />
+    <Folder Include="Data\Shop\OrderStatuses\" />
+    <Folder Include="Data\Shop\Payments\" />
+    <Folder Include="Data\Shop\PaymentTypes\" />
+    <Folder Include="Data\Shop\People\" />
+    <Folder Include="Data\Shop\Products\" />
+    <Folder Include="Data\Shop\ProductTypes\" />
+    <Folder Include="Data\Shop\Reviews\" />
+    <Folder Include="Data\Shop\Roles\" />
+    <Folder Include="Data\Shop\Statuses\" />
+    <Folder Include="Data\Shop\Stock\" />
+    <Folder Include="Data\Shop\Units\" />
+    <Folder Include="Data\Shop\UserRoles\" />
+    <Folder Include="Data\Shop\Users\" />
+    <Folder Include="Domain\Abstractions\" />
+    <Folder Include="Domain\Shop\BasketItems\" />
+    <Folder Include="Domain\Shop\Baskets\" />
+    <Folder Include="Domain\Shop\Brands\" />
+    <Folder Include="Domain\Shop\Cities\" />
+    <Folder Include="Domain\Shop\Countries\" />
+    <Folder Include="Domain\Shop\DeliveryTypes\" />
+    <Folder Include="Domain\Shop\OrderItems\" />
+    <Folder Include="Domain\Shop\OrderStatuses\" />
+    <Folder Include="Domain\Shop\Payments\" />
+    <Folder Include="Domain\Shop\PaymentTypes\" />
+    <Folder Include="Domain\Shop\People\" />
+    <Folder Include="Domain\Shop\Products\" />
+    <Folder Include="Domain\Shop\ProductTypes\" />
+    <Folder Include="Domain\Shop\Reviews\" />
+    <Folder Include="Domain\Shop\Roles\" />
+    <Folder Include="Domain\Shop\Statuses\" />
+    <Folder Include="Domain\Shop\Stock\" />
+    <Folder Include="Domain\Shop\Units\" />
+    <Folder Include="Domain\Shop\UserRoles\" />
+    <Folder Include="Domain\Shop\Users\" />
+    <Folder Include="Facade\Abstractions\" />
+    <Folder Include="Facade\Shop\BasketItems\" />
+    <Folder Include="Facade\Shop\Baskets\" />
+    <Folder Include="Facade\Shop\Brands\" />
+    <Folder Include="Facade\Shop\Cities\" />
+    <Folder Include="Facade\Shop\Countries\" />
+    <Folder Include="Facade\Shop\DeliveryTypes\" />
+    <Folder Include="Facade\Shop\OrderItems\" />
+    <Folder Include="Facade\Shop\OrderStatuses\" />
+    <Folder Include="Facade\Shop\Payments\" />
+    <Folder Include="Facade\Shop\PaymentTypes\" />
+    <Folder Include="Facade\Shop\People\" />
+    <Folder Include="Facade\Shop\Products\" />
+    <Folder Include="Facade\Shop\ProductTypes\" />
+    <Folder Include="Facade\Shop\Reviews\" />
+    <Folder Include="Facade\Shop\Roles\" />
+    <Folder Include="Facade\Shop\Statuses\" />
+    <Folder Include="Facade\Shop\Stock\" />
+    <Folder Include="Facade\Shop\Units\" />
+    <Folder Include="Facade\Shop\UserRoles\" />
+    <Folder Include="Facade\Shop\Users\" />
+    <Folder Include="Infra\Abstractions\" />
+    <Folder Include="Infra\Shop\BasketItems\" />
+    <Folder Include="Infra\Shop\Baskets\" />
+    <Folder Include="Infra\Shop\Brands\" />
+    <Folder Include="Infra\Shop\Cities\" />
+    <Folder Include="Infra\Shop\Countries\" />
+    <Folder Include="Infra\Shop\DeliveryTypes\" />
+    <Folder Include="Infra\Shop\OrderItems\" />
+    <Folder Include="Infra\Shop\OrderStatuses\" />
+    <Folder Include="Infra\Shop\Payments\" />
+    <Folder Include="Infra\Shop\PaymentTypes\" />
+    <Folder Include="Infra\Shop\People\" />
+    <Folder Include="Infra\Shop\Products\" />
+    <Folder Include="Infra\Shop\ProductTypes\" />
+    <Folder Include="Infra\Shop\Reviews\" />
+    <Folder Include="Infra\Shop\Roles\" />
+    <Folder Include="Infra\Shop\Statuses\" />
+    <Folder Include="Infra\Shop\Stock\" />
+    <Folder Include="Infra\Shop\Units\" />
+    <Folder Include="Infra\Shop\UserRoles\" />
+    <Folder Include="Infra\Shop\Users\" />
+    <Folder Include="Pages\Abstractions\" />
+    <Folder Include="Pages\Shop\BasketItems\" />
+    <Folder Include="Pages\Shop\Baskets\" />
+    <Folder Include="Pages\Shop\Brands\" />
+    <Folder Include="Pages\Shop\Cities\" />
+    <Folder Include="Pages\Shop\Countries\" />
+    <Folder Include="Pages\Shop\DeliveryTypes\" />
+    <Folder Include="Pages\Shop\OrderItems\" />
+    <Folder Include="Pages\Shop\OrderStatuses\" />
+    <Folder Include="Pages\Shop\Payments\" />
+    <Folder Include="Pages\Shop\PaymentTypes\" />
+    <Folder Include="Pages\Shop\People\" />
+    <Folder Include="Pages\Shop\Products\" />
+    <Folder Include="Pages\Shop\ProductTypes\" />
+    <Folder Include="Pages\Shop\Reviews\" />
+    <Folder Include="Pages\Shop\Roles\" />
+    <Folder Include="Pages\Shop\Statuses\" />
+    <Folder Include="Pages\Shop\Stock\" />
+    <Folder Include="Pages\Shop\Units\" />
+    <Folder Include="Pages\Shop\UserRoles\" />
+    <Folder Include="Pages\Shop\Users\" />
+    <Folder Include="WebApp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saun\Aids\Aids.csproj" />
+    <ProjectReference Include="..\Saun\Data\Data.csproj" />
+    <ProjectReference Include="..\Saun\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Saun\Facade\Facade.csproj" />
+    <ProjectReference Include="..\Saun\Infra\Infra.csproj" />
+    <ProjectReference Include="..\Saun\Pages\Pages.csproj" />
+    <ProjectReference Include="..\Saun\WebApp\WebApp.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.UserRoles
 {
-    public class UserRoleData : UniqueEntityData
+    public sealed class UserRoleData : UniqueEntityData
     {
         public string UserId { get; set; }
         public string RoleId { get; set; }

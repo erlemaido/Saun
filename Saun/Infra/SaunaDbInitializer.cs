@@ -168,7 +168,7 @@ namespace Infra
             Name = "Muud saunatarvikud"
         };
         
-        internal static DeliveryTypeData UPS = new DeliveryTypeData()
+        internal static DeliveryTypeData ups = new DeliveryTypeData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "UPS"
@@ -433,7 +433,7 @@ namespace Infra
             ProductTypeId = tekstiil.Id
         };
         
-        internal static ProductData saunakividSauflex20kg = new ProductData()
+        internal static ProductData saunakividSauflex20Kg = new ProductData()
         {
             Id = Guid.NewGuid().ToString(),
             BrandId = sauflex.Id,
@@ -721,11 +721,11 @@ namespace Infra
             LastUpdateTime = System.DateTime.Now
         };
 
-        internal static StockData saunakividSauflex20kgStock = new StockData()
+        internal static StockData saunakividSauflex20KgStock = new StockData()
         {
             Id = Guid.NewGuid().ToString(),
             InStock = 0,
-            ProductId = saunakividSauflex20kg.Id,
+            ProductId = saunakividSauflex20Kg.Id,
             Comment = "Otsas",
             LastUpdateTime = System.DateTime.Now
         };
@@ -876,7 +876,7 @@ namespace Infra
             Name = "Venemaa"
 
         };
-        internal static CountryData USA = new CountryData()
+        internal static CountryData usa = new CountryData()
         {
             Id = Guid.NewGuid().ToString(),
             Name = "USA"
@@ -933,7 +933,7 @@ namespace Infra
         {
             Id = Guid.NewGuid().ToString(),
             Name = "New York",
-            CountryId = USA.Id
+            CountryId = usa.Id
         };
         internal static CityData riga = new CityData()
         {
@@ -1077,7 +1077,7 @@ namespace Infra
         };
         internal static List<CountryData> Countries => new List<CountryData>
         {
-            estonia,USA,latvia,russia,china
+            estonia,usa,latvia,russia,china
         };
 
         internal static List<CityData> Cities => new List<CityData>
@@ -1097,7 +1097,7 @@ namespace Infra
         {
             tylöheloAlumiiniumiÄmber, sauflexSaunaKibu, rentoKibu, sawoKibu, tylöheloHygromeeter, cariittiHygromeeter,
             tylöheloTermomeeter, harviaLiivakell, tammeviht, kaseviht, eukalüptiviht, sauflexSaunamyts, rentoSaunaMyts, 
-            harviaSaunaRatik, saunakividSauflex, kerkesMixKerisekivid, kerkesTetra, saunakividSauflex20kg, sauniaAroomikauss,
+            harviaSaunaRatik, saunakividSauflex, kerkesMixKerisekivid, kerkesTetra, saunakividSauflex20Kg, sauniaAroomikauss,
             rentoKulp, tyloheloKulp, sawoSteamshotKulp, harviaIstumisalused, istumisAlused, porandaRest
         };
 
@@ -1106,19 +1106,19 @@ namespace Infra
             tylöheloAlumiiniumiÄmberStock, sauflexSaunaKibuStock, rentoKibuStock, sawoKibuStock, tylöheloHygromeeterStock,
             cariittiHygromeeterStock, tylöheloTermomeeterStock, harviaLiivakellStock, tammevihtStock, kasevihtStock, 
             eukalüptivihtStock, sauflexSaunamytsStock, rentoSaunaMytsStock, harviaSaunaRatikStock, saunakividSauflexStock, 
-            kerkesMixKerisekividStock, kerkesTetraStock, saunakividSauflex20kgStock, sauniaAroomikaussStock, 
+            kerkesMixKerisekividStock, kerkesTetraStock, saunakividSauflex20KgStock, sauniaAroomikaussStock, 
             rentoKulpStock, tyloheloKulpStock, sawoSteamshotKulpStock, harviaIstumisalusedStock, istumisAlusedStock, 
             porandaRestStock
             
         };
-        internal static List<DeliveryTypeData> DeliveryTypes = new List<DeliveryTypeData>
+        internal static List<DeliveryTypeData> deliveryTypes = new List<DeliveryTypeData>
         {
-            UPS,standard,parcelMachine,smartpost
+            ups,standard,parcelMachine,smartpost
         };
         private static void InitializeDeliveryTypes(SaunaDbContext db)
         {
             if (db.DeliveryTypes.Count() != 0) return;
-            db.DeliveryTypes.AddRange(DeliveryTypes);
+            db.DeliveryTypes.AddRange(deliveryTypes);
             db.SaveChanges();
         }
         private static void InitializePaymentTypes(SaunaDbContext db)
