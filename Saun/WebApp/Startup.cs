@@ -66,9 +66,11 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));            
             services.AddDbContext<SaunaDbContext>(options =>
-                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));            
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
