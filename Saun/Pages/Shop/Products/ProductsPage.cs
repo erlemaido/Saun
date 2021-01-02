@@ -4,12 +4,15 @@ using Aids.Reflection;
 using Data.Shop.Brands;
 using Data.Shop.Products;
 using Data.Shop.ProductTypes;
+using Data.Shop.Reviews;
 using Data.Shop.Units;
 using Domain.Shop.Brands;
 using Domain.Shop.Products;
 using Domain.Shop.ProductTypes;
+using Domain.Shop.Reviews;
 using Domain.Shop.Units;
 using Facade.Shop.Products;
+using Facade.Shop.Reviews;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
@@ -22,16 +25,21 @@ namespace Sauna.Pages.Shop.Products
         public IEnumerable<SelectListItem> Brands { get; }
         public IEnumerable<SelectListItem> ProductTypes { get; }
         public IEnumerable<SelectListItem> Units { get; }
+        public IList<ReviewView> Reviews { get; }
+        protected internal readonly IReviewsRepository reviews;
 
         public ProductsPage(
             IProductsRepository repository, 
             IBrandsRepository brandsRepository, 
             IProductTypesRepository productTypesRepository, 
+            IReviewsRepository reviewsRepository,
             IUnitsRepository unitsRepository) : base(repository, PagesNames.Products)
         {
             Brands = NewItemsList<Brand, BrandData>(brandsRepository);
             ProductTypes = NewItemsList<ProductType, ProductTypeData>(productTypesRepository);
             Units = NewUnitsList<Unit, UnitData>(unitsRepository);
+            Reviews = new List<ReviewView>();
+            reviews = reviewsRepository;
         }
 
         public string GetBrandName(string id) => GetItemName(Brands, id);
@@ -76,6 +84,22 @@ namespace Sauna.Pages.Shop.Products
 
             return base.OnGetCreate(sortOrder, searchString, pageIndex,
                 fixedFilter, fixedValue, switchOfCreate);
+        }
+
+        //TODO: see kasutab hetkel toorest Review aga ilmselt peaks kasutama ReviewOfProduct vms
+        public void AddReview(ProductView item)
+        {
+            Reviews.Clear();
+
+            if (item is null) return;
+            reviews.FixedFilter = GetMember.Name<ReviewData>(x => x.ProductId);
+            reviews.FixedValue = item.Id;
+            var list = reviews.Get().GetAwaiter().GetResult();
+
+            foreach (var e in list)
+            {
+                Reviews.Add(ReviewViewFactory.Create(e));
+            }
         }
     }
 }

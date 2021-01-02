@@ -2,6 +2,7 @@
 @using Sauna.Pages.Abstractions.Aids
 @using Sauna.Pages.Abstractions.Constants
 @using Sauna.Pages.Abstractions.Extensions
+@using Sauna.Aids.Reflection
 @model Sauna.Pages.Shop.Products.ProductsPage
 
 @{
@@ -30,25 +31,51 @@
         <tbody>
             @foreach (var item in Model.Items)
             {
+                var selectedRow = "";
+                if (item.Id == Model.SelectedId)
+                {
+                    selectedRow = "alert-success";
+                    Model.AddReview(item);
+                }
+                <tr class=@selectedRow>
+                    @Html.Row(
+                        true,
+                        page,
+                        item.GetId(),
+                        Model.SortOrder,
+                        Model.SearchString,
+                        Model.PageIndex,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.DisplayFor(modelItem => item.Name),
+                        Html.Raw(Model.GetBrandName(item.BrandId)),
+                        Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
+                        Html.Raw(Model.GetUnitName(item.UnitId)),
+                        Html.DisplayFor(modelItem => item.Description),
+                        Html.DisplayFor(modelItem => item.PictureUrl),
+                        Html.DisplayFor(modelItem => item.Price))
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    @if (Model.Reviews.Count != 0)
+    {
+        <h3>Toote arvustused</h3>
+        <table class="table">
             <tr>
-                @Html.Row(
-                    false,
-                    page,
-                    item.GetId(),
-                    Model.SortOrder,
-                    Model.SearchString,
-                    Model.PageIndex,
-                    Model.FixedFilter,
-                    Model.FixedValue,
-                    Html.DisplayFor(modelItem => item.Name),
-                    Html.Raw(Model.GetBrandName(item.BrandId)),
-                    Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
-                    Html.Raw(Model.GetUnitName(item.UnitId)),
-                    Html.DisplayFor(modelItem => item.Description),
-                    Html.DisplayFor(modelItem => item.PictureUrl),
-                    Html.DisplayFor(modelItem => item.Price))
+                <th>@(GetMember.DisplayName<ReviewView>(x => x.TimetableEntryId))</th>
+                <th>@(GetMember.DisplayName<ReviewView>(x => x.ValidFrom))</th>
             </tr>
+
+            @foreach (var item in Model.Reviews)
+            {
+                <tr>
+                    <td> @Html.Raw(Model.GetProductTypeName(item.ProductId))
+                    <td> @Html.DisplayFor(modelItem => item.Rating) </td>
+                </tr>
             }
-        </tbody>
-    </table>
+
+        </table>
+    }
 </body>
