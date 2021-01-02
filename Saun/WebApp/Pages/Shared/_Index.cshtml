@@ -37,12 +37,15 @@
             <input id="searchTextBox" class="form-control" type="text" name="SearchString" value="@Model.SearchString" />
             &nbsp;
             <input id="searchButton" type="submit" value="Search" class="btn btn-light" />
-            &nbsp;
-            <a id="backToList"asp-page="./Index"
-               asp-route-handler="Index"
-               asp-route-sortorder="@Model.SortOrder"
-               asp-route-fixedFilter="@Model.FixedFilter"
-               asp-route-fixedValue="@Model.FixedValue">Back to Full List</a>
+            
+            @if (Model.SortOrder != null || Model.FixedFilter != null || Model.FixedValue != null || Model.SearchString != null)
+            {
+                <a id="backToList" asp-page="./Index"
+                   asp-route-handler="Index"
+                  
+                   asp-route-fixedFilter="@Model.FixedFilter"
+                   asp-route-fixedValue="@Model.FixedValue">Back to Full List</a>
+            }
         </p>
     </div>
 

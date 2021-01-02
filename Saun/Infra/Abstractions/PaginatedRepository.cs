@@ -20,15 +20,19 @@ namespace Infra.Abstractions
         {
         }
 
-        internal int GetTotalPages(in int pageSize)
+        internal int GetTotalPages(int pageSize)
         {
-            var count = GetItemsCount();
+            var count = 1;
+            if (GetItemsCount() > 1)
+            {
+                count = GetItemsCount();
+            }
             var pages = CountTotalPages(count, pageSize);
 
             return pages;
         }
 
-        internal int CountTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
+        internal int CountTotalPages(int count, int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
 
         internal int GetItemsCount() => base.CreateSqlQuery().CountAsync().Result;
 

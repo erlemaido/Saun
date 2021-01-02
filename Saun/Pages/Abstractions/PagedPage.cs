@@ -48,7 +48,7 @@ namespace Sauna.Pages.Abstractions {
             SortOrder = sortOrder;
             SearchString = GetSearchString(currentFilter, searchString, ref pageIndex);
             CurrentFilter = GetCurrentFilter(currentFilter, searchString, ref pageIndex);
-            PageIndex = pageIndex ?? 1;
+            PageIndex = pageIndex ?? 0;
             Items = await GetList().ConfigureAwait(true);
         }
 
