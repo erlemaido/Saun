@@ -2,7 +2,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.Products
 {
-    public class ProductData : DefinedEntityData
+    public sealed class ProductData : DefinedEntityData
     {
         public string BrandId { get; set; }
         public string ProductTypeId { get; set; }

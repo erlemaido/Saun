@@ -2,7 +2,7 @@
 
 namespace Data.Shop.Countries
 {
-    public class CountryData : NamedEntityData
+    public sealed class CountryData : NamedEntityData
     {
     }
 }

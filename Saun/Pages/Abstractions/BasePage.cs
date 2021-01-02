@@ -13,31 +13,31 @@ namespace Sauna.Pages.Abstractions {
         where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
     {
 
-        protected TRepository Repository;
+        protected TRepository repository;
 
-        protected internal BasePage(TRepository repository) => Repository = repository;
+        protected internal BasePage(TRepository repository) => this.repository = repository;
 
         public string SortOrder {
-            get => Repository.SortOrder;
-            set => Repository.SortOrder = value;
+            get => repository.SortOrder;
+            set => repository.SortOrder = value;
         }
         public string SearchString {
-            get => Repository.SearchString;
-            set => Repository.SearchString = value;
+            get => repository.SearchString;
+            set => repository.SearchString = value;
         }
         
         public string CurrentFilter {
-            get => Repository.CurrentFilter;
-            set => Repository.CurrentFilter = value;
+            get => repository.CurrentFilter;
+            set => repository.CurrentFilter = value;
         }
         
         public string FixedValue {
-            get => Repository.FixedValue;
-            set => Repository.FixedValue = value;
+            get => repository.FixedValue;
+            set => repository.FixedValue = value;
         }
         public string FixedFilter {
-            get => Repository.FixedFilter;
-            set => Repository.FixedFilter = value;
+            get => repository.FixedFilter;
+            set => repository.FixedFilter = value;
         }
         
         public bool HasFixedFilter => !string.IsNullOrWhiteSpace(FixedFilter);
