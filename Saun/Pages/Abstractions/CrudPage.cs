@@ -22,7 +22,7 @@ namespace Sauna.Pages.Abstractions {
             SetFixedFilter(fixedFilter, fixedValue);
             
             if (!ModelState.IsValid) return false;
-            await Repository.Add(ToObject(Item)).ConfigureAwait(true);
+            await repository.Add(ToObject(Item)).ConfigureAwait(true);
             
             return true;
         }
@@ -38,7 +38,7 @@ namespace Sauna.Pages.Abstractions {
             SetFixedFilter(fixedFilter, fixedValue);
             
             if (!ModelState.IsValid) return false;
-            await Repository.Update(ToObject(Item)).ConfigureAwait(true);
+            await repository.Update(ToObject(Item)).ConfigureAwait(true);
 
             return true;
         }
@@ -53,7 +53,7 @@ namespace Sauna.Pages.Abstractions {
         protected internal async Task GetObject(string id, string fixedFilter, 
             string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            var obj = await Repository.Get(id);
+            var obj = await repository.Get(id);
             Item = ToView(obj);
         }
 
@@ -66,7 +66,7 @@ namespace Sauna.Pages.Abstractions {
         protected internal async Task DeleteObject(string id, string fixedFilter, 
             string fixedValue) {
             SetFixedFilter(fixedFilter, fixedValue);
-            await Repository.Delete(id).ConfigureAwait(true);
+            await repository.Delete(id).ConfigureAwait(true);
         }
         
         protected internal async Task DeleteObject(string id, string sortOrder, 

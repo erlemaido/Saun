@@ -44,10 +44,10 @@ namespace Sauna.Pages.Abstractions
         protected internal Uri CreateIndexUrl() =>
             new Uri($"{PageUrl}/Index?handler=Index&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);
 
-        protected internal static IEnumerable<SelectListItem> NewItemsList<TTDomain, TTData>(IRepository<TTDomain> repository,
-            Func<TTDomain, bool> condition = null)
-            where TTDomain : IUniqueEntity<TTData>
-            where TTData : NamedEntityData, new()
+        protected internal static IEnumerable<SelectListItem> NewItemsList<TtDomain, TtData>(IRepository<TtDomain> repository,
+            Func<TtDomain, bool> condition = null)
+            where TtDomain : IUniqueEntity<TtData>
+            where TtData : NamedEntityData, new()
         {
             var items = repository?.Get().GetAwaiter().GetResult();
             var list = items is null
@@ -64,10 +64,10 @@ namespace Sauna.Pages.Abstractions
             return list;
         }
         
-        protected internal static IEnumerable<SelectListItem> NewUnitsList<TTDomain, TTData>(IRepository<TTDomain> repository,
-            Func<TTDomain, bool> condition = null)
-            where TTDomain : IUniqueEntity<TTData>
-            where TTData : UnitData, new()
+        protected internal static IEnumerable<SelectListItem> NewUnitsList<TtDomain, TtData>(IRepository<TtDomain> repository,
+            Func<TtDomain, bool> condition = null)
+            where TtDomain : IUniqueEntity<TtData>
+            where TtData : UnitData, new()
         {
             var items = repository?.Get().GetAwaiter().GetResult();
             var list = items is null

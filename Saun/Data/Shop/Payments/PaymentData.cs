@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.Payments
 {
-    public class PaymentData : UniqueEntityData
+    public sealed class PaymentData : UniqueEntityData
     {
         public string OrderId { get; set; }
         public string PersonId { get; set; }

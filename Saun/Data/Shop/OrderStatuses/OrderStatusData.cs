@@ -3,7 +3,7 @@ using Data.Abstractions;
 
 namespace Data.Shop.OrderStatuses
 {
-    public class OrderStatusData : UniqueEntityData
+    public sealed class OrderStatusData : UniqueEntityData
     {
         public string OrderId { get; set; }
         public string StatusId { get; set; }
