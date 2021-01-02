@@ -1,5 +1,6 @@
 using Data.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tests.Domain.Abstractions;
 
 namespace Tests.Data.Abstractions {
 

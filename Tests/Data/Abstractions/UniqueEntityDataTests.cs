@@ -1,5 +1,6 @@
 using Data.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tests.Domain.Abstractions;
 
 namespace Tests.Data.Abstractions {
 
@@ -7,7 +8,9 @@ namespace Tests.Data.Abstractions {
 
         private class TestClass : UniqueEntityData { }
 
-        [TestInitialize] public override void TestInitialize() {
+        [TestInitialize]
+        public override void TestInitialize()
+        {
             base.TestInitialize();
             obj = new TestClass();
         }

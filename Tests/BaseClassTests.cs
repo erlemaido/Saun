@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using Aids.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -37,7 +38,7 @@ namespace Tests
             Assert.AreEqual(d, get());
         }
 
-        protected static void IsReadOnlyProperty(object o, string name, object expected)
+        protected void IsReadOnlyProperty(object o, string name, object expected)
         {
             var property = o.GetType().GetProperty(name);
             Assert.IsNotNull(property);
@@ -45,6 +46,51 @@ namespace Tests
             Assert.IsTrue(property.CanRead);
             var actual = property.GetValue(o);
             Assert.AreEqual(expected, actual);
+        }
+
+        protected void IsReadOnlyProperty()
+        {
+            var n = GetPropertyNameAfter("IsReadOnlyProperty");
+            IsReadOnlyProperty(obj, n);
+        }
+
+        protected void IsReadOnlyProperty(object expected)
+        {
+            var n = GetPropertyNameAfter("IsReadOnlyProperty");
+            IsReadOnlyProperty(obj, n, expected);
+        }
+
+        protected static object IsReadOnlyProperty(object o, string name)
+        {
+            var property = o.GetType().GetProperty(name);
+            Assert.IsNotNull(property);
+            Assert.IsFalse(property.CanWrite);
+            Assert.IsTrue(property.CanRead);
+
+            return property.GetValue(o);
+        }
+
+        protected string GetPropertyNameAfter(string methodName)
+        {
+            var stack = new StackTrace();
+            int i;
+            for (i = 0; i < stack.FrameCount - 1; i++)
+            {
+                var n = stack.GetFrame(i)?.GetMethod()?.Name;
+
+                if (n == methodName) break;
+            }
+
+            for (i += 1; i < stack.FrameCount - 1; i++)
+            {
+                var n = stack.GetFrame(i)?.GetMethod()?.Name;
+
+                if (n == "MoveNext" || n == "Start") continue;
+
+                return n?.Replace("Test", string.Empty);
+            }
+
+            return string.Empty;
         }
 
         [TestMethod]
