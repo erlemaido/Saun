@@ -1,7 +1,8 @@
-﻿@page
+@page
 @using Sauna.Pages.Abstractions.Aids
 @using Sauna.Pages.Abstractions.Constants
 @using Sauna.Pages.Abstractions.Extensions
+@using Sauna.Aids.Reflection
 @model Sauna.Pages.Shop.Products.ProductsPage
  
 @{
@@ -48,7 +49,15 @@
                     Html.DisplayFor(modelItem => item.PictureUrl),
                     Html.DisplayFor(modelItem => item.Price))
             </tr>
+
+            @foreach (var item in Model.Reviews)
+            {
+                <tr>
+                    <td> @Html.Raw(Model.GetProductTypeName(item.ProductId))
+                    <td> @Html.DisplayFor(modelItem => item.Rating) </td>
+                </tr>
             }
-        </tbody>
-    </table>
+
+        </table>
+    }
 </body>
