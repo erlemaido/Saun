@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Units
 {
-    public class UnitView : NamedEntityView
+    public sealed class UnitView : NamedEntityView
     {
         [Required]
         [DisplayName("Lühend")]

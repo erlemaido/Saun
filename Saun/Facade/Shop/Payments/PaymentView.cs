@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Payments
 {
-    public class PaymentView : UniqueEntityView
+    public sealed class PaymentView : UniqueEntityView
     {
         [Required]
         [DisplayName("Tellimus")]

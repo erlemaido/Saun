@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace TrainingApp.Tests.Domain
+namespace Tests.Domain
 {
     [TestClass]
     public class IsDomainTested : AssemblyTests

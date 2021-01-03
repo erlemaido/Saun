@@ -1,9 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 using Data.Shop.Units;
 using Domain.Abstractions;
+using Domain.Shop.Units;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.Units
+namespace Tests.Domain.Shop.Units
 {
     [TestClass]
     public class UnitTests : SealedClassTests<Unit, NamedEntity<UnitData>>

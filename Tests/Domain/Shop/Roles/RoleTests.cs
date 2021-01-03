@@ -1,9 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 using Data.Shop.Roles;
 using Domain.Abstractions;
+using Domain.Shop.Roles;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.Roles
+namespace Tests.Domain.Shop.Roles
 {
     [TestClass]
     public class RoleTests : SealedClassTests<Role, DefinedEntity<RoleData>>

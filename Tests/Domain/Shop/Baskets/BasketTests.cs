@@ -1,9 +1,9 @@
 using Data.Shop.Baskets;
 using Domain.Abstractions;
+using Domain.Shop.Baskets;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Domain.Shop.Baskets
+namespace Tests.Domain.Shop.Baskets
 {
     [TestClass]
     public class BasketTests : SealedClassTests<Basket, NamedEntity<BasketData>>

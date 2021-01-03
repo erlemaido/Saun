@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
-using Data.Shop.Countries;
+﻿using Data.Shop.Countries;
 using Domain.Abstractions;
+using Domain.Shop.Countries;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.Countries
+namespace Tests.Domain.Shop.Countries
 {
     [TestClass]
     public class CountryTests : SealedClassTests<Country, NamedEntity<CountryData>>

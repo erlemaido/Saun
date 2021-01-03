@@ -4,7 +4,7 @@ using Domain.Shop.DeliveryTypes;
 
 namespace Facade.Shop.DeliveryTypes
 {
-    public class DeliveryTypeViewFactory
+    public sealed class DeliveryTypeViewFactory
     {
         public static DeliveryType Create(DeliveryTypeView view)
         {

@@ -4,7 +4,7 @@ using Domain.Shop.ProductTypes;
 
 namespace Facade.Shop.ProductTypes
 {
-    public class ProductTypeViewFactory
+    public sealed class ProductTypeViewFactory
     {
         public static ProductType Create(ProductTypeView view)
         {

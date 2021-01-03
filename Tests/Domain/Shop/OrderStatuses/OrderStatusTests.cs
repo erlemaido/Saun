@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
-using Data.Shop.OrderStatuses;
+﻿using Data.Shop.OrderStatuses;
 using Domain.Abstractions;
+using Domain.Shop.OrderStatuses;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.OrderStatuses
+namespace Tests.Domain.Shop.OrderStatuses
 {
     [TestClass]
     public class OrderStatusTests : SealedClassTests<OrderStatus, UniqueEntity<OrderStatusData>>

@@ -1,9 +1,9 @@
 using Data.Shop.Brands;
 using Domain.Abstractions;
+using Domain.Shop.Brands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Domain.Shop.Brands
+namespace Tests.Domain.Shop.Brands
 {
     [TestClass]
     public class BrandTests : SealedClassTests<Brand, DefinedEntity<BrandData>>

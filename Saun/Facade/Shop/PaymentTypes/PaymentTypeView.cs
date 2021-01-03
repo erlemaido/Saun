@@ -2,7 +2,7 @@
 
 namespace Facade.Shop.PaymentTypes
 {
-    public class PaymentTypeView : NamedEntityView
+    public sealed class PaymentTypeView : NamedEntityView
     {
 
     }

@@ -1,9 +1,9 @@
 ﻿using Data.Shop.Cities;
 using Domain.Abstractions;
+using Domain.Shop.Cities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Domain.Shop.Cities
+namespace Tests.Domain.Shop.Cities
 {
     [TestClass]
     public class CityTests : SealedClassTests<City, NamedEntity<CityData>>

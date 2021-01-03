@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
-using Data.Shop.DeliveryTypes;
+﻿using Data.Shop.DeliveryTypes;
 using Domain.Abstractions;
+using Domain.Shop.DeliveryTypes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.DeliveryTypes
+namespace Tests.Domain.Shop.DeliveryTypes
 {
     [TestClass]
     public class DeliveryTypeTests : SealedClassTests<DeliveryType, NamedEntity<DeliveryTypeData>>

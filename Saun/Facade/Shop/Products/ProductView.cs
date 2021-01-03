@@ -7,7 +7,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Products
 {
-    public class ProductView : DefinedEntityView
+    public sealed class ProductView : DefinedEntityView
     {
         [Required]
         [DisplayName("Bränd")]

@@ -6,7 +6,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Stock
 {
-    public class StockView : UniqueEntityView
+    public sealed class StockView : UniqueEntityView
     {
         [Required]
         [DisplayName("Toode")]

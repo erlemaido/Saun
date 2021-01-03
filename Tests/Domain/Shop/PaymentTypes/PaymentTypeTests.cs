@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
-using Data.Shop.PaymentTypes;
+﻿using Data.Shop.PaymentTypes;
 using Domain.Abstractions;
+using Domain.Shop.PaymentTypes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.PaymentTypes
+namespace Tests.Domain.Shop.PaymentTypes
 {
     [TestClass]
     public class PaymentTypeTests : SealedClassTests<PaymentType, UniqueEntity<PaymentTypeData>>

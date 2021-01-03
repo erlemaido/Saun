@@ -1,9 +1,7 @@
-﻿using Aids.Constants;
-using Aids.Reflection;
+﻿using Aids.Reflection;
 using Data.Shop.Products;
 using Domain.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests.Domain.Abstractions;
 
 namespace Tests.Domain.Abstractions
 {

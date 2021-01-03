@@ -2,7 +2,7 @@
 
 namespace Facade.Shop.ProductTypes
 {
-    public class ProductTypeView : NamedEntityView
+    public sealed class ProductTypeView : NamedEntityView
     {
 
     }

@@ -5,7 +5,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Orders
 {
-    public class OrderView : UniqueEntityView
+    public sealed class OrderView : UniqueEntityView
     {
         [Required]
         [DisplayName("Nimi")]

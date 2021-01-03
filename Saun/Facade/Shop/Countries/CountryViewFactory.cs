@@ -4,7 +4,7 @@ using Domain.Shop.Countries;
 
 namespace Facade.Shop.Countries
 {
-    public class CountryViewFactory
+    public sealed class CountryViewFactory
     {
         public static Country Create(CountryView view)
         {

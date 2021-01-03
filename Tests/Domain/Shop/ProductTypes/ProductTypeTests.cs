@@ -1,9 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 using Data.Shop.ProductTypes;
 using Domain.Abstractions;
+using Domain.Shop.ProductTypes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Domain.Shop.ProductTypes
+namespace Tests.Domain.Shop.ProductTypes
 {
     [TestClass]
     public class ProductTypeTests : SealedClassTests<ProductType, NamedEntity<ProductTypeData>>
