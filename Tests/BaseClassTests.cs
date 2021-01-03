@@ -37,6 +37,13 @@ namespace Tests
             set(d);
             Assert.AreEqual(d, get());
         }
+        protected static void IsProperty(Func<bool> get, Action<bool> set)
+        {
+            var d = !get();
+            Assert.AreNotEqual(d, get());
+            set(d);
+            Assert.AreEqual(d, get());
+        }
 
         protected void IsReadOnlyProperty(object o, string name, object expected)
         {
