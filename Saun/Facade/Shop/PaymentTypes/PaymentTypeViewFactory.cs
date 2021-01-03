@@ -4,7 +4,7 @@ using Domain.Shop.PaymentTypes;
 
 namespace Facade.Shop.PaymentTypes
 {
-    public class PaymentTypeViewFactory
+    public sealed class PaymentTypeViewFactory
     {
         public static PaymentType Create(PaymentTypeView view)
         {

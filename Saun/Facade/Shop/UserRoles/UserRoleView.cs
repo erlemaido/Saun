@@ -5,7 +5,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.UserRoles
 {
-    public class UserRoleView : UniqueEntityView
+    public sealed class UserRoleView : UniqueEntityView
     {
         [Required]
         [DisplayName("Kasutaja")]

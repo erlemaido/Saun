@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.OrderItems
 {
-    public class OrderItemView : UniqueEntityView
+    public sealed class OrderItemView : UniqueEntityView
     {
         [Required]
         [DisplayName("Tellimus")]

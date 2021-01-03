@@ -2,7 +2,7 @@
 
 namespace Facade.Shop.Brands
 {
-    public class BrandView : DefinedEntityView
+    public sealed class BrandView : DefinedEntityView
     {
 
     }

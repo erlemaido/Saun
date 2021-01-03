@@ -4,7 +4,7 @@ using Domain.Shop.OrderItems;
 
 namespace Facade.Shop.OrderItems
 {
-    public class OrderItemViewFactory
+    public sealed class OrderItemViewFactory
     {
         public static OrderItem Create(OrderItemView view)
         {

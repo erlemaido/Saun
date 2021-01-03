@@ -4,7 +4,7 @@ using Domain.Shop.Cities;
 
 namespace Facade.Shop.Cities
 {
-    public class CityViewFactory
+    public sealed class CityViewFactory
     {
         public static City Create(CityView view)
         {

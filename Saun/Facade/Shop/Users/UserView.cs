@@ -5,7 +5,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Users
 {
-    public class UserView : UniqueEntityView
+    public sealed class UserView : UniqueEntityView
     {
         [Required]
         [DisplayName("Klient")]

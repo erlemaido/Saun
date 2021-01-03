@@ -4,7 +4,7 @@ using Domain.Shop.Statuses;
 
 namespace Facade.Shop.Statuses
 {
-    public class StatusViewFactory
+    public sealed class StatusViewFactory
     {
         public static Status Create(StatusView view)
         {

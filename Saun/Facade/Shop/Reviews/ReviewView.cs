@@ -5,7 +5,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Reviews
 {
-    public class ReviewView : UniqueEntityView
+    public sealed class ReviewView : UniqueEntityView
     {
         [Required]
         [DisplayName("Toode")]

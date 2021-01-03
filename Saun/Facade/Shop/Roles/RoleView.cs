@@ -5,7 +5,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Roles
 {
-    public class RoleView : DefinedEntityView
+    public sealed class RoleView : DefinedEntityView
     {
         [Required]
         [DisplayName("Kehtiv alates")]

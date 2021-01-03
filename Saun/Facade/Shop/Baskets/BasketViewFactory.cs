@@ -4,7 +4,7 @@ using Domain.Shop.Baskets;
 
 namespace Facade.Shop.Baskets
 {
-    public class BasketViewFactory
+    public sealed class BasketViewFactory
     {
         public static Basket Create(BasketView view)
         {

@@ -4,7 +4,7 @@ using Domain.Shop.OrderStatuses;
 
 namespace Facade.Shop.OrderStatuses
 {
-    public class OrderStatusViewFactory
+    public sealed class OrderStatusViewFactory
     {
         public static OrderStatus Create(OrderStatusView view)
         {

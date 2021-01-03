@@ -4,7 +4,7 @@ using Domain.Shop.People;
 
 namespace Facade.Shop.People
 {
-    public class PersonViewFactory
+    public sealed class PersonViewFactory
     {
         public static Person Create(PersonView view)
         {

@@ -5,7 +5,7 @@ using Domain.Shop.Products;
 namespace Facade.Shop.Products
 
 {
-    public class ProductViewFactory
+    public sealed class ProductViewFactory
     {
         public static Product Create(ProductView view)
         {

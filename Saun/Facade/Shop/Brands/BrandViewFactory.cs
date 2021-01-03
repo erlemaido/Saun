@@ -4,7 +4,7 @@ using Domain.Shop.Brands;
 
 namespace Facade.Shop.Brands
 {
-    public class BrandViewFactory 
+    public sealed class BrandViewFactory 
     {
         public static Brand Create(BrandView view)
         {

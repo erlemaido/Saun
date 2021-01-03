@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.Baskets
 {
-    public class BasketView : UniqueEntityView
+    public sealed class BasketView : UniqueEntityView
     {
         [Required]
         [DisplayName("Nimi")]

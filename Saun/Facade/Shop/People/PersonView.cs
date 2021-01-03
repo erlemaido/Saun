@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.People
 {
-    public class PersonView : UniqueEntityView
+    public sealed class PersonView : UniqueEntityView
     {
         [Required]
         [DisplayName("Eesnimi")]

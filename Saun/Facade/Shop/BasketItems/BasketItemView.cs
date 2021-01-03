@@ -4,7 +4,7 @@ using Facade.Abstractions;
 
 namespace Facade.Shop.BasketItems
 {
-    public class BasketItemView : UniqueEntityView
+    public sealed class BasketItemView : UniqueEntityView
     {
         [Required]
         [DisplayName("Ostukorv")]

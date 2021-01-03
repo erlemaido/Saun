@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Facade.Abstractions
 {
-    public class DefinedEntityView : NamedEntityView
+    public abstract class DefinedEntityView : NamedEntityView
     {
         [DisplayName("Kirjeldus")]
         [MaxLength(1024)]

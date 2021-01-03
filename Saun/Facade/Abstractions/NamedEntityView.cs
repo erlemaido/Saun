@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Facade.Abstractions
 {
-    public class NamedEntityView : UniqueEntityView
+    public abstract class NamedEntityView : UniqueEntityView
     {
         [Required]
         [DisplayName("Nimi")]
