@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests.Data.Shop.BasketItems
 {
     [TestClass]
-    public class BasketItemsDataTests : SealedClassTests<BasketItemData, UniqueEntityData>
+    public class BasketItemDataTests : SealedClassTests<BasketItemData, UniqueEntityData>
     {
         [TestMethod]
         public void BasketIdTest()

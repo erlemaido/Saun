@@ -15,25 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Aids\" />
-    <Folder Include="Data\Shop\Baskets\" />
-    <Folder Include="Data\Shop\Brands\" />
-    <Folder Include="Data\Shop\Cities\" />
-    <Folder Include="Data\Shop\Countries\" />
-    <Folder Include="Data\Shop\DeliveryTypes\" />
-    <Folder Include="Data\Shop\OrderItems\" />
-    <Folder Include="Data\Shop\OrderStatuses\" />
-    <Folder Include="Data\Shop\Payments\" />
-    <Folder Include="Data\Shop\PaymentTypes\" />
-    <Folder Include="Data\Shop\People\" />
-    <Folder Include="Data\Shop\Products\" />
-    <Folder Include="Data\Shop\ProductTypes\" />
-    <Folder Include="Data\Shop\Reviews\" />
-    <Folder Include="Data\Shop\Roles\" />
-    <Folder Include="Data\Shop\Statuses\" />
-    <Folder Include="Data\Shop\Stock\" />
-    <Folder Include="Data\Shop\Units\" />
-    <Folder Include="Data\Shop\UserRoles\" />
-    <Folder Include="Data\Shop\Users\" />
     <Folder Include="Domain\Shop\" />
     <Folder Include="Domain\Shop\BasketItems\" />
     <Folder Include="Domain\Shop\Baskets\" />
