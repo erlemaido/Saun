@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
@@ -34,7 +35,6 @@
     <Folder Include="Data\Shop\Units\" />
     <Folder Include="Data\Shop\UserRoles\" />
     <Folder Include="Data\Shop\Users\" />
-    <Folder Include="Infra\Abstractions\" />
     <Folder Include="Infra\Shop\BasketItems\" />
     <Folder Include="Infra\Shop\Baskets\" />
     <Folder Include="Infra\Shop\Brands\" />

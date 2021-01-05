@@ -4,14 +4,14 @@ using Microsoft.AspNetCore.Html;
 
 namespace Tests {
 
-    internal class htmlContentMock : IHtmlContent {
+    internal class HtmlContentMock : IHtmlContent {
 
-        private readonly string content;
+        private readonly string _content;
 
-        public htmlContentMock(string s) => content = s;
-        public void WriteTo(TextWriter writer, HtmlEncoder encoder) => writer.WriteLine(content);
+        public HtmlContentMock(string s) => _content = s;
+        public void WriteTo(TextWriter writer, HtmlEncoder encoder) => writer.WriteLine(_content);
 
-        public override string ToString() => content;
+        public override string ToString() => _content;
 
     }
 

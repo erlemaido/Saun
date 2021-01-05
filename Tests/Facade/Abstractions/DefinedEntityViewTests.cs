@@ -6,13 +6,13 @@ namespace Tests.Facade.Abstractions {
     [TestClass]
     public class DefinedEntityViewTests : AbstractClassTests<DefinedEntityView, NamedEntityView> {
 
-        private class testClass : DefinedEntityView { }
+        private class TestClass : DefinedEntityView { }
 
         [TestInitialize]
         public override void TestInitialize() 
         {
             base.TestInitialize();
-            obj = new testClass();
+            obj = new TestClass();
         }
 
         [TestMethod]
