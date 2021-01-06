@@ -10,10 +10,10 @@ namespace Tests.Domain.Abstractions
     public class NamedEntityTests : AbstractClassTests<NamedEntity<ProductData>, UniqueEntity<ProductData>>
     {
 
-        private class testClass : NamedEntity<ProductData>
+        private class TestClass : NamedEntity<ProductData>
         {
 
-            public testClass(ProductData d = null) : base(d) { }
+            public TestClass(ProductData d = null) : base(d) { }
 
         }
 
@@ -21,7 +21,7 @@ namespace Tests.Domain.Abstractions
         public override void TestInitialize()
         {
             base.TestInitialize();
-            obj = new testClass(GetRandom.Object<ProductData>());
+            obj = new TestClass(GetRandom.Object<ProductData>());
         }
 
         [TestMethod] public void NameTest() => IsReadOnlyProperty(obj.Name);
