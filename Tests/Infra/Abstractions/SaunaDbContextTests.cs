@@ -35,7 +35,7 @@ namespace Tests.Infra.Abstractions
     public class SaunaDbContextTests : BaseClassTests<SaunaDbContext, DbContext>
     {
 
-        private DbContextOptions<SaunaDbContext> options;
+        private DbContextOptions<SaunaDbContext> _options;
 
         private class TestClass : SaunaDbContext
         {
@@ -55,8 +55,8 @@ namespace Tests.Infra.Abstractions
         public override void TestInitialize()
         {
             base.TestInitialize();
-            options = new DbContextOptionsBuilder<SaunaDbContext>().UseInMemoryDatabase("TestDb").Options;
-            obj = new SaunaDbContext(options);
+            _options = new DbContextOptionsBuilder<SaunaDbContext>().UseInMemoryDatabase("TestDb").Options;
+            obj = new SaunaDbContext(_options);
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace Tests.Infra.Abstractions
                 TestKey(entity, values);
             }
 
-            var o = new TestClass(options);
+            var o = new TestClass(_options);
             var builder = o.RunOnModelCreating();
             SaunaDbContext.InitializeTables(builder);
             TestEntity<BasketItemData>(builder);
