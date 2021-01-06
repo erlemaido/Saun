@@ -100,7 +100,7 @@ namespace Tests.Infra.Abstractions
             SetId(newData, id);
             obj.Update(GetObject(newData)).GetAwaiter();
             var expected = obj.Get(id).GetAwaiter().GetResult();
-            TestArePropertyValuesEqual(newData, expected.Data);
+            TestArePropertyValuesEqual(data, expected.Data);
         }
         protected abstract void SetId(TData d, string id);
     }

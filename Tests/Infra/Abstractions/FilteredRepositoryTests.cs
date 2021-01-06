@@ -50,7 +50,8 @@ namespace Tests.Infra.Abstractions
 
         [TestMethod]
         public void FixedValueTest() => IsNullableProperty(() => obj.FixedValue, x => obj.FixedValue = x);
-
+        [TestMethod]
+        public void CurrentFilterTest() => IsNullableProperty(() => obj.CurrentFilter, x => obj.CurrentFilter = x);
         [TestMethod]
         public void CreateSqlQueryTest()
         {

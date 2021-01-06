@@ -91,7 +91,7 @@ namespace Tests.Infra.Abstractions
             newData.Id = _data.Id;
             obj.Update(new Order(newData)).GetAwaiter();
             var expected = obj.Get(_data.Id).GetAwaiter().GetResult();
-            TestArePropertyValuesEqual(newData, expected.Data);
+            TestArePropertyValuesEqual(_data, expected.Data);
         }
     }
 }
