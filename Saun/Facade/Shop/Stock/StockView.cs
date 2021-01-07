@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using Domain.Shop.Products;
 using Facade.Abstractions;
 
-namespace Facade.Shop.Stocks
+namespace Facade.Shop.Stock
 {
     public sealed class StockView : UniqueEntityView
     {
         [Required]
         [DisplayName("Toode")]
         public string ProductId { get; set; }
-        public Product Product { get; set; }
-        
+
         [Required]
         [DisplayName("Kogus")]
         public int InStock { get; set; }

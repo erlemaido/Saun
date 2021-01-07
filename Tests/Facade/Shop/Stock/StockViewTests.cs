@@ -1,5 +1,5 @@
 ﻿using Facade.Abstractions;
-using Facade.Shop.Stocks;
+using Facade.Shop.Stock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Facade.Shop.Stocks

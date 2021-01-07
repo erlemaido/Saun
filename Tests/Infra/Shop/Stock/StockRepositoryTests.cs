@@ -1,9 +1,9 @@
 ﻿using System;
-using Data.Shop.Stocks;
-using Domain.Shop.Stocks;
+using Data.Shop.Stock;
+using Domain.Shop.Stock;
 using Infra;
 using Infra.Abstractions;
-using Infra.Shop.Stocks;
+using Infra.Shop.Stock;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests.Infra.Abstractions;

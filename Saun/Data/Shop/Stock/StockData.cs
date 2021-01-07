@@ -1,7 +1,7 @@
 using System;
 using Data.Abstractions;
 
-namespace Data.Shop.Stocks
+namespace Data.Shop.Stock
 {
     public sealed class StockData : UniqueEntityData
     {

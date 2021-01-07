@@ -1,6 +1,6 @@
-using Data.Shop.Stocks;
+using Data.Shop.Stock;
 using Domain.Abstractions;
-using Domain.Shop.Stocks;
+using Domain.Shop.Stock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain.Shop.Stocks
