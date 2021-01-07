@@ -2,35 +2,27 @@
 using System.Threading.Tasks;
 using Data.Abstractions;
 using Domain.Abstractions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
-{
-    [TestClass]
-    internal abstract class BaseTestRepositoryForUniqueEntity<TObj, TData> where TObj : UniqueEntity<TData> where TData : UniqueEntityData, new()
-    {
+namespace Abc.Tests {
+
+    internal abstract class periodRepository<TObj, TData>
+        where TObj : UniqueEntity<TData>
+        where TData : UniqueEntityData, new() {
+
         internal readonly List<TObj> list;
         public object GetById(string id) => null;
 
-        public BaseTestRepositoryForUniqueEntity()
-        {
+        protected periodRepository() {
             list = new List<TObj>();
         }
 
-        //public async Task<List<TObj>> Get()
-        //{
-        //    await Task.CompletedTask;
-        //    return list;
-        //}
-        public async Task<List<TObj>> Get()
-        {
+        public async Task<List<TObj>> Get() {
             await Task.CompletedTask;
 
             if (FixedFilter is null) return list;
             var l = new List<TObj>();
             var p = typeof(TData).GetProperty(FixedFilter);
-            foreach (var e in list)
-            {
+            foreach (var e in list) {
                 var v = p?.GetValue(e.Data);
                 if (v is null) continue;
                 if (v.ToString() != FixedValue) continue;
@@ -38,49 +30,45 @@ namespace Tests
             }
             return l;
         }
-        public async Task<TObj> Get(string id)
-        {
+
+        public async Task<TObj> Get(string id) {
             await Task.CompletedTask;
 
-            return list.Find(x => GetId(x.Data) == id);
+            return list.Find(x => getId(x.Data) == id);
         }
 
-        protected abstract string GetId(TData d);
+        protected abstract string getId(TData d);
 
-        //protected abstract string GetId(TData d);
-        //public async Task<TObj> Get(string id)
-        //{
-        //    await Task.CompletedTask;
-        //    return list.Find(x => x.Data.Id == id);
-        //}
-
-        public async Task Delete(string id)
-        {
+        public async Task Delete(string id) {
             await Task.CompletedTask;
-            var obj = list.Find(x => GetId(x.Data) == id);
+            var obj = list.Find(x => getId(x.Data) == id);
             list.Remove(obj);
         }
 
-        public async Task Add(TObj obj)
-        {
+        public async Task Add(TObj obj) {
             await Task.CompletedTask;
             list.Add(obj);
         }
 
-        public async Task Update(TObj obj)
-        {
-            await Delete(GetId(obj.Data));
+        public async Task Update(TObj obj) {
+            await Delete(getId(obj.Data));
             list.Add(obj);
         }
 
         public string SortOrder { get; set; }
+
         public string SearchString { get; set; }
+        public string CurrentFilter { get; set; }
         public string FixedFilter { get; set; }
         public string FixedValue { get; set; }
+
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
         public int TotalPages { get; set; }
         public bool HasNextPage { get; set; }
         public bool HasPreviousPage { get; set; }
+
+
     }
+
 }

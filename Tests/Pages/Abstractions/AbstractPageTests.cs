@@ -1,4 +1,5 @@
 ﻿using System;
+using Abc.Tests;
 using Data.Shop.Orders;
 using Domain.Shop.Orders;
 using Facade.Shop.Orders;
@@ -32,10 +33,9 @@ namespace Tests.Pages.Abstractions {
         internal class TestRepository : BaseTestRepositoryForUniqueEntity<Order, OrderData>, IOrdersRepository
         {
             public string CurrentFilter { get; set; }
-            public object GetById(string id)
-            {
-                throw new NotImplementedException();
-            }
+            
+            protected override string GetId(OrderData d) => d.Id;
+
         }
 
         [TestInitialize]
