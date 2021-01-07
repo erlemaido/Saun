@@ -15,7 +15,7 @@ using Data.Shop.ProductTypes;
 using Data.Shop.Reviews;
 using Data.Shop.Roles;
 using Data.Shop.Statuses;
-using Data.Shop.Stocks;
+using Data.Shop.Stock;
 using Data.Shop.Units;
 using Data.Shop.UserRoles;
 using Data.Shop.Users;
