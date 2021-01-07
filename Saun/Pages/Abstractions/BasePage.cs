@@ -40,7 +40,7 @@ namespace Sauna.Pages.Abstractions {
             set => repository.FixedFilter = value;
         }
         
-        public bool HasFixedFilter => !string.IsNullOrWhiteSpace(FixedFilter);
+        //public bool HasFixedFilter => !string.IsNullOrWhiteSpace(FixedFilter);
 
         protected internal void SetFixedFilter(string fixedFilter, string fixedValue) {
             FixedFilter = fixedFilter;
