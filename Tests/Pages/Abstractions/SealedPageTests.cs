@@ -42,11 +42,7 @@ namespace Tests.Pages.Abstractions {
 
         protected abstract string GetId(TView item);
 
-        [TestMethod] public void PageTitleTest() => Assert.AreEqual(PageTitle(), obj.PageTitle);
-
         protected abstract string PageTitle();
-
-        [TestMethod] public void PageUrlTest() => Assert.AreEqual(PageUrl(), obj.PageUrl.ToString());
 
         protected abstract string PageUrl();
 
