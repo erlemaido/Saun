@@ -10,7 +10,6 @@ namespace Tests.Facade.Shop.Products
         [TestMethod]
         public void BrandIdTest() => IsNullableProperty(() => obj.BrandId, x => obj.BrandId = x);
 
-
         [TestMethod]
         public void ProductTypeIdTest() => IsNullableProperty(() => obj.ProductTypeId, x => obj.ProductTypeId = x);
 

@@ -16,11 +16,11 @@ namespace Facade.Shop.Products
         [Required]
         [DisplayName("Tüüp")]
         public string ProductTypeId { get; set; }
-        
+
         [Required]
         [DisplayName("Ühik")]
         public string UnitId { get; set; }
-        
+
         [Required]
         public string PictureUrl { get; set; }
         
