@@ -34,7 +34,6 @@
     <Folder Include="Data\Shop\Units\" />
     <Folder Include="Data\Shop\UserRoles\" />
     <Folder Include="Data\Shop\Users\" />
-    <Folder Include="Pages\Shop\Baskets\" />
     <Folder Include="Pages\Shop\Brands\" />
     <Folder Include="Pages\Shop\Cities\" />
     <Folder Include="Pages\Shop\Countries\" />
