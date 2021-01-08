@@ -12,17 +12,14 @@ namespace Facade.Shop.Products
         [Required]
         [DisplayName("Bränd")]
         public string BrandId { get; set; }
-        public Brand Brand { get; set; }
         
         [Required]
         [DisplayName("Tüüp")]
         public string ProductTypeId { get; set; }
-        public ProductType ProductType { get; set; }
         
         [Required]
         [DisplayName("Ühik")]
         public string UnitId { get; set; }
-        public Unit Unit { get; set; }
         
         [Required]
         public string PictureUrl { get; set; }

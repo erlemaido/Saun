@@ -8,7 +8,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Units
 {
-    public class UnitsPage : ViewPage<IUnitsRepository, Unit, UnitView, UnitData>
+    public sealed class UnitsPage : ViewPage<IUnitsRepository, Unit, UnitView, UnitData>
     {
         public UnitsPage(IUnitsRepository repository) : base(repository, PagesNames.Units)
         {

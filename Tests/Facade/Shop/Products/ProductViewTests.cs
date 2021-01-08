@@ -10,20 +10,12 @@ namespace Tests.Facade.Shop.Products
         [TestMethod]
         public void BrandIdTest() => IsNullableProperty(() => obj.BrandId, x => obj.BrandId = x);
 
-        [TestMethod]
-        public void BrandTest() => IsNullableProperty(() => obj.Brand, x => obj.Brand = x);
 
         [TestMethod]
-        public void ProductTypeIdTest() => IsNullableProperty(() => obj.ProductType, x => obj.ProductType = x);
-
-        [TestMethod]
-        public void ProductTypeTest() => IsNullableProperty(() => obj.ProductType, x => obj.ProductType = x);
+        public void ProductTypeIdTest() => IsNullableProperty(() => obj.ProductTypeId, x => obj.ProductTypeId = x);
 
         [TestMethod]
         public void UnitIdTest() => IsNullableProperty(() => obj.UnitId, x => obj.UnitId = x);
-
-        [TestMethod]
-        public void UnitTest() => IsNullableProperty(() => obj.Unit, x => obj.Unit = x);
 
         [TestMethod]
         public void PictureUrlTest() => IsNullableProperty(() => obj.PictureUrl, x => obj.PictureUrl = x);

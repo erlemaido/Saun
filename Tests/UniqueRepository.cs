@@ -3,16 +3,16 @@ using System.Threading.Tasks;
 using Data.Abstractions;
 using Domain.Abstractions;
 
-namespace Abc.Tests {
+namespace Tests {
 
-    internal abstract class periodRepository<TObj, TData>
+    internal abstract class UniqueRepository<TObj, TData>
         where TObj : UniqueEntity<TData>
         where TData : UniqueEntityData, new() {
 
         internal readonly List<TObj> list;
         public object GetById(string id) => null;
 
-        protected periodRepository() {
+        protected UniqueRepository() {
             list = new List<TObj>();
         }
 

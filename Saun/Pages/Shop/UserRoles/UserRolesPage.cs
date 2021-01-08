@@ -15,7 +15,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.UserRoles
 {
-    public class UserRolesPage : ViewPage<IUserRolesRepository, UserRole, UserRoleView, UserRoleData>
+    public sealed class UserRolesPage : ViewPage<IUserRolesRepository, UserRole, UserRoleView, UserRoleData>
     {
         public UserRolesPage(
             IUserRolesRepository repository,

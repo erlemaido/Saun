@@ -15,7 +15,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Reviews
 {
-    public class ReviewsPage : ViewPage<IReviewsRepository, Review, ReviewView, ReviewData>
+    public sealed class ReviewsPage : ViewPage<IReviewsRepository, Review, ReviewView, ReviewData>
     {
         public ReviewsPage(
             IReviewsRepository repository,

@@ -15,7 +15,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.BasketItems
 {
-   public class BasketItemsPage : ViewPage<IBasketItemsRepository, BasketItem, BasketItemView, BasketItemData>
+   public sealed class BasketItemsPage : ViewPage<IBasketItemsRepository, BasketItem, BasketItemView, BasketItemData>
     {
         public BasketItemsPage(
             IBasketItemsRepository repository, 

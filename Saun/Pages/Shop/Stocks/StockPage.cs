@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data.Shop.Products;
-using Data.Shop.Stocks;
+using Data.Shop.Stock;
 using Domain.Shop.Products;
-using Domain.Shop.Stocks;
-using Facade.Shop.Stocks;
+using Domain.Shop.Stock;
+using Facade.Shop.Stock;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
@@ -12,7 +12,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Stocks
 {
-    public class StockPage : ViewPage<IStockRepository, Stock, StockView, StockData>
+    public sealed class StockPage : ViewPage<IStockRepository, Stock, StockView, StockData>
     {
         public IEnumerable<SelectListItem> Products { get; }
 

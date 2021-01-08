@@ -8,7 +8,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Roles
 {
-    public class RolesPage : ViewPage<IRolesRepository, Role, RoleView, RoleData>
+    public sealed class RolesPage : ViewPage<IRolesRepository, Role, RoleView, RoleData>
     {
         public RolesPage(IRolesRepository repository) : base(repository, PagesNames.Roles)
         {
