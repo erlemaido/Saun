@@ -1,8 +1,8 @@
 ﻿using Data.Abstractions;
-using Data.Shop.Stocks;
+using Data.Shop.Stock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Data.Shop.Stocks
+namespace Tests.Data.Shop.Stock
 {
     [TestClass]
     public class StockDataTests : SealedClassTests<StockData, UniqueEntityData>

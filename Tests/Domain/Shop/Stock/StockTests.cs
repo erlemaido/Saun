@@ -1,12 +1,11 @@
 using Data.Shop.Stock;
 using Domain.Abstractions;
-using Domain.Shop.Stock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Domain.Shop.Stocks
+namespace Tests.Domain.Shop.Stock
 {
     [TestClass]
-    public class StockTests : SealedClassTests<Stock, UniqueEntity<StockData>>
+    public class StockTests : SealedClassTests<global::Domain.Shop.Stock.Stock, UniqueEntity<StockData>>
     {
     }
 }

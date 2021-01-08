@@ -3,7 +3,7 @@ using Data.Shop.Stock;
 using Facade.Shop.Stock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Facade.Shop.Stocks
+namespace Tests.Facade.Shop.Stock
 {
     [TestClass]
     public class StockViewFactoryTests : BaseTests
