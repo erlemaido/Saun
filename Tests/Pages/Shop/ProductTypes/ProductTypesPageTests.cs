@@ -31,7 +31,7 @@ namespace Tests.Pages.Shop.ProductTypes
 
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Toote tüübid", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Toote tï¿½ï¿½bid", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/ProductTypes", obj.PageUrl.ToString());

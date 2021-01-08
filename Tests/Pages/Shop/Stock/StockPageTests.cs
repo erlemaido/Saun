@@ -27,7 +27,6 @@ namespace Tests.Pages.Shop.Stock
         private stockRepository Stock;
         private productsRepository Products;
 
-
         [TestInitialize]
         public override void TestInitialize()
         {

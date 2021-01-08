@@ -18,7 +18,7 @@ namespace Tests.Pages.Shop.Units
 
         }
 
-        private UnitsRepository Units;
+        private UnitsRepository _units;
 
 
         [TestInitialize]

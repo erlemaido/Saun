@@ -18,6 +18,7 @@ namespace Tests.Pages.Shop.Cities
         {
             protected override string GetId(CityData d) => d.Id;
 
+
         }
 
         private class countriesRepository : UniqueRepository<Country, CountryData>, ICountriesRepository

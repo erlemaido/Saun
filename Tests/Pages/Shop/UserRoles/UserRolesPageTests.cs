@@ -18,16 +18,16 @@ namespace Tests.Pages.Shop.UserRoles
     public class UserRolesPageTests : SealedViewPageTests<UserRolesPage,
             IUserRolesRepository, UserRole, UserRoleView, UserRoleData>
     {
-        internal class userRolesRepository : UniqueRepository<UserRole, UserRoleData>, IUserRolesRepository
+        internal class UserRolesRepository : UniqueRepository<UserRole, UserRoleData>, IUserRolesRepository
         {
             protected override string GetId(UserRoleData d) => d.Id;
 
         }
-        private class usersRepository : UniqueRepository<User, UserData>, IUsersRepository
+        private class UsersRepository : UniqueRepository<User, UserData>, IUsersRepository
         {
             protected override string GetId(UserData d) => d.Id;
         }
-        private class rolesRepository : UniqueRepository<Role, RoleData>, IRolesRepository
+        private class RolesRepository : UniqueRepository<Role, RoleData>, IRolesRepository
         {
             protected override string GetId(RoleData d)
             {
@@ -55,19 +55,19 @@ namespace Tests.Pages.Shop.UserRoles
             }
         }
 
-        private userRolesRepository UserRoles;
-        private usersRepository Users;
-        private rolesRepository Roles;
+        private UserRolesRepository _userRoles;
+        private UsersRepository _users;
+        private RolesRepository _roles;
 
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            UserRoles = new userRolesRepository();
-            Users = new usersRepository();
-            Roles = new rolesRepository();
-            obj = new UserRolesPage(UserRoles, Users, Roles);
+            _userRoles = new UserRolesRepository();
+            _users = new UsersRepository();
+            _roles = new RolesRepository();
+            obj = new UserRolesPage(_userRoles, _users, _roles);
         }
 
 
