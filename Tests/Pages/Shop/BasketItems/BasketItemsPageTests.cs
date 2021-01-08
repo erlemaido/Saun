@@ -28,9 +28,9 @@ namespace Tests.Pages.Shop.BasketItems
     public class BasketItemsPageTests : SealedViewPageTests<BasketItemsPage, IBasketItemsRepository, BasketItem,
         BasketItemView, BasketItemData>
     {
-        private TestRepository repository;
-        private productRepository Products;
-        private basketRepository Baskets;
+        //private TestRepository repository;
+        //private ProductRepository Products;
+        //private BasketRepository Baskets;
         private BasketItemData data;
         private ProductData productData;
         private BasketData basketData;
@@ -72,7 +72,7 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? basketData : GetRandom.Object<BasketData>();
-                Baskets.Add(new Basket(d)).GetAwaiter();
+                //Baskets.Add(new Basket(d)).GetAwaiter();
             }
         }
 
@@ -84,7 +84,7 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? productData : GetRandom.Object<ProductData>();
-                Products.Add(new Product(d)).GetAwaiter();
+                //Products.Add(new Product(d)).GetAwaiter();
             }
         }
 
@@ -96,7 +96,7 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? data : GetRandom.Object<BasketItemData>();
-                repository.Add(new BasketItem(d)).GetAwaiter();
+                //repository.Add(new BasketItem(d)).GetAwaiter();
             }
         }
 
@@ -124,6 +124,7 @@ namespace Tests.Pages.Shop.BasketItems
 
         [TestMethod]
         public override void ToObjectTest()
+
         {
             var view = GetRandom.Object<BasketItemView>();
             var o = obj.ToObject(view);
@@ -151,6 +152,7 @@ namespace Tests.Pages.Shop.BasketItems
             var list = Baskets.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.Baskets.Count());
         }
+
 
         [TestMethod]
         public void GetProductNameTest()
