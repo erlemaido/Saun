@@ -16,7 +16,7 @@ namespace Tests.Pages.Shop.Countries
         ICountriesRepository, Country, CountryView, CountryData>
     {
 
-        private CountriesRepository Countries;
+        private CountriesRepository _countries;
 
         [TestInitialize]
         public override void TestInitialize()

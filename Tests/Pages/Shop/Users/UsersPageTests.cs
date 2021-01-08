@@ -23,27 +23,27 @@ namespace Tests.Pages.Shop.Users
     public class UsersPageTests : SealedViewPageTests<UsersPage,
             IUsersRepository, User, UserView, UserData>
     {
-        internal class usersRepository : UniqueRepository<User, UserData>, IUsersRepository
+        internal class UsersRepository : UniqueRepository<User, UserData>, IUsersRepository
         {
             protected override string GetId(UserData d) => Compose.Id(d.Id, d.PersonId);
 
         }
-        private class peopleRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
+        private class PeopleRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
         {
             protected override string GetId(PersonData d) => d.Id;
         }
 
-        private usersRepository Users;
-        private peopleRepository People;
+        private UsersRepository _users;
+        private PeopleRepository _people;
         
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            Users = new usersRepository();
-            People = new peopleRepository();
-            obj = new UsersPage(Users, People);
+            _users = new UsersRepository();
+            _people = new PeopleRepository();
+            obj = new UsersPage(_users, _people);
         }
 
 

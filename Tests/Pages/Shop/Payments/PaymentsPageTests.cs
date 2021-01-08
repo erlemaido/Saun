@@ -14,7 +14,7 @@ namespace Tests.Pages.Shop.Payments
             IPaymentsRepository, Payment, PaymentView, PaymentData>
     {
 
-        private PaymentsRepository Payments;
+        private PaymentsRepository _payments;
 
         [TestInitialize]
         public override void TestInitialize()

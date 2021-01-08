@@ -14,7 +14,7 @@ namespace Tests.Pages.Shop.People
             IPeopleRepository, Person, PersonView, PersonData>
     {
 
-        private PeopleRepository People;
+        private PeopleRepository _people;
 
         [TestInitialize]
         public override void TestInitialize()

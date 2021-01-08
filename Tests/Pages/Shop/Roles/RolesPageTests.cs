@@ -16,7 +16,7 @@ namespace Tests.Pages.Shop.Roles
         IRolesRepository, Role, RoleView, RoleData>
     {
 
-        private RolesRepository Roles;
+        private RolesRepository _roles;
 
         [TestInitialize]
         public override void TestInitialize()

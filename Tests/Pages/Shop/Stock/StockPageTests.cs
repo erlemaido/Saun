@@ -15,7 +15,7 @@ namespace Tests.Pages.Shop.Stock
         IStockRepository, global::Domain.Shop.Stock.Stock, StockView, StockData>
     {
 
-        private StockRepository Stock;
+        private StockRepository _stock;
 
         [TestInitialize]
         public override void TestInitialize()

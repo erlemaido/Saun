@@ -14,7 +14,7 @@ namespace Tests.Pages.Shop.DeliveryTypes
             IDeliveryTypesRepository, DeliveryType, DeliveryTypeView, DeliveryTypeData>
     {
 
-        private DeliveryTypesRepository DeliveryTypes;
+        private DeliveryTypesRepository _deliveryTypes;
 
         [TestInitialize]
         public override void TestInitialize()

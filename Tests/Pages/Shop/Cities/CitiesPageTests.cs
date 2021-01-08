@@ -20,7 +20,7 @@ namespace Tests.Pages.Shop.Cities
             ICitiesRepository, City, CityView, CityData>
     {
 
-        private CitiesRepository Cities;
+        private CitiesRepository _cities;
 
         [TestInitialize]
         public override void TestInitialize()

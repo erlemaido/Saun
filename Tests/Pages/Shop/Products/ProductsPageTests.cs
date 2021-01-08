@@ -16,7 +16,7 @@ namespace Tests.Pages.Shop.Products
         IProductsRepository, Product, ProductView, ProductData>
     {
 
-        private ProductsRepository Products;
+        private ProductsRepository _products;
 
         [TestInitialize]
         public override void TestInitialize()

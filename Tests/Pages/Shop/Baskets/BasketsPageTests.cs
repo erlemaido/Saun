@@ -25,11 +25,11 @@ namespace Tests.Pages.Shop.Baskets
     [TestClass]
     public class BasketsPageTests : SealedViewPageTests<BasketsPage, IBasketsRepository, Basket, BasketView, BasketData>
     {
-        private TestRepository repository;
-        private peopleRepository People;
-        private BasketData data;
-        private PersonData peopleData;
-        private string SelectedId;
+        private TestRepository _repository;
+        private PeopleTestRepository _peopleTest;
+        private BasketData _data;
+        private PersonData _peopleData;
+        private string _selectedId;
         protected override string GetId(BasketView item) => item.Id;
 
         protected override string PageTitle() => PagesNames.Baskets;
@@ -43,14 +43,14 @@ namespace Tests.Pages.Shop.Baskets
         public override void TestInitialize()
         {
             base.TestInitialize();
-            SelectedId = GetRandom.String();
-            repository = new TestRepository();
-            People = new peopleRepository();
-            data = GetRandom.Object<BasketData>();
-            peopleData = GetRandom.Object<PersonData>();
+            _selectedId = GetRandom.String();
+            _repository = new TestRepository();
+            _peopleTest = new PeopleTestRepository();
+            _data = GetRandom.Object<BasketData>();
+            _peopleData = GetRandom.Object<PersonData>();
             AddRandomPeople();
             AddRandomBaskets();
-            obj = new BasketsPage(repository, People);
+            obj = new BasketsPage(_repository, _peopleTest);
         }
 
         private void AddRandomBaskets()
@@ -60,8 +60,8 @@ namespace Tests.Pages.Shop.Baskets
 
             for (var i = 0; i < count; i++)
             {
-                var d = i == idx ? data : GetRandom.Object<BasketData>();
-                repository.Add(new Basket(d)).GetAwaiter();
+                var d = i == idx ? _data : GetRandom.Object<BasketData>();
+                _repository.Add(new Basket(d)).GetAwaiter();
             }
         }
 
@@ -72,8 +72,8 @@ namespace Tests.Pages.Shop.Baskets
 
             for (var i = 0; i < count; i++)
             {
-                var d = i == idx ? peopleData : GetRandom.Object<PersonData>();
-                People.Add(new Person(d)).GetAwaiter();
+                var d = i == idx ? _peopleData : GetRandom.Object<PersonData>();
+                _peopleTest.Add(new Person(d)).GetAwaiter();
             }
         }
 
@@ -85,7 +85,7 @@ namespace Tests.Pages.Shop.Baskets
 
         }
 
-        private class peopleRepository
+        private class PeopleTestRepository
             : UniqueRepository<Person, PersonData>,
                 IPeopleRepository
         {
@@ -111,15 +111,15 @@ namespace Tests.Pages.Shop.Baskets
         [TestMethod]
         public void PeopleTest()
         {
-            var list = People.Get().GetAwaiter().GetResult();
+            var list = _peopleTest.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.People.Count());
         }
 
         [TestMethod]
         public void GetPersonNameTest()
         {
-            var name = obj.GetPersonName(peopleData.Id);
-            Assert.AreEqual(peopleData.FirstName + " " + peopleData.LastName, name);
+            var name = obj.GetPersonName(_peopleData.Id);
+            Assert.AreEqual(_peopleData.FirstName + " " + _peopleData.LastName, name);
         }
 
         [TestMethod]
@@ -139,10 +139,10 @@ namespace Tests.Pages.Shop.Baskets
         [TestMethod]
         public void GetPageSubtitleTest()
         {
-            var list = People.Get().GetAwaiter().GetResult();
+            var list = _peopleTest.Get().GetAwaiter().GetResult();
             obj.FixedFilter = GetMember.Name<BasketView>(x => x.PersonId);
             if (!IsPerson()) return;
-            foreach (var person in list.Where(person => person.Id == peopleData.Id))
+            foreach (var person in list.Where(person => person.Id == _peopleData.Id))
             {
                 obj.FixedValue = person.Id;
                 Assert.AreEqual(obj.GetPageSubtitle(), obj.PageSubtitle);

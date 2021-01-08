@@ -28,13 +28,13 @@ namespace Tests.Pages.Shop.BasketItems
     public class BasketItemsPageTests : SealedViewPageTests<BasketItemsPage, IBasketItemsRepository, BasketItem,
         BasketItemView, BasketItemData>
     {
-        //private TestRepository repository;
-        //private ProductRepository Products;
-        //private BasketRepository Baskets;
-        private BasketItemData data;
-        private ProductData productData;
-        private BasketData basketData;
-        private string SelectedId;
+        private TestRepository _repository;
+        private ProductTestRepository _productsTest;
+        private BasketTestRepository _basketsTest;
+        private BasketItemData _data;
+        private ProductData _productData;
+        private BasketData _basketData;
+        private string _selectedId;
         protected override string GetId(BasketItemView item) => item.Id;
 
         protected override string PageTitle() => PagesNames.BasketItems;
@@ -50,18 +50,17 @@ namespace Tests.Pages.Shop.BasketItems
         public override void TestInitialize()
         {
             base.TestInitialize();
-            SelectedId = GetRandom.String();
-            repository = new TestRepository();
-            Products = new productRepository();
-            ;
-            Baskets = new basketRepository();
-            data = GetRandom.Object<BasketItemData>();
-            productData = GetRandom.Object<ProductData>();
-            basketData = GetRandom.Object<BasketData>();
+            _selectedId = GetRandom.String();
+            _repository = new TestRepository();
+            _productsTest = new ProductTestRepository();
+            _basketsTest = new BasketTestRepository();
+            _data = GetRandom.Object<BasketItemData>();
+            _productData = GetRandom.Object<ProductData>();
+            _basketData = GetRandom.Object<BasketData>();
             AddRandomBasketItems();
             AddRandomProducts();
             AddRandomBaskets();
-            obj = new BasketItemsPage(repository, Baskets, Products);
+            obj = new BasketItemsPage(_repository, _basketsTest, _productsTest);
         }
 
         private void AddRandomBaskets()
@@ -71,8 +70,8 @@ namespace Tests.Pages.Shop.BasketItems
 
             for (var i = 0; i < count; i++)
             {
-                var d = i == idx ? basketData : GetRandom.Object<BasketData>();
-                //Baskets.Add(new Basket(d)).GetAwaiter();
+                var d = i == idx ? _basketData : GetRandom.Object<BasketData>();
+                _basketsTest.Add(new Basket(d)).GetAwaiter();
             }
         }
 
@@ -83,8 +82,8 @@ namespace Tests.Pages.Shop.BasketItems
 
             for (var i = 0; i < count; i++)
             {
-                var d = i == idx ? productData : GetRandom.Object<ProductData>();
-                //Products.Add(new Product(d)).GetAwaiter();
+                var d = i == idx ? _productData : GetRandom.Object<ProductData>();
+                _productsTest.Add(new Product(d)).GetAwaiter();
             }
         }
 
@@ -95,8 +94,8 @@ namespace Tests.Pages.Shop.BasketItems
 
             for (var i = 0; i < count; i++)
             {
-                var d = i == idx ? data : GetRandom.Object<BasketItemData>();
-                //repository.Add(new BasketItem(d)).GetAwaiter();
+                var d = i == idx ? _data : GetRandom.Object<BasketItemData>();
+                _repository.Add(new BasketItem(d)).GetAwaiter();
             }
         }
 
@@ -108,14 +107,14 @@ namespace Tests.Pages.Shop.BasketItems
 
         }
 
-        private class productRepository
+        private class ProductTestRepository
             : UniqueRepository<Product, ProductData>,
                 IProductsRepository
         {
             protected override string GetId(ProductData d) => d.Id;
         }
 
-        private class basketRepository
+        private class BasketTestRepository
             : UniqueRepository<Basket, BasketData>,
                 IBasketsRepository
         {
@@ -142,14 +141,14 @@ namespace Tests.Pages.Shop.BasketItems
         [TestMethod]
         public void ProductsTest()
         {
-            var list = Products.Get().GetAwaiter().GetResult();
+            var list = _productsTest.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.Products.Count());
         }
 
         [TestMethod]
         public void BasketsTest()
         {
-            var list = Baskets.Get().GetAwaiter().GetResult();
+            var list = _basketsTest.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.Baskets.Count());
         }
 
@@ -157,15 +156,15 @@ namespace Tests.Pages.Shop.BasketItems
         [TestMethod]
         public void GetProductNameTest()
         {
-            var name = obj.GetProductName(productData.Id);
-            Assert.AreEqual(productData.Name, name);
+            var name = obj.GetProductName(_productData.Id);
+            Assert.AreEqual(_productData.Name, name);
         }
 
         [TestMethod]
         public void GetBasketNameTest()
         {
-            var name = obj.GetBasketName(basketData.Id);
-            Assert.AreEqual(basketData.Name, name);
+            var name = obj.GetBasketName(_basketData.Id);
+            Assert.AreEqual(_basketData.Name, name);
         }
 
         [TestMethod]
@@ -185,10 +184,10 @@ namespace Tests.Pages.Shop.BasketItems
         [TestMethod]
         public void GetPageBasketSubtitleTest()
         {
-            var list = Baskets.Get().GetAwaiter().GetResult();
+            var list = _basketsTest.Get().GetAwaiter().GetResult();
             obj.FixedFilter = GetMember.Name<BasketItemView>(x => x.BasketId);
             if (!IsBasket()) return;
-            foreach (var basket in list.Where(basket => basket.Id == basketData.Id))
+            foreach (var basket in list.Where(basket => basket.Id == _basketData.Id))
             {
                 obj.FixedValue = basket.Id;
                 Assert.AreEqual(obj.GetPageSubtitle(), obj.PageSubtitle);
@@ -199,10 +198,10 @@ namespace Tests.Pages.Shop.BasketItems
         [TestMethod]
         public void GetPageProductSubtitleTest()
         {
-            var list = Products.Get().GetAwaiter().GetResult();
+            var list = _productsTest.Get().GetAwaiter().GetResult();
             obj.FixedFilter = GetMember.Name<BasketItemView>(x => x.ProductId);
             if (!IsProduct()) return;
-            foreach (var product in list.Where(product => product.Id == productData.Id))
+            foreach (var product in list.Where(product => product.Id == _productData.Id))
             {
                 obj.FixedValue = product.Id;
                 Assert.AreEqual(obj.GetPageSubtitle(), obj.PageSubtitle);

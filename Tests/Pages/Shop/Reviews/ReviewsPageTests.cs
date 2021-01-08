@@ -14,7 +14,7 @@ namespace Tests.Pages.Shop.Reviews
             IReviewsRepository, Review, ReviewView, ReviewData>
     {
 
-        private ReviewsRepository Reviews;
+        private ReviewsRepository _reviews;
 
         [TestInitialize]
         public override void TestInitialize()

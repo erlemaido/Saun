@@ -14,7 +14,7 @@ namespace Tests.Pages.Shop.Units
             IUnitsRepository, Unit, UnitView, UnitData>
     {
 
-        private UnitsRepository Units;
+        private UnitsRepository _units;
 
         [TestInitialize]
         public override void TestInitialize()
