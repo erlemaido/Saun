@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
 
-namespace Sauna.Pages.Shop.Stocks
+namespace Sauna.Pages.Shop.Stock
 {
-    public sealed class StockPage : ViewPage<IStockRepository, Stock, StockView, StockData>
+    public sealed class StockPage : ViewPage<IStockRepository, Domain.Shop.Stock.Stock, StockView, StockData>
     {
         public IEnumerable<SelectListItem> Products { get; }
 
@@ -22,9 +22,9 @@ namespace Sauna.Pages.Shop.Stocks
         }
         public string GetProductName(string id) => GetItemName(Products, id);
         
-        protected internal override Stock ToObject(StockView view) => StockViewFactory.Create(view);
+        protected internal override Domain.Shop.Stock.Stock ToObject(StockView view) => StockViewFactory.Create(view);
 
-        protected internal override StockView ToView(Stock obj) => StockViewFactory.Create(obj);
+        protected internal override StockView ToView(Domain.Shop.Stock.Stock obj) => StockViewFactory.Create(obj);
 
         protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Stock, UriKind.Relative);
         
