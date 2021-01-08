@@ -26,7 +26,7 @@ namespace Tests.Pages.Abstractions {
 
             protected internal override string GetPageSubtitle() => SubTitle;
 
-            
+             
         }
 
         internal class TestRepository : BaseTestRepositoryForUniqueEntity<Order, OrderData>, IOrdersRepository
