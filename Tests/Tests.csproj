@@ -33,7 +33,6 @@
     <Folder Include="Data\Shop\Units\" />
     <Folder Include="Data\Shop\UserRoles\" />
     <Folder Include="Data\Shop\Users\" />
-    <Folder Include="Pages\Shop\BasketItems\" />
     <Folder Include="Pages\Shop\Baskets\" />
     <Folder Include="Pages\Shop\Brands\" />
     <Folder Include="Pages\Shop\Cities\" />
@@ -49,7 +48,7 @@
     <Folder Include="Pages\Shop\Reviews\" />
     <Folder Include="Pages\Shop\Roles\" />
     <Folder Include="Pages\Shop\Statuses\" />
-    <Folder Include="Pages\Shop\Stocks\" />
+    <Folder Include="Pages\Shop\Stock\" />
     <Folder Include="Pages\Shop\Units\" />
     <Folder Include="Pages\Shop\UserRoles\" />
     <Folder Include="Pages\Shop\Users\" />

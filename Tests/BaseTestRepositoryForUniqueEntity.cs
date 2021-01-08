@@ -7,31 +7,57 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    internal class BaseTestRepositoryForUniqueEntity<TObj, TData> where TObj : UniqueEntity<TData> where TData : UniqueEntityData, new()
+    internal abstract class BaseTestRepositoryForUniqueEntity<TObj, TData> where TObj : UniqueEntity<TData> where TData : UniqueEntityData, new()
     {
         internal readonly List<TObj> list;
+        public object GetById(string id) => null;
 
         public BaseTestRepositoryForUniqueEntity()
         {
             list = new List<TObj>();
         }
 
+        //public async Task<List<TObj>> Get()
+        //{
+        //    await Task.CompletedTask;
+        //    return list;
+        //}
         public async Task<List<TObj>> Get()
         {
             await Task.CompletedTask;
-            return list;
-        }
 
+            if (FixedFilter is null) return list;
+            var l = new List<TObj>();
+            var p = typeof(TData).GetProperty(FixedFilter);
+            foreach (var e in list)
+            {
+                var v = p?.GetValue(e.Data);
+                if (v is null) continue;
+                if (v.ToString() != FixedValue) continue;
+                l.Add(e);
+            }
+            return l;
+        }
         public async Task<TObj> Get(string id)
         {
             await Task.CompletedTask;
-            return list.Find(x => x.Data.Id == id);
+
+            return list.Find(x => GetId(x.Data) == id);
         }
+
+        protected abstract string GetId(TData d);
+
+        //protected abstract string GetId(TData d);
+        //public async Task<TObj> Get(string id)
+        //{
+        //    await Task.CompletedTask;
+        //    return list.Find(x => x.Data.Id == id);
+        //}
 
         public async Task Delete(string id)
         {
             await Task.CompletedTask;
-            var obj = list.Find(x => x.Data.Id == id);
+            var obj = list.Find(x => GetId(x.Data) == id);
             list.Remove(obj);
         }
 
@@ -43,7 +69,7 @@ namespace Tests
 
         public async Task Update(TObj obj)
         {
-            await Delete(obj.Data.Id);
+            await Delete(GetId(obj.Data));
             list.Add(obj);
         }
 

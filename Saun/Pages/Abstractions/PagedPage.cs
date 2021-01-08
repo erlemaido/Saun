@@ -14,7 +14,6 @@ namespace Sauna.Pages.Abstractions {
 
         protected PagedPage(TRepository repository) : base(repository)
         {
-            Items = new List<TView>();
         }
 
         public IList<TView> Items { get; private set; }

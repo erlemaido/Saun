@@ -1,9 +1,0 @@
-@using Sauna.Pages.Abstractions.Extensions
-@model Sauna.Pages.Shop.Stocks.StockPage
-
-<body>
-    @Html.Show(m => m.Item.ProductId, Model.GetProductName(Model.Item.ProductId))
-    @Html.Show(m => m.Item.InStock)
-    @Html.Show(m => m.Item.LastUpdateTime)
-    @Html.Show(m => m.Item.Comment)
-</body>

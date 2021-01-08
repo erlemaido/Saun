@@ -21,7 +21,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Orders
 {
-    public class OrdersPage : ViewPage<IOrdersRepository, Order, OrderView, OrderData>
+    public sealed class OrdersPage : ViewPage<IOrdersRepository, Order, OrderView, OrderData>
     {
         public OrdersPage(
             IOrdersRepository repository,

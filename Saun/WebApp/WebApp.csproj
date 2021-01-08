@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\Identity\**" />
-    <Content Remove="Areas\Identity\**" />
-    <EmbeddedResource Remove="Areas\Identity\**" />
-    <None Remove="Areas\Identity\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
@@ -331,10 +324,6 @@
     <UpToDateCheckInput Remove="Areas\Shop\Pages\Products\Pages\Index.cshtml" />
     <UpToDateCheckInput Remove="Areas\Shop\Pages\Products\Pages\_EditProduct.cshtml" />
     <UpToDateCheckInput Remove="Areas\Shop\Pages\Products\Pages\_ShowProduct.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\images" />
   </ItemGroup>
 
 </Project>

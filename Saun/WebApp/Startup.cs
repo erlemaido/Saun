@@ -15,7 +15,7 @@ using Domain.Shop.ProductTypes;
 using Domain.Shop.Reviews;
 using Domain.Shop.Roles;
 using Domain.Shop.Statuses;
-using Domain.Shop.Stocks;
+using Domain.Shop.Stock;
 using Domain.Shop.Units;
 using Domain.Shop.UserRoles;
 using Domain.Shop.Users;
@@ -45,7 +45,7 @@ using Infra.Shop.ProductTypes;
 using Infra.Shop.Reviews;
 using Infra.Shop.Roles;
 using Infra.Shop.Statuses;
-using Infra.Shop.Stocks;
+using Infra.Shop.Stock;
 using Infra.Shop.Units;
 using Infra.Shop.UserRoles;
 using Infra.Shop.Users;
@@ -98,7 +98,6 @@ namespace WebApp
             services.AddScoped<IUsersRepository, UsersRepository>();
             
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

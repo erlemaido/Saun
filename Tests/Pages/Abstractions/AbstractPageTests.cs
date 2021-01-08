@@ -32,6 +32,7 @@ namespace Tests.Pages.Abstractions
             protected internal Product ToObject(ProductView view) => ProductViewFactory.Create(view);
 
             protected internal ProductView ToView(Product obj) => ProductViewFactory.Create(obj);
+
         }
 
         internal class TestRepository : BaseTestRepositoryForUniqueEntity<Product, ProductData>, IProductsRepository
@@ -41,6 +42,9 @@ namespace Tests.Pages.Abstractions
             {
                 throw new System.NotImplementedException();
             }
+            
+            protected override string GetId(OrderData d) => d.Id;
+
         }
 
         [TestInitialize]

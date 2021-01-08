@@ -13,7 +13,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Users
 {
-    public class UsersPage : ViewPage<IUsersRepository, User, UserView, UserData>
+    public sealed class UsersPage : ViewPage<IUsersRepository, User, UserView, UserData>
     {
         public UsersPage(
             IUsersRepository repository,
