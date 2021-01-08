@@ -12,7 +12,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Stock
 {
-    public class StockPage : ViewPage<IStockRepository, Domain.Shop.Stock.Stock, StockView, StockData>
+    public sealed class StockPage : ViewPage<IStockRepository, Domain.Shop.Stock.Stock, StockView, StockData>
     {
         public IEnumerable<SelectListItem> Products { get; }
 
