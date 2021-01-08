@@ -1,10 +1,7 @@
 ﻿using System;
 using Aids.Reflection;
 using Data.Shop.Orders;
-using Data.Shop.Orders;
 using Domain.Shop.Orders;
-using Domain.Shop.Orders;
-using Facade.Shop.Orders;
 using Facade.Shop.Orders;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
