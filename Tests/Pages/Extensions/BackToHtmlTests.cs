@@ -11,52 +11,52 @@ namespace Tests.Pages.Extensions {
 
     [TestClass] public class BackToHtmlTests : BaseTests {
 
-        private string str;
-        private Args a;
+        private string _str;
+        private Args _a;
 
         [TestInitialize] public virtual void TestInitialize() {
             type = typeof(BackToHtml);
-            str = GetRandom.String();
-            a = GetRandom.Object<Args>();
-            a.Title = GetRandom.String();
-            a.Handler = GetRandom.String();
-            a.ControlId = GetRandom.String();
+            _str = GetRandom.String();
+            _a = GetRandom.Object<Args>();
+            _a.Title = GetRandom.String();
+            _a.Handler = GetRandom.String();
+            _a.ControlId = GetRandom.String();
         }
 
         [TestMethod] public void BackToTest() {
-            var obj = new HtmlHelperMock<UnitView>().BackTo(a);
+            var obj = new HtmlHelperMock<UnitView>().BackTo(_a);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
         [TestMethod] public void HtmlStringsTest() {
-            var actual = BackToHtml.HtmlStrings(a);
+            var actual = BackToHtml.HtmlStrings(_a);
             var s = actual[0].ToString();
             Assert.IsNotNull(s);
-            Assert.AreEqual("backToList", a.ControlId);
-            var x = $"<a id=\"{a.ControlId}\" href=\"{a.PageUrl}";
+            Assert.AreEqual("backToList", _a.ControlId);
+            var x = $"<a id=\"{_a.ControlId}\" href=\"{_a.PageUrl}";
             Assert.IsTrue(s.Contains(x));
-            Assert.IsTrue(s.Contains($"?handler={a.Handler}"));
-            Assert.IsTrue(s.Contains($"&fixedValue={a.FixedValue}"));
-            Assert.IsTrue(s.Contains($"&fixedFilter={a.FixedFilter}"));
-            Assert.IsTrue(s.Contains($"&sortOrder={a.SortOrder}"));
-            Assert.IsTrue(s.Contains($"&searchString={a.SearchString}"));
-            Assert.IsTrue(s.Contains($"&pageIndex={a.PageIndex}"));
-            Assert.IsTrue(s.Contains($"\">{a.Title}</a>"));
+            Assert.IsTrue(s.Contains($"?handler={_a.Handler}"));
+            Assert.IsTrue(s.Contains($"&fixedValue={_a.FixedValue}"));
+            Assert.IsTrue(s.Contains($"&fixedFilter={_a.FixedFilter}"));
+            Assert.IsTrue(s.Contains($"&sortOrder={_a.SortOrder}"));
+            Assert.IsTrue(s.Contains($"&searchString={_a.SearchString}"));
+            Assert.IsTrue(s.Contains($"&pageIndex={_a.PageIndex}"));
+            Assert.IsTrue(s.Contains($"\">{_a.Title}</a>"));
         }
 
         [TestMethod] public void GetTitleTest() {
             Assert.AreEqual(Captions.BackToList, BackToHtml.GetTitle(null));
-            Assert.AreEqual(str, BackToHtml.GetTitle(str));
+            Assert.AreEqual(_str, BackToHtml.GetTitle(_str));
         }
 
         [TestMethod] public void GetHandlerTest() {
             Assert.AreEqual(Actions.Index, BackToHtml.GetHandler(null));
-            Assert.AreEqual(str, BackToHtml.GetHandler(str));
+            Assert.AreEqual(_str, BackToHtml.GetHandler(_str));
         }
 
         [TestMethod] public void GetPageUrlTest() {
             Assert.AreEqual(Actions.Index, BackToHtml.GetPageUrl(null).ToString());
-            Assert.AreEqual(str, BackToHtml.GetPageUrl(new Uri(str, UriKind.Relative)).ToString());
+            Assert.AreEqual(_str, BackToHtml.GetPageUrl(new Uri(_str, UriKind.Relative)).ToString());
         }
 
     }

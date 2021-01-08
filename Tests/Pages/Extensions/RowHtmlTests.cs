@@ -11,11 +11,11 @@ namespace Tests.Pages.Extensions {
 
     [TestClass] public class RowHtmlTests : BaseTests {
 
-        private string s;
+        private string _s;
 
         [TestInitialize] public virtual void TestInitialize() {
             type = typeof(RowHtml);
-            s = GetRandom.String();
+            _s = GetRandom.String();
         }
 
         [TestMethod] public void RowTest() {
@@ -71,7 +71,7 @@ namespace Tests.Pages.Extensions {
         [TestMethod] public void StringsTest() {
             var expected = new List<string> {
                 "<td>",
-                s,
+                _s,
                 "</td>",
                 "<td>",
                 "Edit",
@@ -85,14 +85,14 @@ namespace Tests.Pages.Extensions {
             var actual = RowHtml.HtmlStrings(
                 false,
                 a,
-                new HtmlContentMock(s));
+                new HtmlContentMock(_s));
             TestHtml.Strings(actual, expected);
         }
 
         [TestMethod] public void SelectStringsTest() {
             var expected = new List<string> {
                 "<td>",
-                s,
+                _s,
                 "</td>",
                 "<td>",
                 "Vali",
@@ -108,17 +108,17 @@ namespace Tests.Pages.Extensions {
             var actual = RowHtml.HtmlStrings(
                 true,
                 a,
-                new HtmlContentMock(s));
+                new HtmlContentMock(_s));
             TestHtml.Strings(actual, expected);
         }
 
         [TestMethod] public void AddValueTest() {
-            var value = new HtmlContentMock(s);
+            var value = new HtmlContentMock(_s);
             var l = new List<object>();
             RowHtml.AddValue(l, value);
             Assert.AreEqual(3, l.Count);
             Assert.AreEqual("<td>", l[0].ToString());
-            Assert.AreEqual(s, l[1].ToString());
+            Assert.AreEqual(_s, l[1].ToString());
             Assert.AreEqual("</td>", l[2].ToString());
         }
 

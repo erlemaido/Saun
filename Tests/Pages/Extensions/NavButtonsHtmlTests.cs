@@ -12,44 +12,44 @@ namespace Tests.Pages.Extensions {
 
     [TestClass] public class NavButtonsHtmlTests : BaseTests {
 
-        private int totalPages;
-        private int pageIndex;
-        private Args a;
-        private List<object> l;
-        private string actual;
-        private string title;
+        private int _totalPages;
+        private int _pageIndex;
+        private Args _a;
+        private List<object> _l;
+        private string _actual;
+        private string _title;
 
         [TestInitialize] public void TestInitialize() {
             type = typeof(NavButtonsHtml);
-            title = GetRandom.String();
-            totalPages = GetRandom.UInt8(5);
-            pageIndex = GetRandom.Int32(1, totalPages - 3);
-            a = GetRandom.Object<Args>();
-            a.Title = GetRandom.String();
-            a.Handler = GetRandom.String();
-            a.Action = GetRandom.String();
-            actual = null;
-            l = new List<object>();
+            _title = GetRandom.String();
+            _totalPages = GetRandom.UInt8(5);
+            _pageIndex = GetRandom.Int32(1, _totalPages - 3);
+            _a = GetRandom.Object<Args>();
+            _a.Title = GetRandom.String();
+            _a.Handler = GetRandom.String();
+            _a.Action = GetRandom.String();
+            _actual = null;
+            _l = new List<object>();
         }
 
         [TestCleanup] public void TestCleanup() {
-            if (actual is null) return;
-            Assert.IsTrue(actual.Contains(Href.AddPage(a?.PageUrl)));
-            Assert.IsTrue(actual.Contains(Href.AddAction(a?.Action)));
-            Assert.IsTrue(actual.Contains(Href.AddHandler(a?.Handler)));
-            Assert.IsTrue(actual.Contains(Href.AddItemId(a?.ItemId)));
-            Assert.IsTrue(actual.Contains(Href.AddFixedFilter(a?.FixedFilter)));
-            Assert.IsTrue(actual.Contains(Href.AddFixedValue(a?.FixedValue)));
-            Assert.IsTrue(actual.Contains(Href.AddSearchString(a?.SearchString)));
-            Assert.IsTrue(actual.Contains(Href.AddSortOrder(a?.SortOrder)));
-            Assert.IsTrue(actual.Contains(Href.AddPageIndex(a?.PageIndex)));
-            Assert.IsTrue(actual.Contains(Href.AddClass(a?.Disabled)));
-            Assert.IsTrue(actual.Contains(Href.AddTitle(a?.Title)));
-            actual = null;
+            if (_actual is null) return;
+            Assert.IsTrue(_actual.Contains(Href.AddPage(_a?.PageUrl)));
+            Assert.IsTrue(_actual.Contains(Href.AddAction(_a?.Action)));
+            Assert.IsTrue(_actual.Contains(Href.AddHandler(_a?.Handler)));
+            Assert.IsTrue(_actual.Contains(Href.AddItemId(_a?.ItemId)));
+            Assert.IsTrue(_actual.Contains(Href.AddFixedFilter(_a?.FixedFilter)));
+            Assert.IsTrue(_actual.Contains(Href.AddFixedValue(_a?.FixedValue)));
+            Assert.IsTrue(_actual.Contains(Href.AddSearchString(_a?.SearchString)));
+            Assert.IsTrue(_actual.Contains(Href.AddSortOrder(_a?.SortOrder)));
+            Assert.IsTrue(_actual.Contains(Href.AddPageIndex(_a?.PageIndex)));
+            Assert.IsTrue(_actual.Contains(Href.AddClass(_a?.Disabled)));
+            Assert.IsTrue(_actual.Contains(Href.AddTitle(_a?.Title)));
+            _actual = null;
         }
 
         [TestMethod] public void NavButtonsTest() {
-            var obj = new HtmlHelperMock<UnitView>().NavButtons(a, totalPages);
+            var obj = new HtmlHelperMock<UnitView>().NavButtons(_a, _totalPages);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
@@ -57,87 +57,87 @@ namespace Tests.Pages.Extensions {
             var expected = new List<string> {
                 "<a href=\"", "&nbsp;", "<a href=\"", "&nbsp;", "Page ", "&nbsp;", "<a href=\"", "&nbsp;", "<a href=\""
             };
-            var result = NavButtonsHtml.HtmlStrings(a, totalPages);
+            var result = NavButtonsHtml.HtmlStrings(_a, _totalPages);
             TestHtml.Strings(result, expected);
         }
 
         [TestMethod] public void AddLastTest() {
-            NavButtonsHtml.AddLast(l, a, pageIndex, totalPages);
-            actual = l[0].ToString();
-            Assert.AreEqual("Viimane", a.Title);
-            Assert.AreEqual("Index", a.Handler);
-            Assert.AreEqual(null, a.ItemId);
-            Assert.AreEqual(totalPages, a.PageIndex);
+            NavButtonsHtml.AddLast(_l, _a, _pageIndex, _totalPages);
+            _actual = _l[0].ToString();
+            Assert.AreEqual("Viimane", _a.Title);
+            Assert.AreEqual("Index", _a.Handler);
+            Assert.AreEqual(null, _a.ItemId);
+            Assert.AreEqual(_totalPages, _a.PageIndex);
         }
 
         [TestMethod] public void HasNextTest() {
-            static void test(int? x, int? y, string s = "") {
+            static void Test(int? x, int? y, string s = "") {
                 Assert.AreEqual(s, NavButtonsHtml.HasNext(x, y));
             }
 
-            test(null, null);
-            test(totalPages, null);
-            test(null, totalPages);
-            test(totalPages, totalPages, "disabled");
-            test(totalPages - 1, totalPages);
-            test(totalPages + 1, totalPages, "disabled");
+            Test(null, null);
+            Test(_totalPages, null);
+            Test(null, _totalPages);
+            Test(_totalPages, _totalPages, "disabled");
+            Test(_totalPages - 1, _totalPages);
+            Test(_totalPages + 1, _totalPages, "disabled");
         }
 
         [TestMethod] public void AddNextTest() {
-            NavButtonsHtml.AddNext(l, a, pageIndex, totalPages);
-            actual = l[0].ToString();
-            Assert.AreEqual("Järgmine", a.Title);
-            Assert.AreEqual("Index", a.Handler);
-            Assert.AreEqual(null, a.ItemId);
-            Assert.AreEqual(pageIndex + 1, a.PageIndex);
+            NavButtonsHtml.AddNext(_l, _a, _pageIndex, _totalPages);
+            _actual = _l[0].ToString();
+            Assert.AreEqual("Järgmine", _a.Title);
+            Assert.AreEqual("Index", _a.Handler);
+            Assert.AreEqual(null, _a.ItemId);
+            Assert.AreEqual(_pageIndex + 1, _a.PageIndex);
         }
 
         [TestMethod] public void AddPreviousTest() {
-            NavButtonsHtml.AddPrevious(l, a, pageIndex);
-            actual = l[0].ToString();
-            Assert.AreEqual("Eelmine", a.Title);
-            Assert.AreEqual("Index", a.Handler);
-            Assert.AreEqual(null, a.ItemId);
-            Assert.AreEqual(pageIndex - 1, a.PageIndex);
+            NavButtonsHtml.AddPrevious(_l, _a, _pageIndex);
+            _actual = _l[0].ToString();
+            Assert.AreEqual("Eelmine", _a.Title);
+            Assert.AreEqual("Index", _a.Handler);
+            Assert.AreEqual(null, _a.ItemId);
+            Assert.AreEqual(_pageIndex - 1, _a.PageIndex);
         }
 
         [TestMethod] public void HasPreviousTest() {
-            static void test(int? x, string s = "") => Assert.AreEqual(s, NavButtonsHtml.HasPrevious(x));
+            static void Test(int? x, string s = "") => Assert.AreEqual(s, NavButtonsHtml.HasPrevious(x));
  
-            test(null);
-            test(totalPages);
-            test(1, "disabled");
-            test(0, "disabled");
-            test(-1, "disabled");
+            Test(null);
+            Test(_totalPages);
+            Test(1, "disabled");
+            Test(0, "disabled");
+            Test(-1, "disabled");
         }
 
         [TestMethod] public void AddFirstTest() {
-            NavButtonsHtml.AddFirst(l, a, pageIndex);
-            actual = l[0].ToString();
-            Assert.AreEqual("Esimene", a.Title);
-            Assert.AreEqual("Index", a.Handler);
-            Assert.AreEqual(null, a.ItemId);
-            Assert.AreEqual(1, a.PageIndex);
+            NavButtonsHtml.AddFirst(_l, _a, _pageIndex);
+            _actual = _l[0].ToString();
+            Assert.AreEqual("Esimene", _a.Title);
+            Assert.AreEqual("Index", _a.Handler);
+            Assert.AreEqual(null, _a.ItemId);
+            Assert.AreEqual(1, _a.PageIndex);
         }
 
         [TestMethod] public void AddPagesInfoTest() {
-            NavButtonsHtml.AddPagesInfo(l, pageIndex, totalPages);
-            var s = $"<a id=\"pagesInfo\">{Messages.PagesOf.Format(pageIndex, totalPages)}</a>";
-            Assert.AreEqual(s, l[0].ToString());
+            NavButtonsHtml.AddPagesInfo(_l, _pageIndex, _totalPages);
+            var s = $"<a id=\"pagesInfo\">{Messages.PagesOf.Format(_pageIndex, _totalPages)}</a>";
+            Assert.AreEqual(s, _l[0].ToString());
         }
 
         [TestMethod] public void AddSeparatorTest() {
-            NavButtonsHtml.AddSeparator(l);
-            Assert.AreEqual("&nbsp;", l[0].ToString());
+            NavButtonsHtml.AddSeparator(_l);
+            Assert.AreEqual("&nbsp;", _l[0].ToString());
         }
 
         [TestMethod] public void HtmlButtonTest() {
             var s = GetRandom.String();
-            actual = NavButtonsHtml.HtmlButton(a, title, s).ToString();
-            Assert.AreEqual(title, a.Title);
-            Assert.AreEqual("Index", a.Handler);
-            Assert.AreEqual(null, a.ItemId);
-            Assert.AreEqual(s, a.Disabled);
+            _actual = NavButtonsHtml.HtmlButton(_a, _title, s).ToString();
+            Assert.AreEqual(_title, _a.Title);
+            Assert.AreEqual("Index", _a.Handler);
+            Assert.AreEqual(null, _a.ItemId);
+            Assert.AreEqual(s, _a.Disabled);
         }
 
     }
