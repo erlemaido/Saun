@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.Shop.Users;
 using Domain.Shop.Users;
 using Infra;

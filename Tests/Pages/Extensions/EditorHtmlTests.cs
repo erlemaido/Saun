@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Facade.Shop.OrderStatuses;
-using Facade.Shop.Statuses;
 using Facade.Shop.Units;
 using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions.Extensions;
 
-namespace Tests.Pages.Extensions {
+namespace Tests.Pages.Extensions
+{
 
     [TestClass]
     public class EditorHtmlTests : BaseTests

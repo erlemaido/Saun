@@ -1,10 +1,6 @@
 ﻿using Aids.Reflection;
-using Data.Shop.Orders;
 using Data.Shop.DeliveryTypes;
-using Data.Shop.People;
-using Domain.Shop.Orders;
 using Domain.Shop.DeliveryTypes;
-using Domain.Shop.People;
 using Facade.Shop.DeliveryTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Shop.DeliveryTypes;

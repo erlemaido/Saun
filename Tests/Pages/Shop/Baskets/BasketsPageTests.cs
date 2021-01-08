@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Aids.Reflection;
-using Data.Shop.BasketItems;
 using Data.Shop.Baskets;
 using Data.Shop.People;
-using Data.Shop.Products;
-using Domain.Shop.BasketItems;
 using Domain.Shop.Baskets;
 using Domain.Shop.People;
-using Domain.Shop.Products;
-using Facade.Shop.BasketItems;
 using Facade.Shop.Baskets;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions.Constants;
-using Sauna.Pages.Shop.BasketItems;
 using Sauna.Pages.Shop.Baskets;
 using Tests.Pages.Abstractions;
 

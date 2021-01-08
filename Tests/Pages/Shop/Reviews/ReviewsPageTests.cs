@@ -1,15 +1,11 @@
-using Aids.Methods;
 using Aids.Reflection;
 using Data.Shop.Products;
 using Data.Shop.Reviews;
 using Data.Shop.Users;
 using Domain.Shop.Products;
-using Domain.Shop.Units;
 using Domain.Shop.Reviews;
 using Domain.Shop.Users;
-using Facade.Shop.BasketItems;
 using Facade.Shop.Reviews;
-using Infra.Shop.Reviews;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Shop.Reviews;
 using Tests.Pages.Abstractions;

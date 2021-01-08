@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.Shop.DeliveryTypes;
 using Domain.Shop.DeliveryTypes;
 using Infra;

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.Shop.Baskets;
 using Domain.Shop.Baskets;
 using Infra;

@@ -1,7 +1,4 @@
 using Data.Shop.Products;
-using Data.Shop.Products;
-using Domain.Abstractions;
-using Domain.Shop.Products;
 using Domain.Shop.Products;
 using Facade.Shop.Products;
 using Infra.Shop.Products;
