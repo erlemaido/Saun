@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.Abstractions;
+﻿using Data.Abstractions;
 using Data.Shop.Roles;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -50,6 +50,7 @@ namespace Tests.Pages.Shop.BasketItems
         public override void TestInitialize()
         {
             base.TestInitialize();
+
             _selectedId = GetRandom.String();
             _repository = new TestRepository();
             _productsTest = new ProductTestRepository();
@@ -61,6 +62,7 @@ namespace Tests.Pages.Shop.BasketItems
             AddRandomProducts();
             AddRandomBaskets();
             obj = new BasketItemsPage(_repository, _basketsTest, _productsTest);
+
         }
 
         private void AddRandomBaskets()
@@ -210,5 +212,6 @@ namespace Tests.Pages.Shop.BasketItems
         }
 
     }
+
 }
 

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Data.Shop.Payments;
 using Domain.Shop.Payments;
 using Infra;

@@ -1,5 +1,4 @@
 ﻿using Data.Shop.OrderItems;
-using Domain.Abstractions;
 using Domain.Shop.OrderItems;
 using Facade.Shop.OrderItems;
 using Infra.Shop.OrderItems;
