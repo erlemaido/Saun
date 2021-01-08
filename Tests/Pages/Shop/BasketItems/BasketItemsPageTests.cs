@@ -27,9 +27,9 @@ namespace Tests.Pages.Shop.BasketItems
     [TestClass]
     public class BasketItemsPageTests :SealedViewPageTests<BasketItemsPage, IBasketItemsRepository,BasketItem, BasketItemView,BasketItemData>
     {
-        private TestRepository repository;
-        private productRepository Products;
-        private basketRepository Baskets;
+        //private TestRepository repository;
+        //private ProductRepository Products;
+        //private BasketRepository Baskets;
         private BasketItemData data;
         private ProductData productData;
         private BasketData basketData;
@@ -46,16 +46,16 @@ namespace Tests.Pages.Shop.BasketItems
         {
             base.TestInitialize();
             SelectedId = GetRandom.String();
-            repository = new TestRepository();
-            Products = new productRepository();;
-            Baskets = new basketRepository();
+            //repository = new TestRepository();
+            //Products = new productRepository();;
+            //Baskets = new basketRepository();
             data = GetRandom.Object<BasketItemData>();
             productData = GetRandom.Object<ProductData>();
             basketData = GetRandom.Object<BasketData>();
             AddRandomBasketItems();
             AddRandomProducts();
             AddRandomBaskets();
-            obj = new BasketItemsPage(repository,Baskets, Products );
+            //obj = new BasketItemsPage(repository,Baskets, Products );
         }
         private void AddRandomBaskets()
         {
@@ -65,7 +65,7 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? basketData : GetRandom.Object<BasketData>();
-                Baskets.Add(new Basket(d)).GetAwaiter();
+                //Baskets.Add(new Basket(d)).GetAwaiter();
             }
         }
 
@@ -77,7 +77,7 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? productData : GetRandom.Object<ProductData>();
-                Products.Add(new Product(d)).GetAwaiter();
+                //Products.Add(new Product(d)).GetAwaiter();
             }
         }
         private void AddRandomBasketItems()
@@ -88,28 +88,28 @@ namespace Tests.Pages.Shop.BasketItems
             for (var i = 0; i < count; i++)
             {
                 var d = i == idx ? data : GetRandom.Object<BasketItemData>();
-                repository.Add(new BasketItem(d)).GetAwaiter();
+                //repository.Add(new BasketItem(d)).GetAwaiter();
             }
         }
-        private class TestRepository
-            : UniqueRepository<BasketItem, BasketItemData>,
-                IBasketItemsRepository
-        {
-            protected override string GetId(BasketItemData d) => d.Id;
+        //private class TestRepository
+        //    : UniqueRepository<BasketItem, BasketItemData>,
+        //        IBasketItemsRepository
+        //{
+        //    protected override string GetId(BasketItemData d) => d.Id;
             
-        }
-        private class productRepository
-            : UniqueRepository<Product, ProductData>,
-                IProductsRepository
-        {
-            protected override string GetId(ProductData d) => d.Id;
-        }
-        private class basketRepository
-            : UniqueRepository<Basket, BasketData>,
-                IBasketsRepository
-        {
-            protected override string GetId(BasketData d) => d.Id;
-        }
+        //}
+        //private class productRepository
+        //    : UniqueRepository<Product, ProductData>,
+        //        IProductsRepository
+        //{
+        //    protected override string GetId(ProductData d) => d.Id;
+        //}
+        //private class basketRepository
+        //    : UniqueRepository<Basket, BasketData>,
+        //        IBasketsRepository
+        //{
+        //    protected override string GetId(BasketData d) => d.Id;
+        //}
         [TestMethod] public override void ToObjectTest()
         {
             var view = GetRandom.Object<BasketItemView>();
@@ -124,19 +124,19 @@ namespace Tests.Pages.Shop.BasketItems
             var view = obj.ToView(CreateObj(d));
             TestArePropertyValuesEqual(view, d);
         }
-        [TestMethod]
-        public void ProductsTest()
-        {
-            var list = Products.Get().GetAwaiter().GetResult();
-            Assert.AreEqual(list.Count, obj.Products.Count());
-        }
+        //[TestMethod]
+        //public void ProductsTest()
+        //{
+        //    var list = Products.Get().GetAwaiter().GetResult();
+        //    Assert.AreEqual(list.Count, obj.Products.Count());
+        //}
 
-        [TestMethod]
-        public void BasketsTest()
-        {
-            var list = Baskets.Get().GetAwaiter().GetResult();
-            Assert.AreEqual(list.Count, obj.Baskets.Count());
-        }
+        //[TestMethod]
+        //public void BasketsTest()
+        //{
+        //    var list = Baskets.Get().GetAwaiter().GetResult();
+        //    Assert.AreEqual(list.Count, obj.Baskets.Count());
+        //}
         [TestMethod]
         public void GetProductNameTest()
         {

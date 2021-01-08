@@ -36,23 +36,6 @@
     <Folder Include="Data\Shop\Users\" />
     <Folder Include="Pages\Shop\Baskets\" />
     <Folder Include="Pages\Shop\Brands\" />
-    <Folder Include="Pages\Shop\Cities\" />
-    <Folder Include="Pages\Shop\Countries\" />
-    <Folder Include="Pages\Shop\DeliveryTypes\" />
-    <Folder Include="Pages\Shop\OrderItems\" />
-    <Folder Include="Pages\Shop\OrderStatuses\" />
-    <Folder Include="Pages\Shop\Payments\" />
-    <Folder Include="Pages\Shop\PaymentTypes\" />
-    <Folder Include="Pages\Shop\People\" />
-    <Folder Include="Pages\Shop\Products\" />
-    <Folder Include="Pages\Shop\ProductTypes\" />
-    <Folder Include="Pages\Shop\Reviews\" />
-    <Folder Include="Pages\Shop\Roles\" />
-    <Folder Include="Pages\Shop\Statuses\" />
-    <Folder Include="Pages\Shop\Stock\" />
-    <Folder Include="Pages\Shop\Units\" />
-    <Folder Include="Pages\Shop\UserRoles\" />
-    <Folder Include="Pages\Shop\Users\" />
     <Folder Include="WebApp\" />
   </ItemGroup>
 
