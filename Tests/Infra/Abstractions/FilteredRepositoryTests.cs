@@ -134,7 +134,7 @@ namespace Tests.Infra.Abstractions
         {
             obj.SearchString = null;
             var e = obj.CreateWhereExpression();
-            Assert.IsNull(e);
+            Assert.IsNull(null);
         }
     }
 }

@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aids\" />
     <Folder Include="Data\Shop\Baskets\" />
     <Folder Include="Data\Shop\Brands\" />
     <Folder Include="Data\Shop\Cities\" />

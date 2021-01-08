@@ -1,40 +1,45 @@
-﻿using System;
-using Data.Shop.Orders;
-using Domain.Shop.Orders;
-using Facade.Shop.Orders;
+﻿using Data.Shop.Products;
+using Domain.Shop.Products;
+using Facade.Shop.Products;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions;
-using Sauna.Pages.Abstractions.Constants;
 
-namespace Tests.Pages.Abstractions {
+namespace Tests.Pages.Abstractions
+{
 
+    [TestClass]
     public abstract class AbstractPageTests<TClass, TBaseClass> : AbstractClassTests<TClass, TBaseClass>
-        where TClass : BasePage<IOrdersRepository, Order, OrderView, OrderData> {
+        where TClass : BasePage<IProductsRepository, Product, ProductView, ProductData>
+    {
 
-        internal TestRepository db; 
-        internal class TestClass : ViewsPage<IOrdersRepository, Order, OrderView, OrderData> {
+        internal TestRepository db;
+        internal class TestClass : BasePage<IProductsRepository, Product, ProductView, ProductData>
+        {
+            protected internal TestClass(IProductsRepository r) : base(r)
+            {
+                //PageTitle = "Tooted";
+            }
 
-            internal string SubTitle { get; set; } = string.Empty;
+            //public string ItemId => Item is null ? string.Empty : Item.GetId();
 
-            protected internal TestClass(IOrdersRepository r) : base(r, PagesNames.Orders) { }
-            
-            protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Orders, UriKind.Relative);
+            protected internal string GetPageUrl() => "/Product/Products";
 
-            protected internal override Order ToObject(OrderView view) => OrderViewFactory.Create(view);
+            protected internal override void SetPageValues(string sortOrder, string searchString, in int? pageIndex)
+            {
+                throw new System.NotImplementedException();
+            }
 
-            protected internal override OrderView ToView(Order obj) => OrderViewFactory.Create(obj);
+            protected internal Product ToObject(ProductView view) => ProductViewFactory.Create(view);
 
-            protected internal override string GetPageSubtitle() => SubTitle;
-
-            
+            protected internal ProductView ToView(Product obj) => ProductViewFactory.Create(obj);
         }
 
-        internal class TestRepository : BaseTestRepositoryForUniqueEntity<Order, OrderData>, IOrdersRepository
+        internal class TestRepository : BaseTestRepositoryForUniqueEntity<Product, ProductData>, IProductsRepository
         {
             public string CurrentFilter { get; set; }
             public object GetById(string id)
             {
-                throw new NotImplementedException();
+                throw new System.NotImplementedException();
             }
         }
 
@@ -44,7 +49,5 @@ namespace Tests.Pages.Abstractions {
             base.TestInitialize();
             db = new TestRepository();
         }
-
     }
-
 }
