@@ -9,7 +9,7 @@ namespace Facade.Shop.Orders
         public static Order Create(OrderView view)
         {
             var orderData = new OrderData();
-            Copy.Members(view, orderData);
+            if (!(view is null)) Copy.Members(view, orderData);
 
             return new Order(orderData);
         }
@@ -17,7 +17,7 @@ namespace Facade.Shop.Orders
         public static OrderView Create(Order order)
         {
             var view = new OrderView();
-            Copy.Members(order.Data, view);
+            if (!(order is null)) Copy.Members(order.Data, view);
 
             return view;
         }

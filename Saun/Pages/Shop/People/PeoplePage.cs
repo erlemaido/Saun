@@ -8,7 +8,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.People
 {
-    public class PeoplePage : ViewPage<IPeopleRepository, Person, PersonView, PersonData>
+    public sealed class PeoplePage : ViewPage<IPeopleRepository, Person, PersonView, PersonData>
     {
         public PeoplePage(IPeopleRepository repository) : base(repository, PagesNames.People)
         {

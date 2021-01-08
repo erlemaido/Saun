@@ -20,7 +20,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Products
 {
-    public class ProductsPage : ViewPage<IProductsRepository, Product, ProductView, ProductData>
+    public sealed class ProductsPage : ViewPage<IProductsRepository, Product, ProductView, ProductData>
     {
         public IEnumerable<SelectListItem> Brands { get; }
         public IEnumerable<SelectListItem> ProductTypes { get; }

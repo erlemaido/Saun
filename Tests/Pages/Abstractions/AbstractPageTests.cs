@@ -32,10 +32,9 @@ namespace Tests.Pages.Abstractions {
         internal class TestRepository : BaseTestRepositoryForUniqueEntity<Order, OrderData>, IOrdersRepository
         {
             public string CurrentFilter { get; set; }
-            public object GetById(string id)
-            {
-                throw new NotImplementedException();
-            }
+            
+            protected override string GetId(OrderData d) => d.Id;
+
         }
 
         [TestInitialize]

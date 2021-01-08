@@ -8,7 +8,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Brands
 {
-    public class BrandsPage : ViewPage<IBrandsRepository, Brand, BrandView, BrandData>
+    public sealed class BrandsPage : ViewPage<IBrandsRepository, Brand, BrandView, BrandData>
     {
         public BrandsPage(IBrandsRepository repository) : base(repository, PagesNames.Brands)
         {

@@ -12,7 +12,7 @@ namespace Facade.Shop.Products
         [Required]
         [DisplayName("Bränd")]
         public string BrandId { get; set; }
-
+        
         [Required]
         [DisplayName("Tüüp")]
         public string ProductTypeId { get; set; }

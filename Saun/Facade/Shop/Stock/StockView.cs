@@ -11,13 +11,16 @@ namespace Facade.Shop.Stock
         [Required]
         [DisplayName("Toode")]
         public string ProductId { get; set; }
+        
         [Required]
         [DisplayName("Kogus")]
         public int InStock { get; set; }
+        
         [Required]
         [DataType(DataType.DateTime)]
         [DisplayName("Viimati uuendatud")]
         public DateTime LastUpdateTime { get; set; }
+        
         [DisplayName("Kommentaar")]
         [MaxLength(512)]
         public string Comment { get; set; }

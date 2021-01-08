@@ -17,7 +17,7 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Payments
 {
-    public class PaymentsPage : ViewPage<IPaymentsRepository, Payment, PaymentView, PaymentData>
+    public sealed class PaymentsPage : ViewPage<IPaymentsRepository, Payment, PaymentView, PaymentData>
     {
         public PaymentsPage(
             IPaymentsRepository repository,
