@@ -34,14 +34,14 @@ namespace Tests {
         public async Task<TObj> Get(string id) {
             await Task.CompletedTask;
 
-            return list.Find(x => getId(x.Data) == id);
+            return list.Find(x => GetId(x.Data) == id);
         }
 
-        protected abstract string getId(TData d);
+        protected abstract string GetId(TData d);
 
         public async Task Delete(string id) {
             await Task.CompletedTask;
-            var obj = list.Find(x => getId(x.Data) == id);
+            var obj = list.Find(x => GetId(x.Data) == id);
             list.Remove(obj);
         }
 
@@ -51,7 +51,7 @@ namespace Tests {
         }
 
         public async Task Update(TObj obj) {
-            await Delete(getId(obj.Data));
+            await Delete(GetId(obj.Data));
             list.Add(obj);
         }
 

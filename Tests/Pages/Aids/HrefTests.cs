@@ -7,13 +7,13 @@ namespace Tests.Pages.Aids {
 
     [TestClass] public class HrefTests : BaseTests {
 
-        private string s;
-        private int i;
+        private string _s;
+        private int _i;
 
         [TestInitialize] public virtual void TestInitialize() {
             type = typeof(Href);
-            s = GetRandom.String();
-            i = GetRandom.UInt8(5);
+            _s = GetRandom.String();
+            _i = GetRandom.UInt8(5);
         }
 
         [TestMethod] public void HandlerTest() {
@@ -52,62 +52,62 @@ namespace Tests.Pages.Aids {
         }
 
         [TestMethod] public void AddPageTest() {
-            var actual = Href.AddPage(new Uri(s, UriKind.Relative));
-            Assert.AreEqual($"<a href=\"{s}", actual);
+            var actual = Href.AddPage(new Uri(_s, UriKind.Relative));
+            Assert.AreEqual($"<a href=\"{_s}", actual);
             Assert.AreEqual("<a href=\"#", Href.AddPage(null));
         }
 
         [TestMethod] public void AddActionTest() {
-            var actual = Href.AddAction(s);
-            Assert.AreEqual($"/{s}?", actual);
+            var actual = Href.AddAction(_s);
+            Assert.AreEqual($"/{_s}?", actual);
             Assert.AreEqual("?", Href.AddAction(null));
         }
 
         [TestMethod] public void AddHandlerTest() {
-            var actual = Href.AddHandler(s);
-            Assert.AreEqual($"handler={s}", actual);
+            var actual = Href.AddHandler(_s);
+            Assert.AreEqual($"handler={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddHandler(null));
         }
 
         [TestMethod] public void AddItemIdTest() {
-            var actual = Href.AddItemId(s);
-            Assert.AreEqual($"&id={s}", actual);
+            var actual = Href.AddItemId(_s);
+            Assert.AreEqual($"&id={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddItemId(null));
         }
 
         [TestMethod] public void AddFixedFilterTest() {
-            var actual = Href.AddFixedFilter(s);
-            Assert.AreEqual($"&fixedFilter={s}", actual);
+            var actual = Href.AddFixedFilter(_s);
+            Assert.AreEqual($"&fixedFilter={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddFixedFilter(null));
         }
 
         [TestMethod] public void AddFixedValueTest() {
-            var actual = Href.AddFixedValue(s);
-            Assert.AreEqual($"&fixedValue={s}", actual);
+            var actual = Href.AddFixedValue(_s);
+            Assert.AreEqual($"&fixedValue={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddFixedValue(null));
         }
 
         [TestMethod] public void AddSortOrderTest() {
-            var actual = Href.AddSortOrder(s);
-            Assert.AreEqual($"&sortOrder={s}", actual);
+            var actual = Href.AddSortOrder(_s);
+            Assert.AreEqual($"&sortOrder={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddSortOrder(null));
         }
 
         [TestMethod] public void AddSearchStringTest() {
-            var actual = Href.AddSearchString(s);
-            Assert.AreEqual($"&searchString={s}", actual);
+            var actual = Href.AddSearchString(_s);
+            Assert.AreEqual($"&searchString={_s}", actual);
             Assert.AreEqual(string.Empty, Href.AddSearchString(null));
         }
 
         [TestMethod] public void AddPageIndexTest() {
-            var actual = Href.AddPageIndex(i);
-            Assert.AreEqual($"&pageIndex={i}", actual);
+            var actual = Href.AddPageIndex(_i);
+            Assert.AreEqual($"&pageIndex={_i}", actual);
             Assert.AreEqual(string.Empty, Href.AddPageIndex(null));
         }
 
         [TestMethod] public void AddTitleTest() {
-            var actual = Href.AddTitle(s);
-            Assert.AreEqual($"\">{s}</a>", actual);
+            var actual = Href.AddTitle(_s);
+            Assert.AreEqual($"\">{_s}</a>", actual);
             Assert.AreEqual("\"></a>", Href.AddTitle(null));
         }
 
@@ -117,8 +117,8 @@ namespace Tests.Pages.Aids {
             Assert.AreEqual(string.Empty, Href.Remove(string.Empty));
             Assert.AreEqual("", Href.Remove("?"));
             Assert.AreEqual("?", Href.Remove("??"));
-            Assert.AreEqual(s, Href.Remove(s));
-            Assert.AreEqual(s, Href.Remove(s+"?"));
+            Assert.AreEqual(_s, Href.Remove(_s));
+            Assert.AreEqual(_s, Href.Remove(_s+"?"));
         }
 
     }

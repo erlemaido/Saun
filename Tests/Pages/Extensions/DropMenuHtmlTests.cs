@@ -11,20 +11,20 @@ namespace Tests.Pages.Extensions {
 
     [TestClass] public class DropMenuHtmlTests : BaseTests {
 
-        private string name;
-        private Link[] items;
+        private string _name;
+        private Link[] _items;
 
         [TestInitialize] public virtual void TestInitialize() {
             type = typeof(DropMenuHtml);
-            name = GetRandom.String();
-            items = new[] {
+            _name = GetRandom.String();
+            _items = new[] {
                 new Link("A", new Uri("A.A", UriKind.Relative)),
                 new Link("B",new Uri("B.B", UriKind.Relative))
             };
         }
 
         [TestMethod] public void DropMenuTest() {
-            var obj = new HtmlHelperMock<UnitView>().DropMenu(name, items);
+            var obj = new HtmlHelperMock<UnitView>().DropMenu(_name, _items);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
@@ -32,7 +32,7 @@ namespace Tests.Pages.Extensions {
             var expected = new List<string> {
                 "<li class=\"nav-item dropdown\">",
                 "<a class=\"nav-link text-dark dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">",
-                name,
+                _name,
                 "</a>",
                 "<div class=\"dropdown-menu\">",
                 "<a class='dropdown-item text-dark' href=\"A.A\">A</a>",
@@ -40,7 +40,7 @@ namespace Tests.Pages.Extensions {
                 "</div>",
                 "</li>"
             };
-            var actual = DropMenuHtml.HtmlStrings(name, items);
+            var actual = DropMenuHtml.HtmlStrings(_name, _items);
             TestHtml.Strings(actual, expected);
         }
 
