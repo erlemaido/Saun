@@ -1,9 +1,17 @@
-﻿using Data.Shop.Countries;
+﻿using Aids.Methods;
+using Aids.Reflection;
+using Data.Shop.BasketItems;
+using Data.Shop.Baskets;
+using Data.Shop.People;
+using Data.Shop.Products;
 using Data.Shop.Countries;
 using Domain.Abstractions;
+using Domain.Shop.People;
+using Domain.Shop.Units;
 using Domain.Shop.Countries;
-using Domain.Shop.Countries;
+using Facade.Shop.BasketItems;
 using Facade.Shop.Countries;
+using Infra.Shop.People;
 using Infra.Shop.Countries;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Shop.Countries;
@@ -12,16 +20,70 @@ using Tests.Pages.Abstractions;
 namespace Tests.Pages.Shop.Countries
 {
     [TestClass]
-    public class CountriesPageTests : SealedViewPageTests<CountriesPage,
-        ICountriesRepository, Country, CountryView, CountryData>
+    public class CountriesPageTests : SealedViewsPageTests<CountriesPage,
+            ICountriesRepository, Country, CountryView, CountryData>
     {
+        internal class countriesRepository : UniqueRepository<Country, CountryData>, ICountriesRepository
+        {
+            protected override string GetId(CountryData d) => d.Id;
 
-        private CountriesRepository Countries;
+        }
+
+        private countriesRepository Countries;
+
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
+            Countries = new countriesRepository();
+            obj = new CountriesPage(Countries);
+        }
+
+
+        [TestMethod]
+        public void PageTitleTest() => Assert.AreEqual("Riigid", obj.PageTitle);
+
+        [TestMethod]
+        public void PageUrlTest() => Assert.AreEqual("/Shop/Countries", obj.PageUrl.ToString());
+
+        [TestMethod]
+        public override void ToObjectTest()
+        {
+            var view = GetRandom.Object<CountryView>();
+            var o = obj.ToObject(view);
+            TestArePropertyValuesEqual(view, o.Data);
+        }
+
+        [TestMethod]
+        public override void ToViewTest()
+        {
+            var d = GetRandom.Object<CountryView>();
+            var view = obj.ToView(CountryViewFactory.Create(d));
+            TestArePropertyValuesEqual(view, d);
+        }
+
+        [TestMethod]
+        public void OnGetCreateTest()
+        {
+            Assert.IsNull(null);
+        }
+
+        [TestMethod]
+        public void GetPersonNameTest()
+        {
+            Assert.IsNull(null);
+        }
+
+        [TestMethod]
+        public void PeopleTest()
+        {
+            Assert.IsNull(null);
+        }
+
+        protected override Country CreateObj(CountryData d)
+        {
+            throw new System.NotImplementedException();
         }
 
         protected override string GetId(CountryView item)
@@ -39,10 +101,6 @@ namespace Tests.Pages.Shop.Countries
             throw new System.NotImplementedException();
         }
 
-        protected override Country CreateObj(CountryData d)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 
 }
