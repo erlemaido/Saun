@@ -4,7 +4,7 @@ namespace Sauna.Pages.Abstractions.Constants
 
         public static string Create => "Lisa uus";
         public static string Edit => "Muuda";
-        public static string Details => "Detailid";
+        public static string Details => "Vaata lähemalt";
         public static string Delete => "Kustuta";
         public static string Select => "Vali";
         public static string BackToList => "Tagasi";
