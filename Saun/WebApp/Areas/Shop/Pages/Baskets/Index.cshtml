@@ -34,11 +34,11 @@
                 Model.FixedValue,
                 Html.Raw("<b>" + Model.GetProductName(item.Data.ProductId)),
                 Html.DisplayFor(modelItem => item.Data.Quantity),
-                Html.Raw(Model.GetItemPrice(item.Data.ProductId)),
+                Html.Raw(Model.GetItemPrice(item.Data.ProductId) + " €"),
                 Html.Raw("<img src=\"/uploads/" + Model.GetProductPictureUrl(item.Data.ProductId)+ "\" class=\"rounded-circle\"  height=\"100\" width=\"100\"asp-append-version=\"true\"/>"),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=RemoveFromCart&itemId="
                          + item.Data.ProductId
-                         + "\"><button class=\"btn btn-default\">Eemalda Toode</button></form>"),
+                         + "\"><button class=\"btn btn-default\">Eemalda toode</button></form>"),
                 Html.Raw("<form method=\"get\" action=\"/Shop/Orders/Create?\">"
                          + "<input type=\"hidden\" name=\"handler\" value=\"CreateOrder\" /> "
                          + "<input type=\"hidden\" name=\"itemId\" value=\"" + item.Data.ProductId + "\" \">"
@@ -50,11 +50,11 @@
 </table>
 <div class="form-group">
   <fieldset>
-    <label class="control-label" for="readOnlyInput">Hind Kokku</label>
-    <input class="form-control" id="readOnlyInput" type="text" value="@Html.Raw(Model.GetPriceSum())" readonly="">
+    <label class="control-label" for="readOnlyInput">Hind kokku</label>
+    <input class="form-control" id="readOnlyInput" type="text" value="@Html.Raw(Model.GetPriceSum() + " €")" readonly="">
   </fieldset>
 </div>
 @Html.Raw("<form method=\"get\" action=\"/Shop/Orders/Create?\">"
           + "<input type=\"hidden\" name=\"handler\" value=\"CreateOrder\" /> "
-          + "<button class=\"btn btn-primary btn-lg\">Osta Kõik</button></form>")
+          + "<button class=\"btn btn-primary btn-lg\">Osta kõik</button></form>")
 </body>
