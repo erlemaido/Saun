@@ -2,8 +2,10 @@
 using Aids.Reflection;
 using Data.Shop.Baskets;
 using Data.Shop.People;
+using Data.Shop.Products;
 using Domain.Shop.Baskets;
 using Domain.Shop.People;
+using Domain.Shop.Products;
 using Facade.Shop.Baskets;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,6 +19,7 @@ namespace Tests.Pages.Shop.Baskets
     public class BasketsPageTests : SealedViewPageTests<BasketsPage, IBasketsRepository, Basket, BasketView, BasketData>
     {
         private TestRepository _repository;
+        private ProductsTestRepository _productsTest;
         private PeopleTestRepository _peopleTest;
         private BasketData _data;
         private PersonData _peopleData;
@@ -36,12 +39,13 @@ namespace Tests.Pages.Shop.Baskets
             base.TestInitialize();
             _selectedId = GetRandom.String();
             _repository = new TestRepository();
+            _productsTest = new ProductsTestRepository();
             _peopleTest = new PeopleTestRepository();
             _data = GetRandom.Object<BasketData>();
             _peopleData = GetRandom.Object<PersonData>();
             AddRandomPeople();
             AddRandomBaskets();
-            obj = new BasketsPage(_repository, _peopleTest);
+            obj = new BasketsPage(_repository, _productsTest, _peopleTest);
         }
 
         private void AddRandomBaskets()
@@ -74,6 +78,13 @@ namespace Tests.Pages.Shop.Baskets
         {
             protected override string GetId(BasketData d) => d.Id;
 
+        }
+        
+        private class ProductsTestRepository
+            : UniqueRepository<Product, ProductData>,
+                IProductsRepository
+        {
+            protected override string GetId(ProductData d) => d.Id;
         }
 
         private class PeopleTestRepository

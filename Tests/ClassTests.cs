@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Data.Shop.BasketItems;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
@@ -7,6 +8,7 @@ namespace Tests
         [TestInitialize]
         public override void TestInitialize()
         {
+
             obj = new TClass();
             type = obj.GetType();
         }

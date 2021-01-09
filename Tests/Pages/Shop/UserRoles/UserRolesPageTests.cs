@@ -34,12 +34,12 @@ namespace Tests.Pages.Shop.UserRoles
                 return d.Id;
             }
 
-            public Task<List<UserRole>> Get()
+            public new Task<List<UserRole>> Get()
             {
                 throw new System.NotImplementedException();
             }
 
-            public Task<UserRole> Get(string id)
+            public new Task<UserRole> Get(string id)
             {
                 throw new System.NotImplementedException();
             }

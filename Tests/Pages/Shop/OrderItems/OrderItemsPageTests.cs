@@ -13,8 +13,6 @@ namespace Tests.Pages.Shop.OrderItems
             IOrderItemsRepository, OrderItem, OrderItemView, OrderItemData>
     {
 
-        private OrderItemsRepository _orderItems;
-
         [TestInitialize]
         public override void TestInitialize()
         {

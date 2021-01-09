@@ -25,13 +25,13 @@ namespace Tests.Pages.Shop.Units
         public override void TestInitialize()
         {
             base.TestInitialize();
-            Units = new UnitsRepository();
-            obj = new UnitsPage(Units);
+            _units = new UnitsRepository();
+            obj = new UnitsPage(_units);
         }
 
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Ühikud", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("?hikud", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Units", obj.PageUrl.ToString());

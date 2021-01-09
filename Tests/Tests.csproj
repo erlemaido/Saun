@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aids\" />
     <Folder Include="Data\Shop\Baskets\" />
     <Folder Include="Data\Shop\Brands\" />
     <Folder Include="Data\Shop\Cities\" />
@@ -35,7 +34,6 @@
     <Folder Include="Data\Shop\UserRoles\" />
     <Folder Include="Data\Shop\Users\" />
     <Folder Include="Pages\Shop\Brands\" />
-    <Folder Include="WebApp\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +44,21 @@
     <ProjectReference Include="..\Saun\Infra\Infra.csproj" />
     <ProjectReference Include="..\Saun\Pages\Pages.csproj" />
     <ProjectReference Include="..\Saun\WebApp\WebApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="WebApp\**" />
+    <Compile Remove="Aids\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="WebApp\**" />
+    <EmbeddedResource Remove="Aids\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="WebApp\**" />
+    <None Remove="Aids\**" />
   </ItemGroup>
 
 </Project>
