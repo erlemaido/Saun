@@ -107,14 +107,7 @@ namespace Sauna.Pages.Abstractions.Extensions
                 list.Add(new HtmlString(Href.Compose(a, Actions.Index, Captions.Select)));
                 hasButton = true;
             }
-
-            if (hasEdit) 
-            {
-                if (hasButton) list.Add(" | ");
-                list.Add(new HtmlString(Href.Compose(a, Actions.Edit, Captions.Edit)));
-                hasButton = true;
-            }
-
+            
             if (hasDetails) 
             {
                 if (hasButton) list.Add(" | ");
@@ -122,6 +115,13 @@ namespace Sauna.Pages.Abstractions.Extensions
                 hasButton = true;
             }
 
+            if (hasEdit) 
+            {
+                if (hasButton) list.Add(" | ");
+                list.Add(new HtmlString(Href.Compose(a, Actions.Edit, Captions.Edit)));
+                hasButton = true;
+            }
+            
             if (hasDelete) 
             {
                 if (hasButton) list.Add(" | ");
@@ -143,10 +143,10 @@ namespace Sauna.Pages.Abstractions.Extensions
                 list.Add(new HtmlString(Href.Compose(a, Actions.Index, Captions.Select)));
                 list.Add(" | ");
             }
-
-            list.Add(new HtmlString(Href.Compose(a, Actions.Edit, Captions.Edit)));
-            list.Add(" | ");
+            
             list.Add(new HtmlString(Href.Compose(a, Actions.Details, Captions.Details)));
+            list.Add(" | ");
+            list.Add(new HtmlString(Href.Compose(a, Actions.Edit, Captions.Edit)));
             list.Add(" | ");
             list.Add(new HtmlString(Href.Compose(a, Actions.Delete, Captions.Delete)));
             list.Add(new HtmlString("</td>"));
