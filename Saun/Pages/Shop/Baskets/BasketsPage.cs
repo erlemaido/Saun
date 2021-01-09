@@ -28,8 +28,8 @@ namespace Sauna.Pages.Shop.Baskets
     public sealed class BasketsPage : ViewPage<IBasketsRepository, Basket, BasketView, BasketData>
     {
         public BasketsPage(
-            IProductsRepository productsRepository,
             IBasketsRepository repository,
+            IProductsRepository productsRepository,
             IPeopleRepository peopleRepository) : base(repository, PagesNames.Baskets)
         {
             Products = productsRepository.Get().Result;

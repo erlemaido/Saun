@@ -31,7 +31,7 @@ namespace Sauna.Pages.Shop.Products
         public IEnumerable<SelectListItem> ProductTypes { get; }
         public IEnumerable<SelectListItem> Units { get; }
         public IList<ReviewView> Reviews { get; }
-        protected internal readonly IReviewsRepository reviews;
+        private readonly IReviewsRepository reviews;
         
         public List<BasketItem> Cart { get; set; }
 
