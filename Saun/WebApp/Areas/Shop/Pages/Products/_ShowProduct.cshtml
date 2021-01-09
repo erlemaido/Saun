@@ -9,8 +9,7 @@
     @Html.Show(m => m.Item.Description)
     <input type="hidden" asp-for="Item.PictureUrl" />
     @Html.Show(model => model.Item.Price)
-    <img src="~/uploads/@Model.Item.PictureUrl"   
-                         class="rounded-circle"   
-                         height="300" width="300"   
-                         asp-append-version="true" /> 
+<a target="_blank" href="~/uploads/@Model.Item.PictureUrl">
+    <img src="~/uploads/@Model.Item.PictureUrl" height="600" width="600" asp-append-version="true" alt=""/>
+</a> 
 </body>
