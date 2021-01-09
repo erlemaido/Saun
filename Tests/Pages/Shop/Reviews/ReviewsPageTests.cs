@@ -42,7 +42,6 @@ namespace Tests.Pages.Shop.Reviews
         private ReviewData _data;
         private ProductData _productData;
         private UserData _userData;
-        private string _selectedId;
         protected override string GetId(ReviewView item) => item.Id;
 
         protected override string PageTitle() => PagesNames.Reviews;
