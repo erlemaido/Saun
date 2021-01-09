@@ -17,7 +17,7 @@ namespace Tests.Pages.Consts {
             Assert.AreEqual("Kustuta", Captions.Delete);
 
         [TestMethod] public void DetailsTest() =>
-            Assert.AreEqual("Detailid", Captions.Details);
+            Assert.AreEqual("Vaata lähemalt", Captions.Details);
 
         [TestMethod] public void EditTest() =>
             Assert.AreEqual("Muuda", Captions.Edit);
