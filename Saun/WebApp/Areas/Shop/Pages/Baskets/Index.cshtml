@@ -1,4 +1,5 @@
 ﻿@page
+@using Microsoft.AspNetCore.Html
 @using Sauna.Pages.Abstractions.Aids
 @using Sauna.Pages.Abstractions.Constants
 @using Sauna.Pages.Abstractions.Extensions
@@ -23,24 +24,29 @@
     </thead>
    
     <tbody>
-    @foreach (var item in Model.Items)
+    @foreach (var item in Model.Cart)
     {
         <tr>
             @Html.Row(
                 false,
                 page,
-                item.GetId(),
+                item.Data.ProductId,
                 Model.SortOrder,
                 Model.SearchString,
                 Model.PageIndex,
                 Model.FixedFilter,
                 Model.FixedValue,
-                Html.DisplayFor(modelItem => item.Name),
-                Html.Raw(Model.GetPersonName(item.PersonId)),
-                Html.DisplayFor(modelItem => item.TotalPrice)
-                )
+                Html.Raw(Model.GetProductName(item.Data.ProductId)),
+                Html.DisplayFor(modelItem => item.Data.Quantity),
+                Html.Raw(Model.GetItemPrice(item.Data.ProductId)),
+                Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=RemoveFromCart&itemId="
+                         + item.Data.ProductId
+                         + "\"><button class=\"btn btn-default\">Eemalda Toode</button></form>"))
         </tr>
     }
     </tbody>
 </table>
+    <div>
+        Hind Kokku: @Html.Raw(Model.GetPriceSum())
+    </div>
 </body>

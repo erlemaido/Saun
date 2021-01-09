@@ -5,6 +5,8 @@ namespace Domain.Shop.BasketItems
 {
     public sealed class BasketItem : UniqueEntity<BasketItemData>
     {
+        public BasketItemData Data { get; set; }
+        
         public BasketItem() : this(null)
         {
 
@@ -12,7 +14,7 @@ namespace Domain.Shop.BasketItems
 
         public BasketItem(BasketItemData data) : base(data)
         {
-
+            Data = data;
         }
     }
 }

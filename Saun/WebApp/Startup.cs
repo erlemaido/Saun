@@ -49,6 +49,7 @@ using Infra.Shop.Stock;
 using Infra.Shop.Units;
 using Infra.Shop.UserRoles;
 using Infra.Shop.Users;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace WebApp
@@ -66,14 +67,18 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
             services.AddDbContext<SaunaDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer("Server=localhost,1433; Database=sql1; User=sa;Password=<Password123.>"));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+            
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.Conventions
+                    .ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
+            });
             
             services.AddScoped<IBasketItemsRepository, BasketItemsRepository>();
             services.AddScoped<IBasketsRepository, BasketsRepository>();
@@ -98,6 +103,8 @@ namespace WebApp
             services.AddScoped<IUsersRepository, UsersRepository>();
             
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -120,9 +127,11 @@ namespace WebApp
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
