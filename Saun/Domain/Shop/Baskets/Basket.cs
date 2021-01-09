@@ -1,3 +1,4 @@
+using Data.Shop.BasketItems;
 using Data.Shop.Baskets;
 using Domain.Abstractions;
 
@@ -5,6 +6,7 @@ namespace Domain.Shop.Baskets
 {
     public sealed class Basket : NamedEntity<BasketData>
     {
+
         public Basket() : this(null)
         {
 
@@ -12,7 +14,6 @@ namespace Domain.Shop.Baskets
 
         public Basket(BasketData data) : base(data)
         {
-
         }
     }
 }

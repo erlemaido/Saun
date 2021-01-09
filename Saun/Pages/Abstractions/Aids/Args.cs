@@ -33,5 +33,17 @@ namespace Sauna.Pages.Abstractions.Aids
             SortOrder = sortOrder;
             PageIndex = pageIndex;
         }
+        
+        public Args(System.Uri pageUrl, string itemId) 
+        {
+            PageUrl = pageUrl;
+            ItemId = itemId;
+            FixedFilter = null;
+            FixedValue = null;
+            SearchString = null;
+            CurrentFilter = null;
+            SortOrder = null;
+            PageIndex = null;
+        }
     }
 }

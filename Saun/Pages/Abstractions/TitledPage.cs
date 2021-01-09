@@ -40,7 +40,7 @@ namespace Sauna.Pages.Abstractions
         protected internal abstract Uri CreatePageUrl();
 
         public Uri IndexUrl => CreateIndexUrl();
-
+        
         protected internal Uri CreateIndexUrl() =>
             new Uri($"{PageUrl}/Index?handler=Index&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);
 

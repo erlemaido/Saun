@@ -6,10 +6,12 @@ using Data.Shop.Products;
 using Data.Shop.ProductTypes;
 using Data.Shop.Reviews;
 using Data.Shop.Units;
+using Domain.Shop.BasketItems;
 using Domain.Shop.Brands;
 using Domain.Shop.Products;
 using Domain.Shop.ProductTypes;
 using Domain.Shop.Reviews;
+using Domain.Shop.Stock;
 using Domain.Shop.Units;
 using Facade.Shop.Products;
 using Facade.Shop.Reviews;
@@ -20,21 +22,28 @@ using Sauna.Pages.Abstractions.Constants;
 
 namespace Sauna.Pages.Shop.Products
 {
+    [IgnoreAntiforgeryToken(Order = 1001)]
     public sealed class ProductsPage : ViewPage<IProductsRepository, Product, ProductView, ProductData>
     {
+        
+        public List<Domain.Shop.Stock.Stock> Stock { get; }
         public IEnumerable<SelectListItem> Brands { get; }
         public IEnumerable<SelectListItem> ProductTypes { get; }
         public IEnumerable<SelectListItem> Units { get; }
         public IList<ReviewView> Reviews { get; }
         protected internal readonly IReviewsRepository reviews;
+        
+        public List<BasketItem> Cart { get; set; }
 
         public ProductsPage(
+            IStockRepository stockRepository,
             IProductsRepository repository, 
             IBrandsRepository brandsRepository, 
             IProductTypesRepository productTypesRepository, 
             IReviewsRepository reviewsRepository,
             IUnitsRepository unitsRepository) : base(repository, PagesNames.Products)
         {
+            Stock = stockRepository.Get().Result;
             Brands = NewItemsList<Brand, BrandData>(brandsRepository);
             ProductTypes = NewItemsList<ProductType, ProductTypeData>(productTypesRepository);
             Units = NewUnitsList<Unit, UnitData>(unitsRepository);

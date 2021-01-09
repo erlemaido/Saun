@@ -18,7 +18,7 @@ namespace Sauna.Pages.Abstractions
         {
         }
 
-        public async Task OnGetIndexAsync(string sortOrder,
+        public virtual async Task OnGetIndexAsync(string sortOrder,
             string id, string currentFilter, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue)
         {
