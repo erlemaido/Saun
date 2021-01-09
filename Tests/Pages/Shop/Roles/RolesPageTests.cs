@@ -1,8 +1,12 @@
 using Aids.Reflection;
+using Data.Shop.Reviews;
 using Data.Shop.Roles;
+using Domain.Shop.Reviews;
 using Domain.Shop.Roles;
 using Facade.Shop.Roles;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.Roles;
 using Tests.Pages.Abstractions;
 
@@ -12,23 +16,30 @@ namespace Tests.Pages.Shop.Roles
     public class RolesPageTests : SealedViewPageTests<RolesPage,
             IRolesRepository, Role, RoleView, RoleData>
     {
-        internal class rolesRepository : UniqueRepository<Role, RoleData>, IRolesRepository
+        internal class RolesTestRepository : UniqueRepository<Role, RoleData>, IRolesRepository
         {
             protected override string GetId(RoleData d) => d.Id;
 
         }
 
 
-        private rolesRepository Roles;
+        private RolesTestRepository _rolesTest;
 
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            Roles = new rolesRepository();
-            obj = new RolesPage(Roles);
+            _rolesTest = new RolesTestRepository();
+            obj = new RolesPage(_rolesTest);
         }
+        protected override string GetId(RoleView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.Roles;
+
+        protected override string PageUrl() => PagesUrls.Roles;
+        protected override Role CreateObj(RoleData d) => new Role(d);
+
 
 
         [TestMethod]
@@ -56,41 +67,12 @@ namespace Tests.Pages.Shop.Roles
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override Role CreateObj(RoleData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(RoleView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
-
+       
     }
 
 }

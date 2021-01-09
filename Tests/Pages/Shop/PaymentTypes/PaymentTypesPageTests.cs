@@ -6,7 +6,9 @@ using Domain.Shop.Orders;
 using Domain.Shop.PaymentTypes;
 using Domain.Shop.People;
 using Facade.Shop.PaymentTypes;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.PaymentTypes;
 using Tests.Pages.Abstractions;
 
@@ -16,34 +18,27 @@ namespace Tests.Pages.Shop.PaymentTypes
     public class PaymentTypePageTests : SealedViewPageTests<PaymentTypesPage,
             IPaymentTypesRepository, PaymentType, PaymentTypeView, PaymentTypeData>
     {
-        private class peopleRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
-        {
-            protected override string GetId(PersonData d) => d.Id;
-        }
 
-        private class orderRepository : UniqueRepository<Order, OrderData>, IOrdersRepository
-        {
-            protected override string GetId(OrderData d) => d.Id;
-        }
-
-        internal class paymentTypeRepository : UniqueRepository<PaymentType, PaymentTypeData>, IPaymentTypesRepository
+        internal class PaymentTypeTestRepository : UniqueRepository<PaymentType, PaymentTypeData>, IPaymentTypesRepository
         {
             protected override string GetId(PaymentTypeData d) => d.Id;
         }
 
-        private peopleRepository People;
-        private orderRepository Order;
-        private paymentTypeRepository PaymentType;
+        private PaymentTypeTestRepository _paymentTypeTest;
 
+        protected override string GetId(PaymentTypeView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.PaymentTypes;
+
+        protected override string PageUrl() => PagesUrls.PaymentTypes;
+        protected override PaymentType CreateObj(PaymentTypeData d) => new PaymentType(d);
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            People = new peopleRepository();
-            Order = new orderRepository();
-            PaymentType = new paymentTypeRepository();
-            obj = new PaymentTypesPage(PaymentType);
+            _paymentTypeTest = new PaymentTypeTestRepository();
+            obj = new PaymentTypesPage(_paymentTypeTest);
         }
 
 
@@ -72,40 +67,12 @@ namespace Tests.Pages.Shop.PaymentTypes
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
 
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override PaymentType CreateObj(PaymentTypeData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(PaymentTypeView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
 
     }
 

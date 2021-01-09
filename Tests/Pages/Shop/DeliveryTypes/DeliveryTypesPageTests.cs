@@ -1,8 +1,12 @@
 ﻿using Aids.Reflection;
+using Data.Shop.Brands;
 using Data.Shop.DeliveryTypes;
+using Domain.Shop.Brands;
 using Domain.Shop.DeliveryTypes;
 using Facade.Shop.DeliveryTypes;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.DeliveryTypes;
 using Tests.Pages.Abstractions;
 
@@ -13,20 +17,26 @@ namespace Tests.Pages.Shop.DeliveryTypes
             IDeliveryTypesRepository, DeliveryType, DeliveryTypeView, DeliveryTypeData>
     {
 
-        internal class deliveryTypeRepository : UniqueRepository<DeliveryType, DeliveryTypeData>, IDeliveryTypesRepository
+        internal class DeliveryTypeTestRepository : UniqueRepository<DeliveryType, DeliveryTypeData>, IDeliveryTypesRepository
         {
             protected override string GetId(DeliveryTypeData d) => d.Id;
         }
 
-        private deliveryTypeRepository DeliveryType;
+        private DeliveryTypeTestRepository _deliveryTypeTest;
 
+        protected override string GetId(DeliveryTypeView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.DeliveryTypes;
+
+        protected override string PageUrl() => PagesUrls.DeliveryTypes;
+        protected override DeliveryType CreateObj(DeliveryTypeData d) => new DeliveryType(d);
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            DeliveryType = new deliveryTypeRepository();
-            obj = new DeliveryTypesPage(DeliveryType);
+            _deliveryTypeTest = new DeliveryTypeTestRepository();
+            obj = new DeliveryTypesPage(_deliveryTypeTest);
         }
 
 
@@ -55,39 +65,9 @@ namespace Tests.Pages.Shop.DeliveryTypes
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override DeliveryType CreateObj(DeliveryTypeData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(DeliveryTypeView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
     }

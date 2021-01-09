@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Users;
@@ -8,7 +9,9 @@ using Domain.Shop.Roles;
 using Domain.Shop.Users;
 using Domain.Shop.UserRoles;
 using Facade.Shop.UserRoles;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.UserRoles;
 using Tests.Pages.Abstractions;
 
@@ -18,58 +21,90 @@ namespace Tests.Pages.Shop.UserRoles
     public class UserRolesPageTests : SealedViewPageTests<UserRolesPage,
             IUserRolesRepository, UserRole, UserRoleView, UserRoleData>
     {
-        internal class UserRolesRepository : UniqueRepository<UserRole, UserRoleData>, IUserRolesRepository
+        internal class UserRolesTestRepository : UniqueRepository<UserRole, UserRoleData>, IUserRolesRepository
         {
             protected override string GetId(UserRoleData d) => d.Id;
 
         }
-        private class UsersRepository : UniqueRepository<User, UserData>, IUsersRepository
+        private class UsersTestRepository : UniqueRepository<User, UserData>, IUsersRepository
         {
             protected override string GetId(UserData d) => d.Id;
         }
-        private class RolesRepository : UniqueRepository<Role, RoleData>, IRolesRepository
+        private class RolesTestRepository : UniqueRepository<Role, RoleData>, IRolesRepository
         {
             protected override string GetId(RoleData d)
             {
                 return d.Id;
             }
 
-            public Task<List<UserRole>> Get()
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public Task<UserRole> Get(string id)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public Task Add(UserRole obj)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public Task Update(UserRole obj)
-            {
-                throw new System.NotImplementedException();
-            }
         }
 
-        private UserRolesRepository _userRoles;
-        private UsersRepository _users;
-        private RolesRepository _roles;
+        private UserRolesTestRepository _userRolesTest;
+        private UsersTestRepository _usersTest;
+        private RolesTestRepository _rolesTest;
+        private UserRoleData _data;
+        private RoleData _roleData;
+        private UserData _userData;
 
+        protected override string GetId(UserRoleView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.UserRoles;
+
+        protected override string PageUrl() => PagesUrls.UserRoles;
+        protected override UserRole CreateObj(UserRoleData d) => new UserRole(d);
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            _userRoles = new UserRolesRepository();
-            _users = new UsersRepository();
-            _roles = new RolesRepository();
-            obj = new UserRolesPage(_userRoles, _users, _roles);
+            _userRolesTest = new UserRolesTestRepository();
+            _usersTest = new UsersTestRepository();
+            _rolesTest = new RolesTestRepository();
+            _data = GetRandom.Object<UserRoleData>();
+            _roleData = GetRandom.Object<RoleData>();
+            _userData = GetRandom.Object<UserData>();
+            AddRandomUsers();
+            AddRandomUserRoles();
+            AddRandomRoles();
+
+            obj = new UserRolesPage(_userRolesTest, _usersTest, _rolesTest);
         }
 
+        private void AddRandomRoles()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var d = i == idx ? _roleData : GetRandom.Object<RoleData>();
+                _rolesTest.Add(new Role(d)).GetAwaiter();
+            }
+        }
+
+        private void AddRandomUserRoles()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var d = i == idx ? _data : GetRandom.Object<UserRoleData>();
+                _userRolesTest.Add(new UserRole(d)).GetAwaiter();
+            }
+        }
+
+        private void AddRandomUsers()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var d = i == idx ? _userData : GetRandom.Object<UserData>();
+                _usersTest.Add(new User(d)).GetAwaiter();
+            }
+        }
 
         [TestMethod]
         public void PageTitleTest() => Assert.AreEqual("Kasutaja rollid", obj.PageTitle);
@@ -96,53 +131,40 @@ namespace Tests.Pages.Shop.UserRoles
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
         [TestMethod]
         public void GetUserNameTest()
         {
-            Assert.IsNull(null);
+            var name = obj.GetUserName(_userData.Id);
+            Assert.AreEqual(_userData.PersonId, name);
         }
 
         [TestMethod]
         public void UsersTest()
         {
-            Assert.IsNull(null);
+            var list = _usersTest.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Users.Count());
         }
 
         [TestMethod]
         public void GetRoleNameTest()
         {
-            Assert.IsNull(null);
+            var name = obj.GetRoleName(_roleData.Id);
+            Assert.AreEqual(_roleData.Name, name);
         }
 
         [TestMethod]
         public void RolesTest()
         {
-            Assert.IsNull(null);
+            var list = _rolesTest.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Roles.Count());
         }
 
-        protected override UserRole CreateObj(UserRoleData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(UserRoleView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
-
+      
     }
 
 }
