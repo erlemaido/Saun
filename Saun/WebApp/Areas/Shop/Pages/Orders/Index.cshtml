@@ -5,11 +5,8 @@
 @model Sauna.Pages.Shop.Orders.OrdersPage
 
 @{
-    Layout = "_Index";
+    Layout = "_IndexWithoutCreate";
     var page = Model.PageUrl;
-}
-@section Create {
-    @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
 }
 
 <body>
