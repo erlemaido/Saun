@@ -49,7 +49,7 @@
                 Html.Raw(Model.GetCityName(item.CityId)),
                 Html.DisplayFor(modelItem => item.Street),
                 Html.DisplayFor(modelItem => item.ZipCode),
-                Html.DisplayFor(modelItem => item.TotalPrice),
+                Html.Raw(item.TotalPrice + " €"),
                 Html.DisplayFor(modelItem => item.Date),
                 Html.DisplayFor(modelItem => item.DeliveryCost),
                 Html.DisplayFor(modelItem => item.Comment)

@@ -41,7 +41,7 @@
                 Html.Raw("<b>" + item.Name),
                 Html.Raw(Model.GetBrandName(item.BrandId)),
                 Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
-                Html.DisplayFor(modelItem => item.Price),
+                Html.Raw(item.Price + " €"),
                 Html.Raw("<img src=\"/uploads/" + item.PictureUrl + "\" class=\"rounded-circle\"  height=\"200\" width=\"200\"asp-append-version=\"true\"/>"),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=CreateBasket&itemId="
                          + item.GetId()
