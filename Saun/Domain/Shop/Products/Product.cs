@@ -5,7 +5,7 @@ namespace Domain.Shop.Products
 {
     public sealed class Product : UniqueEntity<ProductData>
     {
-        public ProductData Data { get; set; }
+        public new ProductData Data { get; set; }
         
         public Product() : this(null)
         {
