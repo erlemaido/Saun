@@ -23,7 +23,7 @@ namespace Tests.Pages.Shop.Users
     {
         internal class UsersTestRepository : UniqueRepository<User, UserData>, IUsersRepository
         {
-            protected override string GetId(UserData d) => Compose.Id(d.Id, d.PersonId);
+            protected override string GetId(UserData d) => d.Id;
 
         }
         private class PeopleTestRepository : UniqueRepository<Person, PersonData>, IPeopleRepository

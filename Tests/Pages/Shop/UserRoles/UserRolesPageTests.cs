@@ -38,8 +38,9 @@ namespace Tests.Pages.Shop.UserRoles
             {
                 return d.Id;
             }
+        }
 
-            private UserRolesTestRepository _userRolesTest;
+        private UserRolesTestRepository _userRolesTest;
             private UsersTestRepository _usersTest;
             private RolesTestRepository _rolesTest;
             private UserRoleData _data;
@@ -164,6 +165,4 @@ namespace Tests.Pages.Shop.UserRoles
                 Assert.AreEqual(list.Count, obj.Roles.Count());
             }
         }
-
     }
-}
