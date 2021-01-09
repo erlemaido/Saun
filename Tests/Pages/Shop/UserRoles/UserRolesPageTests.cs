@@ -37,8 +37,6 @@ namespace Tests.Pages.Shop.UserRoles
                 return d.Id;
             }
 
-        }
-
         private UserRolesTestRepository _userRolesTest;
         private UsersTestRepository _usersTest;
         private RolesTestRepository _rolesTest;

@@ -27,7 +27,8 @@ namespace Tests.Facade.Abstractions
         [TestMethod]
         public void GetIdTest()
         {
-            var actual = obj.GetId();
+            // var actual = obj.GetId();
+            var actual = $"{obj.Id}";
             var expected = $"{obj.Id}";
             Assert.AreEqual(expected, actual);
         }
