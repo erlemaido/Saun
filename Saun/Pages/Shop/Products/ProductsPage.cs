@@ -133,7 +133,7 @@ namespace Sauna.Pages.Shop.Products
 
         private async void UploadFile()
         {
-            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/uploads", Upload.FileName);
+            var file = Path.Combine(_environment.ContentRootPath, "wwwroot\\uploads", Upload.FileName);
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await Upload.CopyToAsync(fileStream);
