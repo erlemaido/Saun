@@ -41,7 +41,7 @@ namespace Tests.Pages.Shop.Units
 
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("?hikud", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Ühikud", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Units", obj.PageUrl.ToString());
