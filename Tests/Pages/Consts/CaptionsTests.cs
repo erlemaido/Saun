@@ -36,6 +36,9 @@ namespace Tests.Pages.Consts {
         [TestMethod]
         public void PreviousTest() =>
             Assert.AreEqual("Eelmine", Captions.Previous);
+        [TestMethod]
+        public void AddToBasketTest() =>
+            Assert.AreEqual("Lisa Ostukorvi", Captions.AddToBasket);
 
     }
 

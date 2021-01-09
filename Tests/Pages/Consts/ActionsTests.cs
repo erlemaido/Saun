@@ -12,6 +12,8 @@ namespace Tests.Pages.Consts
         [TestMethod] public void DetailsTest() => Assert.AreEqual("Details", Actions.Details);
         [TestMethod] public void DeleteTest() => Assert.AreEqual("Delete", Actions.Delete);
         [TestMethod] public void IndexTest() => Assert.AreEqual("Index", Actions.Index);
+        [TestMethod] public void AddToBasketTest() => Assert.AreEqual("AddToCart", Actions.AddToBasket);
+
 
     }
 }
