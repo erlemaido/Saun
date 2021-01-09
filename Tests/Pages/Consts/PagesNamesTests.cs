@@ -8,7 +8,7 @@ namespace Tests.Pages.Consts
     {
         [TestInitialize] public void TestInitialize() => type = typeof(PagesNames);
         [TestMethod] public void BasketItemsTest() => Assert.AreEqual("Ostukorvi read", PagesNames.BasketItems);
-        [TestMethod] public void BasketsTest() => Assert.AreEqual("Ostukorvid", PagesNames.Baskets);
+        [TestMethod] public void BasketsTest() => Assert.AreEqual("Ostukorv", PagesNames.Baskets);
         [TestMethod] public void BrandsTest() => Assert.AreEqual("Brändid", PagesNames.Brands);
         [TestMethod] public void CountriesTest() => Assert.AreEqual("Riigid", PagesNames.Countries);
         [TestMethod] public void CitiesTest() => Assert.AreEqual("Linnad", PagesNames.Cities);

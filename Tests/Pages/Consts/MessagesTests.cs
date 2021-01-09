@@ -9,7 +9,7 @@ namespace Tests.Pages.Consts {
 
         [TestMethod]
         public void PagesOfTest() =>
-            Assert.AreEqual("Page {0} of {1}", Messages.PagesOf);
+            Assert.AreEqual("{0}/{1}", Messages.PagesOf);
 
     }
 

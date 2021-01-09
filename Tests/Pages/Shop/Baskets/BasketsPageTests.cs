@@ -133,7 +133,7 @@ namespace Tests.Pages.Shop.Baskets
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Ostukorvid", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Ostukorv", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Baskets", obj.PageUrl.ToString());

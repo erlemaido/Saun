@@ -1,4 +1,4 @@
-@page
+﻿@page
 @using Sauna.Pages.Abstractions.Aids
 @using Sauna.Pages.Abstractions.Constants
 @using Sauna.Pages.Abstractions.Extensions
@@ -21,9 +21,6 @@
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
         new Link(Html.DisplayNameFor(m => m.Item.BrandId), Model.GetSortString(m => m.BrandId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeId, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitId, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.Description), Model.GetSortString(m => m.Description, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.PictureUrl), Model.GetSortString(m => m.PictureUrl, page)),
         new Link(Html.DisplayNameFor(m => m.Item.Price), Model.GetSortString(m => m.Price, page))
         )
     </thead>
@@ -41,13 +38,11 @@
                 Model.PageIndex,
                 Model.FixedFilter,
                 Model.FixedValue,
-                Html.DisplayFor(modelItem => item.Name),
+                Html.Raw("<b>" + item.Name),
                 Html.Raw(Model.GetBrandName(item.BrandId)),
                 Html.Raw(Model.GetProductTypeName(item.ProductTypeId)),
-                Html.Raw(Model.GetUnitName(item.UnitId)),
-                Html.DisplayFor(modelItem => item.Description),
-                Html.DisplayFor(modelItem => item.PictureUrl),
                 Html.DisplayFor(modelItem => item.Price),
+                Html.Raw("<img src=\"/uploads/" + item.PictureUrl + "\" class=\"rounded-circle\"  height=\"200\" width=\"200\"asp-append-version=\"true\"/>"),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=CreateBasket&itemId="
                          + item.GetId()
                          + "\"><button class=\"btn btn-default\">Lisa ostukorvi</button></form>"))
