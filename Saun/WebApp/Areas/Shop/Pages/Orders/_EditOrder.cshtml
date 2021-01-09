@@ -1,18 +1,40 @@
 @using Sauna.Pages.Abstractions.Extensions
+@using Sauna.Pages.Shop.OrderItems
 @model Sauna.Pages.Shop.Orders.OrdersPage
 
 <body>
-<input type="hidden" asp-for="Item.Id" />
+<input type="hidden" asp-for="Item.Id"/>
 @Html.Editor(m => m.Item.Name)
-@Html.DropDown(m => m.Item.PersonId, Model.People)
-@Html.DropDown(m => m.Item.UserId, Model.Users)
+<input type="hidden" asp-for="Item.PersonId"/>
+<input type="hidden" asp-for="Item.UserId"/>
 @Html.DropDown(m => m.Item.DeliveryTypeId, Model.DeliveryTypes)
 @Html.DropDown(m => m.Item.CountryId, Model.Countries)
 @Html.DropDown(m => m.Item.CityId, Model.Cities)
 @Html.Editor(m => m.Item.Street)
 @Html.Editor(m => m.Item.ZipCode)
-@Html.Editor(m => m.Item.TotalPrice)
+<div class="form-group">
+    <label class="text-light">@Html.DisplayNameFor(item => Model.Item.TotalPrice)</label>
+    <input class="form-control" readonly="readonly" asp-for="Item.TotalPrice" value="@Model.GetPriceSum()"/>
+</div>
 @Html.Editor(m => m.Item.Date)
-@Html.Editor(m => m.Item.DeliveryCost)
+<div class="form-group">
+    <label class="text-light">@Html.DisplayNameFor(item => Model.Item.DeliveryCost)</label>
+    <input class="form-control" readonly="readonly" asp-for="Item.DeliveryCost" value="@Model.GetDeliveryPrice()"/>
+</div>
 @Html.Editor(m => m.Item.Comment)
+<table>
+    <tbody class="table table-hover">
+    @for (int i = 0; i < Model.Item.OrderItems.Count; i++)
+    {
+        var orderItem = Model.Item.OrderItems[i];
+        <tr class="table-active">
+            <td>@orderItem.Quantity @Model.GetProductName(orderItem.ProductId)</td>
+            <input type="hidden" asp-for="Item.OrderItems[i].Id"/>
+            <input type="hidden" asp-for="Item.OrderItems[i].OrderId"/>
+            <input type="hidden" asp-for="Item.OrderItems[i].Quantity"/>
+            <input type="hidden" asp-for="Item.OrderItems[i].ProductId"/>
+        </tr>
+    }
+    </tbody>
+</table>
 </body>

@@ -8,6 +8,7 @@
     Layout = "_Index";
     var page = Model.PageUrl;
 }
+
 @section Create {
     @Html.Link(string.Empty, new Link(Captions.Create, Model.CreationUrl))
 }
@@ -17,11 +18,11 @@
     <thead>
     @Html.Header(
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m=> m.PersonId, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.TotalPrice), Model.GetSortString(m=> m.TotalPrice, page))
+        new Link(Captions.Amount, Model.GetSortString(m => m.PersonId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.TotalPrice), Model.GetSortString(m => m.TotalPrice, page))
         )
     </thead>
-   
+
     <tbody>
     @foreach (var item in Model.Cart)
     {
@@ -40,12 +41,23 @@
                 Html.Raw(Model.GetItemPrice(item.Data.ProductId)),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=RemoveFromCart&itemId="
                          + item.Data.ProductId
-                         + "\"><button class=\"btn btn-default\">Eemalda Toode</button></form>"))
+                         + "\"><button class=\"btn btn-default\">Eemalda Toode</button></form>"),
+                Html.Raw("<form method=\"get\" action=\"/Shop/Orders/Create?\">"
+                         + "<input type=\"hidden\" name=\"handler\" value=\"CreateOrder\" /> "
+                         + "<input type=\"hidden\" name=\"itemId\" value=\"" + item.Data.ProductId + "\" \">"
+                         + "<input type=\"hidden\" name=\"itemQuantity\" value=\"" + item.Data.Quantity + "\" /> "
+                         + "<button class=\"btn btn-primary btn-sm\">Osta</button></form>"))
         </tr>
     }
     </tbody>
 </table>
-    <div>
-        Hind Kokku: @Html.Raw(Model.GetPriceSum())
-    </div>
+<div class="form-group">
+  <fieldset>
+    <label class="control-label" for="readOnlyInput">Hind Kokku</label>
+    <input class="form-control" id="readOnlyInput" type="text" value="@Html.Raw(Model.GetPriceSum())" readonly="">
+  </fieldset>
+</div>
+@Html.Raw("<form method=\"get\" action=\"/Shop/Orders/Create?\">"
+          + "<input type=\"hidden\" name=\"handler\" value=\"CreateOrder\" /> "
+          + "<button class=\"btn btn-primary btn-lg\">Osta Kõik</button></form>")
 </body>

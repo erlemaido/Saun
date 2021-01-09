@@ -2,17 +2,36 @@
 @model Sauna.Pages.Shop.Orders.OrdersPage
 
 <body>
-@Html.Show(m => m.Item.Name)
-@Html.Show(m => m.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
-@Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
-@Html.Show(m => m.Item.DeliveryTypeId, Model.GetDeliveryTypeName(Model.Item.DeliveryTypeId))
-@Html.Show(m => m.Item.CountryId, Model.GetCountryName(Model.Item.CountryId))
-@Html.Show(m => m.Item.CityId, Model.GetCityName(Model.Item.CityId))
-@Html.Show(m => m.Item.Street)
-@Html.Show(m => m.Item.ZipCode)
-@Html.Show(m => m.Item.TotalPrice)
-@Html.Show(m => m.Item.Date)
-@Html.Show(m => m.Item.DeliveryCost)
-@Html.Show(m => m.Item.Comment)
+    <div class="column">
+        @Html.Show(m => m.Item.Name)
+        @Html.Show(m => m.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
+        @Html.Show(m => m.Item.UserId, Model.GetUserName(Model.Item.UserId))
+        @Html.Show(m => m.Item.DeliveryTypeId, Model.GetDeliveryTypeName(Model.Item.DeliveryTypeId))
+        @Html.Show(m => m.Item.CountryId, Model.GetCountryName(Model.Item.CountryId))
+        @Html.Show(m => m.Item.CityId, Model.GetCityName(Model.Item.CityId))
+        @Html.Show(m => m.Item.Street)
+        @Html.Show(m => m.Item.ZipCode)
+        @Html.Show(m => m.Item.TotalPrice)
+        @Html.Show(m => m.Item.Date)
+        @Html.Show(m => m.Item.DeliveryCost)
+        @Html.Show(m => m.Item.Comment)
+    </div>
+    <div class="column">
+        <table>
+            <tbody class="table table-hover">
+            @for (int i = 0; i < Model.Item.OrderItems?.Count; i++)
+            {
+                <tr class="table-active">
+                    <td>@Model.Item.OrderItems[i].Quantity @Model.GetProductName(Model.Item.OrderItems[i].ProductId)</td>
+                    <input type="hidden" asp-for="Item.OrderItems[i].Id"/>
+                    <input type="hidden" asp-for="Item.OrderItems[i].OrderId"/>
+                    <input type="hidden" asp-for="Item.OrderItems[i].Quantity"/>
+                    <input type="hidden" asp-for="Item.OrderItems[i].ProductId"/>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
 
 </body>
+
