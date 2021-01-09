@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Data.Abstractions;
+using Data.Shop.OrderItems;
+using Data.Shop.Products;
 
 namespace Data.Shop.Orders
 {

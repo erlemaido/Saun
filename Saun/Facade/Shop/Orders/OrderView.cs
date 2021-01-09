@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Data.Shop.OrderItems;
+using Domain.Shop.OrderItems;
 using Facade.Abstractions;
 
 namespace Facade.Shop.Orders
@@ -11,7 +14,6 @@ namespace Facade.Shop.Orders
         [DisplayName("Nimi")]
         public string Name { get; set; }
         
-        [Required]
         [DisplayName("Klient")]
         public string PersonId { get; set; }
         
@@ -48,5 +50,7 @@ namespace Facade.Shop.Orders
         
         [DisplayName("Kommentaar")] 
         public string Comment { get; set; }
+        
+        public List<OrderItemData> OrderItems { get; set; }
     }
 }

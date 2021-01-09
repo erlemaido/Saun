@@ -13,5 +13,6 @@ namespace Sauna.Pages.Abstractions.Constants
         public static string First => "Esimene";
         public static string Previous => "Eelmine";
         public static string AddToBasket => "Lisa Ostukorvi";
+        public static string Amount => "Kogus";
     }
 }

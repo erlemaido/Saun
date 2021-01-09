@@ -67,6 +67,14 @@ namespace Infra.Abstractions
 
             await dbContext.SaveChangesAsync();
         }
+        
+        public async Task AddAll(List<TDomain> obj)
+        {
+            var data = obj.Select(item => item.Data);
+            await dbSet.AddRangeAsync(data);
+
+            await dbContext.SaveChangesAsync();
+        }
 
         public async Task Update(TDomain obj)
         {
