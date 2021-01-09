@@ -1,8 +1,12 @@
 ﻿using Aids.Reflection;
+using Data.Shop.Roles;
 using Data.Shop.Statuses;
+using Domain.Shop.Roles;
 using Domain.Shop.Statuses;
 using Facade.Shop.Statuses;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.Statuses;
 using Tests.Pages.Abstractions;
 
@@ -12,21 +16,27 @@ namespace Tests.Pages.Shop.Statuses
     public class StatusesPageTests : SealedViewsPageTests<StatusesPage,
             IStatusesRepository, Status, StatusView, StatusData>
     {
-        internal class statusesRepository : UniqueRepository<Status, StatusData>, IStatusesRepository
+        internal class StatusesTestRepository : UniqueRepository<Status, StatusData>, IStatusesRepository
         {
             protected override string GetId(StatusData d) => d.Id;
 
         }
 
-        private statusesRepository Statuses;
+        private StatusesTestRepository _statusesTest;
+        protected override string GetId(StatusView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.Statuses;
+
+        protected override string PageUrl() => PagesUrls.Statuses;
+        protected override Status CreateObj(StatusData d) => new Status(d);
 
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            Statuses = new statusesRepository();
-            obj = new StatusesPage(Statuses);
+            _statusesTest = new StatusesTestRepository();
+            obj = new StatusesPage(_statusesTest);
         }
 
 
@@ -55,40 +65,12 @@ namespace Tests.Pages.Shop.Statuses
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
-
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override Status CreateObj(StatusData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(StatusView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
+        
+       
 
     }
 

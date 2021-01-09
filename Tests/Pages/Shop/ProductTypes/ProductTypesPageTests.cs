@@ -1,8 +1,12 @@
 using Aids.Reflection;
+using Data.Shop.OrderStatuses;
 using Data.Shop.ProductTypes;
+using Domain.Shop.OrderStatuses;
 using Domain.Shop.ProductTypes;
 using Facade.Shop.ProductTypes;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.ProductTypes;
 using Tests.Pages.Abstractions;
 
@@ -12,26 +16,32 @@ namespace Tests.Pages.Shop.ProductTypes
     public class ProductTypesPageTests : SealedViewsPageTests<ProductTypesPage,
             IProductTypesRepository, ProductType, ProductTypeView, ProductTypeData>
     {
-        internal class productTypesRepository : UniqueRepository<ProductType, ProductTypeData>, IProductTypesRepository
+        internal class ProductTypesTestRepository : UniqueRepository<ProductType, ProductTypeData>, IProductTypesRepository
         {
             protected override string GetId(ProductTypeData d) => d.Id;
 
         }
 
-        private productTypesRepository ProductTypes;
+        private ProductTypesTestRepository _productTypesTest;
 
+        protected override string GetId(ProductTypeView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.PaymentTypes;
+
+        protected override string PageUrl() => PagesUrls.ProductTypes;
+        protected override ProductType CreateObj(ProductTypeData d) => new ProductType(d);
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            ProductTypes = new productTypesRepository();
-            obj = new ProductTypesPage(ProductTypes);
+            _productTypesTest = new ProductTypesTestRepository();
+            obj = new ProductTypesPage(_productTypesTest);
         }
 
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Toote t��bid", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Toote tüübid", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/ProductTypes", obj.PageUrl.ToString());
@@ -55,40 +65,11 @@ namespace Tests.Pages.Shop.ProductTypes
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override ProductType CreateObj(ProductTypeData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(ProductTypeView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
 
     }
 
