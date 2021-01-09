@@ -326,4 +326,8 @@
     <UpToDateCheckInput Remove="Areas\Shop\Pages\Products\Pages\_ShowProduct.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads" />
+  </ItemGroup>
+
 </Project>

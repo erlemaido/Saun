@@ -12,10 +12,11 @@
 
 <h4>@ViewData["Subtitle"]</h4>
 
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
-        <form id="createForm" 
+        <form id="createForm"
+              enctype="multipart/form-data"
               asp-page-handler="Create"
               asp-route-sortorder="@Model.SortOrder"
               asp-route-fixedFilter="@Model.FixedFilter"
@@ -26,7 +27,7 @@
 
             @RenderBody()
 
-            <input id="createButton" type="submit" value="Create" class="btn btn-primary" />
+            <input id="createButton" type="submit" value="Create" class="btn btn-primary"/>
         </form>
     </div>
 </div>
@@ -34,16 +35,16 @@
 <div>
     @Html.BackTo(
         new Args(
-            null, 
-            null, 
-            Model.FixedFilter, 
-            Model.FixedValue, 
-            Model.SortOrder, 
-            Model.SearchString, 
+            null,
+            null,
+            Model.FixedFilter,
+            Model.FixedValue,
+            Model.SortOrder,
+            Model.SearchString,
             Model.PageIndex
             ))
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

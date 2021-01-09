@@ -7,6 +7,10 @@
     @Html.Show(m => m.Item.ProductTypeId, Model.GetProductTypeName(Model.Item.ProductTypeId))
     @Html.Show(m => m.Item.UnitId, Model.GetUnitName(Model.Item.UnitId))
     @Html.Show(m => m.Item.Description)
-    @Html.Show(model => model.Item.PictureUrl)
+    <input type="hidden" asp-for="Item.PictureUrl" />
     @Html.Show(model => model.Item.Price)
+    <img src="~/uploads/@Model.Item.PictureUrl"   
+                         class="rounded-circle"   
+                         height="300" width="300"   
+                         asp-append-version="true" /> 
 </body>

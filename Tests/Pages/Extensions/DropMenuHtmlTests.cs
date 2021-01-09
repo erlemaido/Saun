@@ -31,12 +31,12 @@ namespace Tests.Pages.Extensions {
         [TestMethod] public void HtmlStringsTest() {
             var expected = new List<string> {
                 "<li class=\"nav-item dropdown\">",
-                "<a class=\"nav-link text-dark dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">",
+                "<a class=\"nav-link text-light dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">",
                 _name,
                 "</a>",
                 "<div class=\"dropdown-menu\">",
-                "<a class='dropdown-item text-dark' href=\"A.A\">A</a>",
-                "<a class='dropdown-item text-dark' href=\"B.B\">B</a>",
+                "<a class='dropdown-item text-light' href=\"A.A\">A</a>",
+                "<a class='dropdown-item text-light' href=\"B.B\">B</a>",
                 "</div>",
                 "</li>"
             };
