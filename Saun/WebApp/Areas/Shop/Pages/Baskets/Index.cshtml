@@ -35,9 +35,10 @@
                 Model.PageIndex,
                 Model.FixedFilter,
                 Model.FixedValue,
-                Html.Raw(Model.GetProductName(item.Data.ProductId)),
+                Html.Raw("<b>" + Model.GetProductName(item.Data.ProductId)),
                 Html.DisplayFor(modelItem => item.Data.Quantity),
                 Html.Raw(Model.GetItemPrice(item.Data.ProductId)),
+                Html.Raw("<img src=\"/uploads/" + Model.GetProductPictureUrl(item.Data.ProductId)+ "\" class=\"rounded-circle\"  height=\"100\" width=\"100\"asp-append-version=\"true\"/>"),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=RemoveFromCart&itemId="
                          + item.Data.ProductId
                          + "\"><button class=\"btn btn-default\">Eemalda Toode</button></form>"))

@@ -67,6 +67,8 @@ namespace Sauna.Pages.Shop.Baskets
         }
 
         public string GetProductName(string id) => GetItemName(id);
+        
+        public string GetProductPictureUrl(string id) => GetPictureUrl(id);
 
         public double? GetProductPrice(string id) => GetItemPrice(id);
 
@@ -126,6 +128,11 @@ namespace Sauna.Pages.Shop.Baskets
         public double? GetItemPrice(string id)
         {
             return Products.Find(i => i.Id == id)?.Data.Price;
+        }
+        
+        public string GetPictureUrl(string id)
+        {
+            return Products.Find(i => i.Id == id)?.Data.PictureUrl;
         }
 
         private string GetItemName(string id)
