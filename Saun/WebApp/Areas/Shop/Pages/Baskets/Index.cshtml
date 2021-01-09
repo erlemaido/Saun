@@ -17,7 +17,7 @@
     <thead>
     @Html.Header(
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m=> m.PersonId, page)),
+        new Link("Kogus", "quantity"),
         new Link(Html.DisplayNameFor(m => m.Item.TotalPrice), Model.GetSortString(m=> m.TotalPrice, page))
         )
     </thead>
