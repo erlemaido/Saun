@@ -245,7 +245,7 @@ namespace Infra
                           "Materjal: Põletatud haab" +
                           "Maht: 4l" +
                           "Plastikust siseosa tagab tootele pika eluea ja muudab ka puhastamise kergemaks.",
-            PictureUrl = "mingi url",
+            PictureUrl = "sauflexsaunamyts.jpg",
             UnitId = piece.Id,
             ProductTypeId = kibud.Id
         };
@@ -364,7 +364,7 @@ namespace Infra
                           "õhk. Juuste tugevdamise ja kõõma ravimise eesmärgil pestakse pead kaseviha tõmmisega. " +
                           "Kaseviht võtab pärast füüsilisi koormusi valu lihastest ja liigestest. Värske ja " +
                           "meeldivalt lõhnav viht annab võimsa energialaengu ning hea tuju paljudeks päevadeks.",
-            PictureUrl = "mingi url",
+            PictureUrl = "kaseviht.jpg",
             UnitId = piece.Id,
             ProductTypeId = vihad.Id
         };
@@ -387,7 +387,7 @@ namespace Infra
                           "kasutada sellist vihta ennekõike massaa˛ivahendina, mis aitab reumatismi, lihase- ja " +
                           "liigesevalude korral. Eukalüpti jahutav, kirbe aroom mobiliseerib närvisüsteemi, aitab " +
                           "taastuda pärast stressi ja haigust. Suurendab pikaealisuseks vajalikku energiat.",
-            PictureUrl = "mingi url",
+            PictureUrl = "eukalyptiviht.jpg",
             UnitId = piece.Id,
             ProductTypeId = vihad.Id
         };
@@ -412,7 +412,7 @@ namespace Infra
             Price = 18.90,
             Description = "The linen terry sauna hat protects the hair and scalp from the heat of the sauna. " +
                           "In winter, the sauna hat also keeps your head warm in the hot tub.",
-            PictureUrl = "mingi url",
+            PictureUrl = "rentosaunamyts.jpg",
             UnitId = piece.Id,
             ProductTypeId = tekstiil.Id
         };
@@ -480,10 +480,10 @@ namespace Infra
             BrandId = kerkes.Id,
             Name = "KERISEKIVID KERAAMILISED, KERKES TETRA, 10KG",
             Price = 59.86,
-            Description = "TMeie tetrakujulisi kive on kahes suuruses - suured ja väikesed. Neid kasutatakse kõigi " +
+            Description = "Meie tetrakujulisi kive on kahes suuruses - suured ja väikesed. Neid kasutatakse kõigi " +
                           "saunaahjude pealmiseks kihiks. Tulekahju või õhuvoolu ahjus reguleerib pinna kivikihi " +
                           "paksus. Tetrakujulise kivi pinnakonstruktsioon tagab intensiivse kuumuse.",
-            PictureUrl = "mingi url",
+            PictureUrl = "kerisekividkeraamilisedkerkestetra10.jpg",
             UnitId = piece.Id,
             ProductTypeId = tekstiil.Id
         };
