@@ -1,8 +1,12 @@
 using Aids.Reflection;
+using Data.Shop.Payments;
 using Data.Shop.People;
+using Domain.Shop.Payments;
 using Domain.Shop.People;
 using Facade.Shop.People;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.People;
 using Tests.Pages.Abstractions;
 
@@ -12,21 +16,27 @@ namespace Tests.Pages.Shop.People
     public class PeoplePageTests : SealedViewPageTests<PeoplePage,
             IPeopleRepository, Person, PersonView, PersonData>
     {
-        internal class peopleRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
+        internal class PeopleTestRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
         {
             protected override string GetId(PersonData d) => d.Id;
 
         }
 
-        private peopleRepository People;
+        private PeopleTestRepository _peopleTest;
+        protected override string GetId(PersonView item) => item.Id;
+
+        protected override string PageTitle() => PagesNames.People;
+
+        protected override string PageUrl() => PagesUrls.People;
+        protected override Person CreateObj(PersonData d) => new Person(d);
 
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            People = new peopleRepository();
-            obj = new PeoplePage(People);
+            _peopleTest = new PeopleTestRepository();
+            obj = new PeoplePage(_peopleTest);
         }
 
 
@@ -55,40 +65,11 @@ namespace Tests.Pages.Shop.People
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
-
-        protected override Person CreateObj(PersonData d)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string GetId(PersonView item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
 
     }
 

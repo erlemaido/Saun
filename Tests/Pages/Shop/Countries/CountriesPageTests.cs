@@ -1,8 +1,12 @@
 ﻿using Aids.Reflection;
+using Data.Shop.Brands;
 using Data.Shop.Countries;
+using Domain.Shop.Brands;
 using Domain.Shop.Countries;
 using Facade.Shop.Countries;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.Countries;
 using Tests.Pages.Abstractions;
 
@@ -12,21 +16,21 @@ namespace Tests.Pages.Shop.Countries
     public class CountriesPageTests : SealedViewsPageTests<CountriesPage,
             ICountriesRepository, Country, CountryView, CountryData>
     {
-        internal class countriesRepository : UniqueRepository<Country, CountryData>, ICountriesRepository
+        internal class CountriesTestRepository : UniqueRepository<Country, CountryData>, ICountriesRepository
         {
             protected override string GetId(CountryData d) => d.Id;
 
         }
 
-        private countriesRepository Countries;
+        private CountriesTestRepository _countriesTest;
 
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            Countries = new countriesRepository();
-            obj = new CountriesPage(Countries);
+            _countriesTest = new CountriesTestRepository();
+            obj = new CountriesPage(_countriesTest);
         }
 
 
@@ -55,40 +59,19 @@ namespace Tests.Pages.Shop.Countries
         [TestMethod]
         public void OnGetCreateTest()
         {
-            Assert.IsNull(null);
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
         }
 
-        [TestMethod]
-        public void GetPersonNameTest()
-        {
-            Assert.IsNull(null);
-        }
 
-        [TestMethod]
-        public void PeopleTest()
-        {
-            Assert.IsNull(null);
-        }
+        protected override string GetId(CountryView item) => item.Id;
 
-        protected override Country CreateObj(CountryData d)
-        {
-            throw new System.NotImplementedException();
-        }
+        protected override string PageTitle() => PagesNames.Countries;
 
-        protected override string GetId(CountryView item)
-        {
-            throw new System.NotImplementedException();
-        }
+        protected override string PageUrl() => PagesUrls.Countries;
+        protected override Country CreateObj(CountryData d) => new Country(d);
 
-        protected override string PageTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override string PageUrl()
-        {
-            throw new System.NotImplementedException();
-        }
 
     }
 
