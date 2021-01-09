@@ -230,7 +230,7 @@ namespace Infra
             Name = "TYLÖHELO ÄMBER «BRILLIANT» 5L HÕBEHALL",
             Price = 68.26,
             Description = "Tylöhelo alumiiniumi ämber. Ämbri maht: 5l",
-            PictureUrl = "mingi url",
+            PictureUrl = "TYLoHELOaMBERBRILLIANTHoBEHALL.jpg",
             UnitId = piece.Id,
             ProductTypeId = kibud.Id
         };
@@ -245,7 +245,7 @@ namespace Infra
                           "Materjal: Põletatud haab" +
                           "Maht: 4l" +
                           "Plastikust siseosa tagab tootele pika eluea ja muudab ka puhastamise kergemaks.",
-            PictureUrl = "sauflexsaunamyts.jpg",
+            PictureUrl = "sauflexsaunakibu.jpg",
             UnitId = piece.Id,
             ProductTypeId = kibud.Id
         };
@@ -257,7 +257,7 @@ namespace Infra
             Name = "RENTO KIBU, SININE, 5,0L",
             Price = 50.40,
             Description = "230 × 230 mm",
-            PictureUrl = "mingi url",
+            PictureUrl = "rentokibusinine.jpg",
             UnitId = piece.Id,
             ProductTypeId = kibud.Id
         };
@@ -274,7 +274,7 @@ namespace Infra
                           "Kõrgus - 300 mm" +
                           "⌀ 425 mm" +
                           "SAWO 381-D + 381-D-COV",
-            PictureUrl = "mingi url",
+            PictureUrl = "sawosaunakibu.jpg",
             UnitId = piece.Id,
             ProductTypeId = kibud.Id
         };
@@ -289,7 +289,7 @@ namespace Infra
                           "Pikkus: 230 mm" +
                           "Laius: 100 mm" +
                           "Sügavus: 20 mm",
-            PictureUrl = "mingi url",
+            PictureUrl = "TYLoHELOHyGROMEETERPREMIUMDARK.jpg",
             UnitId = piece.Id,
             ProductTypeId = termoJaHügroMeetrid.Id
         };
@@ -305,7 +305,7 @@ namespace Infra
                           "valida mis tahes Cariitti komplekti, näiteks tootekoodiga 1371. Seinale paigaldatav. " +
                           "Mõõdud on 120 x 120 mm ja süvend 40 mm. Seinapinnast on kõrgus 20 mm. Hügromeeter " +
                           "paigaldatakse seinale, 3. roostevabast terasest kruviga.",
-            PictureUrl = "mingi url",
+            PictureUrl = "CARIITTIHyGROMEETERSQ.jpg",
             UnitId = piece.Id,
             ProductTypeId = termoJaHügroMeetrid.Id
         };
@@ -317,7 +317,7 @@ namespace Infra
             Name = "TYLÖHELO TERMOMEETER «BRILLIANT» MUST",
             Price = 63,
             Description = "",
-            PictureUrl = "mingi url",
+            PictureUrl = "TYLoHELOTERMOMEETERBRILLIANTMUST.jpg",
             UnitId = piece.Id,
             ProductTypeId = termoJaHügroMeetrid.Id
         };
@@ -331,7 +331,7 @@ namespace Infra
             Description = "Liivakell Lux on ilus dekoratsioon teie sauna jaoks ning seda saab kasutada sobiva " +
                           "saunaskäigu aja näitamiseks või lihtsalt meeldetuletusena, et aeg liigub. Liiv " +
                           "voolab 15 minutit. Materjal: Lepp Kõrgus: 305 mm Laius: 70 mm SKU: SAC19900",
-            PictureUrl = "mingi url",
+            PictureUrl = "harvialiivakelllepp.jpg",
             UnitId = piece.Id,
             ProductTypeId = kellad.Id
         };
@@ -343,7 +343,7 @@ namespace Infra
             Name = "TAMMEVIHT",
             Price = 3.78,
             Description = "",
-            PictureUrl = "mingi url",
+            PictureUrl = "tammeviht.jpg",
             UnitId = piece.Id,
             ProductTypeId = vihad.Id
         };
@@ -399,7 +399,7 @@ namespace Infra
             Name = "SAUFLEX SAUNAMÜTS",
             Price = 5.26,
             Description = "Saunamüts kaitseb juukseid ja peanahka sauna kuumuse eest. Talvel hoiab saunamüts pea soojas kümblustünnis ka.",
-            PictureUrl = "mingi url",
+            PictureUrl = "sauflexsaunamyts.jpg",
             UnitId = piece.Id,
             ProductTypeId = tekstiil.Id
         };
@@ -428,7 +428,7 @@ namespace Infra
                           "imendumisvõimega ja kuivavad pärast kasutamist kiiresti. Lihtsalt stiilne ja ajatu " +
                           "kujundus täiendab teie saunamõnusid ning pärast lõõgastavat saunasessiooni on mõnus " +
                           "enda ümber suur rätik mähkida. 75% puuvill, 25% linane, peske temperatuuril 60 ° C",
-            PictureUrl = "mingi url",
+            PictureUrl = "harviasaunaratik.jpg",
             UnitId = piece.Id,
             ProductTypeId = tekstiil.Id
         };
@@ -446,7 +446,7 @@ namespace Infra
                           "auruga pilveks. Kokku on vaja vähemalt 20 kg kive nii, et vesi ei liiguks nende vahel " +
                           "liiga palju. Ainult elektrikerisele. Soovitatav on kõik kivid pesta, et eemaldada " +
                           "plekid või tolm, mis võivad põhjustada ebameeldivat lõhna, kerise esmakordsel kasutamisel.",
-            PictureUrl = "mingi url",
+            PictureUrl = "sauankividsauflex20kg.jpg",
             UnitId = piece.Id,
             ProductTypeId = kerisekivid.Id
         };
@@ -469,7 +469,7 @@ namespace Infra
                           "ning rohkem ei ole vaja nende pärast muretseda. 20 kg, Ainult elektrikerisele. Soovitatav " +
                           "on kõik kivid pesta, et eemaldada plekid või tolm, mis võivad põhjustada ebameeldivat " +
                           "lõhna, kerise esmakordsel kasutamisel.",
-            PictureUrl = "mingi url",
+            PictureUrl = "kerisekividkeraamilisedkerkesmix.jpg",
             UnitId = piece.Id,
             ProductTypeId = kerisekivid.Id
         };
@@ -498,7 +498,7 @@ namespace Infra
                           "hinnaga on sellel kõik vajalikud omadused - kuumuskindlus, vastupidavus tsükliliste " +
                           "temperatuurimuutustele, akumuleerib soojust kiiresti ja hoiab seda pikka aega. Ainult " +
                           "elektrikerisele",
-            PictureUrl = "mingi url",
+            PictureUrl = "saunakividsauflexymardatud.jpg",
             UnitId = piece.Id,
             ProductTypeId = tekstiil.Id
         };
@@ -510,7 +510,7 @@ namespace Infra
             Name = "SAUNIA AROMIKAUSS",
             Price = 42.00,
             Description = "Soolakivi. Kett: 140cm. Sisaldab ca. 50g Hiimala soola",
-            PictureUrl = "mingi url",
+            PictureUrl = "sauniaaromikauss.jpg",
             UnitId = piece.Id,
             ProductTypeId = saunatarvikud.Id
         };
@@ -522,7 +522,7 @@ namespace Infra
             Name = "RENTO KULP 50cm",
             Price = 37.80,
             Description = "",
-            PictureUrl = "mingi url",
+            PictureUrl = "rentokulp.jpg",
             UnitId = piece.Id,
             ProductTypeId = kulbid.Id
         };
@@ -534,7 +534,7 @@ namespace Infra
             Name = "TYLOHELO KULP, PREMIUM DARK",
             Price = 78.74,
             Description = "",
-            PictureUrl = "mingi url",
+            PictureUrl = "TYLOHELOKULPPREMIUMDARK.jpg",
             UnitId = piece.Id,
             ProductTypeId = kulbid.Id
         };
@@ -546,7 +546,7 @@ namespace Infra
             Name = "SAWO STEAMSHOT KULP, MUST",
             Price = 53.56,
             Description = "",
-            PictureUrl = "mingi url",
+            PictureUrl = "sawosteamshotkulp.jpg",
             UnitId = piece.Id,
             ProductTypeId = kulbid.Id
         };
@@ -558,7 +558,7 @@ namespace Infra
             Name = "SAUNA ISTUMISALUSED, POLÜETEEN",
             Price = 1.90,
             Description = "Mõõdud: 410x310x3mm",
-            PictureUrl = "mingi url",
+            PictureUrl = "saunaistumisalusedpolyteen.jpg",
             UnitId = piece.Id,
             ProductTypeId = istumisalused.Id
         };
@@ -570,7 +570,7 @@ namespace Infra
             Name = "SAUNA ISTUMISALUSED, LEPP",
             Price = 12.60,
             Description = "Sauna istumisalused lepast. Mõõdud: 320 x 400 x 10 mm",
-            PictureUrl = "mingi url",
+            PictureUrl = "saunaistumisalusedlepp.jpg",
             UnitId = piece.Id,
             ProductTypeId = istumisalused.Id
         };
@@ -586,7 +586,7 @@ namespace Infra
                           "näiteks duširuumis, sest puu paisub kiiresti ja rest muutub kasutamiskõlbmatuks. " +
                           "Pikaajaliseks kasutamiseks on soovitatav pind katta spetsiaalse puidukaitseõliga. Suurus: " +
                           "600 x 1200 x 43 mm Materjal: termotöödeldud haab",
-            PictureUrl = "mingi url",
+            PictureUrl = "tugevdatudporandarest.jpg",
             UnitId = piece.Id,
             ProductTypeId = porandarestid.Id
         };
