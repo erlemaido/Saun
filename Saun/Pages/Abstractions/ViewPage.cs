@@ -40,7 +40,7 @@ namespace Sauna.Pages.Abstractions
             return Page();
         }
 
-        public async Task<IActionResult> OnPostCreateAsync(
+        public virtual async Task<IActionResult> OnPostCreateAsync(
             string sortOrder,
             string searchString,
             int? pageIndex,
@@ -97,7 +97,7 @@ namespace Sauna.Pages.Abstractions
             return Page();
         }
 
-        public async Task<IActionResult> OnPostEditAsync(string sortOrder, string searchString, int pageIndex,
+        public virtual async Task<IActionResult> OnPostEditAsync(string sortOrder, string searchString, int pageIndex,
             string fixedFilter, string fixedValue)
         {
             await UpdateObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);

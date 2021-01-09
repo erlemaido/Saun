@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Brands;
 using Data.Shop.Products;
@@ -15,6 +17,8 @@ using Domain.Shop.Stock;
 using Domain.Shop.Units;
 using Facade.Shop.Products;
 using Facade.Shop.Reviews;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
@@ -33,9 +37,15 @@ namespace Sauna.Pages.Shop.Products
         public IList<ReviewView> Reviews { get; }
         protected internal readonly IReviewsRepository reviews;
         
+        private IHostingEnvironment _environment;
+
         public List<BasketItem> Cart { get; set; }
+        
+        [BindProperty]
+        public IFormFile Upload { get; set; }
 
         public ProductsPage(
+            IHostingEnvironment environment,
             IStockRepository stockRepository,
             IProductsRepository repository, 
             IBrandsRepository brandsRepository, 
@@ -43,6 +53,7 @@ namespace Sauna.Pages.Shop.Products
             IReviewsRepository reviewsRepository,
             IUnitsRepository unitsRepository) : base(repository, PagesNames.Products)
         {
+            _environment = environment;
             Stock = stockRepository.Get().Result;
             Brands = NewItemsList<Brand, BrandData>(brandsRepository);
             ProductTypes = NewItemsList<ProductType, ProductTypeData>(productTypesRepository);
@@ -95,6 +106,41 @@ namespace Sauna.Pages.Shop.Products
                 fixedFilter, fixedValue, switchOfCreate);
         }
 
+        public override async Task<IActionResult> OnPostCreateAsync(
+            string sortOrder,
+            string searchString,
+            int? pageIndex,
+            string fixedFilter,
+            string fixedValue)
+        {
+            UploadFile();
+            
+            if (!await AddObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue)
+                .ConfigureAwait(true)) return Page();
+
+            return Redirect(IndexUrl.ToString());
+        }
+        
+        public override async Task<IActionResult> OnPostEditAsync(string sortOrder, string searchString, int pageIndex,
+            string fixedFilter, string fixedValue)
+        {
+            UploadFile();
+
+            await UpdateObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);
+
+            return Redirect(IndexUrl.ToString());
+        }
+
+        private async void UploadFile()
+        {
+            var file = Path.Combine(_environment.ContentRootPath, "wwwroot/uploads", Upload.FileName);
+            using (var fileStream = new FileStream(file, FileMode.Create))
+            {
+                await Upload.CopyToAsync(fileStream);
+            }
+            Item.PictureUrl = Upload.FileName;
+        }
+
         //TODO: see kasutab hetkel toorest Review aga ilmselt peaks kasutama ReviewOfProduct vms
         public void AddReview(ProductView item)
         {
@@ -112,4 +158,3 @@ namespace Sauna.Pages.Shop.Products
         }
     }
 }
-

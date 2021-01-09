@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Domain.Shop.Brands;
 using Domain.Shop.ProductTypes;
@@ -9,9 +10,7 @@ namespace Facade.Shop.Products
 {
     public sealed class ProductView : DefinedEntityView
     {
-        [Required]
-        [DisplayName("Bränd")]
-        public string BrandId { get; set; }
+        [Required] [DisplayName("Bränd")] public string BrandId { get; set; }
         
         [Required]
         [DisplayName("Tüüp")]
@@ -21,7 +20,6 @@ namespace Facade.Shop.Products
         [DisplayName("Ühik")]
         public string UnitId { get; set; }
 
-        [Required]
         public string PictureUrl { get; set; }
         
         [Required]

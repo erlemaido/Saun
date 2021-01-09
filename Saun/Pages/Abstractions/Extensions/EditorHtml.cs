@@ -19,7 +19,7 @@ namespace Sauna.Pages.Abstractions.Extensions
         {
             return new List<object> {
                 new HtmlString("<div class=\"form-group\">"),
-                h.LabelFor(e, new {@class = "text-dark"}),
+                h.LabelFor(e, new {@class = "text-light"}),
                 h.EditorFor(e,
                     new {htmlAttributes = new {@class = "form-control"}}),
                 h.ValidationMessageFor(e, "", new {@class = "text-danger"}),

@@ -2,12 +2,13 @@
 @model Sauna.Pages.Shop.Products.ProductsPage
 
 <body>
-<input type="hidden" asp-for="Item.Id" />
+    <input type="hidden" asp-for="Item.Id" />
     @Html.Editor(m => m.Item.Name)
     @Html.DropDown(m => m.Item.BrandId, Model.Brands)
     @Html.DropDown(m => m.Item.ProductTypeId, Model.ProductTypes)
     @Html.DropDown(m => m.Item.UnitId, Model.Units)
     @Html.Editor(m => m.Item.Description)
-    @Html.Editor(model => model.Item.PictureUrl)
+    <input type="hidden" asp-for="Item.PictureUrl" />
     @Html.Editor(model => model.Item.Price)
+    <input type="file" asp-for="Upload"/>
 </body>
