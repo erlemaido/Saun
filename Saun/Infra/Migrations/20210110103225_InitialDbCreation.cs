@@ -8,26 +8,11 @@ namespace Infra.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "BasketItems",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    BasketId = table.Column<string>(nullable: true),
-                    ProductId = table.Column<string>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BasketItems", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Baskets",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    PersonId = table.Column<string>(nullable: true),
                     TotalPrice = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
@@ -327,9 +312,6 @@ namespace Infra.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "BasketItems");
-
             migrationBuilder.DropTable(
                 name: "Baskets");
 

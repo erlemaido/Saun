@@ -4,12 +4,6 @@ namespace Sauna.Pages.Abstractions.Aids
 {
     public class Link 
     {
-        public Link(string displayName, string relativeLink) : this(displayName,
-            new Uri(relativeLink + "?handler=index", UriKind.Relative))
-        {
-            
-        }
-
         public Link(string displayName, Uri url, string propertyName = null) 
         {
             DisplayName = displayName;

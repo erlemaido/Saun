@@ -6,11 +6,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Aids\Aids.csproj"/>
+        <ProjectReference Include="..\Aids\Aids.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0"/>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Docs" />
     </ItemGroup>
 
 </Project>
