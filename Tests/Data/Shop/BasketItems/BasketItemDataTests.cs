@@ -7,11 +7,6 @@ namespace Tests.Data.Shop.BasketItems
     [TestClass]
     public class BasketItemDataTests : SealedClassTests<BasketItemData, UniqueEntityData>
     {
-        [TestMethod]
-        public void BasketIdTest()
-        {
-            IsNullableProperty(() => obj.BasketId, x => obj.BasketId = x);
-        }
 
         [TestMethod]
         public void IdTest()

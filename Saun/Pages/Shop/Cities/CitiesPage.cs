@@ -33,20 +33,12 @@ namespace Sauna.Pages.Shop.Cities
         protected internal override CityView ToView(City obj) => CityViewFactory.Create(obj);
 
         protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Cities, UriKind.Relative);
-
-
+        
         private bool IsCountry() => FixedFilter == GetMember.Name<CityView>(x => x.CountryId);
 
         protected internal override string GetPageSubtitle()
         {
-            if (IsCountry())
-            {
-                return $"{GetCountryName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
+            return IsCountry() ? $"{GetCountryName(FixedValue)}" : "Määramata alalehe pealkiri";
         }
 
         public override IActionResult OnGetCreate(

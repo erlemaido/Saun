@@ -7,7 +7,6 @@ namespace Tests.Pages.Consts
     public class PagesNamesTests : BaseTests
     {
         [TestInitialize] public void TestInitialize() => type = typeof(PagesNames);
-        [TestMethod] public void BasketItemsTest() => Assert.AreEqual("Ostukorvi read", PagesNames.BasketItems);
         [TestMethod] public void BasketsTest() => Assert.AreEqual("Ostukorv", PagesNames.Baskets);
         [TestMethod] public void BrandsTest() => Assert.AreEqual("Brändid", PagesNames.Brands);
         [TestMethod] public void CountriesTest() => Assert.AreEqual("Riigid", PagesNames.Countries);

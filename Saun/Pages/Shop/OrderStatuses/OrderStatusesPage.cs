@@ -48,25 +48,5 @@ namespace Sauna.Pages.Shop.OrderStatuses
         public string GetOrderName(string itemOrderId) => GetItemName(Orders, itemOrderId);
 
         public string GetStatusName(string itemStatusId) => GetItemName(Statuses, itemStatusId);
-        
-        private bool IsOrder() => FixedFilter == GetMember.Name<OrderStatusView>(x => x.OrderId);
-        
-        private bool IsStatus() => FixedFilter == GetMember.Name<OrderStatusView>(x => x.StatusId);
-
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsOrder())
-            {
-                return $"{GetOrderName(FixedValue)}";
-            }
-            else if (IsStatus())
-            {
-                return $"{GetStatusName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
     }
 }

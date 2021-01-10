@@ -31,10 +31,8 @@ namespace Tests.Pages.Shop.Baskets
 
         protected override string PageTitle() => PagesNames.Baskets;
 
-        protected override string PageUrl() => PagesUrls.BasketItems;
+        protected override string PageUrl() => PagesUrls.Baskets;
         protected override Basket CreateObj(BasketData d) => new Basket(d);
-        private bool IsPerson() => obj.FixedFilter == GetMember.Name<BasketView>(x => x.PersonId);
-
 
         [TestInitialize]
         public override void TestInitialize()
@@ -153,19 +151,6 @@ namespace Tests.Pages.Shop.Baskets
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Baskets", obj.PageUrl.ToString());
 
-        [TestMethod]
-        public void GetPageSubtitleTest()
-        {
-            var list = _peopleTest.Get().GetAwaiter().GetResult();
-            obj.FixedFilter = GetMember.Name<BasketView>(x => x.PersonId);
-            if (!IsPerson()) return;
-            foreach (var person in list.Where(person => person.Id == _peopleData.Id))
-            {
-                obj.FixedValue = person.Id;
-                Assert.AreEqual(obj.GetPageSubtitle(), obj.PageSubtitle);
-            }
-        }
-        
         [TestMethod]
         public void OnGetIndexAsyncTest()
         {

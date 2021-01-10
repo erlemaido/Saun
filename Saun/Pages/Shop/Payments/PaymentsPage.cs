@@ -55,29 +55,5 @@ namespace Sauna.Pages.Shop.Payments
         public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
 
         public string GetPaymentTypeName(string itemPaymentTypeId) => GetItemName(PaymentTypes, itemPaymentTypeId);
-        private bool IsOrder() => FixedFilter == GetMember.Name<PaymentView>(x => x.OrderId);
-        
-        private bool IsPerson() => FixedFilter == GetMember.Name<PaymentView>(x => x.PersonId);
-        private bool IsPaymentType() => FixedFilter == GetMember.Name<PaymentView>(x => x.PaymentTypeId);
-
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsOrder())
-            {
-                return $"{GetOrderName(FixedValue)}";
-            }
-            else if (IsPerson())
-            {
-                return $"{GetPersonName(FixedValue)}";
-            }
-            else if (IsPaymentType())
-            {
-                return $"{GetPaymentTypeName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
     }
 }

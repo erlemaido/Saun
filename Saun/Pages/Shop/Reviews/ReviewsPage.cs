@@ -48,25 +48,5 @@ namespace Sauna.Pages.Shop.Reviews
         public string GetProductName(string itemProductId) => GetItemName(Products, itemProductId);
 
         public string GetUserName(string itemUserId) => GetItemName(Users, itemUserId);
-        
-        private bool IsProduct() => FixedFilter == GetMember.Name<ReviewView>(x => x.ProductId);
-        
-        private bool IsUser() => FixedFilter == GetMember.Name<ReviewView>(x => x.UserId);
-
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsProduct())
-            {
-                return $"{GetProductName(FixedValue)}";
-            }
-            else if (IsUser())
-            {
-                return $"{GetUserName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
     }
 }

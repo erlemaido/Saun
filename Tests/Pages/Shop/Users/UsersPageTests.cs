@@ -49,7 +49,7 @@ namespace Tests.Pages.Shop.Users
 
         protected override string PageTitle() => PagesNames.Baskets;
 
-        protected override string PageUrl() => PagesUrls.BasketItems;
+        protected override string PageUrl() => PagesUrls.Users;
         protected override User CreateObj(UserData d) => new User(d);
 
         [TestInitialize]

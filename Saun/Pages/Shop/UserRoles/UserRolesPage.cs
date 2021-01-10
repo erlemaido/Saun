@@ -48,25 +48,5 @@ namespace Sauna.Pages.Shop.UserRoles
         public string GetUserName(string itemUserId) => GetItemName(Users, itemUserId);
 
         public string GetRoleName(string itemRoleId) => GetItemName(Roles, itemRoleId);
-        
-        private bool IsUser() => FixedFilter == GetMember.Name<UserRoleView>(x => x.UserId);
-        
-        private bool IsRole() => FixedFilter == GetMember.Name<UserRoleView>(x => x.RoleId);
-
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsUser())
-            {
-                return $"{GetUserName(FixedValue)}";
-            }
-            else if (IsRole())
-            {
-                return $"{GetRoleName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
     }
 }
