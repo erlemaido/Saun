@@ -23,7 +23,7 @@
     @foreach (var item in Model.Cart)
     {
         <tr>
-            @Html.Row(
+            @Html.RowWithOutEdit(
                 false,
                 page,
                 item.Data.ProductId,
@@ -36,14 +36,17 @@
                 Html.DisplayFor(modelItem => item.Data.Quantity),
                 Html.Raw(Model.GetItemPrice(item.Data.ProductId) + " €"),
                 Html.Raw("<img src=\"/uploads/" + Model.GetProductPictureUrl(item.Data.ProductId)+ "\" class=\"rounded-circle\"  height=\"100\" width=\"100\"asp-append-version=\"true\"/>"),
+                Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=IncreaseCount&itemId="
+                         + item.Data.ProductId
+                         + "\"><button class=\"btn btn-secondary\">Suurenda Kogust</button></form>"),
                 Html.Raw("<form method=\"post\" action=\"/Shop/Baskets/Index?handler=RemoveFromCart&itemId="
                          + item.Data.ProductId
-                         + "\"><button class=\"btn btn-default\">Eemalda toode</button></form>"),
+                         + "\"><button class=\"btn btn-primary\">Vähenda Kogust</button></form>"),
                 Html.Raw("<form method=\"get\" action=\"/Shop/Orders/Create?\">"
                          + "<input type=\"hidden\" name=\"handler\" value=\"CreateOrder\" /> "
                          + "<input type=\"hidden\" name=\"itemId\" value=\"" + item.Data.ProductId + "\" \">"
                          + "<input type=\"hidden\" name=\"itemQuantity\" value=\"" + item.Data.Quantity + "\" /> "
-                         + "<button class=\"btn btn-primary btn-sm\">Osta</button></form>"))
+                         + "<button class=\"btn btn-primary\">Osta</button></form>"))
         </tr>
     }
     </tbody>

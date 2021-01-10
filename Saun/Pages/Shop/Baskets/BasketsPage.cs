@@ -74,6 +74,14 @@ namespace Sauna.Pages.Shop.Baskets
             return Page();
         }
 
+        public async Task<IActionResult> OnPostIncreaseCountAsync(string itemId)
+        {
+            IncreaseCount(itemId);
+            Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
+
+            return Page();
+        }
+
         public async Task<IActionResult> OnPostCreateBasketAsync(string itemId)
         {
             Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
@@ -136,6 +144,17 @@ namespace Sauna.Pages.Shop.Baskets
                 {
                     item.Data.Quantity--;
                 }
+            }
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", Cart);
+        }
+        
+        public void IncreaseCount(string id)
+        {
+            Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
+            var item = Cart.FirstOrDefault(i => i.Data.ProductId == id);
+            if (item != null)
+            {
+                item.Data.Quantity++;
             }
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", Cart);
         }
