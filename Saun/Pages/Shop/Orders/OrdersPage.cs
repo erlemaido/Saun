@@ -115,9 +115,7 @@ namespace Sauna.Pages.Shop.Orders
         {
             if (!await AddObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue)
                 .ConfigureAwait(true)) return Page();
-
-            await SaveOrderItems();
-
+            
             return Redirect(IndexUrl.ToString());
         }
 
@@ -198,13 +196,6 @@ namespace Sauna.Pages.Shop.Orders
             return name;
         }
 
-        //Salvesta Orderi itemid OrderItems tabelisse
-        private async Task SaveOrderItems()
-        {
-            var domainList = Item.OrderItems.Select(item => new OrderItem(item)).ToList();
-            await _orderItemsRepository.AddAll(domainList);
-        }
-        
         public override async Task<IActionResult> OnGetDetailsAsync(string id, string sortOrder, string searchString,
             int pageIndex, string fixedFilter, string fixedValue)
         {
