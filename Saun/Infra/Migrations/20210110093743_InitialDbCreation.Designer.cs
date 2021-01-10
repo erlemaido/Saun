@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(SaunaDbContext))]
-    [Migration("20210109214933_InitialDbCreation")]
+    [Migration("20210110093743_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,6 +122,9 @@ namespace Infra.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("OrderDataId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("OrderId")
                         .HasColumnType("nvarchar(max)");
 
@@ -132,6 +135,8 @@ namespace Infra.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderDataId");
 
                     b.ToTable("OrderItems");
                 });
@@ -451,6 +456,13 @@ namespace Infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Data.Shop.OrderItems.OrderItemData", b =>
+                {
+                    b.HasOne("Data.Shop.Orders.OrderData", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderDataId");
                 });
 #pragma warning restore 612, 618
         }

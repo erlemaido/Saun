@@ -86,20 +86,6 @@ namespace Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderItems",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    OrderId = table.Column<string>(nullable: true),
-                    ProductId = table.Column<string>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderItems", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -311,6 +297,32 @@ namespace Infra.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "OrderItems",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    OrderId = table.Column<string>(nullable: true),
+                    ProductId = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: false),
+                    OrderDataId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Orders_OrderDataId",
+                        column: x => x.OrderDataId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItems_OrderDataId",
+                table: "OrderItems",
+                column: "OrderDataId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -335,9 +347,6 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "OrderItems");
-
-            migrationBuilder.DropTable(
-                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "OrderStatuses");
@@ -377,6 +386,9 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
         }
     }
 }
