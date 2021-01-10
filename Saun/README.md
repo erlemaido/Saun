@@ -6,5 +6,6 @@ dotnet ef migrations add InitialDbCreation --project Infra --startup-project Web
 
 Update Database:
 dotnet ef database update --project Infra --startup-project WebApp --context SaunaDbContext
+
 Drop Database:
 dotnet ef database drop --project Infra --startup-project WebApp --context SaunaDbContext
