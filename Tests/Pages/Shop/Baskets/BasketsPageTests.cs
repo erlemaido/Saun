@@ -150,6 +150,11 @@ namespace Tests.Pages.Shop.Baskets
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Baskets", obj.PageUrl.ToString());
+        
+        [TestMethod]
+        public void IncreaseCountTest()
+        {
+        }
 
         [TestMethod]
         public void OnGetIndexAsyncTest()
@@ -165,6 +170,11 @@ namespace Tests.Pages.Shop.Baskets
         
         [TestMethod]
         public void OnPostCreateBasketAsyncTest()
+        {
+        }
+        
+        [TestMethod]
+        public void OnPostIncreaseCountAsyncTest()
         {
         }
         
