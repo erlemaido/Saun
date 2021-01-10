@@ -14,8 +14,6 @@
     <thead>
     @Html.Header(
         new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m => m.PersonId, page)),
-        new Link(Html.DisplayNameFor(m => m.Item.UserId), Model.GetSortString(m=> m.UserId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.DeliveryTypeId), Model.GetSortString(m => m.DeliveryTypeId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.CountryId), Model.GetSortString(m=> m.CountryId, page)),
         new Link(Html.DisplayNameFor(m => m.Item.CityId), Model.GetSortString(m => m.CityId, page)),
@@ -42,8 +40,6 @@
                 Model.FixedFilter,
                 Model.FixedValue,
                 Html.DisplayFor(modelItem => item.Name),
-                Html.Raw(Model.GetPersonName(item.PersonId)),
-                Html.Raw(Model.GetUserName(item.UserId)),
                 Html.Raw(Model.GetDeliveryTypeName(item.DeliveryTypeId)),
                 Html.Raw(Model.GetCountryName(item.CountryId)),
                 Html.Raw(Model.GetCityName(item.CityId)),
@@ -51,7 +47,7 @@
                 Html.DisplayFor(modelItem => item.ZipCode),
                 Html.Raw(item.TotalPrice + " €"),
                 Html.DisplayFor(modelItem => item.Date),
-                Html.DisplayFor(modelItem => item.DeliveryCost),
+                Html.Raw(item.DeliveryCost + " €"),
                 Html.DisplayFor(modelItem => item.Comment)
                 )
         </tr>
