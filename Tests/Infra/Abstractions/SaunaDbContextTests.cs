@@ -86,7 +86,6 @@ namespace Tests.Infra.Abstractions
             var o = new TestClass(_options);
             var builder = o.RunOnModelCreating();
             SaunaDbContext.InitializeTables(builder);
-            TestEntity<BasketItemData>(builder);
             TestEntity<BrandData>(builder);
             TestEntity<BasketData>(builder);
             TestEntity<CityData>(builder);
