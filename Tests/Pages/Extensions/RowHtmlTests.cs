@@ -58,6 +58,11 @@ namespace Tests.Pages.Extensions {
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
+        [TestMethod]
+        public void RowWithOutEditTest()
+        {
+        }
+
         [TestMethod] public void InternalRowTest() {
             var a = GetRandom.Object<Args>();
             var obj = RowHtml.Row(
