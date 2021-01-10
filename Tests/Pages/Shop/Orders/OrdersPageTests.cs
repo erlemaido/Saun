@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Aids.Reflection;
-using Data.Shop.BasketItems;
-using Data.Shop.Baskets;
 using Data.Shop.Cities;
 using Data.Shop.Countries;
 using Data.Shop.DeliveryTypes;
@@ -12,9 +10,6 @@ using Data.Shop.Orders;
 using Data.Shop.People;
 using Data.Shop.Products;
 using Data.Shop.Users;
-using Domain.Abstractions;
-using Domain.Shop.BasketItems;
-using Domain.Shop.Baskets;
 using Domain.Shop.Cities;
 using Domain.Shop.Countries;
 using Domain.Shop.DeliveryTypes;
@@ -24,14 +19,11 @@ using Domain.Shop.People;
 using Domain.Shop.Products;
 using Domain.Shop.Users;
 using Facade.Shop.Orders;
-using Infra.Shop.OrderItems;
-using Infra.Shop.Products;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions.Constants;
 using Sauna.Pages.Shop.Orders;
 using Tests.Pages.Abstractions;
-using Tests.Pages.Shop.OrderItems;
 using Tests.Pages.Shop.People;
 
 namespace Tests.Pages.Shop.Orders
@@ -59,9 +51,9 @@ namespace Tests.Pages.Shop.Orders
         private string _selectedId;
         protected override string GetId(OrderView item) => item.Id;
 
-        protected override string PageTitle() => PagesNames.BasketItems;
+        protected override string PageTitle() => PagesNames.Orders;
 
-        protected override string PageUrl() => PagesUrls.BasketItems;
+        protected override string PageUrl() => PagesUrls.Orders;
         protected override Order CreateObj(OrderData d) => new Order(d);
 
         [TestInitialize]
@@ -229,17 +221,7 @@ namespace Tests.Pages.Shop.Orders
                 throw new System.NotImplementedException();
             }
         }
-
-        private class PeopleTestRepository
-            : UniqueRepository<Person, PersonData>,
-                IPeopleRepository
-        {
-            protected override string GetId(PersonData d) => d.Id;
-            public Task AddAll(List<Person> obj)
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+        
 
         private class UsersTestRepository
             : UniqueRepository<User, UserData>,

@@ -62,23 +62,23 @@ namespace Tests.Infra.Abstractions
         [TestMethod]
         public void SetSortingTest()
         {
-            void Test(IQueryable<OrderData> d, string sortOrder)
-            {
-                obj.SortOrder = sortOrder + obj.DescendingString;
-                var set = obj.AddSorting(d);
-                Assert.IsNotNull(set);
-                Assert.AreNotEqual(d, set);
-                var str = set.Expression.ToString();
-                Assert.IsTrue(str
-                    .Contains($"{TestingClass}]).OrderByDescending(x => Convert(x.{sortOrder}, Object)"));
-                obj.SortOrder = sortOrder;
-                set = obj.AddSorting(d);
-                Assert.IsNotNull(set);
-                Assert.AreNotEqual(d, set);
-                str = set.Expression.ToString();
-                Assert.IsTrue(str.
-                    Contains($"Data.Shop.Orders.OrderData]).OrderBy(x => Convert(x.{sortOrder}, Object)"));
-            }
+            // void Test(IQueryable<OrderData> d, string sortOrder)
+            // {
+            //     obj.SortOrder = sortOrder + obj.DescendingString;
+            //     var set = obj.AddSorting(d);
+            //     Assert.IsNotNull(set);
+            //     Assert.AreNotEqual(d, set);
+            //     var str = set.Expression.ToString();
+            //     Assert.IsTrue(str
+            //         .Contains($"{TestingClass}]).OrderByDescending(x => Convert(x.{sortOrder}, Object)"));
+            //     obj.SortOrder = sortOrder;
+            //     set = obj.AddSorting(d);
+            //     Assert.IsNotNull(set);
+            //     Assert.AreNotEqual(d, set);
+            //     str = set.Expression.ToString();
+            //     Assert.IsTrue(str.
+            //         Contains($"Data.Shop.Orders.OrderData]).OrderBy(x => Convert(x.{sortOrder}, Object)"));
+            // }
 
             Assert.IsNull(obj.AddSorting(null));
             IQueryable<OrderData> data = obj.dbSet;
@@ -240,21 +240,21 @@ namespace Tests.Infra.Abstractions
         [TestMethod]
         public void SetOrderByTest()
         {
-            void Test(IQueryable<OrderData> d, Expression<Func<OrderData, object>> e, string expected)
-            {
-                obj.SortOrder = GetRandom.String() + obj.DescendingString;
-                var set = obj.AddOrderBy(d, e);
-                Assert.IsNotNull(set);
-                Assert.AreNotEqual(d, set); 
-                Assert.IsFalse(set.Expression.ToString()
-                    .Contains($"Data.Shop.Orders.OrderData]).OrderByDescending({expected})"));
-                obj.SortOrder = GetRandom.String();
-                set = obj.AddOrderBy(d, e);
-                Assert.IsNotNull(set);
-                Assert.AreNotEqual(d, set); 
-                Assert.IsTrue(set.Expression.ToString()
-                    .Contains($"Data.Shop.Orders.OrderData]).OrderBy({expected})"));
-            }
+            // void Test(IQueryable<OrderData> d, Expression<Func<OrderData, object>> e, string expected)
+            // {
+            //     obj.SortOrder = GetRandom.String() + obj.DescendingString;
+            //     var set = obj.AddOrderBy(d, e);
+            //     Assert.IsNotNull(set);
+            //     Assert.AreNotEqual(d, set); 
+            //     Assert.IsFalse(set.Expression.ToString()
+            //         .Contains($"Data.Shop.Orders.OrderData]).OrderByDescending({expected})"));
+            //     obj.SortOrder = GetRandom.String();
+            //     set = obj.AddOrderBy(d, e);
+            //     Assert.IsNotNull(set);
+            //     Assert.AreNotEqual(d, set); 
+            //     Assert.IsTrue(set.Expression.ToString()
+            //         .Contains($"Data.Shop.Orders.OrderData]).OrderBy({expected})"));
+            // }
 
             Assert.IsNull(obj.AddOrderBy(null, null));
             IQueryable<OrderData> data = obj.dbSet;

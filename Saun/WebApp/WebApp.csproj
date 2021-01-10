@@ -314,6 +314,13 @@
     <_ContentIncludedByDefault Remove="Areas\Shop\OrderStatuses\Pages\Index.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Shop\OrderStatuses\Pages\_EditOrderStatus.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Shop\OrderStatuses\Pages\_ShowOrderStatus.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\_EditOrderItem.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Shop\Pages\OrderItems\_ShowOrderItem.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

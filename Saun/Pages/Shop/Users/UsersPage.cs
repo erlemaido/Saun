@@ -41,12 +41,5 @@ namespace Sauna.Pages.Shop.Users
         }
 
         public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
-        
-        private bool IsPerson() => FixedFilter == GetMember.Name<UserView>(x => x.PersonId);
-        
-        protected internal override string GetPageSubtitle()
-        {
-            return IsPerson() ? $"{GetPersonName(FixedValue)}" : "Määramata alalehe pealkiri";
-        }
     }
 }

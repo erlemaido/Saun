@@ -27,9 +27,7 @@ namespace Sauna.Pages.Shop.Stock
         protected internal override StockView ToView(Domain.Shop.Stock.Stock obj) => StockViewFactory.Create(obj);
 
         protected internal override Uri CreatePageUrl() => new Uri(PagesUrls.Stock, UriKind.Relative);
-        
-        protected internal override string GetPageSubtitle() => $"{GetProductName(FixedValue)}";
-        
+
         public override IActionResult OnGetCreate(
             string sortOrder, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue, int? switchOfCreate)

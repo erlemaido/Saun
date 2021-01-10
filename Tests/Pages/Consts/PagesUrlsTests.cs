@@ -8,7 +8,6 @@ namespace Tests.Pages.Consts
     {
         [TestInitialize] public void TestInitialize() => type = typeof(PagesUrls);
         [TestMethod] public void CountriesTest() => Assert.AreEqual("/Shop/Countries", PagesUrls.Countries);
-        [TestMethod] public void BasketItemsTest() => Assert.AreEqual("/Shop/BasketItems", PagesUrls.BasketItems);
         [TestMethod] public void BasketsTest() => Assert.AreEqual("/Shop/Baskets", PagesUrls.Baskets);
         [TestMethod] public void BrandsTest() => Assert.AreEqual("/Shop/Brands", PagesUrls.Brands);
         [TestMethod] public void CitiesTest() => Assert.AreEqual("/Shop/Cities", PagesUrls.Cities);
