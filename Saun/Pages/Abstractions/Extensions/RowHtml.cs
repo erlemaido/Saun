@@ -61,6 +61,26 @@ namespace Sauna.Pages.Abstractions.Extensions
             return Row(hasSelect, a, values);
         }
         
+        public static IHtmlContent RowWithOutEdit(
+            this IHtmlHelper h,
+            bool hasSelect,
+            Uri pageUrl, 
+            string itemId,
+            string sortOrder, 
+            string searchString, 
+            int pageIndex,
+            string fixedFilter, 
+            string fixedValue,
+            params IHtmlContent[] values) 
+        {
+ 
+            if (h == null) throw new ArgumentNullException(nameof(h));
+
+            var a = new Args(pageUrl, itemId, fixedFilter, fixedValue, sortOrder, searchString, pageIndex);
+
+            return RowWithOutEdit(hasSelect, a, values);
+        }
+        
         public static IHtmlContent Row(
             this IHtmlHelper h,
             bool hasSelect,
@@ -86,6 +106,12 @@ namespace Sauna.Pages.Abstractions.Extensions
 
         internal static IHtmlContent Row(bool hasSelect, Args a, params IHtmlContent[] values) {
             var s = HtmlStrings(hasSelect, a, values);
+
+            return new HtmlContentBuilder(s);
+        }
+        
+        internal static IHtmlContent RowWithOutEdit(bool hasSelect, Args a, params IHtmlContent[] values) {
+            var s = HtmlStringsWithOutEdit(hasSelect, a, values);
 
             return new HtmlContentBuilder(s);
         }
@@ -150,6 +176,22 @@ namespace Sauna.Pages.Abstractions.Extensions
             list.Add(" | ");
             list.Add(new HtmlString(Href.Compose(a, Actions.Delete, Captions.Delete)));
             list.Add(new HtmlString("</td>"));
+
+            return list;
+        }
+        
+        internal static List<object> HtmlStringsWithOutEdit(bool hasSelect, Args a, params IHtmlContent[] values) 
+        {
+            var list = new List<object>();
+            foreach (var value in values) AddValue(list, value);
+            list.Add(new HtmlString("<td>"));
+
+            if (hasSelect) 
+            {
+                list.Add(new HtmlString(Href.Compose(a, Actions.Index, Captions.Select)));
+            }
+            
+            list.Add(new HtmlString(Href.Compose(a, Actions.Details, Captions.Details)));
 
             return list;
         }

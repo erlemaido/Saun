@@ -68,11 +68,10 @@
                     <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
                         <div class="card-header">@data.Price €</div>
                         <a href="#">
-                            <img class="card-img-top" src="/uploads/@data.PictureUrl" alt="">
+                            <img class="card-img-top" src="/uploads/@data.PictureUrl" alt="" style="width:320px;height:270px;">
                         </a>
                         <div class="card-body">
                             <h4 class="card-title">@data.Name</h4>
-                            <p class="card-text">@data.Description</p>
                         </div>
                           <div class="card-body">
                               @(new HtmlString(Sauna.Pages.Abstractions.Aids.Href.Compose(new Args(new Uri("https://localhost:5001/Shop/Products"), data.Id), Actions.Details, Captions.Details)))
