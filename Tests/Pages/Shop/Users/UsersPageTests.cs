@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aids.Methods;
 using Aids.Reflection;
 using Data.Shop.Baskets;
@@ -25,10 +27,18 @@ namespace Tests.Pages.Shop.Users
         {
             protected override string GetId(UserData d) => d.Id;
 
+            public Task AddAll(List<User> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         private class PeopleTestRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
         {
             protected override string GetId(PersonData d) => d.Id;
+            public Task AddAll(List<Person> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private UsersTestRepository _usersTest;

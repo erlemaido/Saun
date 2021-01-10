@@ -1,4 +1,6 @@
-﻿using Aids.Reflection;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aids.Reflection;
 using Data.Shop.Orders;
 using Data.Shop.PaymentTypes;
 using Data.Shop.People;
@@ -22,6 +24,10 @@ namespace Tests.Pages.Shop.PaymentTypes
         internal class PaymentTypeTestRepository : UniqueRepository<PaymentType, PaymentTypeData>, IPaymentTypesRepository
         {
             protected override string GetId(PaymentTypeData d) => d.Id;
+            public Task AddAll(List<PaymentType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private PaymentTypeTestRepository _paymentTypeTest;

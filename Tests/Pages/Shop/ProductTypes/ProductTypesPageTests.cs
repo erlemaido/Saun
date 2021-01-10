@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.OrderStatuses;
 using Data.Shop.ProductTypes;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.ProductTypes
         {
             protected override string GetId(ProductTypeData d) => d.Id;
 
+            public Task AddAll(List<ProductType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private ProductTypesTestRepository _productTypesTest;

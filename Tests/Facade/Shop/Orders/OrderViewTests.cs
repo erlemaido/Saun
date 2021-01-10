@@ -42,5 +42,9 @@ namespace Tests.Facade.Shop.Orders
 
         [TestMethod]
         public void CommentTest() => IsNullableProperty(() => obj.Comment, x => obj.Comment = x);
+        
+        
+        [TestMethod]
+        public void OrderItemsTest() => IsNullableProperty(() => obj.OrderItems, x => obj.OrderItems = x);
     }
 }

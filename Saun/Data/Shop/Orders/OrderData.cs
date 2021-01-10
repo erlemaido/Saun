@@ -19,5 +19,6 @@ namespace Data.Shop.Orders
         public string ZipCode { get; set; }
         public double DeliveryCost { get; set; }
         public string Comment { get; set; }
+        public List<OrderItemData> OrderItems { get; set; }
     }
 }

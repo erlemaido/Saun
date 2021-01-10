@@ -1,21 +1,17 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
-using Data.Shop.OrderItems;
-using Data.Shop.Orders;
 using Data.Shop.OrderItems;
 using Data.Shop.Orders;
 using Data.Shop.Products;
 using Domain.Shop.OrderItems;
 using Domain.Shop.Orders;
-using Domain.Shop.OrderItems;
 using Domain.Shop.Products;
 using Facade.Shop.OrderItems;
-using Facade.Shop.OrderItems;
-using Infra.Shop.OrderItems;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions.Constants;
-using Sauna.Pages.Shop.OrderItems;
 using Sauna.Pages.Shop.OrderItems;
 using Tests.Pages.Abstractions;
 
@@ -102,6 +98,10 @@ namespace Tests.Pages.Shop.OrderItems
         {
             protected override string GetId(OrderItemData d) => d.Id;
 
+            public Task AddAll(List<OrderItem> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class ProductTestRepository
@@ -109,6 +109,10 @@ namespace Tests.Pages.Shop.OrderItems
                 IProductsRepository
         {
             protected override string GetId(ProductData d) => d.Id;
+            public Task AddAll(List<Product> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class OrdersTestRepository
@@ -116,6 +120,10 @@ namespace Tests.Pages.Shop.OrderItems
                 IOrdersRepository
         {
             protected override string GetId(OrderData d) => d.Id;
+            public Task AddAll(List<Order> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         [TestMethod]
@@ -177,6 +185,7 @@ namespace Tests.Pages.Shop.OrderItems
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/OrderItems", obj.PageUrl.ToString());
+        
     }
 
 }

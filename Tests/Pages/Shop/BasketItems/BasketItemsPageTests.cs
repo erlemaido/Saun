@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.BasketItems;
 using Data.Shop.Baskets;
@@ -107,6 +108,10 @@ namespace Tests.Pages.Shop.BasketItems
         {
             protected override string GetId(BasketItemData d) => d.Id;
 
+            public Task AddAll(List<BasketItem> obj)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private class ProductTestRepository
@@ -114,6 +119,10 @@ namespace Tests.Pages.Shop.BasketItems
                 IProductsRepository
         {
             protected override string GetId(ProductData d) => d.Id;
+            public Task AddAll(List<Product> obj)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private class BasketTestRepository
@@ -121,6 +130,10 @@ namespace Tests.Pages.Shop.BasketItems
                 IBasketsRepository
         {
             protected override string GetId(BasketData d) => d.Id;
+            public Task AddAll(List<Basket> obj)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         [TestMethod]
