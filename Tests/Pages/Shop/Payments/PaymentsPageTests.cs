@@ -31,7 +31,7 @@ namespace Tests.Pages.Shop.Payments
     {
         internal class PaymentsTestRepository : UniqueRepository<Payment, PaymentData>, IPaymentsRepository
         {
-            protected override string GetId(PaymentData d) => Compose.Id(d.Id, d.PersonId);
+            protected override string GetId(PaymentData d) => d.Id;
 
             public Task AddAll(List<Payment> obj)
             {

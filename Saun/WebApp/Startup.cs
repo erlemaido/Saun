@@ -20,7 +20,6 @@ using Domain.Shop.Units;
 using Domain.Shop.UserRoles;
 using Domain.Shop.Users;
 using Infra;
-using Infra.Shop.BasketItems;
 using Infra.Shop.Baskets;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -82,7 +81,6 @@ namespace WebApp
                     .ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
             });
             
-            services.AddScoped<IBasketItemsRepository, BasketItemsRepository>();
             services.AddScoped<IBasketsRepository, BasketsRepository>();
             services.AddScoped<IBrandsRepository, BrandsRepository>();
             services.AddScoped<ICitiesRepository, CitiesRepository>();

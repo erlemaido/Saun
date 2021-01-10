@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Aids.Methods;
 using Data.Abstractions;
 using Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -94,14 +93,5 @@ namespace Infra.Abstractions
         protected abstract TData GetDataById(TData data);
 
         protected bool IsInDatabase(TData data) => GetDataById(data) != null;
-
-        private TData CopyData(TData data) {
-            var x = GetDataById(data);
-
-            if (x is null) return data;
-            Copy.Members(data, x);
-
-            return x;
-        }
     }
 }

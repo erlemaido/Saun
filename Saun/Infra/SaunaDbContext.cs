@@ -26,8 +26,6 @@ namespace Infra
     public class SaunaDbContext : DbContext
     {
         public SaunaDbContext(DbContextOptions<SaunaDbContext> options) : base(options) { }
-
-        public DbSet<BasketItemData> BasketItems { get; set; }
         public DbSet<BasketData> Baskets { get; set; }
         public DbSet<BrandData> Brands { get; set; }
         public DbSet<CityData> Cities { get; set; }
@@ -58,7 +56,6 @@ namespace Infra
 
         public static void InitializeTables(ModelBuilder builder)
         {
-            builder.Entity<BasketItemData>().ToTable(nameof(BasketItems));
             builder.Entity<BasketData>().ToTable(nameof(Baskets));
             builder.Entity<BrandData>().ToTable(nameof(Brands));
             

@@ -28,7 +28,7 @@ namespace Tests.Pages.Shop.OrderStatuses
     {
         internal class OrderStatusesTestRepository : UniqueRepository<OrderStatus, OrderStatusData>, IOrderStatusesRepository
         {
-            protected override string GetId(OrderStatusData d) => Compose.Id(d.Id, d.StatusId);
+            protected override string GetId(OrderStatusData d) => d.Id;
 
             public Task AddAll(List<OrderStatus> obj)
             {

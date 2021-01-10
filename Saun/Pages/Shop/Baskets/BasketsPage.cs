@@ -70,23 +70,8 @@ namespace Sauna.Pages.Shop.Baskets
         
         public string GetProductPictureUrl(string id) => GetPictureUrl(id);
 
-        public double? GetProductPrice(string id) => GetItemPrice(id);
-
         public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
-        private bool IsPerson() => FixedFilter == GetMember.Name<BasketView>(x => x.PersonId);
 
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsPerson())
-            {
-                return $"{GetPersonName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
-        
         public async Task<IActionResult> OnPostRemoveFromCartAsync(string itemId)
         {
             RemoveFromCart(itemId);

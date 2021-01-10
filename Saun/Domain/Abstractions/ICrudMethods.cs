@@ -11,6 +11,5 @@ namespace Domain.Abstractions
         Task Add(T obj);
         Task Update(T obj);
         Task AddAll(List<T> obj);
-
     }
 }
