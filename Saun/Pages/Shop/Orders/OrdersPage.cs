@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Aids.Helpers;
-using Aids.Reflection;
 using Data.Shop.Cities;
 using Data.Shop.Countries;
 using Data.Shop.DeliveryTypes;
@@ -58,6 +56,7 @@ namespace Sauna.Pages.Shop.Orders
         public IEnumerable<SelectListItem> Countries { get; set; }
         public IEnumerable<SelectListItem> Cities { get; set; }
         public List<Product> Products { get; set; }
+        public List<BasketItem> Cart { get; set; }
 
         protected internal override Order ToObject(OrderView view) => OrderViewFactory.Create(view);
 
@@ -72,7 +71,6 @@ namespace Sauna.Pages.Shop.Orders
         {
             Item = new OrderView() {Id = Guid.NewGuid().ToString()};
             Item.OrderItems = new List<OrderItemData>();
-
             Item.Date = DateTime.Now;
             if (itemId == null)
             {
@@ -102,8 +100,7 @@ namespace Sauna.Pages.Shop.Orders
                 };
             }
 
-            return base.OnGetCreate(sortOrder, searchString, pageIndex,
-                fixedFilter, fixedValue, switchOfCreate);
+            return base.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, switchOfCreate);
         }
 
         public override async Task<IActionResult> OnPostCreateAsync(
@@ -115,9 +112,7 @@ namespace Sauna.Pages.Shop.Orders
         {
             if (!await AddObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue)
                 .ConfigureAwait(true)) return Page();
-
-            await SaveOrderItems();
-
+            
             return Redirect(IndexUrl.ToString());
         }
 
@@ -130,45 +125,7 @@ namespace Sauna.Pages.Shop.Orders
         public string GetCountryName(string itemCountryId) => GetItemName(Countries, itemCountryId);
 
         public string GetCityName(string itemCityId) => GetItemName(Cities, itemCityId);
-
-        private bool IsPerson() => FixedFilter == GetMember.Name<OrderView>(x => x.PersonId);
-
-        private bool IsUser() => FixedFilter == GetMember.Name<OrderView>(x => x.UserId);
-        private bool IsDeliveryType() => FixedFilter == GetMember.Name<OrderView>(x => x.DeliveryTypeId);
-
-        private bool IsCountry() => FixedFilter == GetMember.Name<OrderView>(x => x.CountryId);
-        private bool IsCity() => FixedFilter == GetMember.Name<OrderView>(x => x.CityId);
-
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsPerson())
-            {
-                return $"{GetPersonName(FixedValue)}";
-            }
-            else if (IsUser())
-            {
-                return $"{GetUserName(FixedValue)}";
-            }
-            else if (IsDeliveryType())
-            {
-                return $"{GetDeliveryTypeName(FixedValue)}";
-            }
-            else if (IsCountry())
-            {
-                return $"{GetCountryName(FixedValue)}";
-            }
-            else if (IsCity())
-            {
-                return $"{GetCityName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
-
-        public List<BasketItem> Cart { get; set; }
-
+        
         public double? GetPriceSum()
         {
             Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
@@ -198,14 +155,8 @@ namespace Sauna.Pages.Shop.Orders
             return name;
         }
 
-        //Salvesta Orderi itemid OrderItems tabelisse
-        private async Task SaveOrderItems()
-        {
-            var domainList = Item.OrderItems.Select(item => new OrderItem(item)).ToList();
-            await _orderItemsRepository.AddAll(domainList);
-        }
-        
-        public override async Task<IActionResult> OnGetDetailsAsync(string id, string sortOrder, string searchString,
+        public override async Task<IActionResult> OnGetDetailsAsync(
+            string id, string sortOrder, string searchString, 
             int pageIndex, string fixedFilter, string fixedValue)
         {
             await GetObject(id, sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);

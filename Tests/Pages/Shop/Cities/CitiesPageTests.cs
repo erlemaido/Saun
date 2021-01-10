@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Baskets;
 using Data.Shop.Cities;
@@ -24,12 +26,20 @@ namespace Tests.Pages.Shop.Cities
             protected override string GetId(CityData d) => d.Id;
 
 
+            public Task AddAll(List<City> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class CountriesTestRepository : UniqueRepository<Country, CountryData>, ICountriesRepository
         {
             protected override string GetId(CountryData d) => d.Id;
 
+            public Task AddAll(List<Country> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private CitiesTestRepository _cities;

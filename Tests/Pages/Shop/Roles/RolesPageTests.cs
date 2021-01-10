@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Reviews;
 using Data.Shop.Roles;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.Roles
         {
             protected override string GetId(RoleData d) => d.Id;
 
+            public Task AddAll(List<Role> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
 

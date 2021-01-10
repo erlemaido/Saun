@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Baskets;
 using Data.Shop.People;
@@ -28,10 +31,8 @@ namespace Tests.Pages.Shop.Baskets
 
         protected override string PageTitle() => PagesNames.Baskets;
 
-        protected override string PageUrl() => PagesUrls.BasketItems;
+        protected override string PageUrl() => PagesUrls.Baskets;
         protected override Basket CreateObj(BasketData d) => new Basket(d);
-        private bool IsPerson() => obj.FixedFilter == GetMember.Name<BasketView>(x => x.PersonId);
-
 
         [TestInitialize]
         public override void TestInitialize()
@@ -78,6 +79,10 @@ namespace Tests.Pages.Shop.Baskets
         {
             protected override string GetId(BasketData d) => d.Id;
 
+            public Task AddAll(List<Basket> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         
         private class ProductsTestRepository
@@ -85,6 +90,10 @@ namespace Tests.Pages.Shop.Baskets
                 IProductsRepository
         {
             protected override string GetId(ProductData d) => d.Id;
+            public Task AddAll(List<Product> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class PeopleTestRepository
@@ -92,6 +101,10 @@ namespace Tests.Pages.Shop.Baskets
                 IPeopleRepository
         {
             protected override string GetId(PersonData d) => d.Id;
+            public Task AddAll(List<Person> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         [TestMethod]
@@ -139,19 +152,71 @@ namespace Tests.Pages.Shop.Baskets
         public void PageUrlTest() => Assert.AreEqual("/Shop/Baskets", obj.PageUrl.ToString());
 
         [TestMethod]
-        public void GetPageSubtitleTest()
+        public void OnGetIndexAsyncTest()
         {
             var list = _peopleTest.Get().GetAwaiter().GetResult();
-            obj.FixedFilter = GetMember.Name<BasketView>(x => x.PersonId);
-            if (!IsPerson()) return;
-            foreach (var person in list.Where(person => person.Id == _peopleData.Id))
-            {
-                obj.FixedValue = person.Id;
-                Assert.AreEqual(obj.GetPageSubtitle(), obj.PageSubtitle);
-            }
-
-
-
+            Assert.AreEqual(list.Count, obj.People.Count());
+        }
+        
+        [TestMethod]
+        public void OnPostRemoveFromCartAsyncTest()
+        {
+        }
+        
+        [TestMethod]
+        public void OnPostCreateBasketAsyncTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetItemPriceTest()
+        {
+        }
+        
+        [TestMethod]
+        public void RemoveFromCartTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetPriceSumTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetPictureUrlTest()
+        {
+        }
+        
+        [TestMethod]
+        public void CartTest()
+        {
+        }
+        
+        [TestMethod]
+        public void ProductsTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetProductNameTest()
+        {
+            var name = obj.GetPersonName(_peopleData.Id);
+            Assert.AreEqual(_peopleData.FirstName + " " + _peopleData.LastName, name);
+        }
+        
+        [TestMethod]
+        public void GetProductPictureUrlTest()
+        {
+            var name = obj.GetPersonName(_peopleData.Id);
+            Assert.AreEqual(_peopleData.FirstName + " " + _peopleData.LastName, name);
+        }
+        
+        [TestMethod]
+        public void GetProductPriceTest()
+        {
+            var name = obj.GetPersonName(_peopleData.Id);
+            Assert.AreEqual(_peopleData.FirstName + " " + _peopleData.LastName, name);
         }
     }
 }

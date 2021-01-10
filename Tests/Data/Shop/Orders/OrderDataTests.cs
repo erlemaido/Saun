@@ -66,6 +66,12 @@ namespace Tests.Data.Shop.Orders
         {
             IsProperty(() => obj.DeliveryCost, x => obj.DeliveryCost = x);
         }
+        
+        [TestMethod]
+        public void OrderItemsTest()
+        {
+            IsNullableProperty(() => obj.OrderItems,x => obj.OrderItems = x);
+        }
     }
     
 }

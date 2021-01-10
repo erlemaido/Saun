@@ -1,4 +1,6 @@
-﻿using Aids.Reflection;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aids.Reflection;
 using Data.Shop.Brands;
 using Data.Shop.DeliveryTypes;
 using Domain.Shop.Brands;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.DeliveryTypes
         internal class DeliveryTypeTestRepository : UniqueRepository<DeliveryType, DeliveryTypeData>, IDeliveryTypesRepository
         {
             protected override string GetId(DeliveryTypeData d) => d.Id;
+            public Task AddAll(List<DeliveryType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private DeliveryTypeTestRepository _deliveryTypeTest;

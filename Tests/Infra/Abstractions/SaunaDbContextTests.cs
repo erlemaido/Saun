@@ -110,9 +110,6 @@ namespace Tests.Infra.Abstractions
         }
 
         [TestMethod]
-        public void BasketItemsTest() => IsNullableProperty(obj, nameof(obj.BasketItems), typeof(DbSet<BasketItemData>));
-
-        [TestMethod]
         public void BrandsTest() => IsNullableProperty(obj, nameof(obj.Brands), typeof(DbSet<BrandData>));
 
         [TestMethod]

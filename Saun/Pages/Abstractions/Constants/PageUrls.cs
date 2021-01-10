@@ -2,7 +2,6 @@
 {
     public static class PagesUrls
     {
-        public static string BasketItems => "/Shop/BasketItems";
         public static string Baskets => "/Shop/Baskets";
         public static string Brands => "/Shop/Brands";
         public static string Cities => "/Shop/Cities";

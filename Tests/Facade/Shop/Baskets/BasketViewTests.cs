@@ -11,9 +11,6 @@ namespace Tests.Facade.Shop.Baskets
         public void NameTest() => IsNullableProperty(() => obj.Name, x => obj.Name = x);
 
         [TestMethod]
-        public void PersonIdTest() => IsNullableProperty(() => obj.PersonId, x => obj.PersonId = x);
-
-        [TestMethod]
         public void TotalPriceTest() => IsProperty(() => obj.TotalPrice, x => obj.TotalPrice = x);
     }
 }

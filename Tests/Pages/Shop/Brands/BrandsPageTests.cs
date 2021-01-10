@@ -1,4 +1,6 @@
-﻿using Aids.Reflection;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aids.Reflection;
 using Data.Shop.Brands;
 using Domain.Shop.Brands;
 using Facade.Shop.Brands;
@@ -21,6 +23,10 @@ namespace Tests.Pages.Shop.Brands
         {
             protected override string GetId(BrandData d) => d.Id;
 
+            public Task AddAll(List<Brand> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         protected override string GetId(BrandView item) => item.Id;
 

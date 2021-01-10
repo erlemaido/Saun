@@ -61,7 +61,14 @@ namespace Tests.Infra.Abstractions
         {
             AddTest();
         }
-
+        
+        [TestMethod]
+        public void AddAllTest()
+        {
+            AddTest();
+            Assert.IsNotNull(obj.Get(_data.Id).GetAwaiter().GetResult());
+        }
+        
         [TestMethod]
         public void DeleteTest()
         {

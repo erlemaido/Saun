@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Payments;
 using Data.Shop.People;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.People
         {
             protected override string GetId(PersonData d) => d.Id;
 
+            public Task AddAll(List<Person> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private PeopleTestRepository _peopleTest;

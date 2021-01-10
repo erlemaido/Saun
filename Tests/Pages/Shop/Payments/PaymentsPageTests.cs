@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Methods;
 using Aids.Reflection;
 using Data.Shop.BasketItems;
@@ -29,22 +31,38 @@ namespace Tests.Pages.Shop.Payments
     {
         internal class PaymentsTestRepository : UniqueRepository<Payment, PaymentData>, IPaymentsRepository
         {
-            protected override string GetId(PaymentData d) => Compose.Id(d.Id, d.PersonId);
+            protected override string GetId(PaymentData d) => d.Id;
 
+            public Task AddAll(List<Payment> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         private class PeopleTestRepository : UniqueRepository<Person, PersonData>, IPeopleRepository
         {
             protected override string GetId(PersonData d) => d.Id;
+            public Task AddAll(List<Person> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class OrdersTestRepository : UniqueRepository<Order, OrderData>, IOrdersRepository
         {
             protected override string GetId(OrderData d) => d.Id;
+            public Task AddAll(List<Order> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class PaymentTypesTestRepository : UniqueRepository<PaymentType, PaymentTypeData>, IPaymentTypesRepository
         {
             protected override string GetId(PaymentTypeData d) => d.Id;
+            public Task AddAll(List<PaymentType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private PaymentsTestRepository _paymentsTest;

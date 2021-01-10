@@ -4,14 +4,16 @@ using Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infra.Migrations
 {
     [DbContext(typeof(SaunaDbContext))]
-    partial class SaunaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210110111011_InitialDbCreation")]
+    partial class InitialDbCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

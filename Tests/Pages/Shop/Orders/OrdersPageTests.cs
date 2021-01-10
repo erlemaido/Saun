@@ -1,32 +1,30 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
-using Data.Shop.BasketItems;
-using Data.Shop.Baskets;
 using Data.Shop.Cities;
 using Data.Shop.Countries;
 using Data.Shop.DeliveryTypes;
+using Data.Shop.OrderItems;
 using Data.Shop.Orders;
 using Data.Shop.People;
 using Data.Shop.Products;
 using Data.Shop.Users;
-using Domain.Abstractions;
-using Domain.Shop.BasketItems;
-using Domain.Shop.Baskets;
 using Domain.Shop.Cities;
 using Domain.Shop.Countries;
 using Domain.Shop.DeliveryTypes;
+using Domain.Shop.OrderItems;
 using Domain.Shop.Orders;
 using Domain.Shop.People;
 using Domain.Shop.Products;
 using Domain.Shop.Users;
-using Facade.Shop.BasketItems;
 using Facade.Shop.Orders;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sauna.Pages.Abstractions.Constants;
-using Sauna.Pages.Shop.BasketItems;
 using Sauna.Pages.Shop.Orders;
 using Tests.Pages.Abstractions;
+using Tests.Pages.Shop.People;
 
 namespace Tests.Pages.Shop.Orders
 {
@@ -34,12 +32,16 @@ namespace Tests.Pages.Shop.Orders
     public class OrdersPageTests : SealedViewPageTests<OrdersPage, IOrdersRepository, Order,
         OrderView, OrderData>
     {
+        private OrderItemsTestRepository _orderItemsTest;
+        private ProductsTestRepository _productsTest;
         private OrdersTestRepository _ordersTest;
-        private PeopleTestRepository _peopleTest;
+        private PeoplePageTests.PeopleTestRepository _peopleTest;
         private DeliveryTypesTestRepository _deliveryTypesTest;
         private UsersTestRepository _usersTest;
         private CountriesTestRepository _countriesTest;
         private CitiesTestRepository _citiesTest;
+        private OrderItemData _orderItemData;
+        private ProductData _productData;
         private OrderData _data;
         private PersonData _peopleData;
         private UserData _userData;
@@ -49,9 +51,9 @@ namespace Tests.Pages.Shop.Orders
         private string _selectedId;
         protected override string GetId(OrderView item) => item.Id;
 
-        protected override string PageTitle() => PagesNames.BasketItems;
+        protected override string PageTitle() => PagesNames.Orders;
 
-        protected override string PageUrl() => PagesUrls.BasketItems;
+        protected override string PageUrl() => PagesUrls.Orders;
         protected override Order CreateObj(OrderData d) => new Order(d);
 
         [TestInitialize]
@@ -60,12 +62,16 @@ namespace Tests.Pages.Shop.Orders
             base.TestInitialize();
 
             _selectedId = GetRandom.String();
+            _orderItemsTest = new OrderItemsTestRepository();
+            _productsTest = new ProductsTestRepository();
             _ordersTest = new OrdersTestRepository();
-            _peopleTest = new PeopleTestRepository();
+            _peopleTest = new PeoplePageTests.PeopleTestRepository();
             _usersTest = new UsersTestRepository();
             _deliveryTypesTest = new DeliveryTypesTestRepository();
             _countriesTest = new CountriesTestRepository();
             _citiesTest = new CitiesTestRepository();
+            _orderItemData = GetRandom.Object<OrderItemData>();
+            _productData = GetRandom.Object<ProductData>();
             _data = GetRandom.Object<OrderData>();
             _peopleData = GetRandom.Object<PersonData>();
             _userData = GetRandom.Object<UserData>();
@@ -79,7 +85,9 @@ namespace Tests.Pages.Shop.Orders
             AddRandomDeliveryTypes();
             AddRandomCountries();
             AddRandomCities();
-            obj = new OrdersPage(_ordersTest, _peopleTest, _usersTest, _deliveryTypesTest, _countriesTest, _citiesTest);
+            AddRandomOrderItems();
+            AddRandomProducts();
+            obj = new OrdersPage(_orderItemsTest, _productsTest, _ordersTest, _peopleTest, _usersTest, _deliveryTypesTest, _countriesTest, _citiesTest);
 
         }
 
@@ -130,6 +138,30 @@ namespace Tests.Pages.Shop.Orders
                 _usersTest.Add(new User(d)).GetAwaiter();
             }
         }
+        
+        private void AddRandomOrderItems()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var d = i == idx ? _orderItemData : GetRandom.Object<OrderItemData>();
+                _orderItemsTest.Add(new OrderItem(d)).GetAwaiter();
+            }
+        }
+        
+        private void AddRandomProducts()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var d = i == idx ? _productData : GetRandom.Object<ProductData>();
+                _productsTest.Add(new Product(d)).GetAwaiter();
+            }
+        }
 
         private void AddRandomPeople()
         {
@@ -162,20 +194,44 @@ namespace Tests.Pages.Shop.Orders
         {
             protected override string GetId(OrderData d) => d.Id;
 
+            public Task AddAll(List<Order> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
-
-        private class PeopleTestRepository
-            : UniqueRepository<Person, PersonData>,
-                IPeopleRepository
+        
+        private class OrderItemsTestRepository
+            : UniqueRepository<OrderItem, OrderItemData>,
+                IOrderItemsRepository
         {
-            protected override string GetId(PersonData d) => d.Id;
+            protected override string GetId(OrderItemData d) => d.Id;
+            public Task AddAll(List<OrderItem> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
+        
+        private class ProductsTestRepository
+            : UniqueRepository<Product, ProductData>,
+                IProductsRepository
+        {
+            protected override string GetId(ProductData d) => d.Id;
+            public Task AddAll(List<Product> obj)
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+        
 
         private class UsersTestRepository
             : UniqueRepository<User, UserData>,
                 IUsersRepository
         {
             protected override string GetId(UserData d) => d.Id;
+            public Task AddAll(List<User> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class DeliveryTypesTestRepository
@@ -183,6 +239,10 @@ namespace Tests.Pages.Shop.Orders
                 IDeliveryTypesRepository
         {
             protected override string GetId(DeliveryTypeData d) => d.Id;
+            public Task AddAll(List<DeliveryType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class CountriesTestRepository
@@ -190,6 +250,10 @@ namespace Tests.Pages.Shop.Orders
                 ICountriesRepository
         {
             protected override string GetId(CountryData d) => d.Id;
+            public Task AddAll(List<Country> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class CitiesTestRepository
@@ -197,6 +261,10 @@ namespace Tests.Pages.Shop.Orders
                 ICitiesRepository
         {
             protected override string GetId(CityData d) => d.Id;
+            public Task AddAll(List<City> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         [TestMethod]
@@ -279,6 +347,51 @@ namespace Tests.Pages.Shop.Orders
             var name = obj.GetDeliveryTypeName(_deliveryTypeData.Id);
             Assert.AreEqual(_deliveryTypeData.Name, name);
         }
+        
+        [TestMethod]
+        public void GetPriceSumTest()
+        {
+        }
+        
+        [TestMethod]
+        public void ProductsTest()
+        {
+        }
+        
+        [TestMethod]
+        public void CartTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetOrderItemsTest()
+        {
+        }
+        
+        [TestMethod]
+        public void OnGetDetailsAsyncTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetItemPriceTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetPictureUrlTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetDeliveryPriceTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetProductNameTest()
+        {
+        }
 
         [TestMethod]
         public void GetCountryNameTest()
@@ -299,6 +412,22 @@ namespace Tests.Pages.Shop.Orders
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Shop/Orders", obj.PageUrl.ToString());
+        
+        [TestMethod]
+        public void OnGetCreateOrderTest()
+        {
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
+        }
+        
+        [TestMethod]
+        public void OnPostCreateAsyncTest()
+        {
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
+        }
     }
 
 }

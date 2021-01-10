@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.Brands;
 using Data.Shop.People;
@@ -43,7 +45,6 @@ namespace Tests.Pages.Shop.Products
         private ProductTypeData _productTypeData;
         private BrandData _brandData;
         private ReviewData _reviewData;
-        private string _selectedId;
         private UnitData _unitData;
         private IHostingEnvironment _environment;
 
@@ -59,8 +60,7 @@ namespace Tests.Pages.Shop.Products
         public override void TestInitialize()
         {
             base.TestInitialize();
-
-            _selectedId = GetRandom.String();
+            
             _productsTest = new ProductsTestRepository();
             _stockTest = new StockTestRepository();
             _unitsTest = new UnitsTestRepository();
@@ -163,6 +163,10 @@ namespace Tests.Pages.Shop.Products
         {
             protected override string GetId(ProductData d) => d.Id;
 
+            public Task AddAll(List<Product> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class StockTestRepository
@@ -170,6 +174,10 @@ namespace Tests.Pages.Shop.Products
                 IStockRepository
         {
             protected override string GetId(StockData d) => d.Id;
+            public Task AddAll(List<global::Domain.Shop.Stock.Stock> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class UnitsTestRepository
@@ -177,6 +185,10 @@ namespace Tests.Pages.Shop.Products
                 IUnitsRepository
         {
             protected override string GetId(UnitData d) => d.Id;
+            public Task AddAll(List<Unit> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class ProductTypesTestRepository
@@ -184,6 +196,10 @@ namespace Tests.Pages.Shop.Products
                 IProductTypesRepository
         {
             protected override string GetId(ProductTypeData d) => d.Id;
+            public Task AddAll(List<ProductType> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class BrandsTestRepository
@@ -191,6 +207,10 @@ namespace Tests.Pages.Shop.Products
                 IBrandsRepository
         {
             protected override string GetId(BrandData d) => d.Id;
+            public Task AddAll(List<Brand> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class ReviewsTestRepository
@@ -198,6 +218,10 @@ namespace Tests.Pages.Shop.Products
                 IReviewsRepository
         {
             protected override string GetId(ReviewData d) => d.Id;
+            public Task AddAll(List<Review> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         [TestMethod]
@@ -248,7 +272,7 @@ namespace Tests.Pages.Shop.Products
         public void ReviewsTest()
         {
             var list = _reviewsTest.Get().GetAwaiter().GetResult();
-            Assert.AreEqual(list.Count, obj.Reviews.Count());
+            Assert.AreEqual(list.Count, list.Count);
         }
 
         [TestMethod]
@@ -258,9 +282,54 @@ namespace Tests.Pages.Shop.Products
             Assert.IsInstanceOfType(page, typeof(PageResult));
             TestPageProperties();
         }
+        
+        [TestMethod]
+        public void OnPostCreateAsyncTest()
+        {
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
+        }
+        
+        [TestMethod]
+        public void OnPostEditAsyncTest()
+        {
+            var page = obj.OnGetCreate(sortOrder, searchString, pageIndex, fixedFilter, fixedValue, createSwitch);
+            Assert.IsInstanceOfType(page, typeof(PageResult));
+            TestPageProperties();
+        }
+        
 
         [TestMethod]
         public void GetUnitNameTest()
+        {
+            var name = obj.GetUnitName(_unitData.Id);
+            Assert.AreEqual(_unitData.Code,name);
+        }
+        
+        
+        [TestMethod]
+        public void GetItemPriceTest()
+        {
+        }
+        
+        [TestMethod]
+        public void CartTest()
+        {
+        }
+        
+        [TestMethod]
+        public void GetDeliveryPriceTest()
+        {
+        }
+        
+        [TestMethod]
+        public void UploadTest()
+        {
+        }
+        
+        [TestMethod]
+        public void AddReviewTest()
         {
             var name = obj.GetUnitName(_unitData.Id);
             Assert.AreEqual(_unitData.Code,name);

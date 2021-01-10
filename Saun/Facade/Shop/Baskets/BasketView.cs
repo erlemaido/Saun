@@ -10,9 +10,6 @@ namespace Facade.Shop.Baskets
         [DisplayName("Nimi")]
         public string Name { get; set; }
 
-        [DisplayName("Klient")]
-        public string PersonId { get; set; }
-
         [Required]
         [DisplayName("Hind")]
         public double TotalPrice { get; set; }

@@ -25,6 +25,13 @@ namespace Tests.Pages.Extensions
             var actual = EditorHtml.HtmlStrings(new HtmlHelperMock<OrderStatusView>(), x=>x.Time);
             TestHtml.Strings(actual, expected);
         }
+        
+        [TestMethod]
+        public void DisabledEditorTest() {
+            var expected = new List<string> { "<div", "LabelFor", "EditorFor", "ValidationMessageFor", "</div>"};
+            var actual = EditorHtml.HtmlStrings(new HtmlHelperMock<OrderStatusView>(), x=>x.Time);
+            TestHtml.Strings(actual, expected);
+        }
 
     }
 

@@ -4,23 +4,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Aids.Helpers;
-using Aids.Reflection;
 using Data.Shop.BasketItems;
 using Data.Shop.Baskets;
 using Data.Shop.People;
-using Data.Shop.Products;
-using Data.Shop.Users;
 using Domain.Shop.BasketItems;
 using Domain.Shop.Baskets;
 using Domain.Shop.People;
 using Domain.Shop.Products;
-using Domain.Shop.Users;
 using Facade.Shop.Baskets;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sauna.Pages.Abstractions;
 using Sauna.Pages.Abstractions.Constants;
-using Sauna.Pages.Shop.Products;
 
 namespace Sauna.Pages.Shop.Baskets
 {
@@ -60,7 +55,6 @@ namespace Sauna.Pages.Shop.Baskets
             string fixedFilter, string fixedValue)
         {
             Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
-
             SelectedId = id;
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue).ConfigureAwait(true);
@@ -70,23 +64,8 @@ namespace Sauna.Pages.Shop.Baskets
         
         public string GetProductPictureUrl(string id) => GetPictureUrl(id);
 
-        public double? GetProductPrice(string id) => GetItemPrice(id);
-
         public string GetPersonName(string itemPersonId) => GetItemName(People, itemPersonId);
-        private bool IsPerson() => FixedFilter == GetMember.Name<BasketView>(x => x.PersonId);
 
-        protected internal override string GetPageSubtitle()
-        {
-            if (IsPerson())
-            {
-                return $"{GetPersonName(FixedValue)}";
-            }
-            else
-            {
-                return "Määramata alalehe pealkiri";
-            }
-        }
-        
         public async Task<IActionResult> OnPostRemoveFromCartAsync(string itemId)
         {
             RemoveFromCart(itemId);
@@ -105,11 +84,7 @@ namespace Sauna.Pages.Shop.Baskets
 
         public async Task<IActionResult> OnPostCreateBasketAsync(string itemId)
         {
-            Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart");
-            if (Cart == null)
-            {
-                Cart = new List<BasketItem>();
-            }
+            Cart = HttpContext.Session.GetObjectFromJson<List<BasketItem>>("cart") ?? new List<BasketItem>();
 
             var contains = Cart.Any(item => item.Data.ProductId == itemId);
             if (!contains)
