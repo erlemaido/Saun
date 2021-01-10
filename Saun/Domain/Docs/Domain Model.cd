@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Abstractions.UniqueEntity&lt;TData&gt;">
+    <Position X="0.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\UniqueEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Shop.BasketItems.BasketItem">
+    <Position X="2.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\BasketItems\BasketItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.OrderItems.OrderItem">
+    <Position X="4.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\OrderItems\OrderItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.OrderStatuses.OrderStatus">
+    <Position X="7" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\OrderStatuses\OrderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Payments.Payment">
+    <Position X="9.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Payments\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.PaymentTypes.PaymentType">
+    <Position X="11.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\PaymentTypes\PaymentType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.People.Person">
+    <Position X="14.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\People\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Products.Product">
+    <Position X="11" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Products\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Reviews.Review">
+    <Position X="8.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Reviews\Review.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Stock.Stock">
+    <Position X="6.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Stock\Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.UserRoles.UserRole">
+    <Position X="4.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\UserRoles\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Users.User">
+    <Position X="2.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Abstractions.DefinedEntity&lt;TData&gt;">
+    <Position X="0.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\DefinedEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Shop.Baskets.Basket">
+    <Position X="2.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Baskets\Basket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Cities.City">
+    <Position X="4.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Cities\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Countries.Country">
+    <Position X="6.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Countries\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.DeliveryTypes.DeliveryType">
+    <Position X="9" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\DeliveryTypes\DeliveryType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Orders.Order">
+    <Position X="11.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Orders\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.ProductTypes.ProductType">
+    <Position X="13.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\ProductTypes\ProductType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Statuses.Status">
+    <Position X="16.25" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Statuses\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Units.Unit">
+    <Position X="18.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Units\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Brands.Brand">
+    <Position X="0.5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Brands\Brand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Shop.Roles.Role">
+    <Position X="2.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shop\Roles\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Abstractions.NamedEntity&lt;TData&gt;">
+    <Position X="0.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\NamedEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
