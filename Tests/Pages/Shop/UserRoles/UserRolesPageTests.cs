@@ -25,11 +25,19 @@ namespace Tests.Pages.Shop.UserRoles
         {
             protected override string GetId(UserRoleData d) => d.Id;
 
+            public Task AddAll(List<UserRole> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class UsersTestRepository : UniqueRepository<User, UserData>, IUsersRepository
         {
             protected override string GetId(UserData d) => d.Id;
+            public Task AddAll(List<User> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class RolesTestRepository : UniqueRepository<Role, RoleData>, IRolesRepository
@@ -37,6 +45,11 @@ namespace Tests.Pages.Shop.UserRoles
             protected override string GetId(RoleData d)
             {
                 return d.Id;
+            }
+
+            public Task AddAll(List<Role> obj)
+            {
+                throw new System.NotImplementedException();
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using Aids.Reflection;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aids.Reflection;
 using Data.Shop.Brands;
 using Data.Shop.Countries;
 using Domain.Shop.Brands;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.Countries
         {
             protected override string GetId(CountryData d) => d.Id;
 
+            public Task AddAll(List<Country> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private CountriesTestRepository _countriesTest;

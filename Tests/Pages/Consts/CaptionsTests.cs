@@ -39,6 +39,9 @@ namespace Tests.Pages.Consts {
         [TestMethod]
         public void AddToBasketTest() =>
             Assert.AreEqual("Lisa Ostukorvi", Captions.AddToBasket);
+        
+        [TestMethod] public void AmountTest() =>
+            Assert.AreEqual("Kogus", Captions.Amount);
 
     }
 

@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.BasketItems;
 using Data.Shop.Products;
@@ -23,10 +25,18 @@ namespace Tests.Pages.Shop.Stock
         {
             protected override string GetId(StockData d) => d.Id;
 
+            public Task AddAll(List<global::Domain.Shop.Stock.Stock> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         private class ProductTestRepository : UniqueRepository<Product, ProductData>, IProductsRepository
         {
             protected override string GetId(ProductData d) => d.Id;
+            public Task AddAll(List<Product> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private StockTestRepository _stockTest;

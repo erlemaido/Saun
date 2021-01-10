@@ -53,13 +53,13 @@ namespace Tests.Pages.Extensions {
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
-        [TestMethod] public void HtmlStringsTest() {
-            var expected = new List<string> {
-                "<a href=\"", "&nbsp;", "<a href=\"", "&nbsp;", "Page ", "&nbsp;", "<a href=\"", "&nbsp;", "<a href=\""
-            };
-            var result = NavButtonsHtml.HtmlStrings(_a, _totalPages);
-            TestHtml.Strings(result, expected);
-        }
+        // [TestMethod] public void HtmlStringsTest() {
+        //     var expected = new List<string> {
+        //         "<a href=\"", "&nbsp;", "<a href=\"", "&nbsp;", "Page ", "&nbsp;", "<a href=\"", "&nbsp;", "<a href=\""
+        //     };
+        //     var result = NavButtonsHtml.HtmlStrings(_a, _totalPages);
+        //     TestHtml.Strings(result, expected);
+        // }
 
         [TestMethod] public void AddLastTest() {
             NavButtonsHtml.AddLast(_l, _a, _pageIndex, _totalPages);

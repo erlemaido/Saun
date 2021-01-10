@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Aids.Reflection;
 using Data.Shop.BasketItems;
 using Data.Shop.Units;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.Units
         {
             protected override string GetId(UnitData d) => d.Id;
 
+            public Task AddAll(List<Unit> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private UnitsTestRepository _unitsTest;

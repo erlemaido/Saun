@@ -34,7 +34,6 @@
     <Folder Include="Data\Shop\UserRoles\" />
     <Folder Include="Data\Shop\Users\" />
     <Folder Include="Pages\Shop\Brands\" />
-    <Folder Include="WebApp\" />
   </ItemGroup>
 
   <ItemGroup>

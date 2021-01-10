@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Aids.Methods;
 using Aids.Reflection;
 using Data.Shop.Baskets;
@@ -28,15 +30,27 @@ namespace Tests.Pages.Shop.OrderStatuses
         {
             protected override string GetId(OrderStatusData d) => Compose.Id(d.Id, d.StatusId);
 
+            public Task AddAll(List<OrderStatus> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
         private class StatusesTestRepository : UniqueRepository<Status, StatusData>, IStatusesRepository
         {
             protected override string GetId(StatusData d) => d.Id;
+            public Task AddAll(List<Status> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private class OrdersTestRepository : UniqueRepository<Order, OrderData>, IOrdersRepository
         {
             protected override string GetId(OrderData d) => d.Id;
+            public Task AddAll(List<Order> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private OrderStatusesTestRepository _orderStatusesTest;

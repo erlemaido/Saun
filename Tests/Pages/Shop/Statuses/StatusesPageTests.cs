@@ -1,4 +1,6 @@
-﻿using Aids.Reflection;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aids.Reflection;
 using Data.Shop.Roles;
 using Data.Shop.Statuses;
 using Domain.Shop.Roles;
@@ -20,6 +22,10 @@ namespace Tests.Pages.Shop.Statuses
         {
             protected override string GetId(StatusData d) => d.Id;
 
+            public Task AddAll(List<Status> obj)
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         private StatusesTestRepository _statusesTest;
