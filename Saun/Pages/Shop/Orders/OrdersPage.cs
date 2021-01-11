@@ -139,8 +139,7 @@ namespace Sauna.Pages.Shop.Orders
             Item.TotalPrice = price.GetValueOrDefault(0);
             return price;
         }
-
-        //Kalkuleeri random delivery price 
+        
         public double GetDeliveryPrice()
         {
             var random = new Random().Next(30);
@@ -148,7 +147,6 @@ namespace Sauna.Pages.Shop.Orders
             return random;
         }
 
-        //Leia Products hulgast product name
         public string GetProductName(string id)
         {
             var name = Products.Find(i => i.Id == id)?.Data.Name;

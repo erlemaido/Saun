@@ -33,7 +33,7 @@ namespace Sauna.Pages.Shop.Products
         public IEnumerable<SelectListItem> Units { get; }
         public IList<ReviewView> Reviews { get; }
         private readonly IReviewsRepository reviews;
-        
+        // vaja et saada serveri asukoha failide urli
         private IHostingEnvironment _environment;
 
         public List<BasketItem> Cart { get; set; }
@@ -109,6 +109,10 @@ namespace Sauna.Pages.Shop.Products
 
         private async void UploadFile()
         {
+            if (Upload == null)
+            {
+                return;
+            }
             var file = Path.Combine(_environment.ContentRootPath, "wwwroot\\uploads", Upload.FileName);
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
